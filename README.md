@@ -62,7 +62,9 @@ It will be organized like showed in this following image:
     <img src="images/push_swap_gantt.png">    
 </div>
 
-Tasks
+<br>
+
+**Tasks**
 <ol>
     <li>Research</li>
     <li>Structure</li>
@@ -70,3 +72,7 @@ Tasks
     <li>Debug</li>
     <li>Validade</li>
 </ol>
+
+#### Research
+
+
