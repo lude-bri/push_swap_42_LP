@@ -64,5 +64,9 @@ It will be organized like showed in this following image:
 
 Tasks
 <ol>
-    <li></li>
+    <li>Research</li>
+    <li>Structure</li>
+    <li>Code</li>
+    <li>Debug</li>
+    <li>Validade</li>
 </ol>
