@@ -98,39 +98,39 @@ In this phase, I'll read about the following topics:
 - **Problem Hardness:** Learn about problems that are hard or easy for various complexity classes and the implications of these classifications.
 - **Hierarchies:** Explore the time and space hierarchy theorems and their implications for computational power.
 
-### 3. Time Complexity
+## 3. Time Complexity
 **What I will learn:**
 - **Asymptotic Notation:** Understand Big O, Big Omega, and Big Theta notations to describe algorithm efficiency.
 - **Time Complexity Analysis:** Learn how to analyze the running time of algorithms and how to compute their time complexity.
 - **Worst-case, Best-case, and Average-case Analysis:** Differentiate between these types of analyses and learn how to perform each.
 - **Trade-offs:** Explore the trade-offs between time complexity and other factors like space complexity.
 
-### 4. Space Complexity
+## 4. Space Complexity
 **What I will learn:**
 - **Space Complexity Analysis:** Understand how to analyze the amount of memory an algorithm uses.
 - **In-place Algorithms:** Study algorithms that require minimal extra space.
 - **Complexity Classes:** Learn about space complexity classes such as L (logarithmic space), NL (nondeterministic logarithmic space), and PSPACE.
 - **Trade-offs:** Explore the trade-offs between space complexity and other factors like time complexity.
 
-### 5. Algorithm
+## 5. Algorithm
 **What I will learn:**
 - **Algorithm Design:** Understand the principles of designing efficient algorithms.
 - **Common Algorithms:** Study a variety of common algorithms for tasks such as searching, sorting, and graph traversal.
 - **Algorithm Paradigms:** Explore different algorithmic paradigms such as divide and conquer, greedy algorithms, dynamic programming, and backtracking.
 
-### 6. Sorting Algorithm
+## 6. Sorting Algorithm
 **What I will learn:**
 - **Basic Sorting Algorithms:** Understand simple sorting algorithms such as Bubble Sort, Selection Sort, and Insertion Sort.
 - **Efficient Sorting Algorithms:** Study more efficient algorithms like Merge Sort, Quick Sort, and Heap Sort.
 - **Comparison-based vs Non-comparison-based:** Learn the difference between comparison-based sorting and non-comparison-based sorting algorithms like Counting Sort and Radix Sort.
 - **Complexity Analysis:** Analyze the time and space complexity of different sorting algorithms and understand their performance characteristics in different scenarios.
 
-### 7. Analysis of Algorithm
+## 7. Analysis of Algorithm
 **What I will learn:**
 - **Performance Metrics:** Learn how to measure and evaluate the performance of algorithms.
 - **Complexity Analysis:** Deepen Ir understanding of time and space complexity analysis.
 
-### 8. Optimization of Algorithm
+## 8. Optimization of Algorithm
 **What I will learn:**
 - **Optimization Techniques:** Study techniques to optimize algorithms for better performance.
 - **Heuristics and Approximation:** Learn about heuristic methods and approximation algorithms for solving hard problems.
