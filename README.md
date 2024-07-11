@@ -37,4 +37,28 @@ Rules
 | `rra` | (reverse rotate a) | Shift down all elements of stack `a` by 1. The last element becomes the first one. |
 | `rrb` | (reverse rotate b) | Shift down all elements of stack `b` by 1. The last element becomes the first one. |
 | `rrr` | (reverse rotate a and reverse rotate b) | Do `rra` and `rrb` at the same time. |
-   
+  
+### Program
+
+You have to write a program named `push_swap` that takes as an argument the stack `a` formatted as a list of integers. The first argument should be at the top of the stack (be careful about the order)
+
+The program must display the smallest list of instructions possible to sort the stack `a`, the smallest number being at the top.
+
+Instructions must be separated by a `\n` and nothing else.
+
+The goal is to sort the stack with the lowest possible number of operations.
+
+If no parameters are specified, the program must not display anything and give the prompt back.
+
+In case of error, it must display "Error" followed by a `\n` on the standard error. Errors include for example: some arguments aren't integers, some arguments are bigger than an integer and/or there are duplicates.
+
+### Develop
+
+In my case, and because of the multiple things to study, I'll consider 1 month and 1 week of producing this project.
+
+Things to study: 1. Complexity; 2. Algorithms analysis; 3. Sorting Algorithms
+
+Tasks
+<ol>
+    <li></li>
+</ol>
