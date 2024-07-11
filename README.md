@@ -54,9 +54,13 @@ In case of error, it must display "Error" followed by a `\n` on the standard err
 
 ### Develop
 
-In my case, and because of the multiple things to study, I'll consider 1 month and 1 week of producing this project.
+In my case, and because of the multiple things to study, I'll consider 5 weeks of producing this project.
 
-Things to study: 1. Complexity; 2. Algorithms analysis; 3. Sorting Algorithms
+It will be organized like showed in this following image:
+
+<div aling="center">
+    <img src="images/push_swap_gantt.png">    
+</div>
 
 Tasks
 <ol>
