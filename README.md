@@ -103,7 +103,7 @@ In this phase, I'll read about the following topics:
 - **Complexity Classes:** Understand different complexity classes such as P, NP, PSPACE, and EXP.
 - **Problem Hardness:** Learn about problems that are hard or easy for various complexity classes and the implications of these classifications.
 - **Hierarchies:** Explore the time and space hierarchy theorems and their implications for computational power.
-- **Bibliography**: Introduction to the Theory of Computation (Sipser, 2013).
+- **Bibliography**: [Computational Complexity: A Modern Approach(Arora & Barak, 2007)](https://theory.cs.princeton.edu/complexity/book.pdf); [Computational Complexity Theory (Dean, 2015)](https://plato.stanford.edu/entries/computational-complexity/); [Introduction to the Theory of Computation (Sipser, 2013)](https://mog.dog/files/SP2019/Sipser_Introduction.to.the.Theory.of.Computation.3E.pdf); [An Introduction to research in Computational Complexity Theory (Goldberg, 2019)](https://www.seh.ox.ac.uk/blog/an-introduction-to-research-in-computational-complexity-theory)
 
 ## 3. Time Complexity
 **What I will learn:**
