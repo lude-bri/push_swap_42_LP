@@ -95,12 +95,15 @@ In this phase, I'll read about the following topics:
 - **Formal Languages:** Explore different types of formal languages, including regular, context-free, context-sensitive, and recursively enumerable languages.
 - **Decidability and Computability:** Learn about problems that can or cannot be solved by algorithms, including the concept of undecidability and the Halting problem.
 - **Reductions and Completeness:** Study how problems can be transformed into one another and understand the notions of NP-completeness and co-NP.
+- **Bibliography**: Introduction to the Theory of Computation (Sipser, 2013).[link to the book](https://mog.dog/files/SP2019/Sipser_Introduction.to.the.Theory.of.Computation.3E.pdf)
+
 
 ## 2. Computational Complexity
 **What I will learn:**
 - **Complexity Classes:** Understand different complexity classes such as P, NP, PSPACE, and EXP.
 - **Problem Hardness:** Learn about problems that are hard or easy for various complexity classes and the implications of these classifications.
 - **Hierarchies:** Explore the time and space hierarchy theorems and their implications for computational power.
+- **Bibliography**: Introduction to the Theory of Computation (Sipser, 2013).
 
 ## 3. Time Complexity
 **What I will learn:**
