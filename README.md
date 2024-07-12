@@ -110,7 +110,6 @@ In this phase, I'll read about the following topics:
 - **Time Complexity Analysis:** Learn how to analyze the running time of algorithms and how to compute their time complexity.
 - **Space Complexity Analysis:** Understand how to analyze the amount of memory an algorithm uses.
 - **Worst-case, Best-case, and Average-case Analysis:** Differentiate between these types of analyses and learn how to perform each.
-- **Trade-offs:** Explore the trade-offs between space complexity and other factors like time complexity.
 - **Bibliography**: [Computational Complexity: A Modern Approach(Arora & Barak, 2007)](https://theory.cs.princeton.edu/complexity/book.pdf); [Introduction to the Theory of Computation (Sipser, 2013)](https://mog.dog/files/SP2019/Sipser_Introduction.to.the.Theory.of.Computation.3E.pdf)
 
 ## 4. Algorithm
