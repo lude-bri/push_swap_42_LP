@@ -92,9 +92,8 @@ In this phase, I'll read about the following topics:
 ## 1. Computational Theory
 **What I will learn:**
 - **Fundamental Concepts:** Understand the basic models of computation such as Turing machines, finite automata, and grammars.
-- **Formal Languages:** Explore different types of formal languages, including regular, context-free, context-sensitive, and recursively enumerable languages.
 - **Decidability and Computability:** Learn about problems that can or cannot be solved by algorithms, including the concept of undecidability and the Halting problem.
-- **Reductions and Completeness:** Study how problems can be transformed into one another and understand the notions of NP-completeness and co-NP.
+- **Reductions and Completeness:** Study how problems can be transformed into one another and understand the notions of NP-completeness.
 - **Bibliography**: [Introduction to the Theory of Computation (Sipser, 2013)](https://mog.dog/files/SP2019/Sipser_Introduction.to.the.Theory.of.Computation.3E.pdf)
 
 ## 2. Computational Complexity
