@@ -86,7 +86,6 @@ In this phase, I'll read about the following topics:
     <li>Algorithm</li>
     <li>Analysis of Algorithm</li>
     <li>Sorting Algorithm</li>
-    <li>Optimization of Algorithm</li>
 </ol>
 
 ## 1. Computational Theory
@@ -131,12 +130,3 @@ In this phase, I'll read about the following topics:
 - **Comparison-based vs Non-comparison-based:** Learn the difference between comparison-based sorting and non-comparison-based sorting algorithms like Counting Sort and Radix Sort.
 - **Complexity Analysis:** Analyze the time and space complexity of different sorting algorithms and understand their performance characteristics in different scenarios.
 - **Bibliography**: [The Art of Computer Programming Volume I: Fundamental Algorithms (Knuth, 1997)](https://www.haiocloud.com/app/uploads/2022/01/The-Art-of-Computer-Programming-Vol.-1-Fundamental-Algorithms-3rd-Edition-by-Donald-E.-Knuth-z-lib.org_.pdf); [Introduction to Algorithms(Cormen, Leiserson, Rivest & Stein, 2022)](https://dl.ebooksworld.ir/books/Introduction.to.Algorithms.4th.Leiserson.Stein.Rivest.Cormen.MIT.Press.9780262046305.EBooksWorld.ir.pdf); [Algorithms in C (Sedgewick, 1998)](https://bioinformatics.netmark.pl/teaching/intro2inf/books/Algorithms%20in%20C%20%283rd%20ed.%29%20Parts%201-4_%20Fundamentals%2C%20Data%20Structures%2C%20Sorting%2C%20Searching%20%5BSedgewick%201997-09-27%5D.pdf)
-
-## 7. Optimization of Algorithm
-**What I will learn:**
-- **Optimization Techniques:** Study techniques to optimize algorithms for better performance.
-- **Heuristics and Approximation:** Learn about heuristic methods and approximation algorithms for solving hard problems.
-- **Advanced Data Structures:** Explore advanced data structures that can optimize algorithm performance.
-- **Parallel and Distributed Computing:** Understand how algorithms can be optimized for parallel and distributed computing environments.
-- **Bibliography**: [The Art of Computer Programming Volume I: Fundamental Algorithms (Knuth, 1997)](https://www.haiocloud.com/app/uploads/2022/01/The-Art-of-Computer-Programming-Vol.-1-Fundamental-Algorithms-3rd-Edition-by-Donald-E.-Knuth-z-lib.org_.pdf); [Introduction to Algorithms(Cormen, Leiserson, Rivest & Stein, 2022)](https://dl.ebooksworld.ir/books/Introduction.to.Algorithms.4th.Leiserson.Stein.Rivest.Cormen.MIT.Press.9780262046305.EBooksWorld.ir.pdf); [Algorithms in C (Sedgewick, 1998)](https://bioinformatics.netmark.pl/teaching/intro2inf/books/Algorithms%20in%20C%20%283rd%20ed.%29%20Parts%201-4_%20Fundamentals%2C%20Data%20Structures%2C%20Sorting%2C%20Searching%20%5BSedgewick%201997-09-27%5D.pdf)
-
