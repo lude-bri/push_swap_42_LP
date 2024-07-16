@@ -84,8 +84,8 @@ In this phase, I'll read about the following topics:
     <li>Computational Complexity</li>
     <li>Time Complexity and Space Complexity</li>
     <li>Algorithm</li>
-    <li>Sorting Algorithm</li>
     <li>Analysis of Algorithm</li>
+    <li>Sorting Algorithm</li>
     <li>Optimization of Algorithm</li>
 </ol>
 
