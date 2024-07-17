@@ -76,7 +76,7 @@ It will be organized like showed in this following image:
 In this phase, I'll read about the following topics:
 
 <div aling="center">
-    <img src="images/research_gantt_6.png">    
+    <img src="images/research_gantt_7.png">    
 </div>
 
 <ol>
