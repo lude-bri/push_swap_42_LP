@@ -139,4 +139,5 @@ The Waterfall method is followed in this project. This method consist in followi
 
 It is the best method for this project for two main reasons: scale and structure. It is a small project, in bigger project, with more complex scale, other methods would be more efficient. The structure also it's not complex. I am working in this project solo. If the structure were formed by a group of people, other methods would be more efficient. Not being the case, the waterfall seems adequate 
 
-It is time to see more about the Design phase
+It is time to see more about the Design phase.
+
