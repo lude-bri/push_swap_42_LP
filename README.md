@@ -134,3 +134,7 @@ In this phase, I'll read about the following topics:
 # Structure
 
 In order to solve the problem of the push_swap project, it is needed to make a structure. A consice and clear structure that will guide the program steps.
+
+The Waterfall method is followed in this project. This method consist in following steps sequentially, where each phase depends on the previous one.
+
+It is time to 
