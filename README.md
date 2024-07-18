@@ -131,7 +131,7 @@ In this phase, I'll read about the following topics:
 - **Bibliography**: [The Art of Computer Programming Volume I: Fundamental Algorithms (Knuth, 1997)](https://www.haiocloud.com/app/uploads/2022/01/The-Art-of-Computer-Programming-Vol.-1-Fundamental-Algorithms-3rd-Edition-by-Donald-E.-Knuth-z-lib.org_.pdf); [Introduction to Algorithms(Cormen, Leiserson, Rivest & Stein, 2022)](https://dl.ebooksworld.ir/books/Introduction.to.Algorithms.4th.Leiserson.Stein.Rivest.Cormen.MIT.Press.9780262046305.EBooksWorld.ir.pdf); [Algorithms in C (Sedgewick, 1998)](https://bioinformatics.netmark.pl/teaching/intro2inf/books/Algorithms%20in%20C%20%283rd%20ed.%29%20Parts%201-4_%20Fundamentals%2C%20Data%20Structures%2C%20Sorting%2C%20Searching%20%5BSedgewick%201997-09-27%5D.pdf)
 
 ----
-# Structure
+# Design
 
 In order to solve the problem of the push_swap project, it is needed to make a structure. A consice and clear structure that will guide the program steps.
 
@@ -139,4 +139,4 @@ The Waterfall method is followed in this project. This method consist in followi
 
 It is the best method for this project for two main reasons: scale and structure. It is a small project, in bigger project, with more complex scale, other methods would be more efficient. The structure also it's not complex. I am working in this project solo. If the structure were formed by a group of people, other methods would be more efficient. Not being the case, the waterfall seems adequate 
 
-It is time to 
+It is time to see more about the Design phase
