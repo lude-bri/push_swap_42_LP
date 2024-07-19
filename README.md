@@ -141,4 +141,21 @@ It is the best method for this project for two main reasons: scale and structure
 
 It is time to see more about the Design phase.
 
-
+Initial stage :
+ - parse parameters
+ - Creation of a stack A which is a circular doubly linked list (last.next = first; first.prec = last
+ - Addition in the struct of a rank component, integer from 1 to n.
+This will be much more practical later.
+Phase 1 :
+ - Split the list into 3 (modifiable parameter in the .h).
+ - Push the 2 smallest thirds into stack B and do a pre-sort. do ra with others
+ - Repeat the operation until there are only 3 numbers left in stack A.
+ - Sort these 3 numbers with a specific algo (2 operations maximum)
+Phase2:
+ (Only the ra/rra/rb/rrb commands are used. sa and sb are not used in this phase)
+ - Swipe B and look for the number that will take the fewest moves to be pushed into A.
+ There are each time 4 ways to bring a number from B to A: ra+rb, ra+rrb, rra+rb, rra+rrb. We are looking for the mini between these 4 ways.
+ - Then perform the operation.
+ - Repeat the operation until empty B.
+Phase 3: If necessary rot stack A to finalize the correct order. The shorter between ra or rra.
+The optimization comes from the fact of the maximum use of the double rotations rr and rrr
