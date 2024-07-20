@@ -146,11 +146,13 @@ Initial stage :
  - Creation of a stack A which is a circular doubly linked list (last.next = first; first.prec = last
  - Addition in the struct of a rank component, integer from 1 to n.
 This will be much more practical later.
+
 Phase 1 :
  - Split the list into 3 (modifiable parameter in the .h).
  - Push the 2 smallest thirds into stack B and do a pre-sort. do ra with others
  - Repeat the operation until there are only 3 numbers left in stack A.
  - Sort these 3 numbers with a specific algo (2 operations maximum)
+
 Phase2:
  (Only the ra/rra/rb/rrb commands are used. sa and sb are not used in this phase)
  - Swipe B and look for the number that will take the fewest moves to be pushed into A.
@@ -159,3 +161,22 @@ Phase2:
  - Repeat the operation until empty B.
 Phase 3: If necessary rot stack A to finalize the correct order. The shorter between ra or rra.
 The optimization comes from the fact of the maximum use of the double rotations rr and rrr
+
+Explanation
+Replace all values in a by rank.
+For n = 100, a 3 way split is done:
+ranks 0 to 32 are moved to the bottom of b,
+ranks 33 to 65 are moved to the top of b,
+leaving ranks 66 to 99 in a.
+I'm not sure what is meant by "pre-sort" (top | bottom split in b?).
+Ranks 66 to 99 in a are sorted, using b as needed.
+Ranks from b are then inserted into a using fewest rotates.
+For n = 500, a 7 way split is done:
+Ranks 0 to 71 moved to bottom of b, 72 to 142 to top of b, which
+will end up in the middle of b after other ranks moved to b.
+Ranks 143 to 214 to bottom of b, 215 to 285 to top of b.
+Ranks 286 to 357 to bottom of b, 358 to 428 to top of b.
+Leaving ranks 429 to 499 in a.
+The largest ranks in b are at the outer edges, smallest in the middle,
+since the larger ranks are moved into sorted a before smaller ranks.
+Ranks in a are sorted, then ranks from b moved into a using fewest rotates.
