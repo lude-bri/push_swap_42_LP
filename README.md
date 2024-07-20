@@ -26,7 +26,7 @@ Rules
 |:----:| :---:| :----------:|
 | `sa` | (swap a) | Swap the first 2 elements at the top of stack a. Do nothing if there is only one or no elements. |
 | `sb` | (swap b) | Swap the first 2 elements at the top of stack b. Do nothing if there is only one or no elements. |
-| `ss` | (swap a and swap b) | Do `sa` and `sb` at the same time. |
+| `ss` | (swap a and swap b) | Do `sa` and `sb` at the same time. |Explanation Replace all val
 | `pa` | (push a) | Take the first element at the top of `b` and put it at the top of `a`. Do nothing if `b` is empty. |
 | `pb` | (push b) | Take the first element at the top of `a` and put it at the top of `b`. Do nothing if `a` is empty. |
 | `ra` | (rotate a) | Shift up all elements of stack `a` by 1. The first element becomes the last one. |
@@ -140,20 +140,20 @@ The Waterfall method is followed in this project. This method consist in followi
 It is the best method for this project for two main reasons: scale and structure. It is a small project, in bigger project, with more complex scale, other methods would be more efficient. The structure also it's not complex. I am working in this project solo. If the structure were formed by a group of people, other methods would be more efficient. Not being the case, the waterfall seems adequate 
 
 It is time to see more about the Design phase.
-
-Initial stage :
+**
+Initial stage :**
  - parse parameters
  - Creation of a stack A which is a circular doubly linked list (last.next = first; first.prec = last
  - Addition in the struct of a rank component, integer from 1 to n.
 This will be much more practical later.
 
-Phase 1 :
+**Phase 1 :**
  - Split the list into 3 (modifiable parameter in the .h).
  - Push the 2 smallest thirds into stack B and do a pre-sort. do ra with others
  - Repeat the operation until there are only 3 numbers left in stack A.
  - Sort these 3 numbers with a specific algo (2 operations maximum)
 
-Phase2:
+**Phase2:**
  (Only the ra/rra/rb/rrb commands are used. sa and sb are not used in this phase)
  - Swipe B and look for the number that will take the fewest moves to be pushed into A.
  There are each time 4 ways to bring a number from B to A: ra+rb, ra+rrb, rra+rb, rra+rrb. We are looking for the mini between these 4 ways.
@@ -162,21 +162,22 @@ Phase2:
 Phase 3: If necessary rot stack A to finalize the correct order. The shorter between ra or rra.
 The optimization comes from the fact of the maximum use of the double rotations rr and rrr
 
-Explanation
-Replace all values in a by rank.
-For n = 100, a 3 way split is done:
-ranks 0 to 32 are moved to the bottom of b,
-ranks 33 to 65 are moved to the top of b,
-leaving ranks 66 to 99 in a.
+**Explanation**
+
+  Replace all values in a by rank.
+    For n = 100, a 3 way split is done:
+      ranks 0 to 32 are moved to the bottom of b,
+      ranks 33 to 65 are moved to the top of b,
+      leaving ranks 66 to 99 in a.
+
 I'm not sure what is meant by "pre-sort" (top | bottom split in b?).
 Ranks 66 to 99 in a are sorted, using b as needed.
 Ranks from b are then inserted into a using fewest rotates.
-For n = 500, a 7 way split is done:
-Ranks 0 to 71 moved to bottom of b, 72 to 142 to top of b, which
-will end up in the middle of b after other ranks moved to b.
-Ranks 143 to 214 to bottom of b, 215 to 285 to top of b.
-Ranks 286 to 357 to bottom of b, 358 to 428 to top of b.
-Leaving ranks 429 to 499 in a.
-The largest ranks in b are at the outer edges, smallest in the middle,
-since the larger ranks are moved into sorted a before smaller ranks.
+    For n = 500, a 7 way split is done:
+      Ranks 0 to 71 moved to bottom of b, 72 to 142 to top of b, which will end up in the middle of b after other ranks moved to b.
+      Ranks 143 to 214 to bottom of b, 215 to 285 to top of b.
+      Ranks 286 to 357 to bottom of b, 358 to 428 to top of b.
+      Leaving ranks 429 to 499 in a.
+
+The largest ranks in b are at the outer edges, smallest in the middle, since the larger ranks are moved into sorted a before smaller ranks.
 Ranks in a are sorted, then ranks from b moved into a using fewest rotates.
