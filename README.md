@@ -160,7 +160,7 @@ This will be much more practical later.
  - Then perform the operation.
  - Repeat the operation until empty B.
 
-**Phase 3: **
+**Phase 3:**
 - If necessary rot stack A to finalize the correct order. The shorter between ra or rra.
 - The optimization comes from the fact of the maximum use of the double rotations rr and rrr
 
