@@ -159,8 +159,10 @@ This will be much more practical later.
  There are each time 4 ways to bring a number from B to A: ra+rb, ra+rrb, rra+rb, rra+rrb. We are looking for the mini between these 4 ways.
  - Then perform the operation.
  - Repeat the operation until empty B.
-Phase 3: If necessary rot stack A to finalize the correct order. The shorter between ra or rra.
-The optimization comes from the fact of the maximum use of the double rotations rr and rrr
+
+**Phase 3: **
+- If necessary rot stack A to finalize the correct order. The shorter between ra or rra.
+- The optimization comes from the fact of the maximum use of the double rotations rr and rrr
 
 **Explanation**
 
