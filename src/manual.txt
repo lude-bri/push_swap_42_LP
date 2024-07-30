@@ -1,0 +1,31 @@
+
+
+Initial phase
+
+	1. parse
+	2. create a stack which is a circular double linked list
+	3. Addition in the struct of a rank component (1 to n)
+
+Phase 1
+
+	1. Split the list into 3
+	2. Push the 2 smallest thirds into stack B, do a pre-sort doing ra
+	3. Repeat the operation until there are only 3 numbers left in A
+	4. Sort these 3 numbers with algo
+
+Phase 2
+
+	1. Swap B and look for the number that will take the fewest moves to push into A
+		1.1. Each time there are 4 ways to bring a number from B to A
+			ra+rb
+			ra+rrb
+			rra+rb
+			rra+rrb
+	2. Perform operation
+	3. Repeat until empty B
+	
+Phase 3
+
+	1. If necessary rotate A to finalize: ra or rra
+	2. The optimization comes from the fact of the max use of double rotations rr and rrr
+
