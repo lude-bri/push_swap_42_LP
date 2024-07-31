@@ -1,0 +1,4819 @@
++set print pretty on
++set print array on
++define main
++start
+Temporary breakpoint 1 at 0x401256: file src/main.c, line 50.
+Starting program: /home/lude-bri/CC/Rank2/push_swap/ko/push_swap 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Temporary breakpoint 1, main (argc=1, argv=0x7fffffffdf48) at src/main.c:50
++info argc
+Undefined info command: "argc".  Try "help info".
++n
++n
+[Inferior 1 (process 314472) exited normally]
++q
++set print pretty on
++set print array on
++define main
++info argc
+Undefined info command: "argc".  Try "help info".
++n
+The program is not being run.
++start
+Temporary breakpoint 1 at 0x401256: file src/main.c, line 50.
+Starting program: /home/lude-bri/CC/Rank2/push_swap/ko/push_swap 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Temporary breakpoint 1, main (argc=1, argv=0x7fffffffdf48) at src/main.c:50
++main
+++display argc
+++display *argv@argc
+++break main
+Breakpoint 2 at 0x401256: file src/main.c, line 50.
+++run 2 1 3 6 5 8
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 2, main (argc=7, argv=0x7fffffffdf08) at src/main.c:50
+1: argc = 7
+2: *argv@argc = {
+  0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe358 "2",
+  0x7fffffffe35a "1",
+  0x7fffffffe35c "3",
+  0x7fffffffe35e "6",
+  0x7fffffffe360 "5",
+  0x7fffffffe362 "8"
+}
++n
+1: argc = 7
+2: *argv@argc = {
+  0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe358 "2",
+  0x7fffffffe35a "1",
+  0x7fffffffe35c "3",
+  0x7fffffffe35e "6",
+  0x7fffffffe360 "5",
+  0x7fffffffe362 "8"
+}
++n
+1: argc = 7
+2: *argv@argc = {
+  0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe358 "2",
+  0x7fffffffe35a "1",
+  0x7fffffffe35c "3",
+  0x7fffffffe35e "6",
+  0x7fffffffe360 "5",
+  0x7fffffffe362 "8"
+}
++q
++set print pretty on
++set print array on
++define main
++break main
+Breakpoint 1 at 0x401256: file src/main.c, line 50.
++run 2 1 3 6 5 8
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=7, argv=0x7fffffffdf08) at src/main.c:50
++q
++set print pretty on
++set print array on
++define main
++break main
+Breakpoint 1 at 0x401256: file src/main.c, line 50.
++run 2 1 3 6 5 8
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=7, argv=0x7fffffffdf08) at src/main.c:50
++q
++set print pretty on
++set print array on
++define main
++break main
+Breakpoint 1 at 0x401256: file src/main.c, line 50.
++run 2 1 3 6 5 8
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=7, argv=0x7fffffffdf08) at src/main.c:50
++N
+Undefined command: "N".  Try "help".
++n
++n
++main
+++display argc
+++display *argv@argc
+++display tokens
+++display **tokens
+++display pab
+++display *pab
++info break
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000000000401256 in main at src/main.c:50
+	breakpoint already hit 1 time
++q
++set print pretty on
++set print array on
++define main
++break ft_split
+Breakpoint 1 at 0x4043e4
++run 2 1 3 6 5 8
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[Inferior 1 (process 412186) exited normally]
++main
+++display argc
+.gdbinit:24: Error in sourced command file:
+No symbol "argc" in current context.
++q
++set print pretty on
++set print array on
++define main
++break ft_split
+Breakpoint 1 at 0x4043e4
++run 2 1 3 6 5 8
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[Inferior 1 (process 412747) exited normally]
++q
++set print pretty on
++set print array on
++define main
++break main
+Breakpoint 1 at 0x401256: file src/main.c, line 50.
++run 2 1 3 6 5 8
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=7, argv=0x7fffffffdf08) at src/main.c:50
++q
++set print pretty on
++set print array on
++define main
++break solve_push_swap
+Breakpoint 1 at 0x4011cc: file src/main.c, line 32.
++run 2 1 3 6 5 8
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, solve_push_swap (pab=0x4082a0) at src/main.c:32
++q
++set print pretty on
++set print array on
++define main
++break main
+Breakpoint 1 at 0x401256: file src/main.c, line 50.
++break solve_push_swap
+Breakpoint 2 at 0x4011cc: file src/main.c, line 32.
++run 2 1 3 6 5 8
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=7, argv=0x7fffffffdf08) at src/main.c:50
++info thread
+  Id   Target Id                                      Frame 
+* 1    Thread 0x7ffff7d79740 (LWP 414833) "push_swap" main (argc=7, argv=0x7fffffffdf08)
+    at src/main.c:50
++fs cmd
+Focus set to cmd window.
++info b
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000000000401256 in main at src/main.c:50
+	breakpoint already hit 1 time
+2       breakpoint     keep y   0x00000000004011cc in solve_push_swap at src/main.c:32
++c
+Continuing.
+
+Breakpoint 2, solve_push_swap (pab=0x4082a0) at src/main.c:32
++q
++set print pretty on
++set print array on
++define main
++fs cmd
+Focus set to cmd window.
++break main
+Breakpoint 1 at 0x401256: file src/main.c, line 50.
++run 2 1 3 6 5 8
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=7, argv=0x7fffffffdf08) at src/main.c:50
++main
+++display argc
+++display *argv@argc
+++display tokens
+++display **tokens
+++display pab
+++display *pab
++n
+1: argc = 7
+2: *argv@argc = {
+  0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe358 "2",
+  0x7fffffffe35a "1",
+  0x7fffffffe35c "3",
+  0x7fffffffe35e "6",
+  0x7fffffffe360 "5",
+  0x7fffffffe362 "8"
+}
+3: tokens = (char **) 0x64
+4: **tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe319
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x756c2f656d6f682f
+}
++qq
+Undefined command: "qq".  Try "help".
++q
++set print pretty on
++set print array on
++define main
++fs cmd
+Focus set to cmd window.
++break main
+Breakpoint 1 at 0x401256: file src/main.c, line 50.
++run 2 1 3 6 5 8
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=7, argv=0x7fffffffdf08) at src/main.c:50
++main
+++display argc
+++display *argv@argc
+++display tokens
+++display *tokens
+++display pab
+++display *pab
++n
+1: argc = 7
+2: *argv@argc = {
+  0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe358 "2",
+  0x7fffffffe35a "1",
+  0x7fffffffe35c "3",
+  0x7fffffffe35e "6",
+  0x7fffffffe360 "5",
+  0x7fffffffe362 "8"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe319
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x756c2f656d6f682f
+}
++n
+1: argc = 7
+2: *argv@argc = {
+  0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe358 "2",
+  0x7fffffffe35a "1",
+  0x7fffffffe35c "3",
+  0x7fffffffe35e "6",
+  0x7fffffffe360 "5",
+  0x7fffffffe362 "8"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe319
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x756c2f656d6f682f
+}
++n
+1: argc = 7
+2: *argv@argc = {
+  0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe358 "2",
+  0x7fffffffe35a "1",
+  0x7fffffffe35c "3",
+  0x7fffffffe35e "6",
+  0x7fffffffe360 "5",
+  0x7fffffffe362 "8"
+}
+3: tokens = (char **) 0x7fffffffdf10
+4: *tokens = 0x7fffffffe358 "2"
+5: pab = (t_stack_ab *) 0x7fffffffe319
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x756c2f656d6f682f
+}
++s
+new_ab (strs=0x7fffffffdf10) at src/construct_ab.c:32
++display strs
+7: strs = (char **) 0x7fffffffdf10
++s
+ascii_number_sanity_check (strs=0x7fffffffdf10) at src/sanity_check.c:62
++display strs
+8: strs = (const char **) 0x7fffffffdf10
++display *strs
+9: *strs = 0x7fffffffe358 "2"
++display **strs
+10: **strs = 50 '2'
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
++display strs[idx]
+11: strs[idx] = 0x7fffffffe362 "8"
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
+11: strs[idx] = 0x7fffffffe362 "8"
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
+11: strs[idx] = 0x0
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
+11: strs[idx] = 0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap"
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
+11: strs[idx] = 0x7fffffffe358 "2"
++s
+is_in_range (str=0x7fffffffe358 "2") at src/sanity_check.c:42
++s
+get_number_start (str=0x7fffffffe358 "2") at src/sanity_check.c:32
++display str
+12: str = 0x7fffffffe358 "2"
++n
+12: str = 0x7fffffffe358 "2"
++n
+12: str = 0x7fffffffe358 "2"
++n
+12: str = 0x7fffffffe358 "2"
++n
+is_in_range (str=0x7fffffffe358 "2") at src/sanity_check.c:43
++n
++display num_len
+13: num_len = 1
++n
+13: num_len = 1
++n
+13: num_len = 1
++n
+13: num_len = 1
++n
+ascii_number_sanity_check (strs=0x7fffffffdf10) at src/sanity_check.c:67
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
+11: strs[idx] = 0x7fffffffe358 "2"
++nn
+Undefined command: "nn".  Try "help".
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
+11: strs[idx] = 0x7fffffffe35a "1"
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
+11: strs[idx] = 0x7fffffffe35a "1"
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
+11: strs[idx] = 0x7fffffffe35c "3"
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
+11: strs[idx] = 0x7fffffffe35c "3"
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
+11: strs[idx] = 0x7fffffffe35e "6"
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
+11: strs[idx] = 0x7fffffffe35e "6"
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
+11: strs[idx] = 0x7fffffffe360 "5"
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
+11: strs[idx] = 0x7fffffffe360 "5"
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
+11: strs[idx] = 0x7fffffffe362 "8"
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
+11: strs[idx] = 0x7fffffffe362 "8"
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
+11: strs[idx] = 0x0
++n
+8: strs = (const char **) 0x7fffffffdf10
+9: *strs = 0x7fffffffe358 "2"
+10: **strs = 50 '2'
+11: strs[idx] = 0x0
++n
+new_ab (strs=0x7fffffffdf10) at src/construct_ab.c:34
+7: strs = (char **) 0x7fffffffdf10
++n
+7: strs = (char **) 0x7fffffffdf10
++n
+7: strs = (char **) 0x7fffffffdf10
++n
+7: strs = (char **) 0x7fffffffdf10
++p this
+$1 = (t_stack_ab *) 0x4082a0
++p *this
+$2 = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x0
+}
++p str_cnt
+$3 = 6
++n
+7: strs = (char **) 0x7fffffffdf10
++n
+7: strs = (char **) 0x7fffffffdf10
++n
+7: strs = (char **) 0x7fffffffdf10
++n
+7: strs = (char **) 0x7fffffffdf10
++n
+7: strs = (char **) 0x7fffffffdf10
++n
+7: strs = (char **) 0x7fffffffdf10
++n
+7: strs = (char **) 0x7fffffffdf10
++n
+7: strs = (char **) 0x7fffffffdf10
++n
+7: strs = (char **) 0x7fffffffdf10
++n
+7: strs = (char **) 0x7fffffffdf10
++n
+7: strs = (char **) 0x7fffffffdf10
++n
+7: strs = (char **) 0x7fffffffdf10
++n
+7: strs = (char **) 0x7fffffffdf10
++n
+7: strs = (char **) 0x7fffffffdf10
++n
+7: strs = (char **) 0x7fffffffdf10
++n
+7: strs = (char **) 0x7fffffffdf10
++n
+7: strs = (char **) 0x7fffffffdf10
++p *this
+$4 = {
+  size = 6,
+  a_bot = 0,
+  b_bot = 5,
+  pivot = 6,
+  pdata = 0x4082c0
+}
++s
+normailize_int (arr=0x4082c0, size=6) at src/normalize_int.c:81
++n
++n
++n
++p sorted_arr
+$5 = (int *) 0x4082e0
++display size
+14: size = 6
++display sorted_arr
+15: sorted_arr = (int *) 0x4082e0
++display *sorted_arr
+16: *sorted_arr = 0
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 0
++p sorted_arr[0]
+$6 = 0
++p sorted_arr[1]
+$7 = 0
++p sorted_arr[2]
+$8 = 0
++p arr[0]
+$9 = 8
++p arr[0]
+$10 = 8
++p arr[1]
+$11 = 5
++p arr[2]
+$12 = 6
++p arr[7]
+$13 = 0
++p arr[6]
+$14 = 33
++p arr[5]
+$15 = 2
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 8
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 8
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 8
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 8
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 8
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 8
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 8
++p sorted_arr[idx]
+$16 = 3
++p sorted_arr[idx]
+$17 = 3
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 8
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 8
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 8
++display sorted_arr[idx]
+17: sorted_arr[idx] = 0
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 8
+17: sorted_arr[idx] = 2
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 8
+17: sorted_arr[idx] = 134417
++s
+quick_sort (arr=0x4082e0, left=0, right=5) at src/normalize_int.c:39
++s
++p pivot
+$18 = 6
++p left
+$19 = 0
++p right
+$20 = 5
++display i
+18: i = 0
++display j
+19: j = 4211463
++display arr[i]
+20: arr[i] = 8
++display arr[j]
+21: arr[j] = <error: Cannot access memory at address 0x1418efc>
++display pivot
+22: pivot = 6
++n
+18: i = 0
+19: j = 4211463
+20: arr[i] = 8
+21: arr[j] = <error: Cannot access memory at address 0x1418efc>
+22: pivot = 6
++n
+18: i = 0
+19: j = 5
+20: arr[i] = 8
+21: arr[j] = 2
+22: pivot = 6
++n
+18: i = 0
+19: j = 5
+20: arr[i] = 8
+21: arr[j] = 2
+22: pivot = 6
++n
+18: i = 0
+19: j = 5
+20: arr[i] = 8
+21: arr[j] = 2
+22: pivot = 6
++n
+18: i = 0
+19: j = 5
+20: arr[i] = 8
+21: arr[j] = 2
+22: pivot = 6
++n
+18: i = 0
+19: j = 5
+20: arr[i] = 8
+21: arr[j] = 2
+22: pivot = 6
++n
+18: i = 0
+19: j = 5
+20: arr[i] = 8
+21: arr[j] = 2
+22: pivot = 6
++n
+18: i = 1
+19: j = 5
+20: arr[i] = 5
+21: arr[j] = 2
+22: pivot = 6
++n
+18: i = 1
+19: j = 4
+20: arr[i] = 5
+21: arr[j] = 1
+22: pivot = 6
++n
+18: i = 1
+19: j = 4
+20: arr[i] = 5
+21: arr[j] = 1
+22: pivot = 6
++n
+18: i = 1
+19: j = 4
+20: arr[i] = 5
+21: arr[j] = 1
+22: pivot = 6
++n
+18: i = 2
+19: j = 4
+20: arr[i] = 6
+21: arr[j] = 1
+22: pivot = 6
++n
+18: i = 2
+19: j = 4
+20: arr[i] = 6
+21: arr[j] = 1
+22: pivot = 6
++n
+18: i = 2
+19: j = 4
+20: arr[i] = 6
+21: arr[j] = 1
+22: pivot = 6
++n
+18: i = 2
+19: j = 4
+20: arr[i] = 6
+21: arr[j] = 1
+22: pivot = 6
++n
+18: i = 2
+19: j = 4
+20: arr[i] = 6
+21: arr[j] = 1
+22: pivot = 6
++n
+18: i = 3
+19: j = 4
+20: arr[i] = 3
+21: arr[j] = 1
+22: pivot = 6
++n
+18: i = 3
+19: j = 3
+20: arr[i] = 3
+21: arr[j] = 3
+22: pivot = 6
++n
+18: i = 3
+19: j = 3
+20: arr[i] = 3
+21: arr[j] = 3
+22: pivot = 6
++n
+18: i = 3
+19: j = 3
+20: arr[i] = 3
+21: arr[j] = 3
+22: pivot = 6
++n
+18: i = 4
+19: j = 3
+20: arr[i] = 6
+21: arr[j] = 3
+22: pivot = 6
++n
+18: i = 4
+19: j = 3
+20: arr[i] = 6
+21: arr[j] = 3
+22: pivot = 6
++n
+18: i = 4
+19: j = 3
+20: arr[i] = 6
+21: arr[j] = 3
+22: pivot = 6
++n
+18: i = 4
+19: j = 3
+20: arr[i] = 6
+21: arr[j] = 3
+22: pivot = 6
++n
+18: i = 4
+19: j = 3
+20: arr[i] = 6
+21: arr[j] = 3
+22: pivot = 6
++n
+18: i = 4
+19: j = 3
+20: arr[i] = 6
+21: arr[j] = 3
+22: pivot = 6
++n
+18: i = 4
+19: j = 3
+20: arr[i] = 6
+21: arr[j] = 5
+22: pivot = 6
++n
+18: i = 4
+19: j = 3
+20: arr[i] = 6
+21: arr[j] = 5
+22: pivot = 6
++n
+18: i = 4
+19: j = 3
+20: arr[i] = 6
+21: arr[j] = 5
+22: pivot = 6
++n
+normailize_int (arr=0x4082c0, size=6) at src/normalize_int.c:88
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 1
+17: sorted_arr[idx] = 134417
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 1
+17: sorted_arr[idx] = 134417
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 1
+17: sorted_arr[idx] = 0
++display idx
+23: idx = -1
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 1
+17: sorted_arr[idx] = 1
+23: idx = 0
++p arr[idx]
+$21 = 8
++s
+binary_search (arr=0x4082e0, target=8, begin=0, end=6) at src/normalize_int.c:21
++display arr
+24: arr = (const int *) 0x4082e0
++display *arr
+25: *arr = 1
++display target
+26: target = 8
++display begin
+27: begin = 0
++display end
+28: end = 6
++display mid
+29: mid = 6
++n
+24: arr = (const int *) 0x4082e0
+25: *arr = 1
+26: target = 8
+27: begin = 0
+28: end = 6
+29: mid = 6
++n
+24: arr = (const int *) 0x4082e0
+25: *arr = 1
+26: target = 8
+27: begin = 0
+28: end = 6
+29: mid = 3
++n
+24: arr = (const int *) 0x4082e0
+25: *arr = 1
+26: target = 8
+27: begin = 0
+28: end = 6
+29: mid = 3
++display arr[mid]
+30: arr[mid] = 5
++n
+24: arr = (const int *) 0x4082e0
+25: *arr = 1
+26: target = 8
+27: begin = 0
+28: end = 6
+29: mid = 3
+30: arr[mid] = 5
++n
+24: arr = (const int *) 0x4082e0
+25: *arr = 1
+26: target = 8
+27: begin = 4
+28: end = 6
+29: mid = 3
+30: arr[mid] = 5
++n
+24: arr = (const int *) 0x4082e0
+25: *arr = 1
+26: target = 8
+27: begin = 4
+28: end = 6
+29: mid = 3
+30: arr[mid] = 5
++n
+24: arr = (const int *) 0x4082e0
+25: *arr = 1
+26: target = 8
+27: begin = 4
+28: end = 6
+29: mid = 5
+30: arr[mid] = 8
++n
+24: arr = (const int *) 0x4082e0
+25: *arr = 1
+26: target = 8
+27: begin = 4
+28: end = 6
+29: mid = 5
+30: arr[mid] = 8
++n
+24: arr = (const int *) 0x4082e0
+25: *arr = 1
+26: target = 8
+27: begin = 4
+28: end = 6
+29: mid = 5
+30: arr[mid] = 8
++n
+normailize_int (arr=0x4082c0, size=6) at src/normalize_int.c:94
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 1
+17: sorted_arr[idx] = 1
+23: idx = 0
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 1
+17: sorted_arr[idx] = 2
+23: idx = 1
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 1
+17: sorted_arr[idx] = 2
+23: idx = 1
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 1
+17: sorted_arr[idx] = 3
+23: idx = 2
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 1
+17: sorted_arr[idx] = 3
+23: idx = 2
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 1
+17: sorted_arr[idx] = 5
+23: idx = 3
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 1
+17: sorted_arr[idx] = 5
+23: idx = 3
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 1
+17: sorted_arr[idx] = 6
+23: idx = 4
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 1
+17: sorted_arr[idx] = 6
+23: idx = 4
++n
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 1
+17: sorted_arr[idx] = 8
+23: idx = 5
++s
+binary_search (arr=0x4082e0, target=2, begin=0, end=6) at src/normalize_int.c:21
+24: arr = (const int *) 0x4082e0
+25: *arr = 1
+26: target = 2
+27: begin = 0
+28: end = 6
+29: mid = 1
+30: arr[mid] = 2
++s
+24: arr = (const int *) 0x4082e0
+25: *arr = 1
+26: target = 2
+27: begin = 0
+28: end = 6
+29: mid = 1
+30: arr[mid] = 2
++s
+24: arr = (const int *) 0x4082e0
+25: *arr = 1
+26: target = 2
+27: begin = 0
+28: end = 6
+29: mid = 3
+30: arr[mid] = 5
++s
+24: arr = (const int *) 0x4082e0
+25: *arr = 1
+26: target = 2
+27: begin = 0
+28: end = 6
+29: mid = 3
+30: arr[mid] = 5
++s
+24: arr = (const int *) 0x4082e0
+25: *arr = 1
+26: target = 2
+27: begin = 0
+28: end = 6
+29: mid = 3
+30: arr[mid] = 5
++s
+24: arr = (const int *) 0x4082e0
+25: *arr = 1
+26: target = 2
+27: begin = 0
+28: end = 2
+29: mid = 3
+30: arr[mid] = 5
++s
+24: arr = (const int *) 0x4082e0
+25: *arr = 1
+26: target = 2
+27: begin = 0
+28: end = 2
+29: mid = 3
+30: arr[mid] = 5
++s
+24: arr = (const int *) 0x4082e0
+25: *arr = 1
+26: target = 2
+27: begin = 0
+28: end = 2
+29: mid = 1
+30: arr[mid] = 2
++s
+24: arr = (const int *) 0x4082e0
+25: *arr = 1
+26: target = 2
+27: begin = 0
+28: end = 2
+29: mid = 1
+30: arr[mid] = 2
++s
+24: arr = (const int *) 0x4082e0
+25: *arr = 1
+26: target = 2
+27: begin = 0
+28: end = 2
+29: mid = 1
+30: arr[mid] = 2
++s
+normailize_int (arr=0x4082c0, size=6) at src/normalize_int.c:94
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 1
+17: sorted_arr[idx] = 8
+23: idx = 5
++s
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 1
+17: sorted_arr[idx] = 134417
+23: idx = 6
++s
+__GI___libc_free (mem=0x4082e0) at ./malloc/malloc.c:3352
++s
++s
++s
++s
++s
++s
+arena_for_chunk (ptr=0x4082d0) at ./malloc/arena.c:162
++s
+__GI___libc_free (mem=<optimized out>) at ./malloc/malloc.c:3391
++s
+_int_free (av=0x7ffff7f96c80 <main_arena>, p=0x4082d0, have_lock=0) at ./malloc/malloc.c:4421
++s
++s
++s
++s
++s
++s
++s
++s
++s
+tcache_put (tc_idx=0, chunk=0x4082d0) at ./malloc/malloc.c:3181
++s
++s
++s
++s
+_int_free (av=0x7ffff7f96c80 <main_arena>, p=0x4082d0, have_lock=0) at ./malloc/malloc.c:4482
++s
+__GI___libc_free (mem=<optimized out>) at ./malloc/malloc.c:3394
++s
+normailize_int (arr=0x4082c0, size=6) at src/normalize_int.c:97
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 1032
+17: sorted_arr[idx] = 134417
+23: idx = 6
++s
+14: size = 6
+15: sorted_arr = (int *) 0x4082e0
+16: *sorted_arr = 1032
+17: sorted_arr[idx] = 134417
+23: idx = 6
++s
+new_ab (strs=0x7fffffffdf10) at src/construct_ab.c:54
+7: strs = (char **) 0x7fffffffdf10
++s
+7: strs = (char **) 0x7fffffffdf10
++s
+main (argc=7, argv=0x7fffffffdf08) at src/main.c:65
+1: argc = 7
+2: *argv@argc = {
+  0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe358 "2",
+  0x7fffffffe35a "1",
+  0x7fffffffe35c "3",
+  0x7fffffffe35e "6",
+  0x7fffffffe360 "5",
+  0x7fffffffe362 "8"
+}
+3: tokens = (char **) 0x7fffffffdf10
+4: *tokens = 0x7fffffffe358 "2"
+5: pab = (t_stack_ab *) 0x4082a0
+6: *pab = {
+  size = 6,
+  a_bot = 0,
+  b_bot = 5,
+  pivot = 6,
+  pdata = 0x4082c0
+}
++s
+1: argc = 7
+2: *argv@argc = {
+  0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe358 "2",
+  0x7fffffffe35a "1",
+  0x7fffffffe35c "3",
+  0x7fffffffe35e "6",
+  0x7fffffffe360 "5",
+  0x7fffffffe362 "8"
+}
+3: tokens = (char **) 0x7fffffffdf10
+4: *tokens = 0x7fffffffe358 "2"
+5: pab = (t_stack_ab *) 0x4082a0
+6: *pab = {
+  size = 6,
+  a_bot = 0,
+  b_bot = 5,
+  pivot = 6,
+  pdata = 0x4082c0
+}
++s
+solve_push_swap (pab=0x4082a0) at src/main.c:32
++s
+new_command_buffer () at src/push_swap_command.c:29
++s
+solve_push_swap (pab=0x4082a0) at src/main.c:33
++s
++s
+is_ab_sorted (this=0x4082a0) at src/stack_ab_utility.c:21
++n
++n
++n
++n
++n
++n
++n
++n
+solve_push_swap (pab=0x4082a0) at src/main.c:40
++p pab
+$22 = (t_stack_ab *) 0x4082a0
++p *pab
+$23 = {
+  size = 6,
+  a_bot = 0,
+  b_bot = 5,
+  pivot = 6,
+  pdata = 0x4082c0
+}
++s
+sort_ab (pab=0x4082a0, p_cmd_vec=0x408300) at src/psa_quick.c:69
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
+solve_push_swap (pab=0x4082a0) at src/main.c:41
++n
++q
++set print pretty on
++set print array on
++define main
++fs cmd
+Focus set to cmd window.
++break main
+Breakpoint 1 at 0x401256: file src/main.c, line 50.
++run 2 1 3 6 5 8
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=7, argv=0x7fffffffdf08) at src/main.c:50
++main
+++display argc
+++display *argv@argc
+++display tokens
+++display *tokens
+++display pab
+++display *pab
++n
+1: argc = 7
+2: *argv@argc = {
+  0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe358 "2",
+  0x7fffffffe35a "1",
+  0x7fffffffe35c "3",
+  0x7fffffffe35e "6",
+  0x7fffffffe360 "5",
+  0x7fffffffe362 "8"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe319
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x756c2f656d6f682f
+}
++n
+1: argc = 7
+2: *argv@argc = {
+  0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe358 "2",
+  0x7fffffffe35a "1",
+  0x7fffffffe35c "3",
+  0x7fffffffe35e "6",
+  0x7fffffffe360 "5",
+  0x7fffffffe362 "8"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe319
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x756c2f656d6f682f
+}
++n
+1: argc = 7
+2: *argv@argc = {
+  0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe358 "2",
+  0x7fffffffe35a "1",
+  0x7fffffffe35c "3",
+  0x7fffffffe35e "6",
+  0x7fffffffe360 "5",
+  0x7fffffffe362 "8"
+}
+3: tokens = (char **) 0x7fffffffdf10
+4: *tokens = 0x7fffffffe358 "2"
+5: pab = (t_stack_ab *) 0x7fffffffe319
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x756c2f656d6f682f
+}
++p **tokens
+$1 = 50 '2'
++n
+1: argc = 7
+2: *argv@argc = {
+  0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe358 "2",
+  0x7fffffffe35a "1",
+  0x7fffffffe35c "3",
+  0x7fffffffe35e "6",
+  0x7fffffffe360 "5",
+  0x7fffffffe362 "8"
+}
+3: tokens = (char **) 0x7fffffffdf10
+4: *tokens = 0x7fffffffe358 "2"
+5: pab = (t_stack_ab *) 0x4082a0
+6: *pab = {
+  size = 6,
+  a_bot = 0,
+  b_bot = 5,
+  pivot = 6,
+  pdata = 0x4082c0
+}
++p pab
+$2 = (t_stack_ab *) 0x4082a0
++p *pab
+$3 = {
+  size = 6,
+  a_bot = 0,
+  b_bot = 5,
+  pivot = 6,
+  pdata = 0x4082c0
+}
++n
+1: argc = 7
+2: *argv@argc = {
+  0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe358 "2",
+  0x7fffffffe35a "1",
+  0x7fffffffe35c "3",
+  0x7fffffffe35e "6",
+  0x7fffffffe360 "5",
+  0x7fffffffe362 "8"
+}
+3: tokens = (char **) 0x7fffffffdf10
+4: *tokens = 0x7fffffffe358 "2"
+5: pab = (t_stack_ab *) 0x4082a0
+6: *pab = {
+  size = 6,
+  a_bot = 0,
+  b_bot = 5,
+  pivot = 6,
+  pdata = 0x4082c0
+}
++s
+solve_push_swap (pab=0x4082a0) at src/main.c:32
++s
+new_command_buffer () at src/push_swap_command.c:29
++s
+solve_push_swap (pab=0x4082a0) at src/main.c:33
++q
++set print pretty on
++set print array on
++define main
++fs cmd
+Focus set to cmd window.
++break main
+Breakpoint 1 at 0x401256: file src/main.c, line 50.
++run 2 1 3 6 5 8
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=7, argv=0x7fffffffdf08) at src/main.c:50
++main
+++display argc
+++display *argv@argc
+++display tokens
+++display *tokens
+++display pab
+++display *pab
++n
+1: argc = 7
+2: *argv@argc = {
+  0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe358 "2",
+  0x7fffffffe35a "1",
+  0x7fffffffe35c "3",
+  0x7fffffffe35e "6",
+  0x7fffffffe360 "5",
+  0x7fffffffe362 "8"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe319
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x756c2f656d6f682f
+}
++n
+1: argc = 7
+2: *argv@argc = {
+  0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe358 "2",
+  0x7fffffffe35a "1",
+  0x7fffffffe35c "3",
+  0x7fffffffe35e "6",
+  0x7fffffffe360 "5",
+  0x7fffffffe362 "8"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe319
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x756c2f656d6f682f
+}
++n
+1: argc = 7
+2: *argv@argc = {
+  0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe358 "2",
+  0x7fffffffe35a "1",
+  0x7fffffffe35c "3",
+  0x7fffffffe35e "6",
+  0x7fffffffe360 "5",
+  0x7fffffffe362 "8"
+}
+3: tokens = (char **) 0x7fffffffdf10
+4: *tokens = 0x7fffffffe358 "2"
+5: pab = (t_stack_ab *) 0x7fffffffe319
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x756c2f656d6f682f
+}
++n
+1: argc = 7
+2: *argv@argc = {
+  0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe358 "2",
+  0x7fffffffe35a "1",
+  0x7fffffffe35c "3",
+  0x7fffffffe35e "6",
+  0x7fffffffe360 "5",
+  0x7fffffffe362 "8"
+}
+3: tokens = (char **) 0x7fffffffdf10
+4: *tokens = 0x7fffffffe358 "2"
+5: pab = (t_stack_ab *) 0x4082a0
+6: *pab = {
+  size = 6,
+  a_bot = 0,
+  b_bot = 5,
+  pivot = 6,
+  pdata = 0x4082c0
+}
++n
+1: argc = 7
+2: *argv@argc = {
+  0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe358 "2",
+  0x7fffffffe35a "1",
+  0x7fffffffe35c "3",
+  0x7fffffffe35e "6",
+  0x7fffffffe360 "5",
+  0x7fffffffe362 "8"
+}
+3: tokens = (char **) 0x7fffffffdf10
+4: *tokens = 0x7fffffffe358 "2"
+5: pab = (t_stack_ab *) 0x4082a0
+6: *pab = {
+  size = 6,
+  a_bot = 0,
+  b_bot = 5,
+  pivot = 6,
+  pdata = 0x4082c0
+}
++s
+solve_push_swap (pab=0x4082a0) at src/main.c:32
++s
+new_command_buffer () at src/push_swap_command.c:29
++p set_int
+$1 = {int (void *, void *)} 0x403710 <set_int>
++p free_Int
+No symbol "free_Int" in current context.
++n
+solve_push_swap (pab=0x4082a0) at src/main.c:33
++p p_cmd_buffer
+$2 = (t_ft_vector *) 0x408300
++p *p_cmd_buffer
+$3 = {
+  pbuffer = 0x408370,
+  size = 0,
+  capacity = 256,
+  data_size = 4,
+  construct_data = 0x403710 <set_int>,
+  delete_data = 0x403730 <free_int>,
+  at = 0x403e60 <ft_vec_at>,
+  front = 0x403eb0 <ft_vec_front>,
+  back = 0x403ef0 <ft_vec_back>,
+  empty = 0x403f40 <ft_vec_empty>,
+  clear = 0x403f60 <ft_vec_clear>,
+  push_back = 0x404130 <ft_vec_push_back>,
+  resize = 0x403fd0 <ft_vec_resize>
+}
++n
++s
+is_ab_sorted (this=0x4082a0) at src/stack_ab_utility.c:21
++display *this
+7: *this = {
+  size = 6,
+  a_bot = 0,
+  b_bot = 5,
+  pivot = 6,
+  pdata = 0x4082c0
+}
++n
+7: *this = {
+  size = 6,
+  a_bot = 0,
+  b_bot = 5,
+  pivot = 6,
+  pdata = 0x4082c0
+}
++s
+b_size (this=0x4082a0) at src/stack_ab_utility.c:79
++n
+is_ab_sorted (this=0x4082a0) at src/stack_ab_utility.c:24
+7: *this = {
+  size = 6,
+  a_bot = 0,
+  b_bot = 5,
+  pivot = 6,
+  pdata = 0x4082c0
+}
++p b_size(this)
+$4 = 0
++n
+7: *this = {
+  size = 6,
+  a_bot = 0,
+  b_bot = 5,
+  pivot = 6,
+  pdata = 0x4082c0
+}
++display pdata[idx]
+No symbol "pdata" in current context.
++display this->pdata[idx]
+8: this->pdata[idx] = 5
++n
+7: *this = {
+  size = 6,
+  a_bot = 0,
+  b_bot = 5,
+  pivot = 6,
+  pdata = 0x4082c0
+}
+8: this->pdata[idx] = 5
++n
+7: *this = {
+  size = 6,
+  a_bot = 0,
+  b_bot = 5,
+  pivot = 6,
+  pdata = 0x4082c0
+}
+8: this->pdata[idx] = 3
++n
+7: *this = {
+  size = 6,
+  a_bot = 0,
+  b_bot = 5,
+  pivot = 6,
+  pdata = 0x4082c0
+}
+8: this->pdata[idx] = 3
++n
+7: *this = {
+  size = 6,
+  a_bot = 0,
+  b_bot = 5,
+  pivot = 6,
+  pdata = 0x4082c0
+}
+8: this->pdata[idx] = 3
++n
+solve_push_swap (pab=0x4082a0) at src/main.c:40
++n
++n
++n
++n
+main (argc=7, argv=0x7fffffffdf08) at src/main.c:71
+1: argc = 7
+2: *argv@argc = {
+  0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe358 "2",
+  0x7fffffffe35a "1",
+  0x7fffffffe35c "3",
+  0x7fffffffe35e "6",
+  0x7fffffffe360 "5",
+  0x7fffffffe362 "8"
+}
+3: tokens = (char **) 0x7fffffffdf10
+4: *tokens = 0x7fffffffe358 "2"
+5: pab = (t_stack_ab *) 0x4082a0
+6: *pab = {
+  size = 6,
+  a_bot = 0,
+  b_bot = 5,
+  pivot = 6,
+  pdata = 0x4082c0
+}
++n
+1: argc = 7
+2: *argv@argc = {
+  0x7fffffffe329 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe358 "2",
+  0x7fffffffe35a "1",
+  0x7fffffffe35c "3",
+  0x7fffffffe35e "6",
+  0x7fffffffe360 "5",
+  0x7fffffffe362 "8"
+}
+3: tokens = (char **) 0x7fffffffdf10
+4: *tokens = 0x7fffffffe358 "2"
+5: pab = (t_stack_ab *) 0x4082a0
+6: *pab = {
+  size = 4228808,
+  a_bot = 0,
+  b_bot = -558832881,
+  pivot = 57390348,
+  pdata = 0x4082c0
+}
++n
+__libc_start_call_main (main=main@entry=0x401240 <main>, argc=argc@entry=7, argv=argv@entry=0x7fffffffdf08) at ../sysdeps/nptl/libc_start_call_main.h:74
++n
+[Inferior 1 (process 430981) exited normally]
++q
++set print pretty on
++set print array on
++define main
++fs cmd
+Focus set to cmd window.
++break main
+Breakpoint 1 at 0x401256: file src/main.c, line 50.
++run 65 45 71 6 30 51 12 50 74 92 88 5
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=13, argv=0x7fffffffdec8) at src/main.c:50
++main
+++display argc
+++display *argv@argc
+++display tokens
+++display *tokens
+++display pab
+++display *pab
++p argc
+$1 = 13
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe342 "65"
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++p **tokens
+$2 = 54 '6'
++p argv
+$3 = (char **) 0x7fffffffdec8
++p **agv
+No symbol "agv" in current context.
++p **argv
+$4 = 47 '/'
++p *argv
+$5 = 0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap"
++p **argv
+$6 = 47 '/'
++p toknes
+No symbol "toknes" in current context.
++p tokens
+$7 = (char **) 0x7fffffffded0
++p *tokens
+$8 = 0x7fffffffe342 "65"
++p **tokens
+$9 = 54 '6'
++p *tokens
+$10 = 0x7fffffffe342 "65"
++p tokens[1]
+$11 = 0x7fffffffe345 "45"
++p tokens[2]
+$12 = 0x7fffffffe348 "71"
++p tokens[6]]
+Junk after end of expression.
++p tokens[6]
+$13 = 0x7fffffffe353 "12"
++s
+new_ab (strs=0x7fffffffded0) at src/construct_ab.c:32
++p *this
+$14 = {
+  size = 1202184127,
+  a_bot = 1683246881,
+  b_bot = 798229217,
+  pivot = 217241539,
+  pdata = 0x34365f363878
+}
++s
+ascii_number_sanity_check (strs=0x7fffffffded0) at src/sanity_check.c:62
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
+new_ab (strs=0x7fffffffded0) at src/construct_ab.c:34
++p str_cnt
+$15 = 12
++n
++n
++display this
+7: this = (t_stack_ab *) 0x4082a0
++display *this
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x0
+}
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x0
+}
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
++display this->pdata
+9: this->pdata = (int *) 0x4082c0
++p *this->pdata
+$16 = 0
++display *this->pdata
+10: *this->pdata = 0
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
++p strs[str_cnt - 1 - idx]
+$17 = 0x7fffffffe342 "65"
++p str_cnt
+$18 = 12
++p idx
+$19 = 11
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
++p this->pdata[idx]
+$20 = 65
++display this->pdata[idx]
+11: this->pdata[idx] = 65
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
+11: this->pdata[idx] = 0
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
+11: this->pdata[idx] = 45
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
+11: this->pdata[idx] = 0
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
+11: this->pdata[idx] = 71
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
+11: this->pdata[idx] = 0
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
+11: this->pdata[idx] = 6
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
+11: this->pdata[idx] = 0
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
+11: this->pdata[idx] = 30
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
+11: this->pdata[idx] = 0
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
+11: this->pdata[idx] = 51
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
+11: this->pdata[idx] = 0
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
+11: this->pdata[idx] = 12
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
+11: this->pdata[idx] = 0
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
+11: this->pdata[idx] = 50
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
+11: this->pdata[idx] = 0
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
+11: this->pdata[idx] = 74
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
+11: this->pdata[idx] = 0
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
+11: this->pdata[idx] = 92
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
+11: this->pdata[idx] = 0
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
+11: this->pdata[idx] = 88
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 0
+11: this->pdata[idx] = 0
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 5
+11: this->pdata[idx] = 5
++n
+7: this = (t_stack_ab *) 0x4082a0
+8: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+9: this->pdata = (int *) 0x4082c0
+10: *this->pdata = 5
+11: this->pdata[idx] = 0
++p this
+$21 = (t_stack_ab *) 0x4082a0
++q
++set print pretty on
++set print array on
++define main
++define new_ab
++fs cmd
+Focus set to cmd window.
++break main
+Breakpoint 1 at 0x401256: file src/main.c, line 50.
++run 65 45 71 6 30 51 12 50 74 92 88 5
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=13, argv=0x7fffffffdec8) at src/main.c:50
++main
+++display argc
+++display *argv@argc
+++display tokens
+++display *tokens
+++display pab
+++display *pab
++c
+Continuing.
+[Inferior 1 (process 450569) exited normally]
++q
++set print pretty on
++set print array on
++define main
++define new_ab
++fs cmd
+Focus set to cmd window.
++break main
+Breakpoint 1 at 0x401256: file src/main.c, line 50.
++run 65 45 71 6 30 51 12 50 74 92 88 5
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=13, argv=0x7fffffffdec8) at src/main.c:50
++main
+++display argc
+++display *argv@argc
+++display tokens
+++display *tokens
+++display pab
+++display *pab
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe342 "65"
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++s
+new_ab (strs=0x7fffffffded0) at src/construct_ab.c:32
++n
++n
++q
++set print pretty on
++set print array on
++define main
++define *new_ab
+.gdbinit:20: Error in sourced command file:
+Junk in argument list: "*new_ab"
++m
+Ambiguous command "m": macro, main, maintenance, make, mem, memory-tag, monitor, mt.
++q
++set print pretty on
++set print array on
++define main
++define *new_ab
+.gdbinit:20: Error in sourced command file:
+Junk in argument list: "*new_ab"
++q
++set print pretty on
++set print array on
++define main
++define new_ab
++fs cmd
+Focus set to cmd window.
++break main
+Breakpoint 1 at 0x401256: file src/main.c, line 50.
++run 65 45 71 6 30 51 12 50 74 92 88 5
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=13, argv=0x7fffffffdec8) at src/main.c:50
++main
+++display argc
+++display *argv@argc
+++display tokens
+++display *tokens
+++display pab
+++display *pab
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe342 "65"
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++s
+new_ab (strs=0x7fffffffded0) at src/construct_ab.c:32
++main
+++display argc
+No symbol "argc" in current context.
++n
++new_ab
+++display *this
+++display this
+++display strs
++n
+7: *this = {
+  size = -133291744,
+  a_bot = 722925563,
+  b_bot = 361445768,
+  pivot = -206600610,
+  pdata = 0x34365f363878
+}
+8: this = (t_stack_ab *) 0x7fffffffe2f9
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++nn
+Undefined command: "nn".  Try "help".
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 12,
+  a_bot = 0,
+  b_bot = 11,
+  pivot = 12,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++s
+normailize_int (arr=0x4082c0, size=12) at src/normalize_int.c:81
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++s
+quick_sort (arr=0x408300, left=0, right=11) at src/normalize_int.c:39
++p left
+$1 = 0
++p right
+$2 = 11
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
+normailize_int (arr=0x4082c0, size=12) at src/normalize_int.c:88
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
+new_ab (strs=0x7fffffffded0) at src/construct_ab.c:54
+7: *this = {
+  size = 12,
+  a_bot = 0,
+  b_bot = 11,
+  pivot = 12,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = 12,
+  a_bot = 0,
+  b_bot = 11,
+  pivot = 12,
+  pdata = 0x4082c0
+}
+8: this = (t_stack_ab *) 0x4082a0
+9: strs = (char **) 0x7fffffffded0
++n
+main (argc=13, argv=0x7fffffffdec8) at src/main.c:65
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe342 "65"
+5: pab = (t_stack_ab *) 0x4082a0
+6: *pab = {
+  size = 12,
+  a_bot = 0,
+  b_bot = 11,
+  pivot = 12,
+  pdata = 0x4082c0
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe342 "65"
+5: pab = (t_stack_ab *) 0x4082a0
+6: *pab = {
+  size = 12,
+  a_bot = 0,
+  b_bot = 11,
+  pivot = 12,
+  pdata = 0x4082c0
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe342 "65"
+5: pab = (t_stack_ab *) 0x4082a0
+6: *pab = {
+  size = 12,
+  a_bot = 0,
+  b_bot = 11,
+  pivot = 12,
+  pdata = 0x4082c0
+}
++refresh
++q
++set print pretty on
++set print array on
++define main
++define new_ab
++fs cmd
+Focus set to cmd window.
++break main
+Breakpoint 1 at 0x401256: file src/main.c, line 50.
++run 65 45 71 6 30 51 12 50 74 92 88 5
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=13, argv=0x7fffffffdec8) at src/main.c:50
++main
+++display argc
+++display *argv@argc
+++display tokens
+++display *tokens
+++display pab
+++display *pab
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe342 "65"
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe342 "65"
+5: pab = (t_stack_ab *) 0x4082a0
+6: *pab = {
+  size = 12,
+  a_bot = 0,
+  b_bot = 11,
+  pivot = 12,
+  pdata = 0x4082c0
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe342 "65"
+5: pab = (t_stack_ab *) 0x4082a0
+6: *pab = {
+  size = 12,
+  a_bot = 0,
+  b_bot = 11,
+  pivot = 12,
+  pdata = 0x4082c0
+}
++s
+solve_push_swap (pab=0x4082a0) at src/main.c:32
++reverse stepi
+Ambiguous command "reverse stepi": reverse-continue, reverse-finish, reverse-next, reverse-nexti, reverse-search, reverse-step...
++reverse-stepi
+Target multi-thread does not support this command.
++reverse-step
+Target multi-thread does not support this command.
++info checkpoints
+No checkpoints.
++info checkpoint
+No checkpoints.
++checkpoints
+Undefined command: "checkpoints".  Try "help".
++checkpoint
+checkpoint 1: fork returned pid 456337.
++q
++set print pretty on
++set print array on
++define main
++define new_ab
++fs cmd
+Focus set to cmd window.
++break main
+Breakpoint 1 at 0x401256: file src/main.c, line 50.
++run 65 45 71 6 30 51 12 50 74 92 88 5
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=13, argv=0x7fffffffdec8) at src/main.c:50
++record
++target record-full
++main
+++display argc
+++display *argv@argc
+++display tokens
+++display *tokens
+++display pab
+++display *pab
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++reverse-stepi
++stepi 
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++reverse-stepi
++stepi 
+
+No more reverse-execution history.
+main (argc=13, argv=0x7fffffffdec8) at src/main.c:50
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++q
++set print pretty on
++set print array on
++define main
++define new_ab
++fs cmd
+Focus set to cmd window.
++break main
+Breakpoint 1 at 0x401256: file src/main.c, line 50.
++run 65 45 71 6 30 51 12 50 74 92 88 5
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=13, argv=0x7fffffffdec8) at src/main.c:50
++record
++target record-full
++main
+++display argc
+++display *argv@argc
+++display tokens
+++display *tokens
+++display pab
+++display *pab
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe342 "65"
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++s
+new_ab (strs=0x7fffffffded0) at src/construct_ab.c:32
++new_ab
+++display *this
+++display this
+++display strs
++n
+7: *this = {
+  size = -83078547,
+  a_bot = -1617494794,
+  b_bot = -1895381522,
+  pivot = -472831175,
+  pdata = 0x34365f363878
+}
+8: this = (t_stack_ab *) 0x7fffffffe2f9
+9: strs = (char **) 0x7fffffffded0
++n
+7: *this = {
+  size = -83078547,
+  a_bot = -1617494794,
+  b_bot = -1895381522,
+  pivot = -472831175,
+  pdata = 0x34365f363878
+}
+8: this = (t_stack_ab *) 0x7fffffffe2f9
+9: strs = (char **) 0x7fffffffded0
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
+
+Program stopped.
+0x00007ffff7dc2c85 in __GI___getrandom (buffer=buffer@entry=0x7ffff7f9d4d8 <tcache_key>, length=length@entry=8, flags=flags@entry=1) at ../sysdeps/unix/sysv/linux/getrandom.c:29
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++n
+Process record and replay target doesn't support syscall number 318
+Process record: failed to record execution log.
++q

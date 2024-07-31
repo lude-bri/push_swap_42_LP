@@ -15,8 +15,8 @@
 #include "push_swap_parser.h"
 #include "stack_ab.h"
 
-void	delete_strs(char **strs)
-{
+void	delete_strs(char **strs) 
+{	
 	int	idx;
 
 	idx = -1;
