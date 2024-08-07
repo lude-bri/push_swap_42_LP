@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 10:24:31 by luigi             #+#    #+#             */
-/*   Updated: 2024/08/07 10:32:10 by luigi            ###   ########.fr       */
+/*   Updated: 2024/08/07 10:52:54 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,10 @@ t_stack *create_stack(char **str)
 		return (free(stack), NULL);
 	i = count;
 	while (i >= 0)
-
+	{
+		stack->num = ft_atoi(str[count - i - 1)]);
+		stack->next;
+		i--;
+	}
+	stack->next = NULL;
 }
