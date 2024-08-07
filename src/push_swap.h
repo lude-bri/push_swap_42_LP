@@ -25,8 +25,8 @@ typedef struct s_list
 {
 	int				num;
 	size_t			rank;
-	struct s_list	*prev;
 	struct s_list	*next;
+	struct s_list	*prev;
 }	t_stack;	
 
 
