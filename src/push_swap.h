@@ -34,7 +34,6 @@ typedef struct s_list
 	size_t			rank;
 	struct s_list	*next;
 	struct s_list	*prev;
-}	t_stack;	
-
+}	t_stack;
 
 #endif
