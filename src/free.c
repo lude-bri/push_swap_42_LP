@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 09:37:57 by luigi             #+#    #+#             */
-/*   Updated: 2024/08/07 09:39:40 by luigi            ###   ########.fr       */
+/*   Updated: 2024/08/07 09:41:12 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ void	free_str(char **str)
 	free(str);
 }
 
-void	free_str()
+void	free_stack()
 {
 }
