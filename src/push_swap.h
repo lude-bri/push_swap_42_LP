@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 08:56:09 by luigi             #+#    #+#             */
-/*   Updated: 2024/07/30 08:56:20 by luigi            ###   ########.fr       */
+/*   Updated: 2024/08/07 09:43:55 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@
 typedef struct s_list
 {
 	int				num;
+	int				size;
+	int				a_bottom;
+	int				b_bottom;
+	int				pivot;
 	size_t			rank;
 	struct s_list	*next;
 	struct s_list	*prev;
