@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 09:28:58 by luigi             #+#    #+#             */
-/*   Updated: 2024/08/07 09:35:20 by luigi            ###   ########.fr       */
+/*   Updated: 2024/08/07 09:37:35 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 //1. parse
 //2. create stack
 //3. resolve push_swap
-
-
-
 
 int	main(int ac, char **av)
 {
@@ -28,7 +25,11 @@ int	main(int ac, char **av)
 		exit (0);
 	if (ac == 2)
 	{
-		//parsing
+		numbers = ft_split(av[1], ' ');
+		if (!*numbers)
+			exit(0);
+		stack = create_stack(numbers);
+		free_str(numbers);
 	}
 	else
 	{
@@ -41,5 +42,5 @@ int	main(int ac, char **av)
 		exit(1);
 	}
 	push_swap(stack);
-	delete_stack(stack);
+	free_stack(stack);
 }
