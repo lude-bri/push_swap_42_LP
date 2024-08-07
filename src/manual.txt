@@ -29,3 +29,8 @@ Phase 3
 	1. If necessary rotate A to finalize: ra or rra
 	2. The optimization comes from the fact of the max use of double rotations rr and rrr
 
+
+
+
+Plano
+
