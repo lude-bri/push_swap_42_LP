@@ -35,4 +35,6 @@ t_stack *create_stack(char **str)
 		i--;
 	}
 	stack->next = NULL;
+	return (stack);
 }
+

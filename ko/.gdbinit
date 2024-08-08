@@ -55,6 +55,14 @@ define sort_ab
 	disp small_pivot
 end
 
+define binary_search
+	disp begin
+	disp mid
+	disp end
+	disp arr[mid]
+	disp target
+end
+
 #  Start
 fs cmd
 break main

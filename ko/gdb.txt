@@ -13190,3 +13190,2391 @@ ascii_number_sanity_check (strs=0x7fffffffdef0) at src/sanity_check.c:63
 +n
 new_ab (strs=0x7fffffffdef0) at src/construct_ab.c:34
 +q
++set print pretty on
++set print array on
++define main
++define new_ab
++define normailize_int
++define quick_sort
++define sort_ab
++fs cmd
+Focus set to cmd window.
++break main
+Breakpoint 1 at 0x401256: file src/main.c, line 50.
++run 65 45 71 6 30 51 12 50 74 92 88 5
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=13, argv=0x7fffffffdec8) at src/main.c:50
++main
+++display argc
+++display *argv@argc
+++display tokens
+++display *tokens
+++display pab
+++display *pab
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe312 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe341 "65",
+  0x7fffffffe344 "45",
+  0x7fffffffe347 "71",
+  0x7fffffffe34a "6",
+  0x7fffffffe34c "30",
+  0x7fffffffe34f "51",
+  0x7fffffffe352 "12",
+  0x7fffffffe355 "50",
+  0x7fffffffe358 "74",
+  0x7fffffffe35b "92",
+  0x7fffffffe35e "88",
+  0x7fffffffe361 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1869098752,
+  pivot = 1815045485,
+  pdata = 0x2f6972622d656475
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe312 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe341 "65",
+  0x7fffffffe344 "45",
+  0x7fffffffe347 "71",
+  0x7fffffffe34a "6",
+  0x7fffffffe34c "30",
+  0x7fffffffe34f "51",
+  0x7fffffffe352 "12",
+  0x7fffffffe355 "50",
+  0x7fffffffe358 "74",
+  0x7fffffffe35b "92",
+  0x7fffffffe35e "88",
+  0x7fffffffe361 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1869098752,
+  pivot = 1815045485,
+  pdata = 0x2f6972622d656475
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe312 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe341 "65",
+  0x7fffffffe344 "45",
+  0x7fffffffe347 "71",
+  0x7fffffffe34a "6",
+  0x7fffffffe34c "30",
+  0x7fffffffe34f "51",
+  0x7fffffffe352 "12",
+  0x7fffffffe355 "50",
+  0x7fffffffe358 "74",
+  0x7fffffffe35b "92",
+  0x7fffffffe35e "88",
+  0x7fffffffe361 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe341 "65"
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1869098752,
+  pivot = 1815045485,
+  pdata = 0x2f6972622d656475
+}
++s
+new_ab (strs=0x7fffffffded0) at src/construct_ab.c:32
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
+main (argc=13, argv=0x7fffffffdec8) at src/main.c:65
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe312 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe341 "65",
+  0x7fffffffe344 "45",
+  0x7fffffffe347 "71",
+  0x7fffffffe34a "6",
+  0x7fffffffe34c "30",
+  0x7fffffffe34f "51",
+  0x7fffffffe352 "12",
+  0x7fffffffe355 "50",
+  0x7fffffffe358 "74",
+  0x7fffffffe35b "92",
+  0x7fffffffe35e "88",
+  0x7fffffffe361 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe341 "65"
+5: pab = (t_stack_ab *) 0x4082a0
+6: *pab = {
+  size = 12,
+  a_bot = 0,
+  b_bot = 11,
+  pivot = 12,
+  pdata = 0x4082c0
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe312 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe341 "65",
+  0x7fffffffe344 "45",
+  0x7fffffffe347 "71",
+  0x7fffffffe34a "6",
+  0x7fffffffe34c "30",
+  0x7fffffffe34f "51",
+  0x7fffffffe352 "12",
+  0x7fffffffe355 "50",
+  0x7fffffffe358 "74",
+  0x7fffffffe35b "92",
+  0x7fffffffe35e "88",
+  0x7fffffffe361 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe341 "65"
+5: pab = (t_stack_ab *) 0x4082a0
+6: *pab = {
+  size = 12,
+  a_bot = 0,
+  b_bot = 11,
+  pivot = 12,
+  pdata = 0x4082c0
+}
++s
+solve_push_swap (pab=0x4082a0) at src/main.c:32
++n
++n
++q
++set print pretty on
++set print array on
++define main
++define new_ab
++define normailize_int
++define quick_sort
++define sort_ab
++fs cmd
+Focus set to cmd window.
++break main
+Breakpoint 1 at 0x401256: file src/main.c, line 50.
++run 65 45 71 6 30 51 12 50 74 92 88 5
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=13, argv=0x7fffffffdec8) at src/main.c:50
++main
+++display argc
+++display *argv@argc
+++display tokens
+++display *tokens
+++display pab
+++display *pab
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe342 "65"
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++s
+new_ab (strs=0x7fffffffded0) at src/construct_ab.c:32
++n
++n
++n
++n
++n
++n
++n
++new_ab
+++disp idx
+++disp str_cnt
+++disp *strs
+++disp strs[str_cnt - 1 - idx]
+++display *this
+++display this
+++display *this->pdata
+++display this->pdata[idx]
++n
+7: idx = 11
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe342 "65"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 0
++n
+7: idx = 11
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe342 "65"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 65
++n
+7: idx = 10
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe345 "45"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 0
++n
+7: idx = 10
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe345 "45"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 45
++n
+7: idx = 9
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe348 "71"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 0
++n
+7: idx = 9
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe348 "71"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 71
++n
+7: idx = 8
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe34b "6"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 0
++n
+7: idx = 8
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe34b "6"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 6
++n
+7: idx = 7
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe34d "30"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 0
++n
+7: idx = 7
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe34d "30"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 30
++n
+7: idx = 6
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe350 "51"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 0
++n
+7: idx = 6
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe350 "51"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 51
++n
+7: idx = 5
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe353 "12"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 0
++n
+7: idx = 5
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe353 "12"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 12
++n
+7: idx = 4
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe356 "50"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 0
++n
+7: idx = 4
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe356 "50"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 50
++n
+7: idx = 3
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe359 "74"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 0
++n
+7: idx = 3
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe359 "74"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 74
++n
+7: idx = 2
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe35c "92"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 0
++n
+7: idx = 2
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe35c "92"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 92
++n
+7: idx = 1
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe35f "88"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 0
++n
+7: idx = 1
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe35f "88"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 88
++n
+7: idx = 0
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe362 "5"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 0
+14: this->pdata[idx] = 0
++n
+7: idx = 0
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x7fffffffe362 "5"
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 5
+14: this->pdata[idx] = 5
++n
+7: idx = -1
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x0
+11: *this = {
+  size = 0,
+  a_bot = 0,
+  b_bot = 0,
+  pivot = 0,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 5
+14: this->pdata[idx] = 0
++s
+init_ab (this=0x4082a0, size=12) at src/construct_ab.c:19
++s
++s
++s
++s
++s
+new_ab (strs=0x7fffffffded0) at src/construct_ab.c:49
+7: idx = -1
+8: str_cnt = 12
+9: *strs = 0x7fffffffe342 "65"
+10: strs[str_cnt - 1 - idx] = 0x0
+11: *this = {
+  size = 12,
+  a_bot = 0,
+  b_bot = 11,
+  pivot = 12,
+  pdata = 0x4082c0
+}
+12: this = (t_stack_ab *) 0x4082a0
+13: *this->pdata = 5
+14: this->pdata[idx] = 0
++s
+normailize_int (arr=0x4082c0, size=12) at src/normalize_int.c:81
++normailize_int
+++disp idx
+++disp *arr
+++disp size
+++disp *sorted_arr
+++disp sorted_arr[idx]
+++disp arr[idx]
++n
+15: idx = 0
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 0
+19: sorted_arr[idx] = 0
+20: arr[idx] = 5
++n
+15: idx = 0
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 0
+19: sorted_arr[idx] = 0
+20: arr[idx] = 5
++n
+15: idx = -1
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 0
+19: sorted_arr[idx] = 0
+20: arr[idx] = 0
++n
+15: idx = 0
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 0
+19: sorted_arr[idx] = 0
+20: arr[idx] = 5
++n
+15: idx = 0
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 5
+20: arr[idx] = 5
++n
+15: idx = 1
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 0
+20: arr[idx] = 88
++n
+15: idx = 1
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 88
+20: arr[idx] = 88
++n
+15: idx = 2
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 0
+20: arr[idx] = 92
++n
+15: idx = 2
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 92
+20: arr[idx] = 92
++n
+15: idx = 3
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 0
+20: arr[idx] = 74
++n
+15: idx = 3
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 74
+20: arr[idx] = 74
++n
+15: idx = 4
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 0
+20: arr[idx] = 50
++n
+15: idx = 4
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 50
+20: arr[idx] = 50
++n
+15: idx = 5
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 0
+20: arr[idx] = 12
++n
+15: idx = 5
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 12
+20: arr[idx] = 12
++n
+15: idx = 6
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 0
+20: arr[idx] = 51
++n
+15: idx = 6
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 51
+20: arr[idx] = 51
++n
+15: idx = 7
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 0
+20: arr[idx] = 30
++n
+15: idx = 7
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 30
+20: arr[idx] = 30
++n
+15: idx = 8
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 0
+20: arr[idx] = 6
++n
+15: idx = 8
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 6
+20: arr[idx] = 6
++n
+15: idx = 9
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 0
+20: arr[idx] = 71
++n
+15: idx = 9
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 71
+20: arr[idx] = 71
++n
+15: idx = 10
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 0
+20: arr[idx] = 45
++n
+15: idx = 10
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 45
+20: arr[idx] = 45
++n
+15: idx = 11
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 0
+20: arr[idx] = 65
++n
+15: idx = 11
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 65
+20: arr[idx] = 65
++n
+15: idx = 12
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 0
+20: arr[idx] = 0
++s
+quick_sort (arr=0x408300, left=0, right=11) at src/normalize_int.c:39
++n
++quick)_sort
+++disp left
+++disp right
+++disp i
+++disp j
+++disp pivot
+++disp arr[i]
+++disp arr[j]
++n
+21: left = 0
+22: right = 11
+23: i = 0
+24: j = 4211463
+25: pivot = 12
+26: arr[i] = 5
+27: arr[j] = <error: Cannot access memory at address 0x1418f1c>
++n
+21: left = 0
+22: right = 11
+23: i = 0
+24: j = 11
+25: pivot = 12
+26: arr[i] = 5
+27: arr[j] = 65
++n
+21: left = 0
+22: right = 11
+23: i = 0
+24: j = 11
+25: pivot = 12
+26: arr[i] = 5
+27: arr[j] = 65
++n
+21: left = 0
+22: right = 11
+23: i = 0
+24: j = 11
+25: pivot = 12
+26: arr[i] = 5
+27: arr[j] = 65
++n
+21: left = 0
+22: right = 11
+23: i = 1
+24: j = 11
+25: pivot = 12
+26: arr[i] = 88
+27: arr[j] = 65
++n
+21: left = 0
+22: right = 11
+23: i = 1
+24: j = 11
+25: pivot = 12
+26: arr[i] = 88
+27: arr[j] = 65
++n
+21: left = 0
+22: right = 11
+23: i = 1
+24: j = 11
+25: pivot = 12
+26: arr[i] = 88
+27: arr[j] = 65
++n
+21: left = 0
+22: right = 11
+23: i = 1
+24: j = 10
+25: pivot = 12
+26: arr[i] = 88
+27: arr[j] = 45
++n
+21: left = 0
+22: right = 11
+23: i = 1
+24: j = 10
+25: pivot = 12
+26: arr[i] = 88
+27: arr[j] = 45
++n
+21: left = 0
+22: right = 11
+23: i = 1
+24: j = 9
+25: pivot = 12
+26: arr[i] = 88
+27: arr[j] = 71
++n
+21: left = 0
+22: right = 11
+23: i = 1
+24: j = 9
+25: pivot = 12
+26: arr[i] = 88
+27: arr[j] = 71
++n
+21: left = 0
+22: right = 11
+23: i = 1
+24: j = 8
+25: pivot = 12
+26: arr[i] = 88
+27: arr[j] = 6
++n
+21: left = 0
+22: right = 11
+23: i = 1
+24: j = 8
+25: pivot = 12
+26: arr[i] = 88
+27: arr[j] = 6
++n
+21: left = 0
+22: right = 11
+23: i = 1
+24: j = 8
+25: pivot = 12
+26: arr[i] = 88
+27: arr[j] = 6
++n
+21: left = 0
+22: right = 11
+23: i = 1
+24: j = 8
+25: pivot = 12
+26: arr[i] = 88
+27: arr[j] = 6
++n
+21: left = 0
+22: right = 11
+23: i = 2
+24: j = 8
+25: pivot = 12
+26: arr[i] = 92
+27: arr[j] = 6
++n
+21: left = 0
+22: right = 11
+23: i = 2
+24: j = 7
+25: pivot = 12
+26: arr[i] = 92
+27: arr[j] = 30
++n
+21: left = 0
+22: right = 11
+23: i = 2
+24: j = 7
+25: pivot = 12
+26: arr[i] = 92
+27: arr[j] = 30
++n
+21: left = 0
+22: right = 11
+23: i = 2
+24: j = 7
+25: pivot = 12
+26: arr[i] = 92
+27: arr[j] = 30
++n
+21: left = 0
+22: right = 11
+23: i = 2
+24: j = 7
+25: pivot = 12
+26: arr[i] = 92
+27: arr[j] = 30
++n
+21: left = 0
+22: right = 11
+23: i = 2
+24: j = 6
+25: pivot = 12
+26: arr[i] = 92
+27: arr[j] = 51
++n
+21: left = 0
+22: right = 11
+23: i = 2
+24: j = 6
+25: pivot = 12
+26: arr[i] = 92
+27: arr[j] = 51
++n
+21: left = 0
+22: right = 11
+23: i = 2
+24: j = 5
+25: pivot = 12
+26: arr[i] = 92
+27: arr[j] = 12
++n
+21: left = 0
+22: right = 11
+23: i = 2
+24: j = 5
+25: pivot = 12
+26: arr[i] = 92
+27: arr[j] = 12
++n
+21: left = 0
+22: right = 11
+23: i = 2
+24: j = 5
+25: pivot = 12
+26: arr[i] = 92
+27: arr[j] = 12
++n
+21: left = 0
+22: right = 11
+23: i = 2
+24: j = 5
+25: pivot = 12
+26: arr[i] = 92
+27: arr[j] = 12
++n
+21: left = 0
+22: right = 11
+23: i = 3
+24: j = 5
+25: pivot = 12
+26: arr[i] = 74
+27: arr[j] = 12
++n
+21: left = 0
+22: right = 11
+23: i = 3
+24: j = 4
+25: pivot = 12
+26: arr[i] = 74
+27: arr[j] = 50
++n
+21: left = 0
+22: right = 11
+23: i = 3
+24: j = 4
+25: pivot = 12
+26: arr[i] = 74
+27: arr[j] = 50
++n
+21: left = 0
+22: right = 11
+23: i = 3
+24: j = 4
+25: pivot = 12
+26: arr[i] = 74
+27: arr[j] = 50
++n
+21: left = 0
+22: right = 11
+23: i = 3
+24: j = 4
+25: pivot = 12
+26: arr[i] = 74
+27: arr[j] = 50
++n
+21: left = 0
+22: right = 11
+23: i = 3
+24: j = 3
+25: pivot = 12
+26: arr[i] = 74
+27: arr[j] = 74
++n
+21: left = 0
+22: right = 11
+23: i = 3
+24: j = 3
+25: pivot = 12
+26: arr[i] = 74
+27: arr[j] = 74
++n
+21: left = 0
+22: right = 11
+23: i = 3
+24: j = 2
+25: pivot = 12
+26: arr[i] = 74
+27: arr[j] = 12
++n
+21: left = 0
+22: right = 11
+23: i = 3
+24: j = 2
+25: pivot = 12
+26: arr[i] = 74
+27: arr[j] = 12
++n
+21: left = 0
+22: right = 11
+23: i = 3
+24: j = 2
+25: pivot = 12
+26: arr[i] = 74
+27: arr[j] = 12
++n
+21: left = 0
+22: right = 11
+23: i = 3
+24: j = 2
+25: pivot = 12
+26: arr[i] = 74
+27: arr[j] = 12
++n
+21: left = 0
+22: right = 11
+23: i = 3
+24: j = 2
+25: pivot = 12
+26: arr[i] = 74
+27: arr[j] = 12
++n
+21: left = 0
+22: right = 11
+23: i = 3
+24: j = 2
+25: pivot = 12
+26: arr[i] = 74
+27: arr[j] = 12
++n
+21: left = 0
+22: right = 11
+23: i = 3
+24: j = 2
+25: pivot = 12
+26: arr[i] = 74
+27: arr[j] = 12
++n
+21: left = 0
+22: right = 11
+23: i = 3
+24: j = 2
+25: pivot = 12
+26: arr[i] = 30
+27: arr[j] = 12
++n
+normailize_int (arr=0x4082c0, size=12) at src/normalize_int.c:88
+15: idx = 12
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 0
+20: arr[idx] = 0
++n
+15: idx = 12
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 0
+20: arr[idx] = 0
++n
+15: idx = -1
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 0
+20: arr[idx] = 0
++n
+15: idx = 0
+16: *arr = 5
+17: size = 12
+18: *sorted_arr = 5
+19: sorted_arr[idx] = 5
+20: arr[idx] = 5
++p arr[0]
+$1 = 5
++p arr[1]
+$2 = 88
++p arr[2]
+$3 = 92
++p arr[3]
+$4 = 74
++p arr[4]
+$5 = 50
++p arr[5]
+$6 = 12
++p arr[12]
+$7 = 0
++p arr[11]
+$8 = 65
++p arr[10]
+$9 = 45
++p arr[9]
+$10 = 71
++p arr[8]
+$11 = 6
++s
+binary_search (arr=0x408300, target=5, begin=0, end=12) at src/normalize_int.c:21
++q
++set print pretty on
++set print array on
++define main
++define new_ab
++define normailize_int
++define quick_sort
++define sort_ab
++define binary_search
++fs cmd
+Focus set to cmd window.
++break main
+Breakpoint 1 at 0x401256: file src/main.c, line 50.
++run 65 45 71 6 30 51 12 50 74 92 88 5
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=13, argv=0x7fffffffdec8) at src/main.c:50
++main
+++display argc
+++display *argv@argc
+++display tokens
+++display *tokens
+++display pab
+++display *pab
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe342 "65"
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++s
+new_ab (strs=0x7fffffffded0) at src/construct_ab.c:32
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
+main (argc=13, argv=0x7fffffffdec8) at src/main.c:65
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe342 "65"
+5: pab = (t_stack_ab *) 0x4082a0
+6: *pab = {
+  size = 12,
+  a_bot = 0,
+  b_bot = 11,
+  pivot = 12,
+  pdata = 0x4082c0
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe342 "65"
+5: pab = (t_stack_ab *) 0x4082a0
+6: *pab = {
+  size = 12,
+  a_bot = 0,
+  b_bot = 11,
+  pivot = 12,
+  pdata = 0x4082c0
+}
++s
+solve_push_swap (pab=0x4082a0) at src/main.c:32
++n
++n
++n
++s
+sort_ab (pab=0x4082a0, p_cmd_vec=0x408340) at src/psa_quick.c:69
++q
++set print pretty on
++set print array on
++define main
++define new_ab
++define normailize_int
++define quick_sort
++define sort_ab
++define binary_search
++fs cmd
+Focus set to cmd window.
++break main
+Breakpoint 1 at 0x401256: file src/main.c, line 50.
++run 65 45 71 6 30 51 12 50 74 92 88 5
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=13, argv=0x7fffffffdec8) at src/main.c:50
++main
+++display argc
+++display *argv@argc
+++display tokens
+++display *tokens
+++display pab
+++display *pab
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe342 "65"
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++s
+new_ab (strs=0x7fffffffded0) at src/construct_ab.c:32
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++s
+normailize_int (arr=0x4082c0, size=12) at src/normalize_int.c:81
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++s
+binary_search (arr=0x408300, target=5, begin=0, end=12) at src/normalize_int.c:21
++binary_search
+++disp begin
+++disp mid
+++disp end
+++disp arr[mid]
+++disp target
++n
+7: begin = 0
+8: mid = 92
+9: end = 12
+10: arr[mid] = 0
+11: target = 5
++n
+7: begin = 0
+8: mid = 6
+9: end = 12
+10: arr[mid] = 51
+11: target = 5
++n
+7: begin = 0
+8: mid = 6
+9: end = 12
+10: arr[mid] = 51
+11: target = 5
++n
+7: begin = 0
+8: mid = 6
+9: end = 12
+10: arr[mid] = 51
+11: target = 5
++n
+7: begin = 0
+8: mid = 6
+9: end = 5
+10: arr[mid] = 51
+11: target = 5
++n
+7: begin = 0
+8: mid = 6
+9: end = 5
+10: arr[mid] = 51
+11: target = 5
++n
+7: begin = 0
+8: mid = 2
+9: end = 5
+10: arr[mid] = 12
+11: target = 5
++n
+7: begin = 0
+8: mid = 2
+9: end = 5
+10: arr[mid] = 12
+11: target = 5
++n
+7: begin = 0
+8: mid = 2
+9: end = 5
+10: arr[mid] = 12
+11: target = 5
++n
+7: begin = 0
+8: mid = 2
+9: end = 1
+10: arr[mid] = 12
+11: target = 5
++n
+7: begin = 0
+8: mid = 2
+9: end = 1
+10: arr[mid] = 12
+11: target = 5
++n
+7: begin = 0
+8: mid = 0
+9: end = 1
+10: arr[mid] = 5
+11: target = 5
++n
+7: begin = 0
+8: mid = 0
+9: end = 1
+10: arr[mid] = 5
+11: target = 5
++n
+7: begin = 0
+8: mid = 0
+9: end = 1
+10: arr[mid] = 5
+11: target = 5
++n
+normailize_int (arr=0x4082c0, size=12) at src/normalize_int.c:94
++p arr[0]
+$1 = 0
++p arr[1]
+$2 = 88
++p arr[0]
+$3 = 0
++p arr[0]
+$4 = 0
++p arr[1]
+$5 = 88
++n
++n
++p arr[1]
+$6 = 10
++p arr[2]
+$7 = 92
++n
++s
+binary_search (arr=0x408300, target=92, begin=0, end=12) at src/normalize_int.c:21
+7: begin = 0
+8: mid = 11
+9: end = 12
+10: arr[mid] = 92
+11: target = 92
++n
+7: begin = 0
+8: mid = 11
+9: end = 12
+10: arr[mid] = 92
+11: target = 92
++n
+7: begin = 0
+8: mid = 6
+9: end = 12
+10: arr[mid] = 51
+11: target = 92
++n
+7: begin = 0
+8: mid = 6
+9: end = 12
+10: arr[mid] = 51
+11: target = 92
++nn
+Undefined command: "nn".  Try "help".
++n
+7: begin = 0
+8: mid = 6
+9: end = 12
+10: arr[mid] = 51
+11: target = 92
++n
+7: begin = 7
+8: mid = 6
+9: end = 12
+10: arr[mid] = 51
+11: target = 92
++n
+7: begin = 7
+8: mid = 6
+9: end = 12
+10: arr[mid] = 51
+11: target = 92
++n
+7: begin = 7
+8: mid = 9
+9: end = 12
+10: arr[mid] = 74
+11: target = 92
++n
+7: begin = 7
+8: mid = 9
+9: end = 12
+10: arr[mid] = 74
+11: target = 92
++n
+7: begin = 7
+8: mid = 9
+9: end = 12
+10: arr[mid] = 74
+11: target = 92
++n
+7: begin = 10
+8: mid = 9
+9: end = 12
+10: arr[mid] = 74
+11: target = 92
++n
+7: begin = 10
+8: mid = 9
+9: end = 12
+10: arr[mid] = 74
+11: target = 92
++n
+7: begin = 10
+8: mid = 11
+9: end = 12
+10: arr[mid] = 92
+11: target = 92
++n
+7: begin = 10
+8: mid = 11
+9: end = 12
+10: arr[mid] = 92
+11: target = 92
++n
+7: begin = 10
+8: mid = 11
+9: end = 12
+10: arr[mid] = 92
+11: target = 92
++n
+normailize_int (arr=0x4082c0, size=12) at src/normalize_int.c:94
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++disp arr[idx]
+12: arr[idx] = 8
++n
+12: arr[idx] = 45
++n
+12: arr[idx] = 4
++n
+12: arr[idx] = 65
++n
+12: arr[idx] = 7
++n
+12: arr[idx] = 0
++n
+12: arr[idx] = 0
++p arr[0]
+$8 = 0
++p arr[1]
+$9 = 10
++p arr[2]
+$10 = 11
++p arr[3]
+$11 = 9
++p arr[4]
+$12 = 5
++p arr[5]
+$13 = 2
++p arr[6]
+$14 = 6
++p arr[7]
+$15 = 3
++p arr[7]
+$16 = 3
++n
+12: arr[idx] = 0
++n
+new_ab (strs=0x7fffffffded0) at src/construct_ab.c:54
++n
++n
+main (argc=13, argv=0x7fffffffdec8) at src/main.c:65
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe342 "65"
+5: pab = (t_stack_ab *) 0x4082a0
+6: *pab = {
+  size = 12,
+  a_bot = 0,
+  b_bot = 11,
+  pivot = 12,
+  pdata = 0x4082c0
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe342 "65"
+5: pab = (t_stack_ab *) 0x4082a0
+6: *pab = {
+  size = 12,
+  a_bot = 0,
+  b_bot = 11,
+  pivot = 12,
+  pdata = 0x4082c0
+}
++q
++set print pretty on
++set print array on
++define main
++define new_ab
++define normailize_int
++define quick_sort
++define sort_ab
++define binary_search
++fs cmd
+Focus set to cmd window.
++break main
+Breakpoint 1 at 0x401256: file src/main.c, line 50.
++run 65 45 71 6 30 51 12 50 74 92 88 5
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Breakpoint 1, main (argc=13, argv=0x7fffffffdec8) at src/main.c:50
++main
+++display argc
+++display *argv@argc
+++display tokens
+++display *tokens
+++display pab
+++display *pab
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x64
+4: *tokens = <error: Cannot access memory at address 0x64>
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe342 "65"
+5: pab = (t_stack_ab *) 0x7fffffffe309
+6: *pab = {
+  size = 1597388920,
+  a_bot = 13366,
+  b_bot = 1747910656,
+  pivot = 795176303,
+  pdata = 0x6972622d6564756c
+}
++s
+new_ab (strs=0x7fffffffded0) at src/construct_ab.c:32
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++s
+normailize_int (arr=0x4082c0, size=12) at src/normalize_int.c:81
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++refresh
++n
+new_ab (strs=0x7fffffffded0) at src/construct_ab.c:54
++n
++n
+main (argc=13, argv=0x7fffffffdec8) at src/main.c:65
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe342 "65"
+5: pab = (t_stack_ab *) 0x4082a0
+6: *pab = {
+  size = 12,
+  a_bot = 0,
+  b_bot = 11,
+  pivot = 12,
+  pdata = 0x4082c0
+}
++n
+1: argc = 13
+2: *argv@argc = {
+  0x7fffffffe313 "/home/lude-bri/CC/Rank2/push_swap/ko/push_swap",
+  0x7fffffffe342 "65",
+  0x7fffffffe345 "45",
+  0x7fffffffe348 "71",
+  0x7fffffffe34b "6",
+  0x7fffffffe34d "30",
+  0x7fffffffe350 "51",
+  0x7fffffffe353 "12",
+  0x7fffffffe356 "50",
+  0x7fffffffe359 "74",
+  0x7fffffffe35c "92",
+  0x7fffffffe35f "88",
+  0x7fffffffe362 "5"
+}
+3: tokens = (char **) 0x7fffffffded0
+4: *tokens = 0x7fffffffe342 "65"
+5: pab = (t_stack_ab *) 0x4082a0
+6: *pab = {
+  size = 12,
+  a_bot = 0,
+  b_bot = 11,
+  pivot = 12,
+  pdata = 0x4082c0
+}
++s
+solve_push_swap (pab=0x4082a0) at src/main.c:32
++n
++n
++s
+is_ab_sorted (this=0x4082a0) at src/stack_ab_utility.c:21
++n
++n
++n
++n
++n
++n
+solve_push_swap (pab=0x4082a0) at src/main.c:40
++s
+sort_ab (pab=0x4082a0, p_cmd_vec=0x408340) at src/psa_quick.c:69
++sort_Ab
+Undefined command: "sort_Ab".  Try "help".
++sort_ab
+++disp *pab
+++disp partition_size
+++disp big_pivot
+++disp small_pivot
++n
+7: *pab = {
+  size = 12,
+  a_bot = 0,
+  b_bot = 11,
+  pivot = 12,
+  pdata = 0x4082c0
+}
+8: partition_size = 4
+9: big_pivot = 4227904
+10: small_pivot = 0
++n
+7: *pab = {
+  size = 12,
+  a_bot = 0,
+  b_bot = 11,
+  pivot = 12,
+  pdata = 0x4082c0
+}
+8: partition_size = 4
+9: big_pivot = 8
+10: small_pivot = 0
++n
+7: *pab = {
+  size = 12,
+  a_bot = 0,
+  b_bot = 11,
+  pivot = 12,
+  pdata = 0x4082c0
+}
+8: partition_size = 4
+9: big_pivot = 8
+10: small_pivot = 4
++n
+7: *pab = {
+  size = 12,
+  a_bot = 0,
+  b_bot = 11,
+  pivot = 12,
+  pdata = 0x4082c0
+}
+8: partition_size = 4
+9: big_pivot = 8
+10: small_pivot = 4
++s
+split_first (pab=0x4082a0, p_cmd_vec=0x408340, start=0, end=12) at src/psa_quick.c:47
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
++n
