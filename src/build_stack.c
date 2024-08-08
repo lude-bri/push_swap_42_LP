@@ -12,6 +12,16 @@
 
 #include "push_swap.h"
 
+const void	init_stack(t_stack *stack, int size)
+{
+	stack->a_bottom = 0;
+	stack->b_bottom = size - 1;
+	stack->pivot = size;
+	stack->size = size;
+	stack->next = NULL;
+	stack->prev = NULL;
+}
+
 t_stack *create_stack(char **str)
 {
 	t_stack		*stack;
@@ -34,7 +44,9 @@ t_stack *create_stack(char **str)
 		stack->next;
 		i--;
 	}
-	stack->next = NULL;
+	init_stack(stack, count);
+	if (!to_rank(stack->num, stack->size))
+		return (free_stack(stack), NULL);
 	return (stack);
 }
 

@@ -22,6 +22,8 @@ void	free_str(char **str)
 	free(str);
 }
 
-void	free_stack()
+void	free_stack(t_stack *stack)
 {
+	free(stack->num);
+	free(stack);
 }
