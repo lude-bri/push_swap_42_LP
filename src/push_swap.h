@@ -23,7 +23,6 @@
 
 INT_MAX	2147483647
 
-
 typedef struct s_list
 {
 	int				num;
