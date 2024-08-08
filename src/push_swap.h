@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 08:56:09 by luigi             #+#    #+#             */
-/*   Updated: 2024/08/07 09:43:55 by luigi            ###   ########.fr       */
+/*   Updated: 2024/08/08 12:03:27 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdlib.h>
 # include <limits.h>
 # include <string.h>
+# include "../lib/libft_42/libft.h"
 
 INT_MAX	2147483647
 
@@ -34,5 +35,15 @@ typedef struct s_list
 	struct s_list	*next;
 	struct s_list	*prev;
 }	t_stack;
+
+const void init_stack(t_stack *stack, int size);
+t_stack *create_stack(char **str);
+
+
+
+
+
+
+
 
 #endif

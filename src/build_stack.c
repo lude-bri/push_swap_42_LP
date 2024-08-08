@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 10:24:31 by luigi             #+#    #+#             */
-/*   Updated: 2024/08/07 10:52:54 by luigi            ###   ########.fr       */
+/*   Updated: 2024/08/08 12:00:36 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_stack *create_stack(char **str)
 		return (NULL);
 	stack->num = malloc(sizeof(int) * count);
 	if (!stack->num)
-		return (free(stack), NULL);
+		return (free(stack->num), NULL);
 	i = count;
 	while (i >= 0)
 	{
