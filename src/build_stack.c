@@ -18,7 +18,6 @@ void	init_stack(t_stack *stack, int size)
 	stack->b_bottom = size - 1;
 	stack->pivot = size;
 	stack->size = size;
-	stack->next = NULL;
 }
 
 t_stack *create_stack(char **str)

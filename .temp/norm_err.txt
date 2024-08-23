@@ -1,0 +1,37 @@
+src/main.c: Error!
+Error: WRONG_SCOPE_COMMENT  (line:  40, col:   5):	Comment is invalid in this scope
+src/build_stack.c: Error!
+Error: SPACE_BEFORE_FUNC    (line:  23, col:   8):	space before function name
+Error: WRONG_SCOPE_COMMENT  (line:  40, col:   5):	Comment is invalid in this scope
+Error: WRONG_SCOPE_COMMENT  (line:  41, col:   5):	Comment is invalid in this scope
+Error: EMPTY_LINE_EOF       (line:  77, col:   1):	Empty line at end of file
+src/free.c: Error!
+Error: SPACE_AFTER_KW       (line:  20, col:   5):	Missing space after keyword
+Error: SPC_BFR_PAR          (line:  20, col:  10):	Missing space before parenthesis (brace/bracket)
+src/sanity_check.c: Error!
+Error: SPACE_AFTER_KW       (line:  27, col:  10):	Missing space after keyword
+Error: SPC_BFR_PAR          (line:  27, col:  12):	Missing space before parenthesis (brace/bracket)
+Error: SPACE_REPLACE_TAB    (line:  35, col:   8):	Found space when expecting tab
+Error: SPACE_AFTER_KW       (line:  50, col:   5):	Missing space after keyword
+Error: SPC_BFR_PAR          (line:  50, col:   7):	Missing space before parenthesis (brace/bracket)
+Error: SPACE_AFTER_KW       (line:  52, col:   5):	Missing space after keyword
+Error: SPC_BFR_PAR          (line:  52, col:  10):	Missing space before parenthesis (brace/bracket)
+Error: SPACE_AFTER_KW       (line:  54, col:  13):	Missing space after keyword
+Error: SPC_BFR_PAR          (line:  54, col:  19):	Missing space before parenthesis (brace/bracket)
+Error: SPACE_AFTER_KW       (line:  63, col:   5):	Missing space after keyword
+Error: SPC_BFR_PAR          (line:  63, col:  10):	Missing space before parenthesis (brace/bracket)
+Error: SPACE_AFTER_KW       (line:  65, col:  13):	Missing space after keyword
+Error: SPC_BFR_PAR          (line:  65, col:  19):	Missing space before parenthesis (brace/bracket)
+Error: SPACE_AFTER_KW       (line:  69, col:  13):	Missing space after keyword
+Error: SPC_BFR_PAR          (line:  69, col:  19):	Missing space before parenthesis (brace/bracket)
+Error: SPACE_AFTER_KW       (line:  70, col:   5):	Missing space after keyword
+Error: SPC_BFR_PAR          (line:  70, col:  11):	Missing space before parenthesis (brace/bracket)
+src/normalize.c: Error!
+Error: SPC_BEFORE_NL        (line:  24, col:   9):	Space before newline
+src/push_swap.h: Error!
+Error: CONSECUTIVE_NEWLINES (line:  48, col:   1):	Consecutive newlines
+Error: CONSECUTIVE_NEWLINES (line:  49, col:   1):	Consecutive newlines
+Error: CONSECUTIVE_NEWLINES (line:  50, col:   1):	Consecutive newlines
+Error: CONSECUTIVE_NEWLINES (line:  51, col:   1):	Consecutive newlines
+Error: CONSECUTIVE_NEWLINES (line:  52, col:   1):	Consecutive newlines
+Error: CONSECUTIVE_NEWLINES (line:  53, col:   1):	Consecutive newlines
