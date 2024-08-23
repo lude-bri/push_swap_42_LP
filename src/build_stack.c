@@ -43,8 +43,8 @@ t_stack *create_stack(char **str)
 		i--;
 	}
 	init_stack(stack, count);
-	//if (!to_rank(stack->num, stack->size))
-	//		return (free_stack(stack), NULL);
+	if (!to_rank(stack, stack->size))
+			return (free_stack(stack), NULL);
 	return (stack);
 }
 

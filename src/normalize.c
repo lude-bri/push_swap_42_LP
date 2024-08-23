@@ -12,15 +12,11 @@
 
 #include "push_swap.h"
 
-int to_rank(t_stack *stack)
+int to_rank(t_stack *stack, int size)
 {
     t_stack *sorted_stack;
     t_stack *current;
-    int size;
     int idx;
-
-    // Count the number of nodes in the circular linked list
-    size = stack->size;
 
     // Create a new sorted stack (circular linked list)
     sorted_stack = NULL;
