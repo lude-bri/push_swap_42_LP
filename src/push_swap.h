@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 08:56:09 by luigi             #+#    #+#             */
-/*   Updated: 2024/08/08 12:03:27 by luigi            ###   ########.fr       */
+/*   Updated: 2024/08/23 14:03:42 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ t_stack		*get_node_at_index(t_stack *stack, int index);
 void		swap_nodes(t_stack **stack, int i, int j);
 int			duplicate_check_stack(t_stack *stack, int size);
 int			binary_search_stack(t_stack *stack, int target, int low, int high);
+void		push_swap(t_stack *stack);
 
 
 

@@ -48,7 +48,6 @@ int to_rank(t_stack *stack, int size)
         current = current->next;
         i++;
     }
-
     free_stack(sorted_stack);
     return (1);
 }
