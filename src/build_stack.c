@@ -14,15 +14,21 @@
 
 void	init_stack(t_stack *stack, int size)
 {
+	t_stack		*last_node;
+
 	stack->a_bottom = 0;
 	stack->b_bottom = size - 1;
 	stack->pivot = size;
 	stack->size = size;
+	last_node = find_lastnode(stack);
+	last_node->next = stack;
+	stack->prev = last_node;
 }
 
 t_stack *create_stack(char **str)
 {
 	t_stack		*stack;
+	t_stack		*last_node;
 	int			count;
 	int			i;
 
