@@ -16,17 +16,17 @@ int to_rank(t_stack *stack, int size)
 {
     t_stack *sorted_stack;
     t_stack *current;
-    int idx;
+    int i;
 
     // Create a new sorted stack (circular linked list)
     sorted_stack = NULL;
     current = stack;
-    idx = 0;
-    while (idx < size)
+    i = 0;
+    while (i < size)
     {
         put_node(&sorted_stack, current->num);
         current = current->next;
-        idx++;
+        i++;
     }
 
     // Sort the circular linked list
@@ -41,12 +41,12 @@ int to_rank(t_stack *stack, int size)
 
     // Replace the numbers in the original stack with their normalized ranks
     current = stack;
-    idx = 0;
-    while (idx < size)
+    i = 0;
+    while (i < size)
     {
         current->num = binary_search_stack(sorted_stack, current->num, 0, size);
         current = current->next;
-        idx++;
+        i++;
     }
 
     free_stack(sorted_stack);
@@ -57,9 +57,10 @@ void quick_sort_stack(t_stack **stack, int low, int high)
 {
 	int	pi;
 
-	pi = partition_stack(stack, low, high);
     if (low < high)
     {
+
+		pi = partition_stack(stack, low, high);
         quick_sort_stack(stack, low, pi - 1);
         quick_sort_stack(stack, pi + 1, high);
     }
@@ -110,13 +111,60 @@ void swap_nodes(t_stack **stack, int i, int j)
 {
     t_stack *node_i;
 	t_stack *node_j;
-	int	tmp;
+	int		tmp;
 
 	node_i = get_node_at_index(*stack, i);
-	node_j = get_node_at_index(*stack, i);
+	node_j = get_node_at_index(*stack, j);
     
 	tmp = node_i->num;
     node_i->num = node_j->num;
     node_j->num = tmp;
 }
+
+int duplicate_check_stack(t_stack *stack, int size)
+{
+    t_stack *current;
+	t_stack *runner;
+    int i;
+	int j;
+
+	current = stack;
+	i = 0;
+    while (i < size)
+    {
+        runner = current->next;
+        j = i + 1;
+        while (j < size)
+        {
+            if (current->num == runner->num)
+                return (0);
+            runner = runner->next;
+            j++;
+        }
+        current = current->next;
+        i++;
+    }
+    return (1);
+}
+
+int binary_search_stack(t_stack *stack, int target, int low, int high)
+{
+	t_stack		*mid_node;
+	int			mid;
+
+    while (low <= high)
+    {
+        mid = low + (high - low) / 2;
+        mid_node = get_node_at_index(stack, mid);
+
+        if (mid_node->num == target)
+            return mid;
+        else if (mid_node->num < target)
+            low = mid + 1;
+        else
+            high = mid - 1;
+    }
+    return (-1);
+}
+
 

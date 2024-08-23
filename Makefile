@@ -42,7 +42,7 @@ FILES	= main.c
 FILES	+= push_swap.c
 FILES	+= free.c
 FILES	+= build_stack.c
-# FILES	+= normalize.c
+FILES	+= normalize.c
 FILES	+= sanity_check.c
 FILES	+= push_swap_operations.c
 

@@ -28,7 +28,6 @@ void	init_stack(t_stack *stack, int size)
 t_stack *create_stack(char **str)
 {
 	t_stack		*stack;
-	t_stack		*last_node;
 	int			count;
 	int			i;
 
