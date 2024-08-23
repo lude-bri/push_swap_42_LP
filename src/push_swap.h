@@ -44,8 +44,13 @@ int			ft_is_valid(char *str);
 int			ft_find_start(char *str);
 int			ft_is_number(char *str);
 int			number_sanity_check(char **str);
-
-
+int			to_rank(t_stack *stack);
+void		quick_sort_stack(t_stack **stack, int low, int high);
+int			partition_stack(t_stack **stack, int low, int high);
+t_stack		*get_node_at_index(t_stack *stack, int index);
+void		swap_nodes(t_stack **stack, int i, int j);
+int			duplicate_check_stack(t_stack *stack, int size);
+int			binary_search_stack(t_stack *stack, int target, int low, int high);
 
 
 
