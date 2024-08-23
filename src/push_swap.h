@@ -30,12 +30,14 @@ typedef struct s_stack
 	int				b_bottom;
 	int				pivot;
 	size_t			rank;
-	struct s_list	*next;
-	struct s_list	*prev;
+	struct s_stack	*next;
+	struct s_stack	*prev;
 }	t_stack;
 
 const void init_stack(t_stack *stack, int size);
 t_stack *create_stack(char **str);
+t_stack *put_node(t_stack *stack, int data);
+t_stack *find_lastnode(t_stack *lst);
 void	free_str(char **str);
 void	free_stack(t_stack *stack);
 static int	ft_is_valid(char *str);

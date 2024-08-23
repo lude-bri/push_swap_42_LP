@@ -25,7 +25,7 @@ const void	init_stack(t_stack *stack, int size)
 t_stack *create_stack(char **str)
 {
 	t_stack		*stack;
-	const int	count;
+	int			count;
 	int			i;
 
 	count = number_sanity_check(str);
@@ -34,19 +34,47 @@ t_stack *create_stack(char **str)
 	stack = malloc(sizeof(t_stack));
 	if (!stack)
 		return (NULL);
-	stack->num = malloc(sizeof(int) * count);
-	if (!stack->num)
-		return (free(stack->num), NULL);
 	i = count;
 	while (i >= 0)
 	{
-		stack->num = ft_atoi(str[count - i - 1]);
-		stack->next;
+		put_node(stack, ft_atoi(str[count - i]));
 		i--;
 	}
 	init_stack(stack, count);
 	if (!to_rank(stack->num, stack->size))
 		return (free_stack(stack), NULL);
 	return (stack);
+}
+
+t_stack	*put_node(t_stack *stack, int data)
+{
+	t_stack	*node;
+	t_stack	*last_node;
+
+	node = malloc(sizeof(t_stack));
+	if (!node)
+		return (NULL);
+	node->num = data;
+	node->next = NULL;
+	if (!stack)
+	{
+		stack = node;
+		node->prev = NULL;
+	}
+	else
+	{
+		last_node = find_lastnode(stack);
+		last_node->next = node;
+		node->prev = last_node;
+	}
+}
+
+t_stack	*find_lastnode(t_stack *lst)
+{
+	if (!lst)
+		return (0);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
 
