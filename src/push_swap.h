@@ -22,9 +22,7 @@
 # include <string.h>
 # include "../lib/libft_42/libft.h"
 
-INT_MAX	2147483647
-
-typedef struct s_list
+typedef struct s_stack
 {
 	int				num;
 	int				size;
@@ -38,7 +36,8 @@ typedef struct s_list
 
 const void init_stack(t_stack *stack, int size);
 t_stack *create_stack(char **str);
-
+void	free_str(char **str);
+void	free_stack(t_stack *stack);
 
 
 
