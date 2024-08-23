@@ -38,6 +38,10 @@ const void init_stack(t_stack *stack, int size);
 t_stack *create_stack(char **str);
 void	free_str(char **str);
 void	free_stack(t_stack *stack);
+static int	ft_is_valid(char *str);
+static int	ft_find_start(char *str);
+static int	ft_is_number(char *str);
+static int	number_sanity_check(char **str);
 
 
 
