@@ -21,7 +21,6 @@ int	to_rank(int num, int size)
 		return (NULL);
 	i = -1;
 	while (++i < size)
-	{
-	
+	{		
 	}
 }

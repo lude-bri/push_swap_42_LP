@@ -24,6 +24,5 @@ void	free_str(char **str)
 
 void	free_stack(t_stack *stack)
 {
-	free(stack->num);
 	free(stack);
 }

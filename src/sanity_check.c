@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static int	ft_is_valid(char *str)
+int	ft_is_valid(char *str)
 {
 	const int	start = ft_find_start(str);
 	const int	len = ft_strlen(str) - start;
@@ -20,9 +20,9 @@ static int	ft_is_valid(char *str)
 	if (len == 10)
 	{
 		if (str[0] == '-')
-			return (ft_strncmp(str + start, INT_MAX, 10) <= 0);
+			return (ft_strncmp(str + start, "2147483647", 10) <= 0);
 		else
-			return (ft_strncmp(str + start, INT_MAX, 10) <= 0);
+			return (ft_strncmp(str + start, "2147483647", 10) <= 0);
 	}
 	else if(len < 10)
 		return (1);
@@ -30,7 +30,7 @@ static int	ft_is_valid(char *str)
 		return (0);
 }
 
-static int	ft_find_start(char *str)
+int	ft_find_start(char *str)
 {
 	int i;
 
@@ -42,7 +42,7 @@ static int	ft_find_start(char *str)
 	return (i);
 }
 
-static int	ft_is_number(char *str)
+int	ft_is_number(char *str)
 {
 	int	i;
 
@@ -50,12 +50,12 @@ static int	ft_is_number(char *str)
 	if(str[i] == '+' || str[i] == '-')
 		i++;
 	while(str[i])
-		if (!ft_is_digit(str[i++]))
+		if (!ft_isdigit(str[i++]))
 			return(0);
 	return (1);
 }
 
-static int	number_sanity_check(char **str)
+int	number_sanity_check(char **str)
 {
 	int	i;
 

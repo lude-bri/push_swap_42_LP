@@ -12,10 +12,6 @@
 
 #include "push_swap.h"
 
-//1. parse
-//2. create stack
-//3. resolve push_swap
-
 int	main(int ac, char **av)
 {
 	char		**numbers;
@@ -41,6 +37,6 @@ int	main(int ac, char **av)
 		ft_putstr_fd("Error creating stack\n", 0);
 		exit(1);
 	}
-	push_swap(stack);
+	//push_swap(stack);
 	free_stack(stack);
 }

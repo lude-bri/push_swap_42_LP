@@ -22,7 +22,7 @@ static int	binary_search(const int *arr, int target, int begin, int end)
 	{
 		mid = (begin + end) >> 1;
 		if (arr[mid] == target)
-			return (mid);
+			return(mid);
 		else if (arr[mid] < target)
 			begin = mid + 1;
 		else

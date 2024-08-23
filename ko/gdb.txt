@@ -16421,3 +16421,5 @@ new_ab (strs=0x7fffffffdef0) at src/construct_ab.c:32
 14: this->pdata[idx] = 0
 +p strs[0]
 $1 = 0x7fffffffe353 "65"
++q
+Please answer y or n.
