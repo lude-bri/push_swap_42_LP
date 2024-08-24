@@ -96,8 +96,8 @@ t_stack *get_node_at_index(t_stack *stack, int index)
     t_stack *current;
     int i;
 
-	current = stack;
 	i = 0;
+	current = stack;
     while (i < index)
     {
         current = current->next;
