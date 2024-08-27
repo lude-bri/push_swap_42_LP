@@ -25,7 +25,7 @@ void	init_stack(t_stack *stack, int size)
 	stack->prev = last_node;
 }
 
-t_stack *create_stack(char **str)
+t_stack	*create_stack(char **str)
 {
 	t_stack		*stack;
 	int			count;
@@ -43,7 +43,7 @@ t_stack *create_stack(char **str)
 	}
 	init_stack(stack, count);
 	if (!to_rank(stack, stack->size))
-			return (free_stack(stack), NULL);
+		return (free_stack(stack), NULL);
 	return (stack);
 }
 
@@ -79,4 +79,3 @@ t_stack	*find_lastnode(t_stack *lst)
 		lst = lst->next;
 	return (lst);
 }
-

@@ -24,7 +24,7 @@ int	ft_is_valid(char *str)
 		else
 			return (ft_strncmp(str + start, "2147483647", 10) <= 0);
 	}
-	else if(len < 10)
+	else if (len < 10)
 		return (1);
 	else
 		return (0);
@@ -32,7 +32,7 @@ int	ft_is_valid(char *str)
 
 int	ft_find_start(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (str[i] == '+' || str[i] == '-')
@@ -47,11 +47,11 @@ int	ft_is_number(char *str)
 	int	i;
 
 	i = 0;
-	if(str[i] == '+' || str[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 		i++;
-	while(str[i])
+	while (str[i])
 		if (!ft_isdigit(str[i++]))
-			return(0);
+			return (0);
 	return (1);
 }
 
@@ -60,12 +60,38 @@ int	number_sanity_check(char **str)
 	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 		if (!ft_is_number(str[i++]))
-			return(0);
+			return (0);
 	i = 0;
 	while (str[i])
 		if (!ft_is_valid(str[i++]))
-			return(0);
-	return(i);
+			return (0);
+	return (i);
+}
+
+int	duplicate_check_stack(t_stack *stack, int size)
+{
+	t_stack		*current;
+	t_stack		*runner;
+	int			i;
+	int			j;
+
+	current = stack;
+	i = 0;
+	while (i < size)
+	{
+		runner = current->next;
+		j = i + 1;
+		while (j < size)
+		{
+			if (current->num == runner->num)
+				return (0);
+			runner = runner->next;
+			j++;
+		}
+		current = current->next;
+		i++;
+	}
+	return (1);
 }

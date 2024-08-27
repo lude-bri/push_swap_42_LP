@@ -6,11 +6,11 @@
 /*   By: dogwak <dogwak@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 14:22:04 by dogwak            #+#    #+#             */
-/*   Updated: 2024/02/20 16:10:55 by dogwak           ###   ########.fr       */
+/*   Updated: 2024/08/27 12:01:25 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_parser.h"
+#include "push_swap.h"
 
 static int	is_number(const char *str)
 {
@@ -62,10 +62,37 @@ int	ascii_number_sanity_check(const char **strs)
 	idx = -1;
 	while (strs[++idx] != NULL)
 		if (!is_number(strs[idx]))
-			return (0);
+			return (0
 	idx = -1;
 	while (strs[++idx] != NULL)
 		if (!is_in_range(strs[idx]))
 			return (0);
 	return (idx);
 }
+
+int	duplicate_check_stack(t_stack *stack, int size)
+{
+	t_stack		*current;
+	t_stack		*runner;
+	int			i;
+	int			j;
+
+	current = stack;
+	i = 0;
+	while (i < size)
+	{
+		runner = current->next;
+		j = i + 1;
+		while (j < size)
+		{
+			if (current->num == runner->num)
+				return (0);
+			runner = runner->next;
+			j++;
+		}
+		current = current->next;
+		i++;
+	}
+	return (1);
+}
+

@@ -52,8 +52,4 @@ int			duplicate_check_stack(t_stack *stack, int size);
 int			binary_search_stack(t_stack *stack, int target, int low, int high);
 void		push_swap(t_stack *stack);
 
-
-
-
-
 #endif
