@@ -39,7 +39,7 @@ TESTS_PATH		= files
 LIBFT_PATH		= $(LIBS_PATH)
 
 FILES	= main.c
-FILES	+= push_swap.c
+## FILES	+= push_swap.c
 FILES	+= free.c
 FILES	+= build_stack.c
 FILES	+= normalize.c

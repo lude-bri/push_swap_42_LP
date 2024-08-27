@@ -58,7 +58,6 @@ void quick_sort_stack(t_stack **stack, int low, int high)
 
     if (low < high)
     {
-
 		pi = partition_stack(stack, low, high);
         quick_sort_stack(stack, low, pi - 1);
         quick_sort_stack(stack, pi + 1, high);
@@ -157,7 +156,7 @@ int binary_search_stack(t_stack *stack, int target, int low, int high)
         mid_node = get_node_at_index(stack, mid);
 
         if (mid_node->num == target)
-            return mid;
+            return (mid);
         else if (mid_node->num < target)
             low = mid + 1;
         else
@@ -165,5 +164,3 @@ int binary_search_stack(t_stack *stack, int target, int low, int high)
     }
     return (-1);
 }
-
-

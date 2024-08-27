@@ -29,7 +29,6 @@ typedef struct s_stack
 	int				a_bottom;
 	int				b_bottom;
 	int				pivot;
-	size_t			rank;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }	t_stack;
