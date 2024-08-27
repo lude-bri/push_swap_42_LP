@@ -1,4 +1,0 @@
-src/main.c: Error!
-Error: WRONG_SCOPE_COMMENT  (line:  40, col:   5):	Comment is invalid in this scope
-src/push_swap.c: Error!
-Error: EMPTY_LINE_FUNCTION  (line:  17, col:   1):	Empty line in function

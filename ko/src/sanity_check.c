@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_parser.h"
 
 static int	is_number(const char *str)
 {
@@ -69,30 +69,3 @@ int	ascii_number_sanity_check(const char **strs)
 			return (0);
 	return (idx);
 }
-
-int	duplicate_check_stack(t_stack *stack, int size)
-{
-	t_stack		*current;
-	t_stack		*runner;
-	int			i;
-	int			j;
-
-	current = stack;
-	i = 0;
-	while (i < size)
-	{
-		runner = current->next;
-		j = i + 1;
-		while (j < size)
-		{
-			if (current->num == runner->num)
-				return (0);
-			runner = runner->next;
-			j++;
-		}
-		current = current->next;
-		i++;
-	}
-	return (1);
-}
-

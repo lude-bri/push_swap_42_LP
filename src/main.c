@@ -37,6 +37,7 @@ int	main(int ac, char **av)
 		ft_putstr_fd("Error creating stack\n", 0);
 		exit(1);
 	}
-	//push_swap(stack);
+	if (!is_sorted(stack))
+		sort_stack(stack);
 	free_stack(stack);
 }
