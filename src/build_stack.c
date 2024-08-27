@@ -28,6 +28,7 @@ void	init_stack(t_stack *stack, int size)
 t_stack	*create_stack(char **str)
 {
 	t_stack		*stack;
+	int			number;
 	int			count;
 	int			i;
 
@@ -38,7 +39,8 @@ t_stack	*create_stack(char **str)
 	i = count;
 	while (i > 0)
 	{
-		put_node(&stack, ft_atoi(str[count - i]));
+		number = ft_atoi(str[count - i]);
+		put_node(&stack, number);
 		i--;
 	}
 	init_stack(stack, count);

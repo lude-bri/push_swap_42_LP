@@ -3,7 +3,7 @@ NAME = push_swap
 NAME_B = checker
 
 # compiler
-CC = cc
+CC = -cc
 CFLAGS = -Wall -Wextra -Werror -g
 LDFLAGS = -L./ft_vector -lftvector -L./ft_string -lftstring -L./libft -lft
 LDFLAGS_B = -L./ft_string -lftstring -L./libft -lft
@@ -75,31 +75,6 @@ gdb: all $(NAME) $(TEMP_PATH)			## Debug w/ gdb
 	tmux split-window -h "gdb --tui --args ./$(NAME)"
 	tmux resize-pane -L 5
 	make get_log
-
-vgdb: all $(NAME) $(TEMP_PATH)			## Debug w/ valgrind (memcheck) & gdb
-	tmux split-window -h "valgrind --vgdb-error=0 --log-file=gdb.txt ./$(NAME) $(ARG)"
-	make vgdb_pid
-	tmux split-window -v "gdb --tui -x $(TEMP_PATH)/gdb_commands.txt $(NAME)"
-	tmux resize-pane -U 18
-	make get_log
-
-valgrind: all $(NAME) $(TEMP_PATH)			## Debug w/ valgrind (memcheck)
-	tmux set-option remain-on-exit on
-	tmux split-window -h "valgrind --leak-check=full --show-leak-kinds=all -s ./$(NAME) $(ARG)"
-	tmux split-window -h "gdb --tui --args ./$(NAME)"
-	tmux resize-pane -L 5
-	make get_log
-
-vgdb: all $(NAME) $(TEMP_PATH)			## Debug w/ valgrind (memcheck) & gdb
-	tmux split-window -h "valgrind --vgdb-error=0 --log-file=gdb.txt ./$(NAME) $(ARG)"
-	make vgdb_pid
-	tmux split-window -v "gdb --tui -x $(TEMP_PATH)/gdb_commands.txt $(NAME)"
-	tmux resize-pane -U 18
-	make get_log
-
-valgrind: all $(NAME) $(TEMP_PATH)			## Debug w/ valgrind (memcheck)
-	tmux set-option remain-on-exit on
-	tmux split-window -h "valgrind --leak-check=full --show-leak-kinds=all -s ./$(NAME) $(ARG)"
 
 get_log:
 	touch gdb.txt
