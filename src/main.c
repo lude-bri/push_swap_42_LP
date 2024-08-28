@@ -15,7 +15,8 @@
 int	main(int ac, char **av)
 {
 	char		**numbers;
-	t_stack		*stack;
+	t_stack		*stack_a;
+	t_stack		*stack_b;
 
 	if (ac == 1)
 		exit(0);
@@ -24,19 +25,22 @@ int	main(int ac, char **av)
 		numbers = ft_split(av[1], ' ');
 		if (!*numbers)
 			exit(0);
-		stack = create_stack(numbers);
+		stack_a = create_stack(numbers, STACK_A);
+		stack_b = create_stack(numbers, STACK_B);
 		free_str(numbers);
 	}
 	else
 	{
 		numbers = av + 1;
-		stack = create_stack(numbers);
+		stack_a = create_stack(numbers, STACK_A);
+		stack_b = create_stack(numbers, STACK_B);
 	}
-	if (!stack)
+	if (!stack_a)
 	{
 		ft_putstr_fd("Error creating stack\n", 0);
 		exit(1);
 	}
 	//push_swap(stack);
-	free_stack(stack);
+	free_stack(stack_a);
+	free_stack(stack_b);
 }

@@ -25,7 +25,7 @@ void	init_stack(t_stack *stack, int size)
 	stack->prev = last_node;
 }
 
-t_stack	*create_stack(char **str)
+t_stack	*create_stack(char **str, int flag)
 {
 	t_stack		*stack;
 	int			number;
@@ -39,12 +39,17 @@ t_stack	*create_stack(char **str)
 	i = count;
 	while (i > 0)
 	{
-		number = ft_atoi(str[count - i]);
-		put_node(&stack, number);
-		i--;
+		if (flag == STACK_A)
+		{
+			number = ft_atoi(str[count - i]);
+			put_node(&stack, number);
+		}
+		else
+			put_node(&stack, 0);
+		--i;
 	}
 	init_stack(stack, count);
-	if (!to_rank(stack, stack->size))
+	if (!to_rank(stack, stack->size) && flag == STACK_A)
 		return (free_stack(stack), NULL);
 	return (stack);
 }

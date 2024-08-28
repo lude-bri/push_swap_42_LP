@@ -22,6 +22,9 @@
 # include <string.h>
 # include "../lib/libft_42/libft.h"
 
+# define STACK_A 1
+# define STACK_B 0
+
 typedef struct s_stack
 {
 	int				num;
@@ -34,7 +37,7 @@ typedef struct s_stack
 }	t_stack;
 
 void		init_stack(t_stack *stack, int size);
-t_stack		*create_stack(char **str);
+t_stack		*create_stack(char **str, int flag);
 void		put_node(t_stack **stack, int data);
 t_stack		*find_lastnode(t_stack *lst);
 void		free_str(char **str);
