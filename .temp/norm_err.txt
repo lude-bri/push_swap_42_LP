@@ -1,2 +1,0 @@
-src/main.c: Error!
-Error: TOO_MANY_LINES       (line:  59, col:   1):	Function has more than 25 lines
