@@ -62,7 +62,7 @@ int	ascii_number_sanity_check(const char **strs)
 	idx = -1;
 	while (strs[++idx] != NULL)
 		if (!is_number(strs[idx]))
-			return (0
+			return (0);
 	idx = -1;
 	while (strs[++idx] != NULL)
 		if (!is_in_range(strs[idx]))

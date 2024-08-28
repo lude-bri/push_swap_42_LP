@@ -12,30 +12,29 @@
 
 #include "push_swap.h"
 
-int	is_sorted(t_stack *stack)
+int	is_sorted(t_stack *stack_a, t_stack *stack_b)
 {
 	t_stack		*current;
 	int			i;
 
-	i = 0;
-	current = stack;
-	if (b_size(current))
+	i = -1;
+	current = stack_a;
+	if (b_size(stack_b) != 0)
 		return (0);
-	while (i++ < current->size)
+	while (++i < current->size - 1)
 	{
-		if (current->num != current->size - 1 - i)
+		if (current->num > current->next->num)
 			return (0);
+		current = current->next;
 	}
 	return (1);
 }
 
-void	sort_ab(t_stack *stack)
+int	sort_ab(t_stack *stack_a, t_stack *stack_b)
 {
-	int		partition_size = stack->size / 3;
-	int		big_pivot = stack->size - partition_size;
-	int		small_pivot = big_pivot - partition_size;
-
-
+	if (stack_a && stack_b)
+		return (1);
+	return (0);
 }
 
 int	a_size(t_stack *stack)

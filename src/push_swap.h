@@ -53,6 +53,11 @@ t_stack		*get_node_at_index(t_stack *stack, int index);
 void		swap_nodes(t_stack **stack, int i, int j);
 int			duplicate_check_stack(t_stack *stack, int size);
 int			binary_search_stack(t_stack *stack, int target, int low, int high);
-void		push_swap(t_stack *stack);
+void		push_swap(t_stack *stack_a, t_stack *stack_b);
+int			is_sorted(t_stack *stack_a, t_stack *stack_b);
+int			sort_ab(t_stack *stack_a, t_stack *stack_b);
+int			a_size(t_stack *stack);
+int			b_size(t_stack *stack);
+void		is_string(char **av, t_stack *stack_a, t_stack *stack_b);
 
 #endif

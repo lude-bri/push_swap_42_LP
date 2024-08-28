@@ -15,11 +15,19 @@
 void	init_stack(t_stack *stack, int size)
 {
 	t_stack		*last_node;
+	t_stack		*current;
+	int			i;
 
-	stack->a_bottom = 0;
-	stack->b_bottom = size - 1;
-	stack->pivot = size;
-	stack->size = size;
+	i = -1;
+	current = stack;
+	while (++i < size)
+	{
+		current->a_bottom = 0;
+		current->b_bottom = size - 1;
+		current->pivot = size;
+		current->size = size;
+		current = current->next;
+	}
 	last_node = find_lastnode(stack);
 	last_node->next = stack;
 	stack->prev = last_node;

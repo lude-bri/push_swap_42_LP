@@ -11,6 +11,18 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+//
+// void	is_string(char **av, t_stack *stack_a, t_stack *stack_b)
+// {
+// 	char		**numbers;
+//
+// 	numbers = ft_split(av[1], ' ');
+// 	if (!*numbers)
+// 		exit(0);
+// 	stack_a = create_stack(numbers, STACK_A);
+// 	stack_b = create_stack(numbers, STACK_B);
+// 	free_str(numbers);
+// }
 
 int	main(int ac, char **av)
 {
@@ -40,7 +52,8 @@ int	main(int ac, char **av)
 		ft_putstr_fd("Error creating stack\n", 0);
 		exit(1);
 	}
-	//push_swap(stack);
+	if (!is_sorted(stack_a, stack_b))
+		sort_ab(stack_a, stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);
 }
