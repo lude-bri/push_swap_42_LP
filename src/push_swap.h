@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 08:56:09 by luigi             #+#    #+#             */
-/*   Updated: 2024/08/29 08:50:07 by luigi            ###   ########.fr       */
+/*   Updated: 2024/08/29 11:31:10 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,18 @@ int			b_top(t_stack *stack);
 int			a_bottom(t_stack *stack);
 int			b_bottom(t_stack *stack);
 void		is_string(char **av, t_stack *stack_a, t_stack *stack_b);
+
+void	operations(t_stack **stack_a, t_stack **stack_b);
+void	pa(t_stack **stack_a, t_stack **stack_b);
+void	pb(t_stack **stack_a, t_stack **stack_b);
+void	ra(t_stack **stack);
+void	rb(t_stack **stack);
+void	rr(t_stack **stack);
+void	rra(t_stack **stack);
+void	rrb(t_stack **stack);
+void	rrr(t_stack **stack);
+void	sa(t_stack **stack);
+void	sb(t_stack **stack);
+void	ss(t_stack **stack);
 
 #endif
