@@ -23,7 +23,7 @@
 // 	stack_b = create_stack(numbers, STACK_B);
 // 	free_str(numbers);
 // }
-
+//
 int	main(int ac, char **av)
 {
 	char		**numbers;

@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 08:56:09 by luigi             #+#    #+#             */
-/*   Updated: 2024/08/23 14:03:42 by luigi            ###   ########.fr       */
+/*   Updated: 2024/08/29 08:50:07 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,10 @@ int			is_sorted(t_stack *stack_a, t_stack *stack_b);
 int			sort_ab(t_stack *stack_a, t_stack *stack_b);
 int			a_size(t_stack *stack);
 int			b_size(t_stack *stack);
+int			a_top(t_stack *stack);
+int			b_top(t_stack *stack);
+int			a_bottom(t_stack *stack);
+int			b_bottom(t_stack *stack);
 void		is_string(char **av, t_stack *stack_a, t_stack *stack_b);
 
 #endif
