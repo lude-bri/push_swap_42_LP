@@ -54,7 +54,7 @@ int	main(int ac, char **av)
 	}
 	if (!is_sorted(stack_a, stack_b))
 		sort_ab(stack_a, stack_b);
-	operations(stack_a, stack_b);
+	operations(&stack_a, &stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);
 }

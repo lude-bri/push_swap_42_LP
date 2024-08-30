@@ -47,9 +47,9 @@ void	sort_ab(t_stack *stack_a, t_stack *stack_b)
 
 void	sort_base_case(t_stack *stack, int size, int ab)
 {
-	if (size == 2 && ab)
-		push_a_n(stack, 2);
-else if (size == 3 && ab)
+	if (!stack || size || ab)
+		return ;
+	return ;
 }
 
 int	a_size(t_stack *stack)

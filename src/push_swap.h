@@ -55,7 +55,7 @@ int			duplicate_check_stack(t_stack *stack, int size);
 int			binary_search_stack(t_stack *stack, int target, int low, int high);
 void		push_swap(t_stack *stack_a, t_stack *stack_b);
 int			is_sorted(t_stack *stack_a, t_stack *stack_b);
-int			sort_ab(t_stack *stack_a, t_stack *stack_b);
+void		sort_ab(t_stack *stack_a, t_stack *stack_b);
 int			a_size(t_stack *stack);
 int			b_size(t_stack *stack);
 int			a_top(t_stack *stack);
