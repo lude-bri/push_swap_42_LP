@@ -1,0 +1,6 @@
+
+
+
+
+1. Instal VM Box (Hypervisor)
+2. Img UBUNTU 22.04
