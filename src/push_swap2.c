@@ -50,15 +50,22 @@ void	sort_4(t_stack **stack_a, t_stack **stack_b)
 
 void	sort_5(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack		*small;
+	int		size;
 
-	small = find_num(*stack_a, 0);
-	while ((*stack_a)->num != 0 && (*stack_a)->size == 5)
+	size = (*stack_a)->size;
+	
+	if ((*stack_a)->num == size - 1)
+		do_cmd(stack_a, RA);
+	while (size > 0)
 	{
-		if (small->num == 0)
+		if ((*stack_a)->num == 0)
+		{
 			do_push_cmd(stack_a, stack_b, PB);
+			break ;
+		}
 		else
 			do_cmd(stack_a, RA);
+		size--;
 	}
 	sort_4(stack_a, stack_b);
 	do_push_cmd(stack_a, stack_b, PA);
