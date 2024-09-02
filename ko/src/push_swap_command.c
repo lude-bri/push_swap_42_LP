@@ -21,7 +21,9 @@ int	set_int(void *paddr, void *pval)
 // do nothing
 void	free_int(void *paddr)
 {
-	paddr++;
+	if (paddr != NULL)
+		return ;
+	return ;
 }
 
 t_ft_vector	*new_command_buffer(void)

@@ -3,7 +3,7 @@ NAME = push_swap
 NAME_B = checker
 
 # compiler
-CC = -cc
+CC = -gcc
 CFLAGS = -Wall -Wextra -Werror -g
 LDFLAGS = -L./ft_vector -lftvector -L./ft_string -lftstring -L./libft -lft
 LDFLAGS_B = -L./ft_string -lftstring -L./libft -lft

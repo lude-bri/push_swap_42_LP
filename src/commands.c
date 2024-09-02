@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/02 12:41:10 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/02 14:25:04 by luigi            ###   ########.fr       */
+/*   Created: 224/09/02 12:41:10 by luigi             #+#    #+#             */
+/*   Updated: 224/09/02 14:25:04 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,25 +48,25 @@ void	do_cmd(t_stack **stack, int cmd)
 void	print_cmd(int cmd)
 {
 	if (cmd == PA)
-		ft_putstr_fd("pa\n", 0);
+		ft_printf("pa\n");
 	else if (cmd == PB)
-		ft_putstr_fd("pb\n", 0);
+		ft_printf("pb\n");
 	else if (cmd == RA)
-		ft_putstr_fd("ra\n", 0);
+		ft_printf("ra\n");
 	else if (cmd == RB)
-		ft_putstr_fd("rb\n", 0);
+		ft_printf("rb\n");
 	else if (cmd == RR)
-		ft_putstr_fd("rr\n", 0);
+		ft_printf("rr\n");
 	else if (cmd == RRA)
-		ft_putstr_fd("rra\n", 0);
+		ft_printf("rra\n");
 	else if (cmd == RRB)
-		ft_putstr_fd("rrb\n", 0);
+		ft_printf("rrb\n");
 	else if (cmd == RRR)
-		ft_putstr_fd("rrr\n", 0);
+		ft_printf("rrr\n");
 	else if (cmd == SA)
-		ft_putstr_fd("sa\n", 0);
+		ft_printf("sa\n");
 	else if (cmd == SB)
-		ft_putstr_fd("sb\n", 0);
+		ft_printf("sb\n");
 	else if (cmd == SS)
-		ft_putstr_fd("ss\n", 0);
+		ft_printf("ss\n");
 }

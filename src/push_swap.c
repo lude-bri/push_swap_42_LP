@@ -39,7 +39,7 @@ void	sort_ab(t_stack **stack_a, t_stack **stack_b)
 	// partition_size = (*stack_a)->size / 3;
 	// big_pivot = (*stack_a)->size - partition_size;
 	// small_pivot = big_pivot - partition_size;
-
+	//
 	(void)(*stack_b);
 	if ((*stack_a)->size <= 5)
 		sort_base_case(stack_a, (*stack_a)->size);
