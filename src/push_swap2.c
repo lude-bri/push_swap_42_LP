@@ -62,13 +62,12 @@ void	sort_5(t_stack **stack_a, t_stack **stack_b)
 			if ((*stack_a)->num == 0)
 				do_push_cmd(stack_a, stack_b, PB);
 			else if ((*stack_a)->num == 1)
-			{
 				do_push_cmd(stack_a, stack_b, PB);
-				break;
-			}
 			else
 				do_cmd(stack_a, RA);
 		}
+		if ((*stack_b)->num == 0 && (*stack_b)->next->num == 1)
+			break ;
 		size--;
 	}
 	sort_3(stack_a);
