@@ -12,13 +12,12 @@
 
 #include "push_swap.h"
 
-
 void	do_push_cmd(t_stack **stack_a, t_stack **stack_b, int cmd)
 {
 	if (cmd == PA)
 		pa(stack_a, stack_b);
 	else if (cmd == PB)
-		pa(stack_a, stack_b);
+		pb(stack_a, stack_b);
 	print_cmd(cmd);
 }
 
