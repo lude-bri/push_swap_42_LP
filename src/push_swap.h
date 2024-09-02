@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 08:56:09 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/02 14:08:46 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/02 14:56:17 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ void		sort_3(t_stack **stack);
 void		sort_4(t_stack **stack);
 void		sort_5(t_stack **stack);
 t_stack		*find_big(t_stack *stack);
+t_stack		*find_small(t_stack *stack);
 
 
 //stack_access

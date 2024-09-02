@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:50:37 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/02 14:16:29 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/02 15:04:23 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,24 @@ void	sort_3(t_stack **stack)
 		do_cmd(stack, SA);
 }
 
-
 void	sort_4(t_stack **stack)
 {
-	int		first;
-	int		second;
-	int		third;
+	t_stack *small;
+	t_stack *stack_b;
+	int		i;
 
-	first = (*stack)->num;
-	second = (*stack)->next->num;
-	third = (*stack)->next->next->num;
-
+	i = 0;
+	small = find_small(*stack);
+	while (i != (*stack)->num && (*stack)->size == 4)
+	{
+		if (i == small->num)
+			do_push_cmd(stack, &stack_b, PB);
+		else
+			do_cmd(stack, RA);
+	}
+	sort_3(stack);
+	do_push_cmd(stack, &stack_b, PA);
+	free(stack_b);
 }
 
 void	sort_5(t_stack **stack)
@@ -51,7 +58,7 @@ t_stack	*find_big(t_stack *stack)
 	int			size;
 	t_stack		*high_node;
 
-	n = INT_MIN;
+	n = 0;
 	size = stack->size;
 	while (size)
 	{
@@ -66,3 +73,21 @@ t_stack	*find_big(t_stack *stack)
 	return (high_node);
 }
 
+t_stack *find_small(t_stack *stack)
+{
+	int			n;
+	int			size;
+	t_stack		*small_node;
+
+	n = 0;
+	size = stack->size;
+	small_node = stack;
+	while (size)
+	{
+		if (small_node->num == n)
+			return (small_node);
+		small_node = small_node->next;
+		size--;
+	}
+	return (NULL);
+}
