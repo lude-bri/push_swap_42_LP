@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 09:28:58 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/02 12:05:16 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/02 12:36:29 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,7 @@ int	main(int ac, char **av)
 	}
 	if (!is_sorted(stack_a, stack_b))
 		sort_ab(stack_a, stack_b);
-	while (stack_a)
-		operations(&stack_a);
 	free_stack(stack_a);
 	free_stack(stack_b);
-}
-
-void	operations(t_stack **stack_a)
-{
-	rra(stack_a);
-	rrb(stack_a);
 }
 
