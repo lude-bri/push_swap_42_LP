@@ -27,14 +27,12 @@ void	sort_3(t_stack **stack)
 
 void	sort_4(t_stack **stack)
 {
-	t_stack *small;
-	t_stack *stack_b;
+	t_stack		*stack_b;
 
 	stack_b = NULL;
-	small = find_num(*stack, 0);
 	while ((*stack)->num != 0 && (*stack)->size == 4)
 	{
-		if (small->num == 0)
+		if ((*stack)->num == 0)
 			do_push_cmd(stack, &stack_b, PB);
 		else
 			do_cmd(stack, RA);
