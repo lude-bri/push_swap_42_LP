@@ -29,27 +29,38 @@ void	sort_4(t_stack **stack)
 {
 	t_stack *small;
 	t_stack *stack_b;
-	int		i;
 
-	i = 0;
-	small = find_small(*stack);
-	while (i != (*stack)->num && (*stack)->size == 4)
+	stack_b = NULL;
+	small = find_num(*stack, 0);
+	while ((*stack)->num != 0 && (*stack)->size == 4)
 	{
-		if (i == small->num)
+		if (small->num == 0)
 			do_push_cmd(stack, &stack_b, PB);
 		else
 			do_cmd(stack, RA);
 	}
 	sort_3(stack);
 	do_push_cmd(stack, &stack_b, PA);
-	free(stack_b);
+	free_stack(stack_b);
 }
 
 void	sort_5(t_stack **stack)
 {
-	if (*stack != 0)
-		return ;
-	return ;
+	t_stack		*small;
+	t_stack		*stack_b;
+
+	stack_b = NULL;
+	small = find_num(*stack, 0);
+	while ((*stack)->num != 0 && (*stack)->size == 5)
+	{
+		if (small->num == 0)
+			do_push_cmd(stack, &stack_b, PB);
+		else
+			do_cmd(stack, RA);
+	}
+	sort_4(stack);
+	do_push_cmd(stack, &stack_b, PA);
+	free_stack(stack_b);
 }
 
 t_stack	*find_big(t_stack *stack)
@@ -73,18 +84,16 @@ t_stack	*find_big(t_stack *stack)
 	return (high_node);
 }
 
-t_stack *find_small(t_stack *stack)
+t_stack *find_num(t_stack *stack, int num)
 {
-	int			n;
 	int			size;
 	t_stack		*small_node;
 
-	n = 0;
 	size = stack->size;
 	small_node = stack;
 	while (size)
 	{
-		if (small_node->num == n)
+		if (small_node->num == num)
 			return (small_node);
 		small_node = small_node->next;
 		size--;

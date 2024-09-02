@@ -32,13 +32,13 @@ int	is_sorted(t_stack *stack_a, t_stack *stack_b)
 
 void	sort_ab(t_stack **stack_a, t_stack **stack_b)
 {
-	int	partition_size;
-	int	big_pivot;
-	int	small_pivot;
+	//int	partition_size;
+	// int	big_pivot;
+	// int	small_pivot;
 
-	partition_size = (*stack_a)->size / 3;
-	big_pivot = (*stack_a)->size - partition_size;
-	small_pivot = big_pivot - partition_size;
+	// partition_size = (*stack_a)->size / 3;
+	// big_pivot = (*stack_a)->size - partition_size;
+	// small_pivot = big_pivot - partition_size;
 
 	(void)(*stack_b);
 	if ((*stack_a)->size <= 5)

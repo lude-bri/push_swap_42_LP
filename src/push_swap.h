@@ -91,7 +91,7 @@ void		sort_3(t_stack **stack);
 void		sort_4(t_stack **stack);
 void		sort_5(t_stack **stack);
 t_stack		*find_big(t_stack *stack);
-t_stack		*find_small(t_stack *stack);
+t_stack		*find_num(t_stack *stack, int num);
 
 
 //stack_access
