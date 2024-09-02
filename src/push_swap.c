@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 14:02:04 by luigi             #+#    #+#             */
-/*   Updated: 2024/08/29 11:20:03 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/02 14:14:43 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,26 +30,32 @@ int	is_sorted(t_stack *stack_a, t_stack *stack_b)
 	return (1);
 }
 
-// int	sort_ab(t_stack *stack_a, t_stack *stack_b)
-// {
-// 	if (stack_a && stack_b)
-// 		return (1);
-// 	return (0);
-// }
-//
-
-void	sort_ab(t_stack *stack_a, t_stack *stack_b)
+void	sort_ab(t_stack **stack_a, t_stack **stack_b)
 {
-	if (stack_a && stack_b)
-		return ;
-	return ;
+	int	partition_size;
+	int	big_pivot;
+	int	small_pivot;
+
+	partition_size = (*stack_a)->size / 3;
+	big_pivot = (*stack_a)->size - partition_size;
+	small_pivot = big_pivot - partition_size;
+
+	(void)(*stack_b);
+	if ((*stack_a)->size <= 5)
+		sort_base_case(stack_a, (*stack_a)->size);
+
 }
 
-void	sort_base_case(t_stack *stack, int size, int ab)
+void	sort_base_case(t_stack **stack, int size)
 {
-	if (!stack || size || ab)
-		return ;
-	return ;
+	if (size == 2)
+		do_cmd(stack, SA);
+	else if (size == 3)
+		sort_3(stack);
+	else if (size == 4)
+		sort_4(stack);
+	else if (size == 5)
+		sort_5(stack);
 }
 
 int	a_size(t_stack *stack)

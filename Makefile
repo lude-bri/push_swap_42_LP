@@ -48,7 +48,9 @@ FILES	+= push_operations.c
 FILES	+= swap_operations.c
 FILES	+= rotate_operations.c
 FILES	+= reverse_rotate_operations.c
+FILES	+= commands.c
 FILES	+= push_swap.c
+FILES	+= push_swap2.c
 
 ## TXT_NAMES = file1.txt og_out.txt push_swap_out.txt out_ok.txt out_ko.txt
 

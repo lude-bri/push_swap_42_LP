@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 08:56:09 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/02 13:06:01 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/02 14:08:46 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,17 @@ void		swap_nodes(t_stack **stack, int i, int j);
 
 //push_swap
 int			is_sorted(t_stack *stack_a, t_stack *stack_b);
-void		sort_ab(t_stack *stack_a, t_stack *stack_b);
+void		sort_ab(t_stack **stack_a, t_stack **stack_b);
+void		sort_base_case(t_stack **stack, int size);
 int			a_size(t_stack *stack);
 int			b_size(t_stack *stack);
+
+//push_swap2
+void		sort_3(t_stack **stack);
+void		sort_4(t_stack **stack);
+void		sort_5(t_stack **stack);
+t_stack		*find_big(t_stack *stack);
+
 
 //stack_access
 int			a_top(t_stack *stack);

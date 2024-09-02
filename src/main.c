@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 09:28:58 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/02 12:36:29 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/02 13:49:43 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	main(int ac, char **av)
 		exit(1);
 	}
 	if (!is_sorted(stack_a, stack_b))
-		sort_ab(stack_a, stack_b);
+		sort_ab(&stack_a, &stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);
 }
