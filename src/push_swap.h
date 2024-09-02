@@ -82,14 +82,14 @@ void		swap_nodes(t_stack **stack, int i, int j);
 //push_swap
 int			is_sorted(t_stack *stack_a, t_stack *stack_b);
 void		sort_ab(t_stack **stack_a, t_stack **stack_b);
-void		sort_base_case(t_stack **stack, int size);
+void		sort_base_case(t_stack **stack_a, t_stack **stack_b, int size);
 int			a_size(t_stack *stack);
 int			b_size(t_stack *stack);
 
 //push_swap2
-void		sort_3(t_stack **stack);
-void		sort_4(t_stack **stack);
-void		sort_5(t_stack **stack);
+void		sort_3(t_stack **stack_a);
+void		sort_4(t_stack **stack_a, t_stack **stack_b);
+void		sort_5(t_stack **stack_a, t_stack **stack_b);
 t_stack		*find_big(t_stack *stack);
 t_stack		*find_num(t_stack *stack, int num);
 

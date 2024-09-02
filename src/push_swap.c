@@ -42,20 +42,20 @@ void	sort_ab(t_stack **stack_a, t_stack **stack_b)
 	//
 	(void)(*stack_b);
 	if ((*stack_a)->size <= 5)
-		sort_base_case(stack_a, (*stack_a)->size);
+		sort_base_case(stack_a, stack_b, (*stack_a)->size);
 
 }
 
-void	sort_base_case(t_stack **stack, int size)
+void	sort_base_case(t_stack **stack_a, t_stack **stack_b, int size)
 {
 	if (size == 2)
-		do_cmd(stack, SA);
+		do_cmd(stack_a, SA);
 	else if (size == 3)
-		sort_3(stack);
+		sort_3(stack_a);
 	else if (size == 4)
-		sort_4(stack);
+		sort_4(stack_a, stack_b);
 	else if (size == 5)
-		sort_5(stack);
+		sort_5(stack_a, stack_b);
 }
 
 int	a_size(t_stack *stack)

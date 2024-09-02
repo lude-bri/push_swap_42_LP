@@ -25,40 +25,33 @@ void	sort_3(t_stack **stack)
 		do_cmd(stack, SA);
 }
 
-void	sort_4(t_stack **stack)
+void	sort_4(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack		*stack_b;
-
-	stack_b = NULL;
-	while ((*stack)->num != 0 && (*stack)->size == 4)
+	while ((*stack_a)->num != 0 && (*stack_a)->size == 4)
 	{
-		if ((*stack)->num == 0)
-			do_push_cmd(stack, &stack_b, PB);
+		if ((*stack_a)->num == 0)
+			do_push_cmd(stack_a, stack_b, PB);
 		else
-			do_cmd(stack, RA);
+			do_cmd(stack_a, RA);
 	}
-	sort_3(stack);
-	do_push_cmd(stack, &stack_b, PA);
-	free_stack(stack_b);
+	sort_3(stack_a);
+	do_push_cmd(stack_a, stack_b, PA);
 }
 
-void	sort_5(t_stack **stack)
+void	sort_5(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack		*small;
-	t_stack		*stack_b;
 
-	stack_b = NULL;
-	small = find_num(*stack, 0);
-	while ((*stack)->num != 0 && (*stack)->size == 5)
+	small = find_num(*stack_a, 0);
+	while ((*stack_a)->num != 0 && (*stack_a)->size == 5)
 	{
 		if (small->num == 0)
-			do_push_cmd(stack, &stack_b, PB);
+			do_push_cmd(stack_a, stack_b, PB);
 		else
-			do_cmd(stack, RA);
+			do_cmd(stack_a, RA);
 	}
-	sort_4(stack);
-	do_push_cmd(stack, &stack_b, PA);
-	free_stack(stack_b);
+	sort_4(stack_a, stack_b);
+	do_push_cmd(stack_a, stack_b, PA);
 }
 
 t_stack	*find_big(t_stack *stack)
