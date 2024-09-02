@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 10:24:31 by luigi             #+#    #+#             */
-/*   Updated: 2024/08/08 12:09:40 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/02 11:50:38 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,8 @@ t_stack	*find_lastnode(t_stack *lst)
 	if (!lst)
 		return (0);
 	while (lst->next)
+	{
 		lst = lst->next;
+	}
 	return (lst);
 }

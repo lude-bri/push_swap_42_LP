@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    manual_for_vm.txt                                  :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/09/02 10:55:09 by luigi             #+#    #+#              #
+#    Updated: 2024/09/02 10:58:50 by luigi            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 
 
 MANUAL TO USE VM on MAC
@@ -87,4 +99,5 @@ CONNECT GITHUB
 	4. copy and add to github key
 	5. ssh -vvv -T git@github
 	6. git clone <repo>
+
 

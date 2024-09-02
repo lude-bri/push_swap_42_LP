@@ -83,11 +83,23 @@ define binary_search
 	disp target
 end
 
+define ra
+	disp **stack
+	disp *current
+	disp *last_node
+end
+
+define rra
+	disp *last_node
+	disp *new_last_node
+	disp **stack
+end
+
 #  Start
 fs cmd
 break main
-run "0 1 2 3 4 5"
-# run 65 45 71 6 30 51 12 50 74 92 88 5
+# run "0 1 2 3 4 5"
+run 65 45 71 6 30 51 12 50 74 92 88 5
 main
 
 
