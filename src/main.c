@@ -37,7 +37,7 @@ int	main(int ac, char **av)
 	}
 	if (!stack_a)
 	{
-		ft_putstr_fd("Error creating stack\n", 0);
+		ft_putstr_fd("Error\n", 0);
 		exit(1);
 	}
 	if (!is_sorted(stack_a, stack_b))
