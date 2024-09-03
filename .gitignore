@@ -1,0 +1,8 @@
+images/
+lib/
+push_swap_visualizer/
+.temp/
+.build/
+images/
+gdb.txt
+

@@ -100,19 +100,3 @@ t_stack	*find_big(t_stack *stack)
 	return (high_node);
 }
 
-t_stack *find_num(t_stack *stack, int num)
-{
-	int			size;
-	t_stack		*small_node;
-
-	size = stack->size;
-	small_node = stack;
-	while (size)
-	{
-		if (small_node->num == num)
-			return (small_node);
-		small_node = small_node->next;
-		size--;
-	}
-	return (NULL);
-}
