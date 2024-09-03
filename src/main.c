@@ -12,6 +12,16 @@
 
 #include "push_swap.h"
 
+void print_list(t_stack **list)
+{
+	t_stack *head = (*list);
+	
+	do{
+		printf("%d\n", head->num);
+		head = head->next;
+	} while ((*list) != head);
+}
+
 int	main(int ac, char **av)
 {
 	char		**numbers;
@@ -42,7 +52,9 @@ int	main(int ac, char **av)
 	}
 	if (!is_sorted(stack_a, stack_b))
 		sort_ab(&stack_a, &stack_b);
+	//
+	print_list(&stack_a);
+	//
 	free_stack(stack_a);
 	free_stack(stack_b);
 }
-

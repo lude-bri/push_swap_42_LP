@@ -54,7 +54,6 @@ void	sort_5(t_stack **stack_a, t_stack **stack_b)
 	int		size;
 
 	size = (*stack_a)->size;
-	
 	while (size > 0)
 	{
 		if (!is_sorted(*stack_a, *stack_b))	
@@ -66,7 +65,9 @@ void	sort_5(t_stack **stack_a, t_stack **stack_b)
 			else
 				do_cmd(stack_a, RA);
 		}
-		if ((*stack_b)->num == 0 && (*stack_b)->next->num == 1)
+		if ((*stack_b)->num == 1 && (*stack_b)->next->num == 0)
+			do_cmd(stack_b, RB);
+		else if ((*stack_b)->num == 1 && (*stack_b)->next->num == 0)
 			break ;
 		size--;
 	}

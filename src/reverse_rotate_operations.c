@@ -15,33 +15,13 @@
 //rra (reverse rotate a) - Shift down all elements of stack a by 1. The last element becomes the first one.
 void rra(t_stack **stack)
 {
-    t_stack		*last_node;
-    t_stack		*new_last_node;
-
-    last_node = (*stack)->prev;
-	new_last_node = last_node->prev;
-
-	(*stack)->prev = new_last_node;
-	last_node->next = *stack;
-	last_node->prev = new_last_node;
-	*stack = last_node;
-	new_last_node->next = *stack;
+	*stack = (*stack)->prev;
 }
 
 //rrb (reverse rotate b) - Shift down all elements of stack b by 1. The last element becomes the first one.
 void	rrb(t_stack **stack)
 {
-	t_stack		*last_node;
-    t_stack		*new_last_node;
-
-    last_node = (*stack)->prev;
-	new_last_node = last_node->prev;
-
-	(*stack)->prev = new_last_node;
-	last_node->next = *stack;
-	last_node->prev = new_last_node;
-    *stack = last_node;
-	new_last_node->next = *stack;
+	*stack = (*stack)->prev;
 }
 
 //rrr (reverse rotate a and reverse rotate b) - Do rra and rrb

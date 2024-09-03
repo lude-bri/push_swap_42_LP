@@ -15,27 +15,13 @@
 //ra (rotate a) - Shift up all elements of stack a by 1. The first elements becomes the last one.
 void	ra(t_stack **stack)
 {
-	t_stack	*last_node;
-	t_stack *current;
-
-	current = *stack;
-	last_node = (*stack)->prev;
 	*stack = (*stack)->next;
-	last_node = current;
-	last_node->next = *stack;
 }
 
 //rb (rotate b) - Shift up all elements of stack b by 1. The first element becomes the last one.
 void	rb(t_stack **stack)
 {
-	t_stack	*last_node;
-	t_stack *current;
-
-	current = *stack;
-	last_node = (*stack)->prev;
 	*stack = (*stack)->next;
-	last_node = current;
-	last_node->next = *stack;
 }
 
 //rr (rotate a and rotate b) - Do ra and rb
