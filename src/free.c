@@ -24,5 +24,18 @@ void	free_str(char **str)
 
 void	free_stack(t_stack *stack)
 {
-	free(stack);
+	t_stack		*current;
+	t_stack		*next;
+
+	current = stack;
+	if (stack)
+	{
+		while ((current->next != stack) && (current->next != NULL))
+		{
+			next = current->next;
+			free(current);
+			current = next;
+		}
+		free(current);
+	}
 }
