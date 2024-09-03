@@ -56,5 +56,7 @@ int	a_size(t_stack *stack)
 
 int	b_size(t_stack *stack)
 {
+	if (!stack)
+		return (0);
 	return (stack->b_bottom - stack->pivot + 1);
 }

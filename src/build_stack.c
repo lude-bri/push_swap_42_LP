@@ -53,7 +53,7 @@ t_stack	*create_stack(char **str, int flag)
 			put_node(&stack, number);
 		}
 		else
-			put_node(&stack, 0);
+			put_node(&stack, -1);
 		--i;
 	}
 	init_stack(stack, count);

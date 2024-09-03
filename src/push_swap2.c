@@ -36,13 +36,16 @@ void	sort_4(t_stack **stack_a, t_stack **stack_b)
 	
 	while (size > 0)
 	{
-		if ((*stack_a)->num == 0)
-		{
-			do_push_cmd(stack_a, stack_b, PB);
-			break ;
+		if (!is_sorted(*stack_a, *stack_b))
+		{	
+			if ((*stack_a)->num == 0)
+			{
+				do_push_cmd(stack_a, stack_b, PB);
+				break ;
+			}
+			else
+				do_cmd(stack_a, RA);
 		}
-		else
-			do_cmd(stack_a, RA);
 		size--;
 	}
 	sort_3(stack_a);
@@ -65,13 +68,13 @@ void	sort_5(t_stack **stack_a, t_stack **stack_b)
 			else
 				do_cmd(stack_a, RA);
 		}
-		if ((*stack_b)->num == 1 && (*stack_b)->next->num == 0)
-			do_cmd(stack_b, RB);
-		else if ((*stack_b)->num == 1 && (*stack_b)->next->num == 0)
+		if ((*stack_b)->num == 0 && (*stack_b)->next->num == 1)
 			break ;
 		size--;
 	}
 	sort_3(stack_a);
+	if ((*stack_b)->num < (*stack_b)->next->num)
+		do_cmd(stack_b, RB);
 	do_push_cmd(stack_a, stack_b, PA);
 	do_push_cmd(stack_a, stack_b, PA);
 }

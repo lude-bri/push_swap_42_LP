@@ -14,75 +14,69 @@
 
 //pa (push a) - Take the first element at the top of b and put it at the top of a. Do nothing if b is empty.
 void	pa(t_stack **stack_a, t_stack **stack_b)
-{	
-	t_stack *curr;
-	t_stack *head_b;
+{
+	t_stack		*current;
 
-	if (!(*stack_a))
+	if (!(*stack_b))
+		return ;
+	current = *stack_b;
+	//if there is only one element, now its empty
+	if ((*stack_b)->next == *stack_b)
+		*stack_b = NULL;
+	else
 	{
-		(*stack_a) = *stack_b;
 		(*stack_b)->prev->next = (*stack_b)->next;
 		(*stack_b)->next->prev = (*stack_b)->prev;
-		(*stack_a)->next = NULL;
-		(*stack_a)->prev = NULL;
+		*stack_b = (*stack_b)->next; //new head
+	}
+	if (!(*stack_a))
+	{
+		current->next = current;
+		current->prev = current;
+		*stack_a = current;
 	}
 	else
 	{
-		curr = (*stack_a);
-		head_b = (*stack_b)->next;
-		(*stack_a) = (*stack_b);
-		(*stack_b)->prev->next = (*stack_b)->next;
-		(*stack_b)->next->prev = (*stack_b)->prev;
-		(*stack_b) = head_b; // stack_b feito
-		
-		(*stack_a)->next = curr;
-		(*stack_a)->prev = curr->prev;
-		curr->prev = (*stack_a);
-		curr->prev->next = (*stack_a);
-		(*stack_a) = curr;
+		current->prev = (*stack_a)->prev;
+		current->next = *stack_a;
+		(*stack_a)->prev->next = current;
+		(*stack_a)->prev = current;
+		*stack_a = current;
 	}
 }
 
 //pb (push b) - Take the first element at the top of a and put it at the top of b. Do nothing if a is empty.
 void	pb(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *curr;
-	t_stack *head_a;
+	t_stack		*current;
 
-	if (!(*stack_b))
+	if (!(*stack_a))
+		return ;
+	current = *stack_a;
+	//if there is only one element, now it's empty
+	if ((*stack_a)->next == *stack_a)
+		*stack_a = NULL;
+	else
 	{
-		(*stack_b) = *stack_a;
 		(*stack_a)->prev->next = (*stack_a)->next;
 		(*stack_a)->next->prev = (*stack_a)->prev;
-		(*stack_b)->next = NULL;
-		(*stack_b)->prev = NULL;
+		*stack_a = (*stack_a)->next; //new head
+	}
+	//if stack_b is empty
+	if (!(*stack_b))
+	{
+		current->next = current;
+		current->prev = current;
+		*stack_b = current;
 	}
 	else
 	{
-		curr = (*stack_b);
-		head_a = (*stack_a)->next;
-		(*stack_b) = (*stack_a);
-		(*stack_a)->prev->next = (*stack_a)->next;
-		(*stack_a)->next->prev = (*stack_a)->prev;
-		(*stack_a) = head_a; // stack_a feito
-		
-		(*stack_b)->next = curr;
-		(*stack_b)->prev = curr->prev;
-		curr->prev = (*stack_b);
-		curr->prev->next = (*stack_b);
-		(*stack_b) = curr;
+		current->prev = (*stack_b)->prev;
+		current->next = *stack_b;
+		(*stack_b)->prev->next = current;
+		(*stack_b)->prev = current;
+		*stack_b = current; //new element of stack_b
 	}
+
 }
-
-
-	// t_stack		*current;
-	//
-	// if (a_size(*stack_a) != 0)
-	// {
-	// 	current = *stack_a;
-	// 	*stack_a = (*stack_a)->next;
-	// 	current->next = *stack_b;
-	// 	*stack_b = current;
-	// }
-
 
