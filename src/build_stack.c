@@ -30,17 +30,29 @@ void	init_stack(t_stack *stack, int size, int flag)
 			current->size = size;
 			current = current->next;
 		}
+		last_node = find_lastnode(stack);
+		last_node->next = stack;
+		stack->prev = last_node;
 	}
 	else
+		init_stack_b(stack, size);
+}
+
+void	init_stack_b(t_stack *stack, int size)
+{
+	t_stack		*last_node;
+	t_stack		*current;
+	int			i;
+
+	i = -1;
+	current = stack;
+	while (++i < size)
 	{
-		while (++i < size)
-		{
-			current->a_bottom = 0;
-			current->b_bottom = size - 1;
-			current->pivot = size;
-			current->size = 0;
-			current = current->next;
-		}
+		current->a_bottom = 0;
+		current->b_bottom = size - 1;
+		current->pivot = size;
+		current->size = 0;
+		current = current->next;
 	}
 	last_node = find_lastnode(stack);
 	last_node->next = stack;
@@ -50,7 +62,6 @@ void	init_stack(t_stack *stack, int size, int flag)
 t_stack	*create_stack(char **str, int flag)
 {
 	t_stack		*stack;
-	int			number;
 	int			count;
 	int			i;
 
@@ -62,10 +73,7 @@ t_stack	*create_stack(char **str, int flag)
 	while (i > 0)
 	{
 		if (flag == STACK_A)
-		{
-			number = ft_atoi(str[count - i]);
-			put_node(&stack, number);
-		}
+			put_node(&stack, ft_atoi(str[count - i]));
 		else
 			put_node(&stack, -1);
 		--i;
@@ -92,6 +100,7 @@ void	put_node(t_stack **stack, int data)
 		node->prev = NULL;
 	}
 	else
+
 	{
 		last_node = find_lastnode(*stack);
 		last_node->next = node;
@@ -108,3 +117,5 @@ t_stack	*find_lastnode(t_stack *lst)
 		lst = lst->next;
 	return (lst);
 }
+
+
