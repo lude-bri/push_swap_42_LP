@@ -22,7 +22,7 @@ void	init_stack(t_stack *stack, int size, t_stack_root *stack_root, int flag)
 	current = stack;
 	if (flag == STACK_A)
 	{
-		stack_root->size = size;
+		stack_root->size_a = size;
 		while (++i < size)
 		{
 			current->a_bottom = 0;
@@ -47,7 +47,7 @@ void	init_stack_b(t_stack *stack, int size, t_stack_root *stack_root)
 
 	i = -1;
 	current = stack;
-	stack_root->size = size;
+	stack_root->size_b = 0;
 	while (++i < size)
 	{
 		current->a_bottom = 0;
@@ -61,10 +61,9 @@ void	init_stack_b(t_stack *stack, int size, t_stack_root *stack_root)
 	stack->prev = last_node;
 }
 
-t_stack	*create_stack(char **str, int flag)
+t_stack	*create_stack(char **str, t_stack_root *stack_root, int flag)
 {
 	t_stack			*stack;
-	t_stack_root	*stack_root;
 	int				count;
 	int				i;
 
