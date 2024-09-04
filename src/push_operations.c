@@ -29,20 +29,11 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
 		(*stack_b)->next->prev = (*stack_b)->prev;
 		*stack_b = (*stack_b)->next; //new head
 	}
-	if (!(*stack_a))
-	{
-		current->next = current;
-		current->prev = current;
-		*stack_a = current;
-	}
-	else
-	{
-		current->prev = (*stack_a)->prev;
-		current->next = *stack_a;
-		(*stack_a)->prev->next = current;
-		(*stack_a)->prev = current;
-		*stack_a = current;
-	}
+	current->prev = (*stack_a)->prev;
+	current->next = *stack_a;
+	(*stack_a)->prev->next = current;
+	(*stack_a)->prev = current;
+	*stack_a = current;
 }
 
 //pb (push b) - Take the first element at the top of a and put it at the top of b. Do nothing if a is empty.

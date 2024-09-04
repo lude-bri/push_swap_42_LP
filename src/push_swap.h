@@ -106,6 +106,7 @@ void	print_cmd(int cmd);
 //push_operations
 void	pa(t_stack **stack_a, t_stack **stack_b);
 void	pb(t_stack **stack_a, t_stack **stack_b);
+void	if_empty(t_stack **stack);
 
 //rotate_operations
 void	ra(t_stack **stack);

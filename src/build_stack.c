@@ -91,8 +91,6 @@ t_stack	*find_lastnode(t_stack *lst)
 	if (!lst)
 		return (0);
 	while (lst->next)
-	{
 		lst = lst->next;
-	}
 	return (lst);
 }
