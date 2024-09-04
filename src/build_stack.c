@@ -16,12 +16,10 @@ void	init_stack(t_stack *stack, int size, int flag)
 {
 	t_stack			*last_node;
 	t_stack			*current;
-	t_stack_root	*stack_root = NULL;
 	int				i;
 
 	i = -1;
 	current = stack;
-	stack_root->size = size;
 	if (flag == STACK_A)
 	{
 		while (++i < size)
@@ -44,12 +42,10 @@ void	init_stack_b(t_stack *stack, int size)
 {
 	t_stack			*last_node;
 	t_stack			*current;
-	t_stack_root	*stack_root = NULL;
 	int				i;
 
 	i = -1;
 	current = stack;
-	stack_root->size = size;
 	while (++i < size)
 	{
 		current->a_bottom = 0;
