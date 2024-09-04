@@ -12,6 +12,18 @@
 
 #include "push_swap.h"
 
+t_stack_root	*init_root(t_stack *stack_a)
+{
+	t_stack_root	*root;
+
+	root = malloc(sizeof(t_stack_root));
+	if (!root)
+		return (NULL);
+	root->size_a = stack_a->prev->num + 1;
+	root->size_b = 0;
+	return (root);
+}
+
 int	main(int ac, char **av)
 {
 	char			**numbers;
@@ -26,17 +38,17 @@ int	main(int ac, char **av)
 		numbers = ft_split(av[1], ' ');
 		if (!*numbers)
 			exit(0);
-		stack_root = NULL;
-		stack_a = create_stack(numbers, stack_root, STACK_A);
-		stack_b = create_stack(numbers, stack_root, STACK_B);
+		stack_a = create_stack(numbers, STACK_A);
+		stack_b = create_stack(numbers, STACK_B);
+		stack_root = init_root(stack_a);
 		free_str(numbers);
-	}
+}
 	else
 	{
 		numbers = av + 1;
-		stack_root = NULL;
-		stack_a = create_stack(numbers, stack_root, STACK_A);
-		stack_b = create_stack(numbers, stack_root, STACK_B);
+		stack_a = create_stack(numbers, STACK_A);
+		stack_b = create_stack(numbers, STACK_B);
+		stack_root = init_root(stack_a);
 	}
 	if (!stack_a)
 	{
