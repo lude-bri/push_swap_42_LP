@@ -70,13 +70,24 @@ void	update_stack_size(t_stack **stack_a, t_stack **stack_b, int flag)
 {
 	if (flag == PA)
 	{
-		(*stack_a)->size += 1;
-		(*stack_b)->size -= 1;
+		while ((*stack_a)->next != (*stack_a))
+		{
+			(*stack_a)->size += 1;
+			(*stack_b)->size -= 1;
+			(*stack_a) = (*stack_a)->next;
+			(*stack_b) = (*stack_b)->next;
+		}
+
 	}
 	else if (flag == PB)
 	{
-		(*stack_a)->size -= 1;
-		(*stack_b)->size += 1;
+		while ((*stack_a)->next != (*stack_a))
+		{
+			(*stack_a)->size += 1;
+			(*stack_b)->size -= 1;
+			(*stack_a) = (*stack_a)->next;
+			(*stack_b) = (*stack_b)->next;
+		}
 	}
 }
 
