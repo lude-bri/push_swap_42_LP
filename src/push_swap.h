@@ -53,7 +53,7 @@ typedef struct s_stack
 
 
 //build_stack
-void		init_stack(t_stack *stack, int size);
+void		init_stack(t_stack *stack, int size, int flag);
 t_stack		*create_stack(char **str, int flag);
 void		put_node(t_stack **stack, int data);
 t_stack		*find_lastnode(t_stack *lst);
@@ -99,28 +99,28 @@ int			a_bottom(t_stack *stack);
 int			b_bottom(t_stack *stack);
 
 // commands
-void	do_push_cmd(t_stack **stack_a, t_stack **stack_b, int cmd);
-void	do_cmd(t_stack **stack, int cmd);
-void	print_cmd(int cmd);
+void		do_push_cmd(t_stack **stack_a, t_stack **stack_b, int cmd);
+void		do_cmd(t_stack **stack, int cmd);
+void		print_cmd(int cmd);
 
 //push_operations
-void	pa(t_stack **stack_a, t_stack **stack_b);
-void	pb(t_stack **stack_a, t_stack **stack_b);
-void	if_empty(t_stack **stack);
+void		pa(t_stack **stack_a, t_stack **stack_b);
+void		pb(t_stack **stack_a, t_stack **stack_b);
+void		if_empty(t_stack **stack);
 
 //rotate_operations
-void	ra(t_stack **stack);
-void	rb(t_stack **stack);
-void	rr(t_stack **stack);
+void		ra(t_stack **stack);
+void		rb(t_stack **stack);
+void		rr(t_stack **stack);
 
 //reverse_rotate_operations
-void	rra(t_stack **stack);
-void	rrb(t_stack **stack);
-void	rrr(t_stack **stack);
+void		rra(t_stack **stack);
+void		rrb(t_stack **stack);
+void		rrr(t_stack **stack);
 
 //swap_operations
-void	sa(t_stack **stack);
-void	sb(t_stack **stack);
-void	ss(t_stack **stack);
+void		sa(t_stack **stack);
+void		sb(t_stack **stack);
+void		ss(t_stack **stack);
 
 #endif
