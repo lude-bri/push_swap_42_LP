@@ -107,6 +107,7 @@ void		print_cmd(int cmd);
 void		pa(t_stack **stack_a, t_stack **stack_b);
 void		pb(t_stack **stack_a, t_stack **stack_b);
 void		if_empty(t_stack **stack);
+void		update_stack_size(t_stack **stack_a, t_stack **stack_b, int flag);
 
 //rotate_operations
 void		ra(t_stack **stack);
