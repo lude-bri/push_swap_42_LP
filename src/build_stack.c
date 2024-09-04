@@ -58,7 +58,7 @@ t_stack	*create_stack(char **str, int flag)
 			put_node(&stack, -1);
 		--i;
 	}
-	init_stack(stack, count, STACK_A);
+	init_stack(stack, count, STACK_B);
 	if (!to_rank(stack, stack->size) && flag == STACK_A)
 		return (free_stack(stack), NULL);
 	return (stack);
