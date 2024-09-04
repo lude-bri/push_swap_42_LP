@@ -74,7 +74,6 @@ void	init_stack(t_stack *stack, int size)
 		current->a_bottom = 0;
 		current->b_bottom = size - 1;
 		current->pivot = size;
-		current->size = size;
 		current = current->next;
 	}
 	last_node = find_lastnode(stack);

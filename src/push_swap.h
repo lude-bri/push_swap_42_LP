@@ -47,7 +47,6 @@
 typedef struct s_stack
 {
 	int				num;
-	int				size;
 	int				a_bottom;
 	int				b_bottom;
 	int				pivot;
@@ -117,7 +116,7 @@ int			b_bottom(t_stack *stack);
 
 // commands
 void		do_push_cmd(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int cmd);
-void		do_cmd(t_stack **stack, int cmd);
+void		do_cmd(t_stack **stack, t_stack_root **stack_root, int cmd);
 void		print_cmd(int cmd);
 
 //push_operations
@@ -136,8 +135,8 @@ void		rrb(t_stack **stack);
 void		rrr(t_stack **stack);
 
 //swap_operations
-void		sa(t_stack **stack);
-void		sb(t_stack **stack);
-void		ss(t_stack **stack);
+void		sa(t_stack **stack, t_stack_root **stack_root);
+void		sb(t_stack **stack, t_stack_root **stack_root);
+void		ss(t_stack **stack, t_stack_root **stack_root);
 
 #endif

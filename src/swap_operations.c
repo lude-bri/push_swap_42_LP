@@ -13,11 +13,11 @@
 #include "push_swap.h"
 
 //sa (swap a) - Swap the 2 first elements at the top of stack a. Do nothing if there is only one or no elements.
-void	sa(t_stack **stack)
+void	sa(t_stack **stack, t_stack_root **stack_root)
 {
 	int		tmp;
 
-	if ((*stack)->size > 1)
+	if ((*stack_root)->size_a > 1)
 	{
 		tmp = (*stack)->num;
 		(*stack)->num = (*stack)->next->num;
@@ -26,11 +26,11 @@ void	sa(t_stack **stack)
 }
 
 //sb (swap b) - Swap the 2 first elements at the top of stack b. Do nothing if there is only one or no elements.
-void	sb(t_stack **stack)
+void	sb(t_stack **stack, t_stack_root **stack_root)
 {
 	int		tmp;
 
-	if ((*stack)->size > 1)
+	if ((*stack_root)->size_b > 1)
 	{
 		tmp = (*stack)->num;
 		(*stack)->num = (*stack)->next->num;
@@ -39,8 +39,8 @@ void	sb(t_stack **stack)
 }
 
 //ss (swap a and swap b) - do sa and sb at the same time
-void	ss(t_stack **stack)
+void	ss(t_stack **stack, t_stack_root **stack_root)
 {
-	sa(stack);
-	sb(stack);
+	sa(stack, stack_root);
+	sb(stack, stack_root);
 }

@@ -22,7 +22,7 @@ int	is_sorted(t_stack *stack_a, t_stack *stack_b, t_stack_root *stack_root)
 	(void)(*stack_b);
 	if (stack_root->size_b != 0)
 		return (0);
-	while (++i < current->size - 1)
+	while (++i < stack_root->size_a - 1)
 	{
 		if (current->num > current->next->num)
 			return (0);
@@ -45,7 +45,7 @@ void	sort_base_case(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_r
 	size = (*stack_root)->size_a;
 
 	if (size == 2)
-		do_cmd(stack_a, SA);
+		do_cmd(stack_a, stack_root, SA);
 	else if (size == 3)
 		sort_3(stack_a, stack_root);
 	else if (size == 4)

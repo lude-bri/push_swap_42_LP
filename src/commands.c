@@ -21,7 +21,7 @@ void	do_push_cmd(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root
 	print_cmd(cmd);
 }
 
-void	do_cmd(t_stack **stack, int cmd)
+void	do_cmd(t_stack **stack, t_stack_root **stack_root, int cmd)
 {
 	if (cmd == RA)
 		ra(stack);
@@ -36,11 +36,11 @@ void	do_cmd(t_stack **stack, int cmd)
 	else if (cmd == RRR)
 		rrr(stack);
 	else if (cmd == SA)
-		sa(stack);
+		sa(stack, stack_root);
 	else if (cmd == SB)
-		sb(stack);
+		sb(stack, stack_root);
 	else if (cmd == SS)
-		ss(stack);
+		ss(stack, stack_root);
 	print_cmd(cmd);
 }
 
