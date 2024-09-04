@@ -68,25 +68,29 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 
 void	update_stack_size(t_stack **stack_a, t_stack **stack_b, int flag)
 {
+	t_stack		*current_a;
+	t_stack		*current_b;
+
+	current_a = *stack_a;
+	current_b = *stack_b;
 	if (flag == PA)
 	{
-		while ((*stack_a)->prev != (*stack_a))
+		while (current_a->next != *stack_a)
 		{
-			(*stack_a)->size += 1;
-			(*stack_b)->size -= 1;
-			(*stack_a) = (*stack_a)->next;
-			(*stack_b) = (*stack_b)->next;
+			current_a->size = current_a->size + 1;
+			current_b->size = current_b->size - 1;
+			current_a = current_a->next;
+			current_b = current_b->next;
 		}
-
 	}
-	else if (flag == PB)
+	else
 	{
-		while ((*stack_a)->prev != (*stack_a))
+		while (current_a->next != *stack_a)
 		{
-			(*stack_a)->size += 1;
-			(*stack_b)->size -= 1;
-			(*stack_a) = (*stack_a)->next;
-			(*stack_b) = (*stack_b)->next;
+			current_a->size = current_a->size - 1;
+			current_b->size = current_b->size + 1;
+			current_a = current_a->next;
+			current_b = current_b->next;
 		}
 	}
 }
