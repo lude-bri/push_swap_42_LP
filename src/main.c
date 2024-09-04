@@ -15,11 +15,22 @@
 t_stack_root	*init_root(t_stack *stack_a)
 {
 	t_stack_root	*root;
+	t_stack			*current;
+	t_stack			*next;
+	int				size;
 
 	root = malloc(sizeof(t_stack_root));
 	if (!root)
 		return (NULL);
-	root->size_a = stack_a->prev->num + 1;
+	current = stack_a;
+	size = 0;
+	while ((current->next != stack_a) && (current->next != NULL))
+	{
+		next = current->next;
+		size++;
+		current = next;
+	}
+	root->size_a = size + 1;
 	root->size_b = 0;
 	return (root);
 }
