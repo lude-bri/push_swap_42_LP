@@ -44,7 +44,6 @@
 //      STRUCTURES		///
 ///////////////////////////
 
-
 typedef struct s_stack
 {
 	int				num;
@@ -59,8 +58,7 @@ typedef struct s_stack
 typedef struct s_root
 {
 	int	size;
-} t_stack_root;
-
+}	t_stack_root;
 
 
 ////////////////////////////

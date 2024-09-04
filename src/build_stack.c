@@ -14,12 +14,14 @@
 
 void	init_stack(t_stack *stack, int size, int flag)
 {
-	t_stack		*last_node;
-	t_stack		*current;
-	int			i;
+	t_stack			*last_node;
+	t_stack			*current;
+	t_stack_root	*stack_root = NULL;
+	int				i;
 
 	i = -1;
 	current = stack;
+	stack_root->size = size;
 	if (flag == STACK_A)
 	{
 		while (++i < size)
@@ -40,12 +42,14 @@ void	init_stack(t_stack *stack, int size, int flag)
 
 void	init_stack_b(t_stack *stack, int size)
 {
-	t_stack		*last_node;
-	t_stack		*current;
-	int			i;
+	t_stack			*last_node;
+	t_stack			*current;
+	t_stack_root	*stack_root = NULL;
+	int				i;
 
 	i = -1;
 	current = stack;
+	stack_root->size = size;
 	while (++i < size)
 	{
 		current->a_bottom = 0;
@@ -61,9 +65,9 @@ void	init_stack_b(t_stack *stack, int size)
 
 t_stack	*create_stack(char **str, int flag)
 {
-	t_stack		*stack;
-	int			count;
-	int			i;
+	t_stack			*stack;
+	int				count;
+	int				i;
 
 	count = number_sanity_check(str);
 	if (count == 0)
