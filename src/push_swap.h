@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//create double linked list
+////////////////////////////
+///      MACROS         ///
+//////////////////////////
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -38,6 +40,11 @@
 # define SS 10
 
 
+////////////////////////////
+//      STRUCTURES		///
+///////////////////////////
+
+
 typedef struct s_stack
 {
 	int				num;
@@ -49,7 +56,16 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }	t_stack;
 
-//FILES FUNCTIONS
+typedef struct s_root
+{
+	int	size;
+} t_stack_root;
+
+
+
+////////////////////////////
+//   FILES FUNCTIONS	 //
+///////////////////////////
 
 
 //build_stack
