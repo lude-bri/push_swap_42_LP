@@ -16,12 +16,14 @@
 void	ra(t_stack **stack)
 {
 	*stack = (*stack)->next;
+	ft_printf("ra\n");
 }
 
 //rb (rotate b) - Shift up all elements of stack b by 1. The first element becomes the last one.
 void	rb(t_stack **stack)
 {
 	*stack = (*stack)->next;
+	ft_printf("rb\n");
 }
 
 //rr (rotate a and rotate b) - Do ra and rb
@@ -29,6 +31,7 @@ void	rr(t_stack **stack)
 {
 	ra(stack);
 	rb(stack);
+	ft_printf("rr\n");
 }
 
 

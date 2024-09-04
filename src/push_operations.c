@@ -36,6 +36,7 @@ void	pa(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 	*stack_a = current;
 	(*stack_root)->size_a += 1;
 	(*stack_root)->size_b -= 1;
+	ft_printf("pa\n");
 }
 
 //pb (push b) - Take the first element at the top of a and put it at the top of b. Do nothing if a is empty.
@@ -66,6 +67,7 @@ void	pb(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 	}
 	(*stack_root)->size_a -= 1;
 	(*stack_root)->size_b += 1;
+	ft_printf("pb\n");
 }
 
 void	if_empty(t_stack **stack)

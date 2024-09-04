@@ -23,6 +23,7 @@ void	sa(t_stack **stack, t_stack_root **stack_root)
 		(*stack)->num = (*stack)->next->num;
 		(*stack)->next->num = tmp;
 	}
+	ft_printf("sa\n");
 }
 
 //sb (swap b) - Swap the 2 first elements at the top of stack b. Do nothing if there is only one or no elements.
@@ -36,6 +37,7 @@ void	sb(t_stack **stack, t_stack_root **stack_root)
 		(*stack)->num = (*stack)->next->num;
 		(*stack)->next->num = tmp;
 	}
+	ft_printf("sb\n");
 }
 
 //ss (swap a and swap b) - do sa and sb at the same time
@@ -43,4 +45,5 @@ void	ss(t_stack **stack, t_stack_root **stack_root)
 {
 	sa(stack, stack_root);
 	sb(stack, stack_root);
+	ft_printf("ss\n");
 }

@@ -18,7 +18,6 @@ void	do_push_cmd(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root
 		pa(stack_a, stack_b, stack_root);
 	else if (cmd == PB)
 		pb(stack_a, stack_b, stack_root);
-	print_cmd(cmd);
 }
 
 void	do_cmd(t_stack **stack, t_stack_root **stack_root, int cmd)
@@ -41,31 +40,4 @@ void	do_cmd(t_stack **stack, t_stack_root **stack_root, int cmd)
 		sb(stack, stack_root);
 	else if (cmd == SS)
 		ss(stack, stack_root);
-	print_cmd(cmd);
-}
-
-void	print_cmd(int cmd)
-{
-	if (cmd == PA)
-		ft_printf("pa\n");
-	else if (cmd == PB)
-		ft_printf("pb\n");
-	else if (cmd == RA)
-		ft_printf("ra\n");
-	else if (cmd == RB)
-		ft_printf("rb\n");
-	else if (cmd == RR)
-		ft_printf("rr\n");
-	else if (cmd == RRA)
-		ft_printf("rra\n");
-	else if (cmd == RRB)
-		ft_printf("rrb\n");
-	else if (cmd == RRR)
-		ft_printf("rrr\n");
-	else if (cmd == SA)
-		ft_printf("sa\n");
-	else if (cmd == SB)
-		ft_printf("sb\n");
-	else if (cmd == SS)
-		ft_printf("ss\n");
 }
