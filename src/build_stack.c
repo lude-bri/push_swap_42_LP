@@ -116,5 +116,3 @@ t_stack	*find_lastnode(t_stack *lst)
 		lst = lst->next;
 	return (lst);
 }
-
-
