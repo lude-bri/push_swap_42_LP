@@ -55,8 +55,8 @@ int	main(int ac, char **av)
 		ft_putstr_fd("Error\n", 0);
 		exit(1);
 	}
-	if (!is_sorted(stack_a, stack_b))
-		sort_ab(&stack_a, &stack_b);
+	if (!is_sorted(stack_a, stack_b, stack_root))
+		sort_ab(&stack_a, &stack_b, &stack_root);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	free(stack_root);
