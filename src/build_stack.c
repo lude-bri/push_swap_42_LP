@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	init_stack(t_stack *stack, int size, int flag)
+void	init_stack(t_stack *stack, int size, t_stack_root *stack_root, int flag)
 {
 	t_stack			*last_node;
 	t_stack			*current;
@@ -22,6 +22,7 @@ void	init_stack(t_stack *stack, int size, int flag)
 	current = stack;
 	if (flag == STACK_A)
 	{
+		stack_root->size = size;
 		while (++i < size)
 		{
 			current->a_bottom = 0;
@@ -35,10 +36,10 @@ void	init_stack(t_stack *stack, int size, int flag)
 		stack->prev = last_node;
 	}
 	else
-		init_stack_b(stack, size);
+		init_stack_b(stack, size, stack_root);
 }
 
-void	init_stack_b(t_stack *stack, int size)
+void	init_stack_b(t_stack *stack, int size, t_stack_root *stack_root)
 {
 	t_stack			*last_node;
 	t_stack			*current;
@@ -46,6 +47,7 @@ void	init_stack_b(t_stack *stack, int size)
 
 	i = -1;
 	current = stack;
+	stack_root->size = size;
 	while (++i < size)
 	{
 		current->a_bottom = 0;
@@ -62,6 +64,7 @@ void	init_stack_b(t_stack *stack, int size)
 t_stack	*create_stack(char **str, int flag)
 {
 	t_stack			*stack;
+	t_stack_root	*stack_root;
 	int				count;
 	int				i;
 
@@ -70,6 +73,9 @@ t_stack	*create_stack(char **str, int flag)
 		return (NULL);
 	stack = NULL;
 	i = count;
+	stack_root = malloc(sizeof(t_stack_root));
+	if (!stack_root)
+		return (NULL);
 	while (i > 0)
 	{
 		if (flag == STACK_A)
@@ -78,7 +84,7 @@ t_stack	*create_stack(char **str, int flag)
 			put_node(&stack, -1);
 		--i;
 	}
-	init_stack(stack, count, flag);
+	init_stack(stack, count, stack_root, flag);
 	if (!to_rank(stack, stack->size) && flag == STACK_A)
 		return (free_stack(stack), NULL);
 	return (stack);

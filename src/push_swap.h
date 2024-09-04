@@ -67,8 +67,8 @@ typedef struct s_root
 
 
 //build_stack
-void		init_stack(t_stack *stack, int size, int flag);
-void		init_stack_b(t_stack *stack, int size);
+void		init_stack(t_stack *stack, int size, t_stack_root *stack_root, int flag);
+void		init_stack_b(t_stack *stack, int size, t_stack_root *stack_root);
 t_stack		*create_stack(char **str, int flag);
 void		put_node(t_stack **stack, int data);
 t_stack		*find_lastnode(t_stack *lst);
