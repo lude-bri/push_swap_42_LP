@@ -70,7 +70,7 @@ void	update_stack_size(t_stack **stack_a, t_stack **stack_b, int flag)
 {
 	if (flag == PA)
 	{
-		while ((*stack_a)->next != (*stack_a))
+		while ((*stack_a)->prev != (*stack_a))
 		{
 			(*stack_a)->size += 1;
 			(*stack_b)->size -= 1;
@@ -81,7 +81,7 @@ void	update_stack_size(t_stack **stack_a, t_stack **stack_b, int flag)
 	}
 	else if (flag == PB)
 	{
-		while ((*stack_a)->next != (*stack_a))
+		while ((*stack_a)->prev != (*stack_a))
 		{
 			(*stack_a)->size += 1;
 			(*stack_b)->size -= 1;
