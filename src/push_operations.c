@@ -34,6 +34,7 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
 	(*stack_a)->prev->next = current;
 	(*stack_a)->prev = current;
 	*stack_a = current;
+	update_stack_size(stack_a, stack_b, PA);
 }
 
 //pb (push b) - Take the first element at the top of a and put it at the top of b. Do nothing if a is empty.
@@ -44,7 +45,6 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 	if (!(*stack_a))
 		return ;
 	current = *stack_a;
-	//if there is only one element, now it's empty
 	if ((*stack_a)->next == *stack_a)
 		*stack_a = NULL;
 	else
@@ -53,13 +53,8 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 		(*stack_a)->next->prev = (*stack_a)->prev;
 		*stack_a = (*stack_a)->next; //new head
 	}
-	//if stack_b is empty
 	if (!(*stack_b))
-	{
-		current->next = current;
-		current->prev = current;
-		*stack_b = current;
-	}
+		if_empty(stack_b);
 	else
 	{
 		current->prev = (*stack_b)->prev;
@@ -68,6 +63,30 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 		(*stack_b)->prev = current;
 		*stack_b = current; //new element of stack_b
 	}
-
+	update_stack_size(stack_a, stack_b, PB);
 }
 
+void	update_stack_size(t_stack **stack_a, t_stack **stack_b, int flag)
+{
+	if (flag == PA)
+	{
+		(*stack_a)->size += 1;
+		(*stack_b)->size -= 1;
+	}
+	else if (flag == PB)
+	{
+		(*stack_a)->size -= 1;
+		(*stack_b)->size += 1;
+	}
+}
+
+void	if_empty(t_stack **stack)
+{
+	t_stack	*current;
+
+	current = *stack;
+
+	current->next = current;
+	current->prev = current;
+	*stack = current;
+}
