@@ -22,13 +22,13 @@ void	init_stack(t_stack *stack, int size, int flag)
 	current = stack;
 	while (++i < size)
 	{
-		if (!(flag == STACK_A))
-			current->size = 0;
 		current->a_bottom = 0;
 		current->b_bottom = size - 1;
 		current->pivot = size;
 		current->size = size;
 		current = current->next;
+		if (flag != STACK_A)
+			current->size = 0;
 	}
 	last_node = find_lastnode(stack);
 	last_node->next = stack;
