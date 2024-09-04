@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	init_stack(t_stack *stack, int size)
+void	init_stack(t_stack *stack, int size, int flag)
 {
 	t_stack		*last_node;
 	t_stack		*current;
@@ -20,13 +20,27 @@ void	init_stack(t_stack *stack, int size)
 
 	i = -1;
 	current = stack;
-	while (++i < size)
+	if (flag == STACK_A)
 	{
-		current->a_bottom = 0;
-		current->b_bottom = size - 1;
-		current->pivot = size;
-		current->size = size;
-		current = current->next;
+		while (++i < size)
+		{
+			current->a_bottom = 0;
+			current->b_bottom = size - 1;
+			current->pivot = size;
+			current->size = size;
+			current = current->next;
+		}
+	}
+	else
+	{
+		while (++i < size)
+		{
+			current->a_bottom = 0;
+			current->b_bottom = size - 1;
+			current->pivot = size;
+			current->size = 0;
+			current = current->next;
+		}
 	}
 	last_node = find_lastnode(stack);
 	last_node->next = stack;
@@ -56,7 +70,7 @@ t_stack	*create_stack(char **str, int flag)
 			put_node(&stack, -1);
 		--i;
 	}
-	init_stack(stack, count);
+	init_stack(stack, count, STACK_A);
 	if (!to_rank(stack, stack->size) && flag == STACK_A)
 		return (free_stack(stack), NULL);
 	return (stack);
