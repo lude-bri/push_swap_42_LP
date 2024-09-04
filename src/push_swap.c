@@ -12,14 +12,15 @@
 
 #include "push_swap.h"
 
-int	is_sorted(t_stack *stack_a, t_stack *stack_b)
+int	is_sorted(t_stack *stack_a, t_stack *stack_b, t_stack_root *stack_root)
 {
 	t_stack		*current;
 	int			i;
 
 	i = -1;
 	current = stack_a;
-	if (b_size(stack_b) != 0)
+	(void)(*stack_b);
+	if (stack_root->size_b != 0)
 		return (0);
 	while (++i < current->size - 1)
 	{
@@ -30,31 +31,39 @@ int	is_sorted(t_stack *stack_a, t_stack *stack_b)
 	return (1);
 }
 
-void	sort_ab(t_stack **stack_a, t_stack **stack_b)
+void	sort_ab(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 {
 	(void)(*stack_b);
-	if ((*stack_a)->size <= 5)
-		sort_base_case(stack_a, stack_b, (*stack_a)->size);
+	if ((*stack_root)->size_a <= 5)
+		sort_base_case(stack_a, stack_b, stack_root);
 }
 
-void	sort_base_case(t_stack **stack_a, t_stack **stack_b, int size)
+void	sort_base_case(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 {
+	int		size;
+
+	size = (*stack_root)->size_a;
+
 	if (size == 2)
 		do_cmd(stack_a, SA);
 	else if (size == 3)
-		sort_3(stack_a);
+		sort_3(stack_a, stack_root);
 	else if (size == 4)
-		sort_4(stack_a, stack_b);
+		sort_4(stack_a, stack_b, stack_root);
 	else if (size == 5)
-		sort_5(stack_a, stack_b);
+		sort_5(stack_a, stack_b, stack_root);
 }
 
+/*
 int	a_size(t_stack *stack)
 {
 	return (stack->pivot - stack->a_bottom);
 }
 
+
 int	b_size(t_stack *stack)
 {
 	return (stack->b_bottom - stack->pivot + 1);
 }
+
+*/

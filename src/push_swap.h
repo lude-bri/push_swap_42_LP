@@ -70,8 +70,7 @@ typedef struct s_root
 t_stack_root	*init_root(t_stack *stack_a);
 
 //build_stack
-void		init_stack(t_stack *stack, int size, int flag);
-void		init_stack_b(t_stack *stack, int size);
+void		init_stack(t_stack *stack, int size);
 t_stack		*create_stack(char **str, int flag);
 void		put_node(t_stack **stack, int data);
 t_stack		*find_lastnode(t_stack *lst);
@@ -98,17 +97,17 @@ t_stack		*get_node_at_index(t_stack *stack, int index);
 void		swap_nodes(t_stack **stack, int i, int j);
 
 //push_swap
-int			is_sorted(t_stack *stack_a, t_stack *stack_b);
-void		sort_ab(t_stack **stack_a, t_stack **stack_b);
-void		sort_base_case(t_stack **stack_a, t_stack **stack_b, int size);
+int			is_sorted(t_stack *stack_a, t_stack *stack_b, t_stack_root *stack_root);
+void		sort_ab(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
+void		sort_base_case(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
 int			a_size(t_stack *stack);
 int			b_size(t_stack *stack);
 
 //push_swap2
-void		sort_3(t_stack **stack_a);
-void		sort_4(t_stack **stack_a, t_stack **stack_b);
-void		sort_5(t_stack **stack_a, t_stack **stack_b);
-t_stack		*find_big(t_stack *stack);
+void		sort_3(t_stack **stack_a, t_stack_root **stack_root);
+void		sort_4(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
+void		sort_5(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
+t_stack		*find_big(t_stack *stack, int size);
 
 //stack_access
 int			a_top(t_stack *stack);

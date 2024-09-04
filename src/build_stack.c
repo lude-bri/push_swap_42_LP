@@ -12,53 +12,6 @@
 
 #include "push_swap.h"
 
-void	init_stack(t_stack *stack, int size, int flag)
-{
-	t_stack			*last_node;
-	t_stack			*current;
-	int				i;
-
-	i = -1;
-	current = stack;
-	if (flag == STACK_A)
-	{
-		while (++i < size)
-		{
-			current->a_bottom = 0;
-			current->b_bottom = size - 1;
-			current->pivot = size;
-			current->size = size;
-			current = current->next;
-		}
-		last_node = find_lastnode(stack);
-		last_node->next = stack;
-		stack->prev = last_node;
-	}
-	else
-		init_stack_b(stack, size);
-}
-
-void	init_stack_b(t_stack *stack, int size)
-{
-	t_stack			*last_node;
-	t_stack			*current;
-	int				i;
-
-	i = -1;
-	current = stack;
-	while (++i < size)
-	{
-		current->a_bottom = 0;
-		current->b_bottom = size - 1;
-		current->pivot = size;
-		current->size = 0;
-		current = current->next;
-	}
-	last_node = find_lastnode(stack);
-	last_node->next = stack;
-	stack->prev = last_node;
-}
-
 t_stack	*create_stack(char **str, int flag)
 {
 	t_stack			*stack;
@@ -78,8 +31,8 @@ t_stack	*create_stack(char **str, int flag)
 			put_node(&stack, -1);
 		--i;
 	}
-	init_stack(stack, count, flag);
-	if (!to_rank(stack, stack->size) && flag == STACK_A)
+	init_stack(stack, count);
+	if (!to_rank(stack, count) && flag == STACK_A)
 		return (free_stack(stack), NULL);
 	return (stack);
 }
@@ -106,6 +59,27 @@ void	put_node(t_stack **stack, int data)
 		node->prev = last_node;
 	}
 	return ;
+}
+
+void	init_stack(t_stack *stack, int size)
+{
+	t_stack			*last_node;
+	t_stack			*current;
+	int				i;
+
+	i = -1;
+	current = stack;
+	while (++i < size)
+	{
+		current->a_bottom = 0;
+		current->b_bottom = size - 1;
+		current->pivot = size;
+		current->size = size;
+		current = current->next;
+	}
+	last_node = find_lastnode(stack);
+	last_node->next = stack;
+	stack->prev = last_node;
 }
 
 t_stack	*find_lastnode(t_stack *lst)

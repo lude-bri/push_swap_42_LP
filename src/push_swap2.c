@@ -12,12 +12,12 @@
 
 #include "push_swap.h"
 
-void	sort_3(t_stack **stack)
+void	sort_3(t_stack **stack, t_stack_root **stack_root)
 {
 	t_stack *big;
 
-	big = find_big(*stack);
-	if (!is_sorted(*stack, (void *)stack))
+	big = find_big(*stack, (*stack_root)->size_a);
+	if (!is_sorted(*stack, (void *)(stack), *stack_root))
 	{
 		if (*stack == big)
 			do_cmd(stack, RA);
@@ -28,15 +28,15 @@ void	sort_3(t_stack **stack)
 	}
 }
 
-void	sort_4(t_stack **stack_a, t_stack **stack_b)
+void	sort_4(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 {
 	int		size;
 
-	size = (*stack_a)->size;
+	size = (*stack_root)->size_a;
 	
 	while (size > 0)
 	{
-		if (!is_sorted(*stack_a, *stack_b))
+		if (!is_sorted(*stack_a, *stack_b, *stack_root))
 		{	
 			if ((*stack_a)->num == 0)
 			{
@@ -48,18 +48,18 @@ void	sort_4(t_stack **stack_a, t_stack **stack_b)
 		}
 		size--;
 	}
-	sort_3(stack_a);
+	sort_3(stack_a, stack_root);
 	do_push_cmd(stack_a, stack_b, PA);
 }
 
-void	sort_5(t_stack **stack_a, t_stack **stack_b)
+void	sort_5(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 {
 	int		size;
 
-	size = (*stack_a)->size;
+	size = (*stack_root)->size_a;
 	while (size > 0)
 	{
-		if (!is_sorted(*stack_a, *stack_b))	
+		if (!is_sorted(*stack_a, *stack_b, *stack_root))	
 		{
 			if ((*stack_a)->num == 0)
 				do_push_cmd(stack_a, stack_b, PB);
@@ -72,21 +72,19 @@ void	sort_5(t_stack **stack_a, t_stack **stack_b)
 			break ;
 		size--;
 	}
-	sort_3(stack_a);
+	sort_3(stack_a, stack_root);
 	if ((*stack_b)->num < (*stack_b)->next->num)
 		do_cmd(stack_b, RB);
 	do_push_cmd(stack_a, stack_b, PA);
 	do_push_cmd(stack_a, stack_b, PA);
 }
 
-t_stack	*find_big(t_stack *stack)
+t_stack	*find_big(t_stack *stack, int size)
 {
 	int			n;
-	int			size;
 	t_stack		*high_node;
 
 	n = 0;
-	size = stack->size;
 	while (size)
 	{
 		if (stack->num > n)
