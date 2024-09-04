@@ -27,7 +27,7 @@ void	init_stack(t_stack *stack, int size, int flag)
 		current->pivot = size;
 		current->size = size;
 		current = current->next;
-		if (flag != STACK_A)
+		if (flag == 0)
 			current->size = 0;
 	}
 	last_node = find_lastnode(stack);
@@ -58,7 +58,7 @@ t_stack	*create_stack(char **str, int flag)
 			put_node(&stack, -1);
 		--i;
 	}
-	init_stack(stack, count, STACK_B);
+	init_stack(stack, count, 0);
 	if (!to_rank(stack, stack->size) && flag == STACK_A)
 		return (free_stack(stack), NULL);
 	return (stack);
