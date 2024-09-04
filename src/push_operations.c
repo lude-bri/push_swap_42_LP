@@ -13,7 +13,7 @@
 #include "push_swap.h"
 
 //pa (push a) - Take the first element at the top of b and put it at the top of a. Do nothing if b is empty.
-void	pa(t_stack **stack_a, t_stack **stack_b)
+void	pa(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 {
 	t_stack		*current;
 
@@ -34,11 +34,12 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
 	(*stack_a)->prev->next = current;
 	(*stack_a)->prev = current;
 	*stack_a = current;
-	update_stack_size(stack_a, stack_b, PA);
+	(*stack_root)->size_a += 1;
+	(*stack_root)->size_b -= 1;
 }
 
 //pb (push b) - Take the first element at the top of a and put it at the top of b. Do nothing if a is empty.
-void	pb(t_stack **stack_a, t_stack **stack_b)
+void	pb(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 {
 	t_stack		*current;
 
@@ -63,36 +64,8 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 		(*stack_b)->prev = current;
 		*stack_b = current; //new element of stack_b
 	}
-	update_stack_size(stack_a, stack_b, PB);
-}
-
-void	update_stack_size(t_stack **stack_a, t_stack **stack_b, int flag)
-{
-	t_stack		*current_a;
-	t_stack		*current_b;
-
-	current_a = *stack_a;
-	current_b = *stack_b;
-	if (flag == PA)
-	{
-		while (current_a->next != *stack_a)
-		{
-			current_a->size = current_a->size + 1;
-			current_b->size = current_b->size - 1;
-			current_a = current_a->next;
-			current_b = current_b->next;
-		}
-	}
-	else
-	{
-		while (current_a->next != *stack_a)
-		{
-			current_a->size = current_a->size - 1;
-			current_b->size = current_b->size + 1;
-			current_a = current_a->next;
-			current_b = current_b->next;
-		}
-	}
+	(*stack_root)->size_a -= 1;
+	(*stack_root)->size_b += 1;
 }
 
 void	if_empty(t_stack **stack)

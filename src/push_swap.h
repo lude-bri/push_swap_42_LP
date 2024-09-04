@@ -116,15 +116,14 @@ int			a_bottom(t_stack *stack);
 int			b_bottom(t_stack *stack);
 
 // commands
-void		do_push_cmd(t_stack **stack_a, t_stack **stack_b, int cmd);
+void		do_push_cmd(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int cmd);
 void		do_cmd(t_stack **stack, int cmd);
 void		print_cmd(int cmd);
 
 //push_operations
-void		pa(t_stack **stack_a, t_stack **stack_b);
-void		pb(t_stack **stack_a, t_stack **stack_b);
+void		pa(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
+void		pb(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
 void		if_empty(t_stack **stack);
-void		update_stack_size(t_stack **stack_a, t_stack **stack_b, int flag);
 
 //rotate_operations
 void		ra(t_stack **stack);

@@ -54,16 +54,3 @@ void	sort_base_case(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_r
 		sort_5(stack_a, stack_b, stack_root);
 }
 
-/*
-int	a_size(t_stack *stack)
-{
-	return (stack->pivot - stack->a_bottom);
-}
-
-
-int	b_size(t_stack *stack)
-{
-	return (stack->b_bottom - stack->pivot + 1);
-}
-
-*/

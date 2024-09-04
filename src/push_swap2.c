@@ -40,7 +40,7 @@ void	sort_4(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 		{	
 			if ((*stack_a)->num == 0)
 			{
-				do_push_cmd(stack_a, stack_b, PB);
+				do_push_cmd(stack_a, stack_b, stack_root, PB);
 				break ;
 			}
 			else
@@ -49,7 +49,7 @@ void	sort_4(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 		size--;
 	}
 	sort_3(stack_a, stack_root);
-	do_push_cmd(stack_a, stack_b, PA);
+	do_push_cmd(stack_a, stack_b, stack_root, PA);
 }
 
 void	sort_5(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
@@ -62,9 +62,9 @@ void	sort_5(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 		if (!is_sorted(*stack_a, *stack_b, *stack_root))	
 		{
 			if ((*stack_a)->num == 0)
-				do_push_cmd(stack_a, stack_b, PB);
+				do_push_cmd(stack_a, stack_b, stack_root, PB);
 			else if ((*stack_a)->num == 1)
-				do_push_cmd(stack_a, stack_b, PB);
+				do_push_cmd(stack_a, stack_b, stack_root, PB);
 			else
 				do_cmd(stack_a, RA);
 		}
@@ -75,8 +75,8 @@ void	sort_5(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 	sort_3(stack_a, stack_root);
 	if ((*stack_b)->num < (*stack_b)->next->num)
 		do_cmd(stack_b, RB);
-	do_push_cmd(stack_a, stack_b, PA);
-	do_push_cmd(stack_a, stack_b, PA);
+	do_push_cmd(stack_a, stack_b, stack_root, PA);
+	do_push_cmd(stack_a, stack_b, stack_root, PA);
 }
 
 t_stack	*find_big(t_stack *stack, int size)
