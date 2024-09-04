@@ -100,7 +100,6 @@ void	put_node(t_stack **stack, int data)
 		node->prev = NULL;
 	}
 	else
-
 	{
 		last_node = find_lastnode(*stack);
 		last_node->next = node;
