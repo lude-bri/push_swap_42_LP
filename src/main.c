@@ -51,9 +51,14 @@ int	main(int ac, char **av)
 			exit(0);
 		stack_a = create_stack(numbers, STACK_A);
 		stack_b = create_stack(numbers, STACK_B);
+		if (!stack_a || !stack_b)
+		{
+			ft_printf("Error\n");
+			exit (1);
+		}
 		stack_root = init_root(stack_a);
 		free_str(numbers);
-}
+	}
 	else
 	{
 		numbers = av + 1;
@@ -63,7 +68,7 @@ int	main(int ac, char **av)
 	}
 	if (!stack_a)
 	{
-		ft_putstr_fd("Error\n", 0);
+		ft_printf("Error\n");
 		exit(1);
 	}
 	if (!is_sorted(stack_a, stack_b, stack_root))
