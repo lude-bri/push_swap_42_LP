@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 12:21:23 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/05 13:49:06 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/05 14:13:42 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ void	split_a(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, in
 	i = -1;
 	while (++i < end - start)
 	{
-		if (a_top(stack_a, stack_root) >= big_pivot)
+		if (a_top(stack_a, stack_root) >= big_pivot && a_top(stack_a, stack_root) < end)
 			do_cmd(stack_a, stack_b, stack_root, RA);
-		else if (a_top(stack_a, stack_root) >= start && small_pivot > a_top(stack_a, stack_root))
+		else if (small_pivot <= a_top(stack_a, stack_root) && a_top(stack_a, stack_root) < big_pivot)
 		{
 			do_push_cmd(stack_a, stack_b, stack_root, PB);
 			do_cmd(stack_a, stack_b, stack_root, RB);
@@ -62,7 +62,9 @@ void	split_a(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, in
 		else
 			do_push_cmd(stack_a, stack_b, stack_root, PB);
 	}
-
+	i = -1;
+	while (i < partition_size)
+		do_cmd(stack_a, stack_b, stack_root, RRR);
 }
 
 void	split_b(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int start, int end)
@@ -78,9 +80,9 @@ void	split_b(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, in
 	i = -1;
 	while (++i < end - start)
 	{
-		if (b_top(stack_a, stack_root) >= big_pivot)
+		if (b_top(stack_b, stack_root) >= big_pivot && b_top(stack_b, stack_root) < end)
 			do_cmd(stack_a, stack_b, stack_root, RA);
-		else if (b_top(stack_a, stack_root) >= start && small_pivot > b_top(stack_a, stack_root))
+		else if (small_pivot <= b_top(stack_b, stack_root) && b_top(stack_b, stack_root) < big_pivot)
 		{
 			do_push_cmd(stack_a, stack_b, stack_root, PB);
 			do_cmd(stack_a, stack_b, stack_root, RB);
