@@ -18,7 +18,7 @@ void	sort_ab(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 	int		big_pivot;
 	int		small_pivot;
 
-	partition_size = (*stack_root)->size_a;
+	partition_size = (*stack_root)->size_a / 3;
 	big_pivot = (*stack_root)->size_a - partition_size;
 	small_pivot = big_pivot - partition_size;
 
