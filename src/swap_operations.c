@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 10:05:49 by luigi             #+#    #+#             */
-/*   Updated: 2024/08/29 11:01:54 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/05 12:47:24 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ void	sb(t_stack **stack, t_stack_root **stack_root)
 }
 
 //ss (swap a and swap b) - do sa and sb at the same time
-void	ss(t_stack **stack, t_stack_root **stack_root)
+void	ss(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 {
-	sa(stack, stack_root);
-	sb(stack, stack_root);
+	sa(stack_a, stack_root);
+	sb(stack_b, stack_root);
 	ft_printf("ss\n");
 }

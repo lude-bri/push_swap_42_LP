@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 10:08:52 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/02 11:58:21 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/05 12:46:55 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ void	rb(t_stack **stack)
 }
 
 //rr (rotate a and rotate b) - Do ra and rb
-void	rr(t_stack **stack)
+void	rr(t_stack **stack_a, t_stack **stack_b)
 {
-	ra(stack);
-	rb(stack);
+	ra(stack_a);
+	rb(stack_b);
 	ft_printf("rr\n");
 }
 

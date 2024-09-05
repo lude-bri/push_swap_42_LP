@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 08:56:09 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/05 12:08:51 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/05 12:46:30 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,10 +100,18 @@ int			partition_stack(t_stack **stack, int low, int high);
 t_stack		*get_node_at_index(t_stack *stack, int index);
 void		swap_nodes(t_stack **stack, int i, int j);
 
+//quick_sort2
+void		quick_a(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int start, int end);
+void		quick_b(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int start, int end);
+
+//split_partitions
+void		split_first(t_stack **stack_a, t_stack **stack_b, int start, t_stack_root **stack_root);
+void		split_a(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int start, int end);
+void		split_b(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int start, int end);
+
 //push_swap
 void		sort_ab(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
-void		sort_base_case(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
-void		split_first(t_stack **stack_a, t_stack **stack_b, int start, t_stack_root **stack_root);
+void		sort_base_case(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int size);
 
 //push_swap2
 void		sort_3(t_stack **stack_a, t_stack_root **stack_root);
@@ -119,7 +127,7 @@ int			b_bottom(t_stack **stack, t_stack_root **stack_root);
 
 // commands
 void		do_push_cmd(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int cmd);
-void		do_cmd(t_stack **stack, t_stack_root **stack_root, int cmd);
+void		do_cmd(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int cmd);
 void		print_cmd(int cmd);
 
 //push_operations
@@ -131,16 +139,16 @@ void		if_empty(t_stack **stack);
 //rotate_operations
 void		ra(t_stack **stack);
 void		rb(t_stack **stack);
-void		rr(t_stack **stack);
+void		rr(t_stack **stack_a, t_stack **stack_b);
 
 //reverse_rotate_operations
 void		rra(t_stack **stack);
 void		rrb(t_stack **stack);
-void		rrr(t_stack **stack);
+void		rrr(t_stack **stack_a, t_stack **stack_b);
 
 //swap_operations
 void		sa(t_stack **stack, t_stack_root **stack_root);
 void		sb(t_stack **stack, t_stack_root **stack_root);
-void		ss(t_stack **stack, t_stack_root **stack_root);
+void		ss(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
 
 #endif

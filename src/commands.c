@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 224/09/02 12:41:10 by luigi             #+#    #+#             */
-/*   Updated: 224/09/02 14:25:04 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/05 12:44:42 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,24 @@ void	do_push_cmd(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root
 		pb(stack_a, stack_b, stack_root);
 }
 
-void	do_cmd(t_stack **stack, t_stack_root **stack_root, int cmd)
+void	do_cmd(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int cmd)
 {
 	if (cmd == RA)
-		ra(stack);
+		ra(stack_a);
 	else if (cmd == RB)
-		rb(stack);
+		rb(stack_b);
 	else if (cmd == RR)
-		rr(stack);
+		rr(stack_a, stack_b);
 	else if (cmd == RRA)
-		rra(stack);
+		rra(stack_a);
 	else if (cmd == RRB)
-		rrb(stack);
+		rrb(stack_b);
 	else if (cmd == RRR)
-		rrr(stack);
+		rrr(stack_a, stack_b);
 	else if (cmd == SA)
-		sa(stack, stack_root);
+		sa(stack_a, stack_root);
 	else if (cmd == SB)
-		sb(stack, stack_root);
+		sb(stack_b, stack_root);
 	else if (cmd == SS)
-		ss(stack, stack_root);
+		ss(stack_a, stack_b, stack_root);
 }

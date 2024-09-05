@@ -40,9 +40,11 @@ LIBFT_PATH		= $(LIBS_PATH)
 
 FILES	= main.c
 FILES	+= quick_sort.c
+FILES	+= quick_sort2.c
 FILES	+= free.c
 FILES	+= build_stack.c
 FILES	+= normalize.c
+FILES	+= split_partitions.c
 FILES	+= sanity_check.c
 FILES	+= sort_check.c
 FILES	+= stack_access.c
