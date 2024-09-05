@@ -12,30 +12,30 @@
 
 #include "push_swap.h"
 
-int	a_top(t_stack *stack)
+int	a_top(t_stack **stack, t_stack_root **stack_root)
 {
-	if (a_size(stack) > 0)
-		return (stack->num);
+	if ((*stack_root)->size_a > 0)
+		return ((*stack)->num);
 	return (-1);
 }
 
-int	b_top(t_stack *stack)
+int	b_top(t_stack **stack, t_stack_root **stack_root)
 {
-	if (b_size(stack) > 0)
-		return (stack->num);
+	if ((*stack_root)->size_b > 0)
+		return ((*stack)->num);
 	return (-1);
 }
 
-int	a_bottom(t_stack *stack)
+int	a_bottom(t_stack **stack, t_stack_root **stack_root)
 {
-	if (a_size(stack) > 0)
-		return (stack->a_bottom);
+	if ((*stack_root)->size_a > 0)
+		return ((*stack)->a_bottom);
 	return (-1);
 }
 
-int	b_bottom(t_stack *stack)
+int	b_bottom(t_stack **stack, t_stack_root  **stack_root)
 {
-	if (b_size(stack) > 0)
-		return (stack->b_bottom);
+	if ((*stack_root)->size_b > 0)
+		return ((*stack)->b_bottom);
 	return (-1);
 }

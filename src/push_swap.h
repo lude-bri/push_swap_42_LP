@@ -99,8 +99,7 @@ void		swap_nodes(t_stack **stack, int i, int j);
 int			is_sorted(t_stack *stack_a, t_stack *stack_b, t_stack_root *stack_root);
 void		sort_ab(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
 void		sort_base_case(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
-int			a_size(t_stack *stack);
-int			b_size(t_stack *stack);
+void		split_first(t_stack **stack_a, t_stack **stack_b, int start, t_stack_root **stack_root);
 
 //push_swap2
 void		sort_3(t_stack **stack_a, t_stack_root **stack_root);
@@ -109,10 +108,10 @@ void		sort_5(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
 t_stack		*find_big(t_stack *stack, int size);
 
 //stack_access
-int			a_top(t_stack *stack);
-int			b_top(t_stack *stack);
-int			a_bottom(t_stack *stack);
-int			b_bottom(t_stack *stack);
+int			a_top(t_stack **stack, t_stack_root **stack_root);
+int			b_top(t_stack **stack, t_stack_root **stack_root);
+int			a_bottom(t_stack **stack, t_stack_root **stack_root);
+int			b_bottom(t_stack **stack, t_stack_root **stack_root);
 
 // commands
 void		do_push_cmd(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int cmd);

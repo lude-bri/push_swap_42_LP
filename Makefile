@@ -44,6 +44,7 @@ FILES	+= free.c
 FILES	+= build_stack.c
 FILES	+= normalize.c
 FILES	+= sanity_check.c
+FILES	+= stack_access.c
 FILES	+= push_operations.c
 FILES	+= swap_operations.c
 FILES	+= rotate_operations.c
