@@ -48,7 +48,7 @@ void	split_a(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, in
 
 	partition_size = (end - start) / 3;
 	big_pivot = end - partition_size;
-	small_pivot = big_pivot - partition_size - 1;
+	small_pivot = big_pivot - partition_size;
 	i = -1;
 	while (++i < end - start)
 	{
@@ -63,7 +63,7 @@ void	split_a(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, in
 			do_push_cmd(stack_a, stack_b, stack_root, PB);
 	}
 	i = -1;
-	while (i < partition_size)
+	while (++i < partition_size)
 		do_cmd(stack_a, stack_b, stack_root, RRR);
 }
 
