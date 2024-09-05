@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 14:02:04 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/05 12:21:57 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/05 13:50:04 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	sort_ab(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 void	sort_base_case(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int size)
 {
 	if (size == 2)
-		do_cmd(stack_a, stack_root, SA);
+		do_cmd(stack_a, stack_b, stack_root, SA);
 	else if (size == 3)
 		sort_3(stack_a, stack_root);
 	else if (size == 4)

@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 12:21:23 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/05 12:32:36 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/05 13:49:06 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ void	split_first(t_stack **stack_a, t_stack **stack_b, int start, t_stack_root *
 	while (++i < end - start)
 	{
 		if (a_top(stack_a, stack_root) >= big_pivot)
-			do_cmd(stack_a, stack_root, RA);
+			do_cmd(stack_a, stack_b, stack_root, RA);
 		else if (a_top(stack_a, stack_root) >= start && small_pivot > a_top(stack_a, stack_root))
 		{
 			do_push_cmd(stack_a, stack_b, stack_root, PB);
-			do_cmd(stack_b, stack_root, RB);
+			do_cmd(stack_a, stack_b, stack_root, RB);
 		}
 		else
 			do_push_cmd(stack_a, stack_b, stack_root, PB);
@@ -53,11 +53,11 @@ void	split_a(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, in
 	while (++i < end - start)
 	{
 		if (a_top(stack_a, stack_root) >= big_pivot)
-			do_cmd(stack_a, stack_root, RA);
+			do_cmd(stack_a, stack_b, stack_root, RA);
 		else if (a_top(stack_a, stack_root) >= start && small_pivot > a_top(stack_a, stack_root))
 		{
 			do_push_cmd(stack_a, stack_b, stack_root, PB);
-			do_cmd(stack_b, stack_root, RB);
+			do_cmd(stack_a, stack_b, stack_root, RB);
 		}
 		else
 			do_push_cmd(stack_a, stack_b, stack_root, PB);
@@ -79,11 +79,11 @@ void	split_b(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, in
 	while (++i < end - start)
 	{
 		if (b_top(stack_a, stack_root) >= big_pivot)
-			do_cmd(stack_a, stack_root, RA);
+			do_cmd(stack_a, stack_b, stack_root, RA);
 		else if (b_top(stack_a, stack_root) >= start && small_pivot > b_top(stack_a, stack_root))
 		{
 			do_push_cmd(stack_a, stack_b, stack_root, PB);
-			do_cmd(stack_b, stack_root, RB);
+			do_cmd(stack_a, stack_b, stack_root, RB);
 		}
 		else
 			do_push_cmd(stack_a, stack_b, stack_root, PB);

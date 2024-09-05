@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:50:37 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/02 15:04:23 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/05 13:52:24 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void	sort_3(t_stack **stack, t_stack_root **stack_root)
 	if (!is_sorted(*stack, (void *)(stack), *stack_root))
 	{
 		if (*stack == big)
-			do_cmd(stack, stack_root, RA);
+			do_cmd(stack, (void *)(stack), stack_root, RA);
 		else if ((*stack)->next == big)
-			do_cmd(stack, stack_root, RRA);
+			do_cmd(stack, (void *)(stack), stack_root, RRA);
 		if ((*stack)->num > (*stack)->next->num)
-			do_cmd(stack, stack_root, SA);
+			do_cmd(stack, (void *)(stack), stack_root, SA);
 	}
 }
 
@@ -44,7 +44,7 @@ void	sort_4(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 				break ;
 			}
 			else
-				do_cmd(stack_a, stack_root, RA);
+				do_cmd(stack_a, stack_b, stack_root, RA);
 		}
 		size--;
 	}
@@ -66,7 +66,7 @@ void	sort_5(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 			else if ((*stack_a)->num == 1)
 				do_push_cmd(stack_a, stack_b, stack_root, PB);
 			else
-				do_cmd(stack_a, stack_root, RA);
+				do_cmd(stack_a, stack_b, stack_root, RA);
 		}
 		if ((*stack_b)->num == 0 && (*stack_b)->next->num == 1)
 			break ;
@@ -74,7 +74,7 @@ void	sort_5(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 	}
 	sort_3(stack_a, stack_root);
 	if ((*stack_b)->num < (*stack_b)->next->num)
-		do_cmd(stack_b, stack_root, RB);
+		do_cmd(stack_a, stack_b, stack_root, RB);
 	do_push_cmd(stack_a, stack_b, stack_root, PA);
 	do_push_cmd(stack_a, stack_b, stack_root, PA);
 }
