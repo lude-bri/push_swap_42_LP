@@ -95,12 +95,20 @@ define rra
 	disp **stack
 end
 
+define split_first
+	disp partition_size
+	disp big_pivot
+	disp small_pivot
+	disp end
+	disp i
+end
+
 #  Start
 fs cmd
 break main
 # run "1 2 4 3 0"
-run "1 122 14000 839"
-# run 65 45 71 6 30 51 12 50 74 92 88 5
+# run "1 122 14000 839"
+run 65 45 71 6 30 51 12 50 74 92 88 5
 main
 
 

@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 10:07:26 by luigi             #+#    #+#             */
-/*   Updated: 2024/08/29 11:04:00 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/05 12:08:00 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,16 @@ void	pb(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 	(*stack_root)->size_a -= 1;
 	(*stack_root)->size_b += 1;
 	ft_printf("pb\n");
+}
+
+//pa multiple times
+void	push_a_n(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int size)
+{
+	int	i;
+
+	i = -1;
+	while (++i < size)
+		do_push_cmd(stack_a, stack_b, stack_root, PA);
 }
 
 void	if_empty(t_stack **stack)

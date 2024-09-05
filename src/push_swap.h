@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 08:56:09 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/02 14:56:17 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/05 12:08:51 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,11 @@ int			ft_is_number(char *str);
 int			number_sanity_check(char **str);
 int			duplicate_check_stack(t_stack *stack, int size);
 
+//sort_check
+int			is_sorted(t_stack *stack_a, t_stack *stack_b, t_stack_root *stack_root);
+int			is_a_sorted(t_stack **stack, t_stack_root **stack_root, int size);
+int			is_b_sorted(t_stack **stack, t_stack_root **stack_root, int size);
+
 //normalize
 int			to_rank(t_stack *stack, int size);
 int			binary_search_stack(t_stack *stack, int target, int low, int high);
@@ -96,7 +101,6 @@ t_stack		*get_node_at_index(t_stack *stack, int index);
 void		swap_nodes(t_stack **stack, int i, int j);
 
 //push_swap
-int			is_sorted(t_stack *stack_a, t_stack *stack_b, t_stack_root *stack_root);
 void		sort_ab(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
 void		sort_base_case(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
 void		split_first(t_stack **stack_a, t_stack **stack_b, int start, t_stack_root **stack_root);
@@ -121,6 +125,7 @@ void		print_cmd(int cmd);
 //push_operations
 void		pa(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
 void		pb(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
+void		push_a_n(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int size);
 void		if_empty(t_stack **stack);
 
 //rotate_operations
