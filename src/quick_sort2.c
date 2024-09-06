@@ -39,7 +39,6 @@ void	quick_a(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, in
 	}
 }
 
-
 void	quick_b(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int start, int end)
 {
 	int		partition_size;

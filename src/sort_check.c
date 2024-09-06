@@ -33,46 +33,45 @@ int	is_sorted(t_stack *stack_a, t_stack *stack_b, t_stack_root *stack_root)
 
 int	is_a_sorted(t_stack **stack, t_stack_root **stack_root, int size)
 {
-	t_stack		*current;
-	int			value;
-	int			i;
+    t_stack	*current;
+    t_stack	*next;
+    int		i;
 
-	current = (*stack);
-	if (size > (*stack_root)->size_a)
-		return (0);
-	if (size <= 1)
-		return (1);
-	i = 0;
-	value = a_top(stack, stack_root);
-	while (++i < size)
-	{
-		if (current->num != value)
-			return (0);
-		current = current->next;
-		++value;
-	}
-	return (1);
+    current = (*stack);
+    if (size > (*stack_root)->size_a)
+        return (0);
+    if (size <= 1)
+        return (1);
+    i = 0;
+    while (++i < size && current->next != NULL)
+    {
+        next = current->next;
+        if (current->num > next->num)  // Verifica se o atual é maior que o próximo
+            return (0);
+        current = next;
+    }
+    return (1);
 }
 
 int	is_b_sorted(t_stack **stack, t_stack_root **stack_root, int size)
 {
-	t_stack		*current;
-	int			value;
-	int			i;
+    t_stack	*current;
+    t_stack	*next;
+    int		i;
 
-	current = (*stack);
-	if (size > (*stack_root)->size_b)
-		return (0);
-	if (size <= 1)
-		return (1);
-	i = 0;
-	value = b_top(stack, stack_root);
-	while (++i < size)
-	{
-		if (current->num != value)
-			return (0);
-		current = current->next;
-		++value;
-	}
-	return (1);
+    current = (*stack);
+    if (size > (*stack_root)->size_b)
+        return (0);
+    if (size <= 1)
+        return (1);
+    i = 0;
+    while (++i < size && current->next != NULL)
+    {
+        next = current->next;
+        if (current->num < next->num)  // Verifica se o atual é menor que o próximo
+            return (0);  // Retorna 0 se a ordem decrescente for violada
+        current = next;
+    }
+    return (1);
 }
+
