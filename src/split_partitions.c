@@ -23,11 +23,11 @@ void	split_first(t_stack **stack_a, t_stack **stack_b, int start, t_stack_root *
 	end = (*stack_root)->size_a;
 	partition_size = (end - start) / 3;
 	big_pivot = end - partition_size;
-	small_pivot = big_pivot - partition_size - 1;
+	small_pivot = big_pivot - partition_size;
 	i = -1;
 	while (++i < end - start)
 	{
-		if (a_top(stack_a, stack_root) >= big_pivot)
+		if (a_top(stack_a, stack_root) >= big_pivot && a_top(stack_a, stack_root) < end)
 			do_cmd(stack_a, stack_b, stack_root, RA);
 		else if (a_top(stack_a, stack_root) >= start && small_pivot > a_top(stack_a, stack_root))
 		{
@@ -75,19 +75,19 @@ void	split_b(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, in
 	int		i;
 
 	partition_size = (end - start) / 3;
-	small_pivot = start + partition_size - 1;
+	small_pivot = start + partition_size;
 	big_pivot = small_pivot + partition_size;
 	i = -1;
 	while (++i < end - start)
 	{
 		if (b_top(stack_b, stack_root) >= big_pivot && b_top(stack_b, stack_root) < end)
-			do_cmd(stack_a, stack_b, stack_root, RA);
+			do_push_cmd(stack_a, stack_b, stack_root, PA);
 		else if (small_pivot <= b_top(stack_b, stack_root) && b_top(stack_b, stack_root) < big_pivot)
 		{
-			do_push_cmd(stack_a, stack_b, stack_root, PB);
-			do_cmd(stack_a, stack_b, stack_root, RB);
+			do_push_cmd(stack_a, stack_b, stack_root, PA);
+			do_cmd(stack_a, stack_b, stack_root, RA);
 		}
 		else
-			do_push_cmd(stack_a, stack_b, stack_root, PB);
+			do_cmd(stack_a, stack_b, stack_root, RB);
 	}
 }

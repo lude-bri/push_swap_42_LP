@@ -31,25 +31,86 @@ int	is_sorted(t_stack *stack_a, t_stack *stack_b, t_stack_root *stack_root)
 	return (1);
 }
 
+
+/*
+int	is_a_sorted_n(t_stack **stack, t_stack_root **stack_root, int size)
+{
+	t_stack	*current;
+	int		expected_val;
+	int		idx;
+
+	if (size > (*stack_root)->size_a)
+		return (0);
+	if (size <= 1)
+		return (1);
+	
+	// Começamos de a_bottom e percorremos para trás
+
+	current = (*stack)->prev;  // "this" é o topo da pilha 'a'
+	expected_val = current->num;
+	idx = 1;
+
+	// Percorre a lista verificando a ordem crescente
+	while (idx < size)
+	{
+		current = current->prev;
+		if (current->num != ++expected_val)
+			return (0);
+		idx++;
+	}
+	return (1);
+}
+
+int	is_b_sorted_n(t_stack **stack, t_stack_root **stack_root, int size)
+{
+	t_stack	*current;
+	int		expected_val;
+	int		idx;
+
+	if (size > (*stack_root)->size_b)
+		return (0);
+	if (size <= 1)
+		return (1);
+	
+	// Começamos de b_bottom e percorremos para frente
+	current = (*stack)->next;  // "this" é o topo da pilha 'b'
+	expected_val = current->num;
+	idx = 1;
+
+	// Percorre a lista verificando a ordem decrescente
+	while (idx < size)
+	{
+		current = current->next;
+		if (current->num != --expected_val)
+			return (0);
+		idx++;
+	}
+	return (1);
+}
+
+
+*/
+
 int	is_a_sorted(t_stack **stack, t_stack_root **stack_root, int size)
 {
 	t_stack		*current;
 	int			value;
 	int			i;
 
-	current = (*stack);
 	if (size > (*stack_root)->size_a)
 		return (0);
 	if (size <= 1)
 		return (1);
-	i = 0;
-	value = a_top(stack, stack_root);
-	while (++i < size)
+
+	current = (*stack)->prev;
+	value = current->num;
+	i = 1;
+	while (i < size)
 	{
-		if (current->num != value)
+		current = current->prev;
+		if (current->num != ++value)
 			return (0);
-		current = current->next;
-		++value;
+		i++;
 	}
 	return (1);
 }
@@ -60,19 +121,20 @@ int	is_b_sorted(t_stack **stack, t_stack_root **stack_root, int size)
 	int			value;
 	int			i;
 
-	current = (*stack);
 	if (size > (*stack_root)->size_b)
 		return (0);
 	if (size <= 1)
 		return (1);
+
+	current = (*stack)->next;
+	value = (*stack)->num;
 	i = 0;
-	value = b_top(stack, stack_root);
 	while (++i < size)
 	{
-		if (current->num != value)
-			return (0);
 		current = current->next;
-		++value;
+		if (current->num != --value)
+			return (0);
 	}
 	return (1);
 }
+
