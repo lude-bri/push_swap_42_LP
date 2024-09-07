@@ -97,6 +97,8 @@ int	is_a_sorted(t_stack **stack, t_stack_root **stack_root, int size)
 	int			value;
 	int			i;
 
+	if (!*stack)
+		return (0);
 	if (size > (*stack_root)->size_a)
 		return (0);
 	if (size <= 1)
@@ -121,6 +123,8 @@ int	is_b_sorted(t_stack **stack, t_stack_root **stack_root, int size)
 	int			value;
 	int			i;
 
+	if (!*stack)
+		return (0);
 	if (size > (*stack_root)->size_b)
 		return (0);
 	if (size <= 1)

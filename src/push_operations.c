@@ -17,7 +17,7 @@ void	pa(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 {
 	t_stack		*current;
 
-	if (!(*stack_b))
+	if (!(*stack_b) || !(*stack_a))
 		return ;
 	current = *stack_b;
 	//if there is only one element, now its empty
@@ -44,7 +44,7 @@ void	pb(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 {
 	t_stack		*current;
 
-	if (!(*stack_a))
+	if (!(*stack_a) || !(*stack_b))
 		return ;
 	current = *stack_a;
 	if ((*stack_a)->next == *stack_a)

@@ -52,7 +52,7 @@ void	split_a(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, in
 	i = -1;
 	while (++i < end - start)
 	{
-		if (a_top(stack_a, stack_root) >= big_pivot && a_top(stack_a, stack_root) < end)
+		if (big_pivot <= a_top(stack_a, stack_root) && a_top(stack_a, stack_root) < end)
 			do_cmd(stack_a, stack_b, stack_root, RA);
 		else if (small_pivot <= a_top(stack_a, stack_root) && a_top(stack_a, stack_root) < big_pivot)
 		{

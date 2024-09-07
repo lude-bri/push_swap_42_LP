@@ -69,6 +69,8 @@ define quick_sort
 end
 
 define sort_ab
+	disp N
+	disp (*stack_root)->size_a
 	disp partition_size
 	disp big_pivot
 	disp small_pivot

@@ -22,7 +22,7 @@ void	quick_a(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, in
 	big_pivot = end - partition_size;
 	small_pivot = big_pivot - partition_size;
 	if (end - start <= 5)
-		sort_base_case(stack_a, stack_b, stack_root, end - start);
+		sort_base_case(stack_a, stack_b, stack_root, end - start, 0);
 	else
 	{
 		split_a(stack_a, stack_b, stack_root, start, end);
@@ -41,16 +41,16 @@ void	quick_a(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, in
 
 void	quick_b(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int start, int end)
 {
-	int		partition_size;
-	int		small_pivot;
-	int		big_pivot;
-	int		i;
+	unsigned int		partition_size;
+	unsigned int		small_pivot;
+	unsigned int		big_pivot;
+	unsigned int		i;
 
 	partition_size = (end - start) / 3;
 	small_pivot = start + partition_size;
 	big_pivot = small_pivot + partition_size;
 	if (end - start <= 5)
-		sort_base_case(stack_a, stack_b, stack_root, end - start);
+		sort_base_case(stack_a, stack_b, stack_root, end - start, 1);
 	else
 	{
 		split_b(stack_a, stack_b, stack_root, start, end);

@@ -15,6 +15,8 @@
 //ra (rotate a) - Shift up all elements of stack a by 1. The first elements becomes the last one.
 void	ra(t_stack **stack)
 {
+	if (!*stack)
+		return ;
 	*stack = (*stack)->next;
 	ft_printf("ra\n");
 }
@@ -22,6 +24,8 @@ void	ra(t_stack **stack)
 //rb (rotate b) - Shift up all elements of stack b by 1. The first element becomes the last one.
 void	rb(t_stack **stack)
 {
+	if (!*stack)
+		return ;
 	*stack = (*stack)->next;
 	ft_printf("rb\n");
 }

@@ -111,13 +111,14 @@ void		split_b(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, i
 
 //push_swap
 void		sort_ab(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
-void		sort_base_case(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int size);
+void		sort_base_case(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int size, int flag);
 
 //push_swap2
 void		sort_3(t_stack **stack_a, t_stack_root **stack_root);
 void		sort_4(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
 void		sort_5(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
 t_stack		*find_big(t_stack *stack, int size);
+t_stack		*find_small(t_stack **stack, int size);
 
 //stack_access
 int			a_top(t_stack **stack, t_stack_root **stack_root);

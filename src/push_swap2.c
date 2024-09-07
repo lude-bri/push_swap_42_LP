@@ -16,6 +16,8 @@ void	sort_3(t_stack **stack, t_stack_root **stack_root)
 {
 	t_stack *big;
 
+	if  (!*stack)
+		return ;
 	big = find_big(*stack, (*stack_root)->size_a);
 	if (!is_sorted(*stack, (void *)(stack), *stack_root))
 	{
@@ -30,15 +32,18 @@ void	sort_3(t_stack **stack, t_stack_root **stack_root)
 
 void	sort_4(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 {
-	int		size;
+	int			size;
+	t_stack		*stack;
 
+	stack = find_small(stack_a, (*stack_root)->size_a);
+	if (!*stack_a || !*stack_b)
+		return ;
 	size = (*stack_root)->size_a;
-	
 	while (size > 0)
 	{
 		if (!is_sorted(*stack_a, *stack_b, *stack_root))
 		{	
-			if ((*stack_a)->num == 0)
+			if ((*stack_a)->num == stack->num)
 			{
 				do_push_cmd(stack_a, stack_b, stack_root, PB);
 				break ;
@@ -54,21 +59,25 @@ void	sort_4(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 
 void	sort_5(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 {
-	int		size;
+	int			size;
+	t_stack		*small;
 
+	if (!*stack_a || !*stack_b)
+		return ;
 	size = (*stack_root)->size_a;
+	small = find_small(stack_a, (*stack_root)->size_a);
 	while (size > 0)
 	{
 		if (!is_sorted(*stack_a, *stack_b, *stack_root))	
 		{
-			if ((*stack_a)->num == 0)
+			if ((*stack_a)->num == small->num)
 				do_push_cmd(stack_a, stack_b, stack_root, PB);
-			else if ((*stack_a)->num == 1)
+			else if ((*stack_a)->num == small->num + 1)
 				do_push_cmd(stack_a, stack_b, stack_root, PB);
 			else
 				do_cmd(stack_a, stack_b, stack_root, RA);
 		}
-		if ((*stack_b)->num == 0 && (*stack_b)->next->num == 1)
+		if ((*stack_b)->num == small->num && (*stack_b)->next->num == small->num + 1)
 			break ;
 		size--;
 	}
@@ -83,7 +92,9 @@ t_stack	*find_big(t_stack *stack, int size)
 {
 	int			n;
 	t_stack		*high_node;
-
+	
+	if (!stack)
+		return (NULL);
 	n = 0;
 	while (size)
 	{
@@ -98,3 +109,23 @@ t_stack	*find_big(t_stack *stack, int size)
 	return (high_node);
 }
 
+t_stack	*find_small(t_stack **stack, int size)
+{
+	int			n;
+	t_stack		*small_node;
+
+	if (!stack)
+		return (NULL);
+	n = 0;
+	while (size)
+	{
+		if ((*stack)->num <= 0)
+		{
+			n = (*stack)->num;
+			small_node = (*stack);
+		}
+		(*stack) = (*stack)->next;
+		size--;
+	}
+	return (small_node);
+}

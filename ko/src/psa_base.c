@@ -65,7 +65,8 @@ void	sort_3a(t_stack_ab *pab, t_ft_vector *p_cmd_vec)
 	else if (second < third && third < first)
 		pattern = "8180";
 	else if (third < second && second < first)
-		pattern = "1140708";
+		pattern = "1140"
+		min->loc = TOP_B708";
 	else
 		pattern = "";
 	first = -1;
