@@ -10,7 +10,7 @@ Phase 1
 
 	1. Split the list into 3
 	2. Push the 2 smallest thirds into stack B, do a pre-sort doing ra
-	3. Repeat the operation until there are only 3 numbers left in A
+	3. Repeat the operation 1 & 2 until there are only 3 numbers left in A
 	4. Sort these 3 numbers with algo
 
 Phase 2

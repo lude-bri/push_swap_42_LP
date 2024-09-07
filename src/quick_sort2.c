@@ -14,9 +14,9 @@
 
 void	quick_a(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int start, int end)
 {
-	int		partition_size;
-	int		big_pivot;
-	int		small_pivot;
+	unsigned int		partition_size;
+	unsigned int		big_pivot;
+	unsigned int		small_pivot;
 
 	partition_size = (end - start) / 3;
 	big_pivot = end - partition_size;

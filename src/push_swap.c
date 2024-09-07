@@ -13,21 +13,22 @@
 #include "push_swap.h"
 
 void	sort_ab(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
-{
-	
-	/*int		partition_size;
+{	
+	int		partition_size;
 	int		big_pivot;
 	int		small_pivot;
 
 	partition_size = (*stack_root)->size_a / 3;
 	big_pivot = (*stack_root)->size_a - partition_size;
 	small_pivot = big_pivot - partition_size;
-*/
+
 	if ((*stack_root)->size_a <= 5)
 		sort_base_case(stack_a, stack_b, stack_root, (*stack_root)->size_a);
 	else
 	{
 		split_first(stack_a, stack_b, 0, stack_root);
+		if (!is_a_sorted(stack_a, stack_root, partition_size))
+			quick_a(stack_a, stack_b, stack_root, big_pivot, (*stack_root)->size_a);
 		/*if (!is_a_sorted(stack_a, stack_root, partition_size))
 			quick_a(stack_a, stack_b, stack_root, big_pivot, (*stack_root)->size_a);
 		if (is_b_sorted(stack_b, stack_root, partition_size))
@@ -53,3 +54,7 @@ void	sort_base_case(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_r
 		sort_5(stack_a, stack_b, stack_root);
 }
 
+// First it is needed to split the numbers in 3. In that case N = 100 --> n = 33. Then N = 33 --> n = 11. Then N = 11 --> n = 4
+// Once there is no way to split, its time to go to the phase 3. Therefore
+//
+//	1. Split first 
