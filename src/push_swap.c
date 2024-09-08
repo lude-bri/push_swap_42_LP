@@ -71,7 +71,7 @@ void	sort_base_case(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_r
 {
 	if (size == 2 && flag)
 		push_a_n(stack_a, stack_b, stack_root, 2);
-	if (size == 2 & (*stack_a)->next->num < (*stack_a)->num)
+	if (size == 2 && (*stack_a)->next->num < (*stack_a)->num)
 		do_cmd(stack_a, stack_b, stack_root, SA);
 	// else if (size == 3 && flag)
 	// 	sort_3b(stack_b, stack_root);
