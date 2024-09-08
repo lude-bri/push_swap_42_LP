@@ -31,11 +31,11 @@ void	split_first(t_stack **stack_a, t_stack **stack_b, int start, t_stack_root *
 			do_cmd(stack_a, stack_b, stack_root, RA);
 		else if (a_top(stack_a, stack_root) >= start && small_pivot > a_top(stack_a, stack_root))
 		{
-			do_push_cmd(stack_a, stack_b, stack_root, PB);
+			do_cmd(stack_a, stack_b, stack_root, PB);
 			do_cmd(stack_a, stack_b, stack_root, RB);
 		}
 		else
-			do_push_cmd(stack_a, stack_b, stack_root, PB);
+			do_cmd(stack_a, stack_b, stack_root, PB);
 	}
 }
 
@@ -56,15 +56,15 @@ void	split_a(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, in
 			do_cmd(stack_a, stack_b, stack_root, RA);
 		else if (small_pivot <= a_top(stack_a, stack_root) && a_top(stack_a, stack_root) < big_pivot)
 		{
-			do_push_cmd(stack_a, stack_b, stack_root, PB);
+			do_cmd(stack_a, stack_b, stack_root, PB);
 			do_cmd(stack_a, stack_b, stack_root, RB);
 		}
 		else
-			do_push_cmd(stack_a, stack_b, stack_root, PB);
+			do_cmd(stack_a, stack_b, stack_root, PB);
 	}
-	i = -1;
+	/*i = -1;
 	while (++i < partition_size)
-		do_cmd(stack_a, stack_b, stack_root, RRR);
+		do_cmd(stack_a, stack_b, stack_root, RRR);*/
 }
 
 void	split_b(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int start, int end)
@@ -81,13 +81,60 @@ void	split_b(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, in
 	while (++i < end - start)
 	{
 		if (b_top(stack_b, stack_root) >= big_pivot && b_top(stack_b, stack_root) < end)
-			do_push_cmd(stack_a, stack_b, stack_root, PA);
+			do_cmd(stack_a, stack_b, stack_root, PA);
 		else if (small_pivot <= b_top(stack_b, stack_root) && b_top(stack_b, stack_root) < big_pivot)
 		{
-			do_push_cmd(stack_a, stack_b, stack_root, PA);
+			do_cmd(stack_a, stack_b, stack_root, PA);
 			do_cmd(stack_a, stack_b, stack_root, RA);
 		}
 		else
 			do_cmd(stack_a, stack_b, stack_root, RB);
 	}
+}
+
+void split_2b(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int size, int pivot)
+{
+    int idx = 0;
+
+    while (idx < size)
+    {
+        if (pivot < b_top(stack_b, stack_root))
+            do_cmd(stack_a, stack_b, stack_root, PA);
+        else
+            do_cmd(stack_a, stack_b, stack_root, RB);
+        idx++;
+    }
+
+    // Voltar alguns elementos na pilha B para restaurar a ordem original
+    idx = 0;
+    while (idx < size - (size >> 1))
+    {
+        do_cmd(stack_a, stack_b, stack_root, RRB);
+        idx++;
+    }
+}
+
+void split_2(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int size, int dir)
+{
+    int pivot = get_pivot(stack_a, *stack_root, size, dir);  // Obter o pivot
+    int idx = 0;
+
+    if (dir)
+    {
+        split_2b(stack_a, stack_b, stack_root, size, pivot);
+        return;
+    }
+
+    while (idx < size)
+    {
+        if (pivot < a_top(stack_a, stack_root))
+            do_cmd(stack_a, stack_b, stack_root, RA);  // Rotaciona para cima
+        else
+            do_cmd(stack_a, stack_b, stack_root, PB);  // Empurra para B
+        idx++;
+    }
+
+    // Ajustar a ordem na pilha A
+    do_cmd(stack_a, stack_b, stack_root, RRA);
+    do_cmd(stack_a, stack_b, stack_root, RRA);
 }

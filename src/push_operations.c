@@ -77,7 +77,7 @@ void	push_a_n(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, i
 
 	i = -1;
 	while (++i < size)
-		do_push_cmd(stack_a, stack_b, stack_root, PA);
+		do_cmd(stack_a, stack_b, stack_root, PA);
 }
 
 void	if_empty(t_stack **stack)

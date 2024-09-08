@@ -65,6 +65,18 @@ typedef struct s_root
 //   FILES FUNCTIONS	 //
 ///////////////////////////
 
+
+
+
+int get_pivot(t_stack **stack, t_stack_root *root, int size, int dir);
+
+void split_2(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int size, int dir);
+void split_2b(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int size, int pivot);
+void	sort_3a(t_stack **stack_a, t_stack_root **stack_root);
+void	sort_3b(t_stack **stack_b, t_stack_root **stack_root);
+char		*get_pattern_3a_roll(int first, int second, int third);
+char		*get_pattern_3b_roll(int first, int second, int third);
+
 //main
 t_stack_root	*init_root(t_stack *stack_a);
 
@@ -115,8 +127,8 @@ void		sort_base_case(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_
 
 //push_swap2
 void		sort_3(t_stack **stack_a, t_stack_root **stack_root);
-void		sort_4(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
-void		sort_5(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
+void		sort_4(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int dir);
+void		sort_5(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int dir);
 t_stack		*find_big(t_stack *stack, int size);
 t_stack		*find_small(t_stack **stack, int size);
 

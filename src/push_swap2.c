@@ -30,11 +30,78 @@ void	sort_3(t_stack **stack, t_stack_root **stack_root)
 	}
 }
 
-void	sort_4(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
+// void	sort_4(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int dir)
+// {
+// 	// Divida os 4 elementos na pilha
+// 	split_2(stack_a, stack_b, stack_root, 4, dir);
+//
+// 	// Comparações para ver se precisamos fazer swap
+// 	if ((*stack_a)->num < (*stack_a)->next->num
+// 		&& (*stack_b)->num < (*stack_b)->next->num)
+// 		do_cmd(stack_a, stack_b, stack_root, SS);
+// 	else if ((*stack_a)->num < (*stack_a)->next->num)
+// 		do_cmd(stack_a, stack_b, stack_root, SA);
+// 	else if ((*stack_b)->num < (*stack_b)->next->num)
+// 		do_cmd(stack_a, stack_b, stack_root, SB);
+//
+// 	// Empurre os elementos de volta para a pilha A
+// 	do_cmd(stack_a, stack_b, stack_root, PA);
+// 	do_cmd(stack_a, stack_b, stack_root, PA);
+// }
+//
+// void	sort_5(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int dir)
+// {
+// 	// Divida os 5 elementos na pilha
+// 	split_2(stack_a, stack_b, stack_root, 5, dir);
+//
+// 	// Se necessário, faz swap no topo de A
+// 	if ((*stack_a)->num < (*stack_a)->next->num)
+// 		do_cmd(stack_a, stack_b, stack_root, SA);
+//
+// 	// Ordena os 3 elementos restantes na pilha B
+// 	sort_3b(stack_b, stack_root);
+//
+// 	// Empurre os elementos de volta para a pilha A
+// 	do_cmd(stack_a, stack_b, stack_root, PA);
+// 	do_cmd(stack_a, stack_b, stack_root, PA);
+// }
+
+
+int get_pivot(t_stack **stack, t_stack_root *root, int size, int dir)
+{
+    int max_val = -1;
+    int min_val = 2147483647;
+    t_stack *current;
+    int cur_val;
+
+	(void)(*root);
+    if (dir == 0) {  // Assume '0' é para a pilha 'a'
+        current = *stack;  // Começa do topo da pilha 'a'
+    } else {  // '1' é para a pilha 'b'
+        current = *stack;  // Começa do topo da pilha 'b'
+    }
+
+    for (int i = 0; i < size; i++) {
+        cur_val = current->num;
+        if (max_val < cur_val)
+            max_val = cur_val;
+        if (min_val > cur_val)
+            min_val = cur_val;
+        current = current->next;  // Move para o próximo elemento na lista circular
+    }
+
+    return ((min_val + max_val) >> 1);  // Retorna a média dos valores máximo e mínimo
+}
+
+
+
+
+void	sort_4(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int dir)
 {
 	int			size;
 	t_stack		*stack;
 
+	(void)(dir);
 	stack = find_small(stack_a, (*stack_root)->size_a);
 	if (!*stack_a || !*stack_b)
 		return ;
@@ -45,7 +112,7 @@ void	sort_4(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 		{	
 			if ((*stack_a)->num == stack->num)
 			{
-				do_push_cmd(stack_a, stack_b, stack_root, PB);
+				do_cmd(stack_a, stack_b, stack_root, PB);
 				break ;
 			}
 			else
@@ -54,14 +121,15 @@ void	sort_4(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 		size--;
 	}
 	sort_3(stack_a, stack_root);
-	do_push_cmd(stack_a, stack_b, stack_root, PA);
+	do_cmd(stack_a, stack_b, stack_root, PA);
 }
 
-void	sort_5(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
+void	sort_5(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int dir)
 {
 	int			size;
 	t_stack		*small;
 
+	(void)(dir);
 	if (!*stack_a || !*stack_b)
 		return ;
 	size = (*stack_root)->size_a;
@@ -71,9 +139,9 @@ void	sort_5(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 		if (!is_sorted(*stack_a, *stack_b, *stack_root))	
 		{
 			if ((*stack_a)->num == small->num)
-				do_push_cmd(stack_a, stack_b, stack_root, PB);
+				do_cmd(stack_a, stack_b, stack_root, PB);
 			else if ((*stack_a)->num == small->num + 1)
-				do_push_cmd(stack_a, stack_b, stack_root, PB);
+				do_cmd(stack_a, stack_b, stack_root, PB);
 			else
 				do_cmd(stack_a, stack_b, stack_root, RA);
 		}
@@ -84,8 +152,8 @@ void	sort_5(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 	sort_3(stack_a, stack_root);
 	if ((*stack_b)->num < (*stack_b)->next->num)
 		do_cmd(stack_a, stack_b, stack_root, RB);
-	do_push_cmd(stack_a, stack_b, stack_root, PA);
-	do_push_cmd(stack_a, stack_b, stack_root, PA);
+	do_cmd(stack_a, stack_b, stack_root, PA);
+	do_cmd(stack_a, stack_b, stack_root, PA);
 }
 
 t_stack	*find_big(t_stack *stack, int size)
@@ -111,20 +179,24 @@ t_stack	*find_big(t_stack *stack, int size)
 
 t_stack	*find_small(t_stack **stack, int size)
 {
-	int			n;
 	t_stack		*small_node;
+	t_stack		*current;
+	int			n;
 
-	if (!stack)
+	if (!stack || size <= 0)
 		return (NULL);
-	n = 0;
+
+	current = (*stack);
+	small_node = current;
+	n = current->num;
 	while (size)
 	{
-		if ((*stack)->num <= 0)
+		if (current->num <= n)
 		{
-			n = (*stack)->num;
-			small_node = (*stack);
+			n = current->num;
+			small_node = current;
 		}
-		(*stack) = (*stack)->next;
+		current = current->next;
 		size--;
 	}
 	return (small_node);
