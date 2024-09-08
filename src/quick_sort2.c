@@ -30,11 +30,6 @@ void	quick_a(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, in
 			quick_a(stack_a, stack_b, stack_root, big_pivot, end);
 		if (is_b_sorted(stack_b, stack_root, partition_size))
 			push_a_n(stack_a, stack_b, stack_root, partition_size);
-		// while (partition_size)
-		// {	
-		// 	do_cmd(stack_a, stack_b, stack_root, PB);
-		// 	partition_size--;
-		// }
 		// else
 		// 	quick_b(stack_a, stack_b, stack_root, small_pivot, big_pivot);
 		// if (is_b_sorted(stack_b, stack_root, small_pivot - start))
