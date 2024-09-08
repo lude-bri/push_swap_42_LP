@@ -32,9 +32,8 @@ void	sort_ab(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 		if (!is_a_sorted(stack_a, stack_root, partition_size))
 			quick_a(stack_a, stack_b, stack_root, big_pivot, N);
 		//se houver somente 3 elementos na stack A, verifique se estao ordenados
-		if ((*stack_root)->size_a != 3)
-			quick_a(stack_a, stack_b, stack_root, big_pivot, N);
-		sort_base_case(stack_a, stack_b, stack_root, (*stack_root)->size_a, 0);
+		if ((*stack_root)->size_a <= 3)
+			sort_base_case(stack_a, stack_b, stack_root, (*stack_root)->size_a, 0);
 		//se estiverem ordenados, passamos para a fase 3
 		//se nao estiverem ordenados, ordene com algoritmo de 3.
 	
