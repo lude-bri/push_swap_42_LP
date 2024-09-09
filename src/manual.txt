@@ -36,3 +36,9 @@ Plano
 
 1. Create a circular double linked list
 2.
+
+https://github.com/ulyssegerkens/push_swap/tree/main
+https://velog.io/@arat5724/42-pushswap-최적화
+https://velog.io/@arat5724/42-pushswap-최적화
+https://automatic-saltopus-34b.notion.site/push_swap-c15e62229b9541d78fadec4d6aae8b50
+https://medium.com/@ulysse.gerkens/push-swap-in-less-than-4200-operations-c292f034f6c0
