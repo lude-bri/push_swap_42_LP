@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 08:56:09 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/05 12:46:30 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/09 15:57:50 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ typedef struct s_root
 
 
 
+void	smart_insert(t_stack **stack_a, t_stack **stack_b, t_stack_root **root);
 
 int get_pivot(t_stack **stack, t_stack_root *root, int size, int dir);
 

@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 14:02:04 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/05 13:59:18 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/09 15:56:36 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	sort_ab(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 	int		N;
 	int		partition_size;
 	int		big_pivot;
-/* 	int		small_pivot; */
+	// int		small_pivot;
 
 	N = (*stack_root)->size_a;
 	partition_size = N / 3;
@@ -34,6 +34,7 @@ void	sort_ab(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 		//se houver somente 3 elementos na stack A, verifique se estao ordenados
 		if ((*stack_root)->size_a <= 3)
 			sort_base_case(stack_a, stack_b, stack_root, (*stack_root)->size_a, 0);
+		smart_insert(stack_a, stack_b, stack_root);
 	}
 
 
@@ -43,8 +44,8 @@ void	sort_ab(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 			push_a_n(stack_a, stack_b, stack_root, small_pivot);
 		else
 			quick_b(stack_a, stack_b, stack_root, 0, small_pivot);
-*/
-		/*if (!is_a_sorted(stack_a, stack_root, partition_size))
+
+		if (!is_a_sorted(stack_a, stack_root, partition_size))
 			quick_a(stack_a, stack_b, stack_root, big_pivot, (*stack_root)->size_a);
 		if (is_b_sorted(stack_b, stack_root, partition_size))
 			push_a_n(stack_a, stack_b, stack_root, partition_size);
@@ -53,7 +54,8 @@ void	sort_ab(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 		if (is_b_sorted(stack_b, stack_root, small_pivot))
 			push_a_n(stack_a, stack_b, stack_root, small_pivot);
 		else
-			quick_b(stack_a, stack_b, stack_root, 0, small_pivot);*/
+			quick_b(stack_a, stack_b, stack_root, 0, small_pivot);
+	*/
 }
 
 void	sort_base_case(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int size, int flag)
