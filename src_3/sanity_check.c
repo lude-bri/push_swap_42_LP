@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 11:34:04 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/10 13:17:27 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/10 20:05:31 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,18 +70,23 @@ int	ft_is_number(char *str)
 	return (1);
 }
 
-int		duplicate_check(int *arr, int size)
+int duplicate_check(int *arr, int size)
 {
-	int i;
-	int j;
+    int i;
+    int j;
 
-	i = -1;
-	while (++i < size)
-	{
-		j = -1;
-		while (++j < size)
-			if (arr[j] == arr[i])
-				return (0);
-	}
-	return (1);
+    i = 0;
+    while (i < size - 1)
+    {
+        j = i + 1;
+        while (j < size)
+        {
+            if (arr[i] == arr[j])
+                return (0);
+            j++;
+        }
+        i++;
+    }
+    return (1);
 }
+
