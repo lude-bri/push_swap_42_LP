@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 20:07:08 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/10 20:30:10 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/10 21:07:39 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,40 @@ int		pop(t_stack *stack, int position)
 	else if (position == TAIL)
 		stack->tail = (stack->tail + stack->size - 1) % stack->size;
 	return (*item);
+}
+
+void	swap(t_stack *stack)
+{
+	int		tmp;
+
+	if (stack->count < 2)
+		return ;
+	tmp = *take_item(stack, 0);
+	*(take_item(stack, 0)) = *take_item(stack, 1);
+	*take_item(stack, 1) = tmp;
+}
+
+void	cmd_to_buffer(t_ps *root, char cmd)
+{
+	static size_t	size;
+	static size_t	i;
+	char			*tmp;
+
+	if (i == size)
+	{
+		if (!size)
+			size = 1;
+		else if (size < 1024)
+			size = size * 2;
+		else
+			size = size + 1024;
+		tmp = ft_calloc(size + 1, sizeof(char));
+		if (!tmp)
+			return ;
+		if (root->cmds)
+			ft_strlcpy(tmp, root->cmds, size + 1);
+		free(root->cmds);
+		root->cmds = tmp;
+	}
+	root->cmds[i++] = cmd;
 }
