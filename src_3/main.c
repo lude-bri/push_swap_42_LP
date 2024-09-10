@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:29:05 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/10 12:30:17 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/10 13:19:35 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ int		main(int ac, char **av)
 		root = new_ab(numbers);
 	}
 	if (!root)
+	{
 		ft_putstr_fd("Error\n", 2);
+		exit (1);
+	}
 	//push_swap(root);
 	free_ab(root);
 }

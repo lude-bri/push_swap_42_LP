@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 11:34:04 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/10 13:15:47 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/10 13:17:27 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,10 @@ int		duplicate_check(int *arr, int size)
 	int j;
 
 	i = -1;
-	while (++i < size - 1)
+	while (++i < size)
 	{
 		j = -1;
-		while (++j < i)
+		while (++j < size)
 			if (arr[j] == arr[i])
 				return (0);
 	}
