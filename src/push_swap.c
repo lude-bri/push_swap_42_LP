@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 14:02:04 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/09 15:56:36 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/10 10:51:49 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,10 @@ void	sort_ab(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
 		//se houver somente 3 elementos na stack A, verifique se estao ordenados
 		if ((*stack_root)->size_a <= 3)
 			sort_base_case(stack_a, stack_b, stack_root, (*stack_root)->size_a, 0);
-		smart_insert(stack_a, stack_b, stack_root);
+		//smart_insert(stack_a, stack_b, stack_root);
 	}
 
 
-		
 
 		/*if (is_b_sorted(stack_b, stack_root, small_pivot))
 			push_a_n(stack_a, stack_b, stack_root, small_pivot);
