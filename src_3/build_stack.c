@@ -6,11 +6,14 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:23:55 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/10 13:02:34 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/10 19:52:33 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+
+static void		set_stack(t_ps *root, int count);
 
 t_ps	*new_ab(char **str)
 {
@@ -31,13 +34,20 @@ t_ps	*new_ab(char **str)
 	i = -1;
 	while (++i < count && str[i])
 		root->b->values[i] = ft_atoi(str[i]);
-	root->a->size = count;
-	root->b->size = count;
+	set_stack(root, count);
 	if (duplicate_check(root->b->values, count) == 0)
 		return (NULL);
 	if (!normalize(root->a, root->b))
 		return (free_ab(root), NULL);
 	return (root);
+}
+
+static void		set_stack(t_ps *root, int count)
+{
+	root->a->size = count;
+	root->a->size = count;
+	root->a->count = count;
+	root->b->count = count;
 }
 
 int  normalize(t_stack *a, t_stack *b)
