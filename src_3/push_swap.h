@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:01:45 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/10 21:26:45 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/11 11:08:34 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,6 @@ void	cmd_to_buffer(t_ps *root, char cmd);
 int		*take_item(t_stack *stack, int i);
 
 //sort_stack.c
-
 void	sort_3(t_ps *data, t_stack *stack);
 void	sort_small(t_ps *data);
 int		unsorted_one(t_stack *stack);
@@ -114,5 +113,8 @@ void	to_top(t_ps *root, char id, int n);
 //free.c
 void	free_ab(t_ps *stack);
 void	free_strs(char **strs);
+
+//costs.c
+void	find_best_insert(t_ps *root);
 
 #endif
