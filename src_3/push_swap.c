@@ -45,25 +45,25 @@ int		is_sorted(t_stack *stack)
 	return (1);
 }
 
-void	do_cmd(t_ps *stack, char cmd)
+void	do_cmd(t_ps *root, char cmd)
 {
 	if (cmd == SA)
-		swap(stack->a);
+		swap(root->a);
 	if (cmd == SB)
-		swap(stack->b);
-	if (cmd == PA && stack->b->count > 0)
-		push(stack->a, pop(stack->b, HEAD), HEAD);
-	if (cmd == PB && stack->a->count > 0)
-		push(stack->b, pop(stack->a, HEAD), HEAD);
-	if (cmd == RA && stack->a->count > 1)
-		push(stack->a, pop(stack->a, HEAD), TAIL);
-	if (cmd == RB && stack->b->count > 1)
-push(stack->b, pop(stack->b, HEAD), TAIL);
-	if (cmd == RRA && stack->a->count > 1)
-		push(stack->a, pop(stack->a, TAIL), HEAD);
-	if (cmd == RRB && stack->b->count > 1)
-		push(stack->b, pop(stack->b, TAIL), HEAD);
-	cmd_to_buffer(stack, cmd);
+		swap(root->b);
+	if (cmd == PA && root->b->count > 0)
+		push(root->a, pop(root->b, HEAD), HEAD);
+	if (cmd == PB && root->a->count > 0)
+		push(root->b, pop(root->a, HEAD), HEAD);
+	if (cmd == RA && root->a->count > 1)
+		push(root->a, pop(root->a, HEAD), TAIL);
+	if (cmd == RB && root->b->count > 1)
+		push(root->b, pop(root->b, HEAD), TAIL);
+	if (cmd == RRA && root->a->count > 1)
+		push(root->a, pop(root->a, TAIL), HEAD);
+	if (cmd == RRB && root->b->count > 1)
+		push(root->b, pop(root->b, TAIL), HEAD);
+	cmd_to_buffer(root, cmd);
 }
 
 void	print_cmds(char *cmd)
