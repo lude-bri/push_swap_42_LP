@@ -80,22 +80,22 @@ void	print_cmds(char *cmd)
 	while (cmd[++i])
 	{
 		if (cmd[i] == SA)
-			ft_printf("SA\n");
-		if (cmd[i] == SB)
-			ft_printf("SB\n");
-		if (cmd[i] == SS)
-			ft_printf("SS\n");
-		if (cmd[i] == RA)
-			ft_printf("RA\n");
-		if (cmd[i] == RB)
-			ft_printf("RB\n");
-		if (cmd[i] == RR)
-			ft_printf("RR\n");
-		if (cmd[i] == RRA)
-			ft_printf("RRA\n");
-		if (cmd[i] == RRB)
-			ft_printf("RRB\n");
-		if (cmd[i] == RRR)
-			ft_printf("RRR\n");
+			ft_printf("sa\n");
+		else if (cmd[i] == SB)
+			ft_printf("sb\n");
+		else if (cmd[i] == SS)
+			ft_printf("ss\n");
+		else if (cmd[i] == RA)
+			ft_printf("ra\n");
+		else if (cmd[i] == RB)
+			ft_printf("rb\n");
+		else if (cmd[i] == RR)
+			ft_printf("rr\n");
+		else if (cmd[i] == RRA)
+			ft_printf("rra\n");
+		else if (cmd[i] == RRB)
+			ft_printf("rrb\n");
+		else if (cmd[i] == RRR)
+			ft_printf("rrr\n");
 	}
 }

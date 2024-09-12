@@ -12,27 +12,41 @@
 
 #include "push_swap.h"
 
-void	sort_3(t_ps *root, t_stack *stack)
+void		sort_3(t_ps *root, t_stack *stack)
 {
-	int		*first;
-	int		*second;
-	int		*third;
-
-	first = take_item(stack, 0);
-	second = take_item(stack, 1);
-	third = take_item(stack, 2);
-
-	if (first < second && second < third)
+	if (*take_item(stack, 0) < *take_item(stack, 1) && *take_item(stack, 1) < *take_item(stack, 2))
 		return ;
-	if (first > second && first > third)
+	if (*take_item(stack, 0) > *take_item(stack, 2) && *take_item(stack, 0) > *take_item(stack, 1))
 		do_cmd(root, RA);
-	else if (first < second && first > third)
+	else if (*take_item(stack, 0) > *take_item(stack, 2) && *take_item(stack, 0) < *take_item(stack, 1))
 		do_cmd(root, RRA);
 	else
 		do_cmd(root, SA);
 	sort_3(root, stack);
 }
 
+//
+// void	sort_3(t_ps *root, t_stack *stack)
+// {
+// 	int		*first;
+// 	int		*second;
+// 	int		*third;
+//
+// 	first = take_item(stack, 0);
+// 	second = take_item(stack, 1);
+// 	third = take_item(stack, 2);
+//
+// 	if (first < second && second < third)
+// 		return ;
+// 	if (first > second && first > third)
+// 		do_cmd(root, RA);
+// 	else if (first < second && first > third)
+// 		do_cmd(root, RRA);
+// 	else
+// 		do_cmd(root, SA);
+// 	sort_3(root, stack);
+// }
+//
 void	sort_small(t_ps *root)
 {
 	int		one;
