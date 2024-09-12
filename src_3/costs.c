@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 11:10:33 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/12 15:38:38 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/12 16:03:57 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int	find_next(t_stack *stack, int num)
 
 	if (stack->count < 1)
 		return (-1);
-	next = INT32_MAX;
+	next = INT_MAX;
 	i = -1;
 	while (take_item(stack, ++i))
 	{
@@ -107,7 +107,7 @@ int	find_next(t_stack *stack, int num)
 		if (current > num && current < next)
 			next = current;
 	}
-	if (next == INT32_MAX)
+	if (next == INT_MAX)
 		return (find_next(stack, -1));
 	return (next);
 }
