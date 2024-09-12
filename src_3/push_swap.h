@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:01:45 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/11 11:20:34 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/12 15:58:00 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ int		number_sanity_check(char **str);
 
 //push_swap.c
 void	do_cmd(t_ps *stack, char cmd);
+void	print_cmds(char *cmd);
 
 //basic_cmds.c
 void	push(t_stack *stack, int value, int position);
@@ -105,7 +106,7 @@ int		*take_item(t_stack *stack, int i);
 
 //sort_stack.c
 void	sort_3(t_ps *data, t_stack *stack);
-void	sort_small(t_ps *data);
+void	sort_small(t_ps *root);
 int		unsorted_one(t_stack *stack);
 void	sort_big(t_ps *data);
 void	to_top(t_ps *root, char id, int n);
@@ -116,8 +117,8 @@ void	free_strs(char **strs);
 
 //costs.c
 void	find_best_insert(t_ps *root);
-int		find_lowest(t_ps *data, int start, int size);
-int		calculate_moves(t_ps *data, int current);
+int		find_lowest(t_ps *root, int start, int size);
+int		calculate_moves(t_ps *root, int current);
 int		find_next(t_stack *stack, int num);
 int		find_distance(t_stack *stack, int num);
 

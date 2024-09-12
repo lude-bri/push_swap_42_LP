@@ -72,10 +72,14 @@ LIBFT_PATH		= $(LIBS_PATH)
 
 ## src_3
 FILES = main.c
+FILES += basic_cmds.c
 FILES += build_stack.c
+FILES += costs.c
 FILES += free.c
+FILES += push_swap.c
 FILES += sanity_check.c
-
+FILES += sort_stack.c
+#
 
 
 ## TXT_NAMES = file1.txt og_out.txt push_swap_out.txt out_ok.txt out_ko.txt

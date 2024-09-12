@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 08:59:46 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/11 11:08:45 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/12 15:46:00 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,4 +115,36 @@ int		unsorted_one(t_stack *stack)
 		push(stack, pop(stack, HEAD), TAIL);
 	}
 	return (one);
+}
+
+void	to_top(t_ps *root, char id, int n)
+{
+	t_stack		*stack;
+	int			i;
+
+	stack = root->a;
+	if (id == B)
+		stack = root->b;
+	if (n < 0 || stack->count < 2)
+		return ;
+	i = -1;
+	while (++i < stack->count)
+		if (*take_item(stack, i) == n)
+			break ;
+	if (i > stack->count / 2)
+		while (i++ < stack->count)
+		{
+			if (root->a)
+				do_cmd(root, RRA);
+			else
+				do_cmd(root, RRB);
+		}
+	else
+		while (i-- > 0)
+		{
+			if (root->a)
+				do_cmd(root, RA);
+			else
+				do_cmd(root, RB);
+		}
 }

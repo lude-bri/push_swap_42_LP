@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 11:10:33 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/11 11:22:53 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/12 15:38:38 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int		find_lowest(t_ps *root, int start, int size)
 		}
 		start++;
 	}
-return(low);
+	return(low);
 }
 
 int		calculate_moves(t_ps *root, int current)

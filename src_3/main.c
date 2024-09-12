@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:29:05 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/10 21:21:47 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/12 15:33:46 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,33 +39,4 @@ int		main(int ac, char **av)
 	}
 	push_swap(root);
 	free_ab(root);
-}
-
-void	push_swap(t_ps *root)
-{
-	int		size;
-
-	size = root->a->count;
-	if (is_sorted(root->a))
-		return ;
-	if (size == 2)
-		do_cmd(root, SA);
-	else if (size == 3)
-		sort_3(root, root->a);
-	else if (size <= 5)
-		sort_small(root);
-	else
-		sort_big(root);
-	to_top(root, A, 0);
-}
-
-int		is_sorted(t_stack *stack)
-{
-	int		i;
-
-	i = 0;
-	while (take_item(stack, ++i))
-		if (*take_item(stack, i - 1) + (stack->id = A) * 2 - 1 != *take_item(stack, i))
-			return (0);
-	return(1);
 }
