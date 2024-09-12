@@ -31,30 +31,25 @@ void	push_swap(t_ps *root)
 	print_cmds(root->cmds);
 }
 
-int	is_sorted(t_stack *stack)
+int is_sorted(t_stack *stack)
 {
-	int		i;
+    int i;
+    int *current_item;
+    int *next_item;
 
-	i = 0;
-	while (take_item(stack, ++i))
-		if (*take_item(stack, i - 1) + (stack->id = A) * 2 - 1 != *take_item(stack, i))
-			return (0);
-	return(1);
+    i = 0;
+    current_item = take_item(stack, i);
+
+    if (!current_item)
+        return (1);
+    while ((next_item = take_item(stack, ++i)))
+    {
+		if (*current_item + (stack->id == A ? 1 : -1) != *next_item)
+            return (0);   
+        current_item = next_item;
+    } 
+    return (1);
 }
-
-// int		is_sorted(t_stack *stack)
-// {
-// 	int		i;
-//
-// 	i = 0;
-// 	while (take_item(stack, ++i))
-// 	{
-// 		if (*take_item(stack, i - 1) + 
-// 			(stack->id == A ? 2 : -1) != *take_item(stack, i))
-// 			return (0);
-// 	}
-// 	return (1);
-// }
 
 void	do_cmd(t_ps *root, char cmd)
 {
