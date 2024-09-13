@@ -46,6 +46,7 @@
 # define HEAD 0
 # define TAIL -1
 
+# define TO_CLEAN 14 
 /* ************************************************************************** */
 /*                                  STRUCTS                                   */
 /* ************************************************************************** */
@@ -120,5 +121,17 @@ int		find_distance(t_stack *stack, int num);
 
 //optimize.c
 void	optimize(t_ps *root, char *cmds);
+void	clean_push(char *cmds);
+void	clean_swap(char *cmds);
+void	clean_rotate(char *cmds, char vis, int i, int r);
+int		*count_helper(int count[4], int r, int tmp0, int tmp1);
+
+//optimize_2.c
+void	optimize_swap(char *cmds, char id);
+void	clean_redundance(t_ps *root, char *cmds);
+void	to_swap(char *cmds, char id, int rev);
+void	replace_r(char *cmds, char cmd, int count_id);
+
+
 
 #endif
