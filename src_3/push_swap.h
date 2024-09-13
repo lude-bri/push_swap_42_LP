@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:01:45 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/12 15:58:00 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/13 18:20:16 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,14 +124,16 @@ void	optimize(t_ps *root, char *cmds);
 void	clean_push(char *cmds);
 void	clean_swap(char *cmds);
 void	clean_rotate(char *cmds, char vis, int i, int r);
-int		*count_helper(int count[4], int r, int tmp0, int tmp1);
+int		*count_update(int count[4], int r, int tmp0, int tmp1);
+
+//optimize_add.c
+void	add_swap(int count_a, int count_b, char *cmds);
+void	add_rev_rot(char *cmds, int *count, int r);
 
 //optimize_2.c
 void	optimize_swap(char *cmds, char id);
 void	clean_redundance(t_ps *root, char *cmds);
 void	to_swap(char *cmds, char id, int rev);
 void	replace_r(char *cmds, char cmd, int count_id);
-
-
 
 #endif

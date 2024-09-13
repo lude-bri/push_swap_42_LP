@@ -1,47 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   optimize.c                                         :+:      :+:    :+:   */
+/*   optimize_clean.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/12 19:00:36 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/13 18:23:59 by luigi            ###   ########.fr       */
+/*   Created: 2024/09/13 18:29:30 by luigi             #+#    #+#             */
+/*   Updated: 2024/09/13 18:29:53 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	optimize(t_ps *root, char *cmds)
-{
-	char	*prev;
-	char	do_it;
-	int		i;
-
-	prev = 0;
-	do_it = -1;
-	while (!(++do_it) || ft_strncmp(cmds, prev, !!do_it * ft_strlen(cmds)))
-	{
-		free(prev);
-		prev = ft_strdup(cmds);
-		i = -1;
-		while(cmds[++i])
-		{
-			optimize_swap(&cmds[i], A);
-			optimize_swap(&cmds[i], B);
-			if (cmds[i] == PA || cmds[i] == PB)
-				clean_push(&cmds[i]);
-			if (cmds[i] == SA || cmds[i] == SB)
-				clean_swap(&cmds[i]);
-			if ((cmds[i] == RRA || cmds[i] == RRB) 
-					|| (cmds[i] == RA || cmds[i] == RB)
-				|| (cmds[i] == RRR) || cmds[i] == RR)
-				clean_rotate(&cmds[i], 0, 4, -2);
-		}
-	}
-	free(prev);
-	clean_redundance(root, cmds);
-}
 
 void	clean_push(char *cmds)
 {
@@ -115,31 +84,4 @@ void	clean_rotate(char *cmds, char seen, int i, int r)
 	add_rev_rot(cmds, count, r);
 }
 
-int *count_update(int count[4], int r, int tmp0, int tmp1)
-{
-    if (r > 4)
-    {
-        // Contabiliza rotação normal (RA, RB) e reverse (RRA, RRB)
-        count[0] += (r == RA);   // Se r é RA, incrementa count[0]
-        count[1] += (r == RRA);  // Se r é RRA, incrementa count[1]
-        count[2] += (r == RB);   // Se r é RB, incrementa count[2]
-        count[3] += (r == RRB);  // Se r é RRB, incrementa count[3]
-    }
-    else if (r == -1)
-    {
-        // Ajuste das contagens para as rotações e reverses
-        count[0] = (count[0] - count[1]) * (count[0] > count[1]);
-        count[1] = (count[1] - tmp0) * (count[1] > tmp0);
-        count[2] = (count[2] - count[3]) * (count[2] > count[3]);
-        count[3] = (count[3] - tmp1) * (count[3] > tmp1);
-    }
-    else
-    {
-        // Ajusta os contadores removendo valores conforme tmp0 e tmp1
-        count[0] -= (tmp1 && count[0]);
-		count[1] -= (tmp0 && count[1]);
-		count[2] -= (tmp1 && count[2]);
-		count[3] -= (tmp0 && count[3]);
-    }
-    return (count);
-}
+
