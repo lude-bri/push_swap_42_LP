@@ -53,7 +53,7 @@ static int	get_num_lowest(t_ps *data, int start, int size)
 	int		moves;
 
 	end = start + size;
-	lowest_moves = INT32_MAX;
+	lowest_moves = INT_MAX;
 	num_lowest = -1;
 	while (start <= end)
 	{
@@ -91,7 +91,7 @@ static int	find_next(t_stack *stack, int num)
 
 	if (stack->count < 1)
 		return (-1);
-	next = INT32_MAX;
+	next = INT_MAX;
 	i = -1;
 	while (peek(stack, ++i))
 	{
@@ -99,7 +99,7 @@ static int	find_next(t_stack *stack, int num)
 		if (current > num && current < next)
 			next = current;
 	}
-	if (next == INT32_MAX)
+	if (next == INT_MAX)
 		return (find_next(stack, -1));
 	return (next);
 }

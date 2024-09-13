@@ -32,7 +32,7 @@ int		*take_item(t_stack *stack, int i)
 
 void	push(t_stack *stack, int value, int position)
 {
-	stack->count = stack->count + 1;
+	stack->count++;
 	if (position == HEAD)
 	{
 		stack->head = (stack->head + stack->size - 1) % stack->size;
@@ -52,7 +52,7 @@ int		pop(t_stack *stack, int position)
 	item = take_item(stack, position);
 	if (!item)
 		return (-1);
-	stack->count = stack->count - 1;
+	stack->count--;
 	if (position == HEAD)
 		stack->head = (stack->head + 1) % stack->size;
 	else if (position == TAIL)

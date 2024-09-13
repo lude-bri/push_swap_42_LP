@@ -50,11 +50,7 @@ void		sort_3(t_ps *root, t_stack *stack)
 void	sort_small(t_ps *root)
 {
 	int		one;
-	int		first;
-	int		second;
 
-	first = *take_item(root->b, 0);
-	second = *take_item(root->b, 1);
 	one = unsorted_one(root->a);
 	if (one != -1)
 	{
@@ -68,9 +64,9 @@ void	sort_small(t_ps *root)
 	sort_3(root, root->a);
 	while (root->b->count)
 	{
-		if (root->b->count > 1 && first < second)
+		if (root->b->count > 1 && *take_item(root->b, 0) < *take_item(root->b, 1))
 			do_cmd(root, SB);
-		to_top(root, A, first + 1);
+		to_top(root, A, *take_item(root->b, 0) + 1);
 		do_cmd(root, PA);
 	}
 }
@@ -148,17 +144,17 @@ void	to_top(t_ps *root, char id, int n)
 	if (i > stack->count / 2)
 		while (i++ < stack->count)
 		{
-			if (root->a)
+			if (id == A)
 				do_cmd(root, RRA);
-			else
+			else if (id == B)
 				do_cmd(root, RRB);
 		}
 	else
 		while (i-- > 0)
 		{
-			if (root->a)
+			if (id == A)
 				do_cmd(root, RA);
-			else
+			else if (id == B)
 				do_cmd(root, RB);
 		}
 }

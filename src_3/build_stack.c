@@ -47,7 +47,6 @@ static void		set_stack(t_ps *root, int count)
 	root->a->size = count;
 	root->b->size = count;
 	root->a->count = count;
-	root->b->count = count;
 }
 
 int  normalize(t_stack *a, t_stack *b)

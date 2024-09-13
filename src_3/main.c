@@ -40,3 +40,4 @@ int		main(int ac, char **av)
 	push_swap(root);
 	free_ab(root);
 }
+
