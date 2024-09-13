@@ -12,11 +12,12 @@
 
 #include "push_swap.h"
 
-void	free_ab(t_ps *stack)
+void	free_ab(t_ps *root)
 {
-	free(stack->a);
-	free(stack->b);
-	free(stack);
+	free (root->cmds);
+	free(root->a);
+	free(root->b);
+	free(root);
 }
 
 void	free_strs(char **strs)

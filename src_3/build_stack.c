@@ -25,17 +25,17 @@ t_ps	*new_ab(char **str)
 		return (NULL);
 	root = init_root();
 	if (!root)
-		return (NULL);
+		return (free_ab(root), NULL);
 	root->a->values = malloc(sizeof(int) * count);
 	root->b->values = malloc(sizeof(int) * count);
 	if (!root->a->values || !root->b->values)
-		return (free(root), NULL);
+		return (free_ab(root), NULL);
 	i = -1;
 	while (++i < count && str[i])
 		root->b->values[i] = ft_atoi(str[i]);
 	set_stack(root, count);
 	if (duplicate_check(root->b->values, count) == 0)
-		return (NULL);
+		return (free_ab(root), NULL);
 	if (!normalize(root->a, root->b))
 		return (free_ab(root), NULL);
 	return (root);
@@ -87,7 +87,7 @@ t_ps	*init_root(void)
 	root->a = init_stack(root, A);
 	root->b = init_stack(root, B);
 	root->cmds = NULL;
-	root->split = NULL;
+	//root->split = NULL;
 	return (root);
 }
 
@@ -98,7 +98,7 @@ t_stack	*init_stack(t_ps *root, char id)
 	(void)(root);
 	stack = malloc(sizeof(t_stack));
 	if (!stack)
-		return (NULL);
+		return (free_ab(root), NULL);
 	stack->id = id;
 	stack->values = NULL;
 	stack->count = 0;
