@@ -38,7 +38,5 @@ int	main(int ac, char **av)
 		exit (1);
 	}
 	push_swap(root);
-	optimize(root, root->cmds);
-	print_cmds(root->cmds);
 	free_ab(root);
 }
