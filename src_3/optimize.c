@@ -51,5 +51,18 @@ void	clean_push(char *cmds)
 	count_a = 0;
 	count_b = 0;
 	i = 0;
+	while ((cmds[i] == PA) || (cmds[i] == PB) || cmds[i] == TO_CLEAN)
+	{
+		if (cmds[i] == PA)
+			count_a++;
+		if (cmds[i] == PB)
+			count_b++;
+		cmds[i++] = TO_CLEAN;
+	}
+	i = -1;
+	while (++i < ((count_a - count_b) * (count_a > count_b)
+			+ (count_b - count_a) * (count_b > count_a)))
+		cmds[i] = PA * (count_a > count_b)
+			+ PB * (count_b > count_a);
 }
 
