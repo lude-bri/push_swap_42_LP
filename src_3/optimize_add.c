@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 18:18:52 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/13 18:19:54 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/13 18:46:26 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,3 +53,59 @@ void	add_swap(int count_a, int count_b, char *cmds)
 			cmds[0] |= SB;
 	}
 }
+
+void	add_best(char *cmds, char id, int rev)
+{
+    int count;
+    int i;
+
+    count = -1;
+    i = -1;
+
+    // Percorre os comandos até encontrar três não `TO_CLEAN`
+    while (cmds[++i] && ++count < 3)
+    {
+        while (cmds[i] == TO_CLEAN)
+            i++;
+        
+        // Para o primeiro comando, insere RRA/RRB (se `rev` for 1) ou limpa (`TO_CLEAN`)
+        if (count == 0)
+        {
+            if (rev)
+            {
+                if (id == A)
+                    cmds[i] = RRA;
+                else if (id == B)
+                    cmds[i] = RRB;
+            }
+            else
+            {
+                cmds[i] = TO_CLEAN;
+            }
+        }
+        // Para o segundo comando, insere SA ou SB dependendo de `id`
+        else if (count == 1)
+        {
+            if (id == A)
+                cmds[i] = SA;
+            else if (id == B)
+                cmds[i] = SB;
+        }
+        // Para o terceiro comando, insere RA/RB (se `rev` for 0) ou limpa (`TO_CLEAN`)
+        else if (count == 2)
+        {
+            if (!rev)
+            {
+                if (id == A)
+                    cmds[i] = RA;
+                else if (id == B)
+                    cmds[i] = RB;
+            }
+            else
+            {
+                cmds[i] = TO_CLEAN;
+            }
+        }
+    }
+}
+

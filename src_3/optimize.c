@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 19:00:36 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/13 18:23:59 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/13 18:46:16 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,76 +43,74 @@ void	optimize(t_ps *root, char *cmds)
 	clean_redundance(root, cmds);
 }
 
-void	clean_push(char *cmds)
+void	optimize_swap(char *cmds, char id)
 {
-	int		count_a;
-	int		count_b;
-	int		i;
+	int	rev;
+	int	count;
+	int	i;
 
-	count_a = 0;
-	count_b = 0;
-	i = 0;
-	while ((cmds[i] == PA) || (cmds[i] == PB) 
-			|| cmds[i] == TO_CLEAN)
-	{
-		if (cmds[i] == PA)
-			count_a++;
-		if (cmds[i] == PB)
-			count_b++;
-		cmds[i++] = TO_CLEAN;
-	}
+	rev = 0;
+	count = 0;
 	i = -1;
-	while (++i < ((count_a - count_b) * (count_a > count_b)
-			+ (count_b - count_a) * (count_b > count_a)))
-		cmds[i] = PA * (count_a > count_b) + PB * (count_b > count_a);
-}
-
-void clean_swap(char *cmds)
-{
-    int count_a;
-    int count_b;
-    int seen[256] = {0};
-	int i;
-
-    count_a = 0;
-    count_b = 0;
-    i = 0;
-
-    while (cmds[i] && !(cmds[i] == PA || cmds[i] == PB) 
-			&& !seen[(unsigned char)cmds[i]])
-    {
-        if (cmds[i] == SA)
-            count_a++;
-        if (cmds[i] == SB)
-            count_b++;
-
-        if (cmds[i] == SA || cmds[i] == SB)
-            cmds[i] = TO_CLEAN; // Marca como "limpo"
-        else if (cmds[i] != TO_CLEAN)
-            seen[(unsigned char)cmds[i]] = 1; // Marca o comando como visto
-        i++;
-    }
-	if (count_a + count_b && (count_a % 2 + count_b % 2))
-		add_swap(count_a, count_b, cmds);
-}
-
-void	clean_rotate(char *cmds, char seen, int i, int r)
-{
-	int	count[4];
-
-	while (i > 0)
-		count[--i] = 0;
-	while (cmds[i] && !(cmds[i] == PA || cmds[i] == PB) && !(cmds[i] == seen))
+	while (cmds[++i] && count < 3)
 	{
-		count_update(count, cmds[i++], 0, 0);
-		if (cmds[i - 1] == RA || cmds[i - 1] == RB 
-				|| cmds[i - 1] == RRA || cmds[i - 1] == RRB)
-			cmds[i - 1] = TO_CLEAN;
-		else if (cmds[i - 1] != TO_CLEAN)
-			seen = cmds[i - 1];
+		if (count == 1 && ((id == A && cmds[i] == RRA) 
+			|| (id == B && cmds[i] == RRB)))
+			rev = 1;
+		if ((count == 0 && ((id == A && cmds[i] == PB) || (id == B && cmds[i] == PA)))
+			|| (count == 1 && ((id == A && (cmds[i] == RA || cmds[i] == RRA))
+					  || (id == B && (cmds[i] == RB || cmds[i] == RRB))))
+			|| (count == 2 && ((id == A && cmds[i] == PA) || (id == B && cmds[i] == PB))))
+				count++;
+		else if (cmds[i] != TO_CLEAN)
+			count = 10;
 	}
-	count_update(count, -1, count[0], count[2]);
-	add_rev_rot(cmds, count, r);
+	if (count == 3)
+		add_best(cmds, id, rev);
+}
+
+void	optimize_rot(char *cmds, char cmd, int count_id)
+{
+    int count_r;
+    int i;
+    int j;
+
+    // Verifica se o primeiro comando é o esperado
+    if (cmds[0] != cmd)
+        return;
+
+    count_r = 0;
+    i = -1;
+
+    // Conta o número de vezes que o comando `cmd` aparece, ignorando `TO_CLEAN`
+    while (cmds[++i] == cmd || cmds[i] == TO_CLEAN)
+    {
+        if (cmds[i] == cmd)
+            count_r++;
+    }
+
+    j = 0;
+
+    // Substitui os comandos conforme a contagem e o valor de `count_id`
+    while (count_r > count_id / 2 && j != i)
+    {
+        if (count_r != count_id)
+        {
+            if (cmd == RA)
+                cmds[j++] = RRA;  // Troca RA por RRA
+            else if (cmd == RB)
+                cmds[j++] = RRB;  // Troca RB por RRB
+            else if (cmd == RRA)
+                cmds[j++] = RA;   // Troca RRA por RA
+            else if (cmd == RRB)
+                cmds[j++] = RB;   // Troca RRB por RB
+            count_r++;
+        }
+        else
+        {
+            cmds[j++] = TO_CLEAN;  // Limpa o comando se count_r igual a count_id
+        }
+    }
 }
 
 int *count_update(int count[4], int r, int tmp0, int tmp1)

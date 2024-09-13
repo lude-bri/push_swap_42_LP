@@ -30,6 +30,7 @@ void	push_swap(t_ps *root)
 	else
 		sort_big(root);
 	to_top(root, A, 0);
+	optimize(root, root->cmds);
 	print_cmds(root->cmds);
 }
 
@@ -104,9 +105,13 @@ void	print_cmds(char *cmd)
 			ft_printf("ra\n");
 		else if (cmd[i] == RB)
 			ft_printf("rb\n");
+		else if (cmd[i] == RR)
+			ft_printf("rr\n");
 		else if (cmd[i] == RRA)
 			ft_printf("rra\n");
 		else if (cmd[i] == RRB)
 			ft_printf("rrb\n");
+		else if (cmd[i] == RRR)
+			ft_printf("rrr\n");
 	}
 }

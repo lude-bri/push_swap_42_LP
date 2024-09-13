@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:01:45 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/13 18:20:16 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/13 18:45:49 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@
 # define TAIL -1
 
 # define TO_CLEAN 14 
+
 /* ************************************************************************** */
 /*                                  STRUCTS                                   */
 /* ************************************************************************** */
@@ -121,19 +122,19 @@ int		find_distance(t_stack *stack, int num);
 
 //optimize.c
 void	optimize(t_ps *root, char *cmds);
-void	clean_push(char *cmds);
-void	clean_swap(char *cmds);
-void	clean_rotate(char *cmds, char vis, int i, int r);
+void	optimize_swap(char *cmds, char id);
+void	optimize_rot(char *cmds, char cmd, int count_id);
 int		*count_update(int count[4], int r, int tmp0, int tmp1);
 
 //optimize_add.c
-void	add_swap(int count_a, int count_b, char *cmds);
 void	add_rev_rot(char *cmds, int *count, int r);
+void	add_swap(int count_a, int count_b, char *cmds);
+void	add_best(char *cmds, char id, int rev);
 
-//optimize_2.c
-void	optimize_swap(char *cmds, char id);
+//optimize_clean.c
+void	clean_push(char *cmds);
+void	clean_swap(char *cmds);
+void	clean_rotate(char *cmds, char vis, int i, int r);
 void	clean_redundance(t_ps *root, char *cmds);
-void	to_swap(char *cmds, char id, int rev);
-void	replace_r(char *cmds, char cmd, int count_id);
 
 #endif

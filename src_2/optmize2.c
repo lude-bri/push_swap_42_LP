@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 17:05:00 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/09 17:20:48 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/13 18:44:35 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	replace_manual_swap(char *cmds, char id)
 	if (count == 3)
 		insert_swap(cmds, id, rev);
 }
-
 
 void	too_many_rotations(t_ps *data, char *cmds)
 {

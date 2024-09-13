@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 18:29:30 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/13 18:29:53 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/13 18:49:35 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,36 @@ void	clean_rotate(char *cmds, char seen, int i, int r)
 	add_rev_rot(cmds, count, r);
 }
 
+void	clean_redundance(t_ps *root, char *cmds)
+{
+	static char		action;
+	int				count_a;
+	int				i;
 
+	count_a = root->a->size;
+	i = -1;
+	while (cmds[++i])
+	{
+		if (cmds[i] == PB)
+			count_a--;
+		if (cmds[i] == PA)
+			count_a++;
+		if (cmds[i] == PB || cmds[i] == PA)
+			continue;
+		if (((count_a == 2 && (cmds[i] == SA || cmds[i] == RA))
+			|| (root->a->size - count_a == 2 && (cmds[i] == SB || cmds[i] == RB))) 
+			&& (++action <= 2))
+		{
+			if (action == 1)
+				cmds[i] = RA;
+			else if (action == 2)
+				cmds[i] = RRA;
+			optimize(root, cmds);
+			return ;
+		}
+		optimize_rot(&cmds[i], RA, count_a);
+		optimize_rot(&cmds[i], RRA, count_a);
+		optimize_rot(&cmds[i], RB, root->a->size - count_a);
+		optimize_rot(&cmds[i], RRB, root->a->size - count_a);
+	}
+}
