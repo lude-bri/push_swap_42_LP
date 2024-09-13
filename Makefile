@@ -30,7 +30,7 @@ _SEP 			= =====================
 #                                    PATHS                                     #
 #==============================================================================#
 
-SRC_PATH		= src_3
+SRC_PATH		= src_2
 BONUS_PATH		= bonus
 LIBS_PATH		= lib
 BUILD_PATH		= .build
@@ -58,28 +58,28 @@ LIBFT_PATH		= $(LIBS_PATH)
 # FILES	+= push_swap2.c
 
 ## src_2
-# FILES = main.c
-# FILES += basic_cmds.c
-# FILES += cmds.c
-# FILES += costs.c
-# FILES += free.c
-# FILES += parser.c
-# FILES += sort_check.c
-# FILES += sort_stack.c
-# FILES += optmize.c
-# FILES += optmize2.c
+FILES = main.c
+FILES += basic_cmds.c
+FILES += cmds.c
+FILES += costs.c
+FILES += free.c
+FILES += parser.c
+FILES += sort_check.c
+FILES += sort_stack.c
+FILES += optmize.c
+FILES += optmize2.c
 
 
 ## src_3
-FILES = main.c
-FILES += basic_cmds.c
-FILES += build_stack.c
-FILES += costs.c
-FILES += free.c
-FILES += push_swap.c
-FILES += sanity_check.c
-FILES += sort_stack.c
-#
+# FILES = main.c
+# FILES += basic_cmds.c
+# FILES += build_stack.c
+# FILES += costs.c
+# FILES += free.c
+# FILES += push_swap.c
+# FILES += sanity_check.c
+# FILES += sort_stack.c
+# #
 
 
 ## TXT_NAMES = file1.txt og_out.txt push_swap_out.txt out_ok.txt out_ko.txt

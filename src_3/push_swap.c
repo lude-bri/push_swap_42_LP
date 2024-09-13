@@ -79,6 +79,10 @@ void	print_cmds(char *cmd)
 	i = -1;
 	while (cmd[++i])
 	{
+		if (cmd[i] == PA)
+			ft_printf("pa\n");
+		if (cmd[i] == PB)
+			ft_printf("pb\n");
 		if (cmd[i] == SA)
 			ft_printf("sa\n");
 		else if (cmd[i] == SB)
