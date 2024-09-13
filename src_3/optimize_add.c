@@ -12,34 +12,83 @@
 
 #include "push_swap.h"
 
-void	add_rev_rot(char *cmds, int *count, int r)
-{
-	int i;
+// void	add_rev_rot(char *cmds, int *count, int r)
+// {
+// 	int i;
+//
+// 	i = 0;
+// 	while (++r < 2)
+// 	{
+// 		while (count[r] || count[r + 1])
+// 		{
+// 			while (cmds[i] != TO_CLEAN)
+// 				i++;
+// 			if (!count[r])
+// 			{
+// 				if (count[1])
+// 					cmds[i++] = RRA;
+// 				else if (count[3])
+// 					cmds[i++] = RRB;
+// 			}
+// 			else if (!count[r + 1])
+// 			{
+// 				if (count[0])
+// 					cmds[i++] = RA;
+// 				else if (count[2])
+// 					cmds[i++] = RB;
+// 			}
+// 			count_update(count, r, !count[r], !count[r + 1]);
+// 		}
+// 	}
+// }
 
-	i = 0;
-	while (++r < 2)
-	{
-		while (count[r] || count[r + 1])
-		{
-			while (cmds[i] != TO_CLEAN)
-				i++;
-			if (!count[r])
-			{
-				if (count[1])
-					cmds[i++] = RRA;
-				else if (count[3])
-					cmds[i++] = RRB;
-			}
-			else if (!count[r + 1])
-			{
-				if (count[0])
-					cmds[i++] = RA;
-				else if (count[2])
-					cmds[i++] = RB;
-			}
-			count_update(count, r, !count[r], !count[r + 1]);
-		}
-	}
+
+
+void add_rev_rot(char *cmds, int *count, int r)
+{
+    int i;
+    int cmds_len;  // Para limitar a iteração de 'i'
+    int safety_counter;  // Para evitar um loop infinito
+
+    i = 0;
+    cmds_len = ft_strlen(cmds);  // Obtém o comprimento de 'cmds'
+    safety_counter = 0;  // Inicializa o contador de segurança
+
+    while (++r < 2)
+    {
+        while (count[r] || count[r + 1])
+        {
+            while (cmds[i] != TO_CLEAN)
+            {
+                i++;
+                if (i >= cmds_len || ++safety_counter > cmds_len * 2)
+                {
+                    // Se ultrapassarmos o limite de iteração, saímos do loop
+                    return;
+                }
+            }
+            
+            if (!count[r])
+            {
+                if (count[1])
+                    cmds[i++] = RRA;
+                else if (count[3])
+                    cmds[i++] = RRB;
+            }
+            else if (!count[r + 1])
+            {
+                if (count[0])
+                    cmds[i++] = RA;
+                else if (count[2])
+                    cmds[i++] = RB;
+            }
+
+            count_update(count, r, !count[r], !count[r + 1]);
+
+            // Reinicia o contador de segurança após uma iteração bem-sucedida
+            safety_counter = 0;
+        }
+    }
 }
 
 void	add_swap(int count_a, int count_b, char *cmds)
