@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 20:07:08 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/12 15:30:30 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/13 16:57:10 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,12 @@ void	cmd_to_buffer(t_ps *root, char cmd)
 			size = size + 1024;
 		tmp = ft_calloc(size + 1, sizeof(char));
 		if (!tmp)
-			return ;
+			free_ab(root);
 		if (root->cmds)
 			ft_strlcpy(tmp, root->cmds, size + 1);
 		free(root->cmds);
 		root->cmds = tmp;
-		free(tmp);
+		
 	}
 	root->cmds[i++] = cmd;
 }

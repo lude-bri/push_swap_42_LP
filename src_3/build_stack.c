@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:23:55 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/10 19:52:33 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/13 16:57:38 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_ps	*new_ab(char **str)
 		return (NULL);
 	root = init_root();
 	if (!root)
-		return (free_ab(root), NULL);
+		return (NULL);
 	root->a->values = malloc(sizeof(int) * count);
 	root->b->values = malloc(sizeof(int) * count);
 	if (!root->a->values || !root->b->values)
