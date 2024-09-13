@@ -74,6 +74,8 @@ typedef struct s_ps
 /*                                 FUNCTIONS                                  */
 /* ************************************************************************** */
 
+
+void optimize_operations(char *ops); 
 //main.c
 void	push_swap(t_ps *root);
 int		is_sorted(t_stack *stack);
@@ -121,7 +123,7 @@ int		find_next(t_stack *stack, int num);
 int		find_distance(t_stack *stack, int num);
 
 //optimize.c
-void	optimize(t_ps *root, char *cmds);
+void	optimize(t_ps *data, char *cmds);
 void	optimize_swap(char *cmds, char id);
 void	optimize_rot(char *cmds, char cmd, int count_id);
 int		*count_update(int count[4], int r, int tmp0, int tmp1);
@@ -132,8 +134,8 @@ void	add_swap(int count_a, int count_b, char *cmds);
 void	add_best(char *cmds, char id, int rev);
 
 //optimize_clean.c
-void	clean_push(char *cmds);
-void	clean_swap(char *cmds);
+//void	clean_push(char *cmds);
+//void	clean_swap(char *cmds);
 void	clean_rotate(char *cmds, char vis, int i, int r);
 void	clean_redundance(t_ps *root, char *cmds);
 

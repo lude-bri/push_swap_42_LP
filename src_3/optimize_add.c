@@ -47,27 +47,35 @@
 void add_rev_rot(char *cmds, int *count, int r)
 {
     int i;
-    int cmds_len;  // Para limitar a iteração de 'i'
-    int safety_counter;  // Para evitar um loop infinito
+    int cmds_len;
+    int safety_counter;
 
     i = 0;
-    cmds_len = ft_strlen(cmds);  // Obtém o comprimento de 'cmds'
-    safety_counter = 0;  // Inicializa o contador de segurança
+    cmds_len = ft_strlen(cmds);
+    safety_counter = 0;
 
     while (++r < 2)
     {
         while (count[r] || count[r + 1])
         {
+            // Procura por TO_CLEAN em cmds, com verificação de segurança
             while (cmds[i] != TO_CLEAN)
             {
                 i++;
-                if (i >= cmds_len || ++safety_counter > cmds_len * 2)
+                safety_counter++;
+
+                if (i >= cmds_len || safety_counter > cmds_len * 2)
                 {
-                    // Se ultrapassarmos o limite de iteração, saímos do loop
+                    // Se `i` ultrapassar o comprimento de cmds ou o safety_counter exceder, interrompe
+                    printf("Loop interrompido: Não foi encontrado TO_CLEAN\n");
                     return;
                 }
             }
-            
+
+            // Reseta o safety_counter após encontrar TO_CLEAN
+            safety_counter = 0;
+
+            // Processa os comandos conforme as contagens
             if (!count[r])
             {
                 if (count[1])
@@ -83,10 +91,17 @@ void add_rev_rot(char *cmds, int *count, int r)
                     cmds[i++] = RB;
             }
 
+            // Atualiza as contagens e adiciona outra verificação de segurança
+            int old_count_r = count[r];
+            int old_count_r1 = count[r + 1];
             count_update(count, r, !count[r], !count[r + 1]);
 
-            // Reinicia o contador de segurança após uma iteração bem-sucedida
-            safety_counter = 0;
+            // Se os contadores não mudarem, isso indica um possível loop infinito
+            if (old_count_r == count[r] && old_count_r1 == count[r + 1])
+            {
+                printf("Loop interrompido: contagem não foi atualizada corretamente\n");
+                return;
+            }
         }
     }
 }
