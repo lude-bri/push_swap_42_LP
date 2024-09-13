@@ -12,7 +12,6 @@
 
 #include "push_swap.h"
 
-
 static void		set_stack(t_ps *root, int count);
 
 t_ps	*new_ab(char **str)
@@ -42,14 +41,14 @@ t_ps	*new_ab(char **str)
 	return (root);
 }
 
-static void		set_stack(t_ps *root, int count)
+static void	set_stack(t_ps *root, int count)
 {
 	root->a->size = count;
 	root->b->size = count;
 	root->a->count = count;
 }
 
-int  normalize(t_stack *a, t_stack *b)
+int	normalize(t_stack *a, t_stack *b)
 {
 	int		min;
 	int		low;
@@ -78,7 +77,7 @@ int  normalize(t_stack *a, t_stack *b)
 	return (1);
 }
 
-t_ps		*init_root(void)
+t_ps	*init_root(void)
 {
 	t_ps	*root;
 
@@ -92,7 +91,7 @@ t_ps		*init_root(void)
 	return (root);
 }
 
-t_stack		*init_stack(t_ps *root, char id)
+t_stack	*init_stack(t_ps *root, char id)
 {
 	t_stack		*stack;
 
@@ -106,5 +105,5 @@ t_stack		*init_stack(t_ps *root, char id)
 	stack->size = 0;
 	stack->head = HEAD;
 	stack->tail = TAIL;
-	return(stack);
+	return (stack);
 }

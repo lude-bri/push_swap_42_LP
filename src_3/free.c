@@ -19,8 +19,8 @@ void	free_ab(t_ps *stack)
 	free(stack);
 }
 
-void	free_strs(char **strs) 
-{	
+void	free_strs(char **strs)
+{
 	int	i;
 
 	i = -1;

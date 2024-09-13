@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int		*take_item(t_stack *stack, int i)
+int	*take_item(t_stack *stack, int i)
 {
 	int		head_position;
 	int		tail_position;
@@ -45,7 +45,7 @@ void	push(t_stack *stack, int value, int position)
 	}
 }
 
-int		pop(t_stack *stack, int position)
+int	pop(t_stack *stack, int position)
 {
 	int		*item;
 

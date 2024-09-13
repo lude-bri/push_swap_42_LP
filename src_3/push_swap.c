@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+static int	verify_id(t_stack *stack);
+
 void	push_swap(t_ps *root)
 {
 	int		size;
@@ -31,24 +33,33 @@ void	push_swap(t_ps *root)
 	print_cmds(root->cmds);
 }
 
-int is_sorted(t_stack *stack)
+int	is_sorted(t_stack *stack)
 {
-    int i;
-    int *current_item;
-    int *next_item;
+	int		i;
+	int		*current_item;
+	int		*next_item;
 
-    i = 0;
-    current_item = take_item(stack, i);
+	i = 0;
+	current_item = take_item(stack, i);
+	if (!current_item)
+		return (1);
+	next_item = take_item(stack, ++i);
+	while (next_item)
+	{
+		if (*current_item + verify_id(stack) != *next_item)
+			return (0);
+		current_item = next_item;
+		next_item = take_item(stack, ++i);
+	}
+	return (1);
+}
 
-    if (!current_item)
-        return (1);
-    while ((next_item = take_item(stack, ++i)))
-    {
-		if (*current_item + (stack->id == A ? 1 : -1) != *next_item)
-            return (0);   
-        current_item = next_item;
-    } 
-    return (1);
+static int	verify_id(t_stack *stack)
+{
+	if (stack->id == A)
+		return (1);
+	else
+		return (-1);
 }
 
 void	do_cmd(t_ps *root, char cmd)
@@ -93,13 +104,9 @@ void	print_cmds(char *cmd)
 			ft_printf("ra\n");
 		else if (cmd[i] == RB)
 			ft_printf("rb\n");
-		else if (cmd[i] == RR)
-			ft_printf("rr\n");
 		else if (cmd[i] == RRA)
 			ft_printf("rra\n");
 		else if (cmd[i] == RRB)
 			ft_printf("rrb\n");
-		else if (cmd[i] == RRR)
-			ft_printf("rrr\n");
 	}
 }

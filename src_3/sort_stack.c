@@ -12,41 +12,26 @@
 
 #include "push_swap.h"
 
-void		sort_3(t_ps *root, t_stack *stack)
+void	sort_3(t_ps *root, t_stack *stack)
 {
-	if (*take_item(stack, 0) < *take_item(stack, 1) && *take_item(stack, 1) < *take_item(stack, 2))
+	int		*first;
+	int		*second;
+	int		*third;
+
+	first = take_item(stack, 0);
+	second = take_item(stack, 1);
+	third = take_item(stack, 2);
+	if (first < second && second < third)
 		return ;
-	if (*take_item(stack, 0) > *take_item(stack, 2) && *take_item(stack, 0) > *take_item(stack, 1))
+	if (first > second && first > third)
 		do_cmd(root, RA);
-	else if (*take_item(stack, 0) > *take_item(stack, 2) && *take_item(stack, 0) < *take_item(stack, 1))
+	else if (first < second && first > third)
 		do_cmd(root, RRA);
 	else
 		do_cmd(root, SA);
 	sort_3(root, stack);
 }
 
-//
-// void	sort_3(t_ps *root, t_stack *stack)
-// {
-// 	int		*first;
-// 	int		*second;
-// 	int		*third;
-//
-// 	first = take_item(stack, 0);
-// 	second = take_item(stack, 1);
-// 	third = take_item(stack, 2);
-//
-// 	if (first < second && second < third)
-// 		return ;
-// 	if (first > second && first > third)
-// 		do_cmd(root, RA);
-// 	else if (first < second && first > third)
-// 		do_cmd(root, RRA);
-// 	else
-// 		do_cmd(root, SA);
-// 	sort_3(root, stack);
-// }
-//
 void	sort_small(t_ps *root)
 {
 	int		one;
@@ -64,7 +49,8 @@ void	sort_small(t_ps *root)
 	sort_3(root, root->a);
 	while (root->b->count)
 	{
-		if (root->b->count > 1 && *take_item(root->b, 0) < *take_item(root->b, 1))
+		if (root->b->count > 1
+			&& *take_item(root->b, 0) < *take_item(root->b, 1))
 			do_cmd(root, SB);
 		to_top(root, A, *take_item(root->b, 0) + 1);
 		do_cmd(root, PA);
@@ -89,7 +75,8 @@ void	sort_big(t_ps *root)
 			if (*take_item(root->a, 0) < (partition + 1) * partition_size)
 			{
 				do_cmd(root, PB);
-				if (*take_item(root->b, 0) < partition * partition_size + partition_size / 2)
+				if (*take_item(root->b, 0)
+					< partition * partition_size + partition_size / 2)
 					do_cmd(root, RB);
 			}
 			else
@@ -100,7 +87,7 @@ void	sort_big(t_ps *root)
 	find_best_insert(root);
 }
 
-int		unsorted_one(t_stack *stack)
+int	unsorted_one(t_stack *stack)
 {
 	int		i;
 	int		j;
@@ -142,6 +129,7 @@ void	to_top(t_ps *root, char id, int n)
 		if (*take_item(stack, i) == n)
 			break ;
 	if (i > stack->count / 2)
+	{
 		while (i++ < stack->count)
 		{
 			if (id == A)
@@ -149,7 +137,9 @@ void	to_top(t_ps *root, char id, int n)
 			else if (id == B)
 				do_cmd(root, RRB);
 		}
+	}
 	else
+	{
 		while (i-- > 0)
 		{
 			if (id == A)
@@ -157,4 +147,5 @@ void	to_top(t_ps *root, char id, int n)
 			else if (id == B)
 				do_cmd(root, RB);
 		}
+	}
 }

@@ -46,7 +46,6 @@
 # define HEAD 0
 # define TAIL -1
 
-
 /* ************************************************************************** */
 /*                                  STRUCTS                                   */
 /* ************************************************************************** */
@@ -64,27 +63,24 @@ typedef struct s_stack
 typedef struct s_ps
 {
 	t_stack	*a;
-	t_stack *b;
+	t_stack	*b;
 	char	*cmds;
 	char	**split;
 }			t_ps;
-
 
 /* ************************************************************************** */
 /*                                 FUNCTIONS                                  */
 /* ************************************************************************** */
 
-
 //main.c
 void	push_swap(t_ps *root);
 int		is_sorted(t_stack *stack);
 
-
 //parser.c
-t_ps		*new_ab(char **str);
-int			normalize(t_stack *a, t_stack *b);
-t_ps		*init_root(void);
-t_stack		*init_stack(t_ps *root, char id);
+t_ps	*new_ab(char **str);
+t_ps	*init_root(void);
+t_stack	*init_stack(t_ps *root, char id);
+int		normalize(t_stack *a, t_stack *b);
 
 //sanit_check.c
 int		duplicate_check(int *arr, int size);
@@ -121,5 +117,8 @@ int		find_lowest(t_ps *root, int start, int size);
 int		calculate_moves(t_ps *root, int current);
 int		find_next(t_stack *stack, int num);
 int		find_distance(t_stack *stack, int num);
+
+//optimize.c
+void	optimize(t_ps *root, char *cmds);
 
 #endif

@@ -39,7 +39,7 @@ void	find_best_insert(t_ps *root)
 	}
 }
 
-int		find_lowest(t_ps *root, int start, int size)
+int	find_lowest(t_ps *root, int start, int size)
 {
 	int		end;
 	int		low;
@@ -59,10 +59,10 @@ int		find_lowest(t_ps *root, int start, int size)
 		}
 		start++;
 	}
-	return(low);
+	return (low);
 }
 
-int		calculate_moves(t_ps *root, int current)
+int	calculate_moves(t_ps *root, int current)
 {
 	int		moves_a;
 	int		moves_b;
@@ -76,7 +76,7 @@ int		calculate_moves(t_ps *root, int current)
 	return (ft_abs(moves_b));
 }
 
-int		find_distance(t_stack *stack, int num)
+int	find_distance(t_stack *stack, int num)
 {
 	int		i;
 
@@ -111,4 +111,3 @@ int	find_next(t_stack *stack, int num)
 		return (find_next(stack, -1));
 	return (next);
 }
-
