@@ -94,6 +94,7 @@ void optimize_operations(t_ps *root, char *ops)
     }
 }
 
+
 // void optimize_operations(char *ops) 
 // {
 //     int i = 0;
@@ -325,9 +326,6 @@ static void replace_manual_swap(char *cmds, char id)
 		insert_swap(cmds, id, rev);
 }
 
-
-
-
 void too_many_rotations(t_ps *data, char *cmds)
 {
 	static char action;
@@ -339,11 +337,13 @@ void too_many_rotations(t_ps *data, char *cmds)
 	while (cmds[++i])
 	{
 		// Ajusta a contagem de elementos em 'a'
+
 		count_a += -(cmds[i] == PB) + (cmds[i] == PA);
 		if (cmds[i] == PB || cmds[i] == PA)
 			continue;
 
 		// Verifica se há comandos rra e rrb consecutivos para combinar em rrr
+
 		if (cmds[i] == RRA && cmds[i + 1] == RRB)
 		{
 			// Combina rra e rrb em rrr
