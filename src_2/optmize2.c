@@ -105,7 +105,7 @@ static void		replace_r(char *cmds, char cmd, int count_id)
 	while (count_r > count_id / 2 && j != i)
 	{
 		if (count_r != count_id)
-			cmds[j++] = cmd ^ (ROT | REV) + 0 * count_r++;
+			cmds[j++] = cmd ^ ((ROT | REV) + 0 * count_r++);
 		else
 			cmds[j++] = CLEAR;
 	}
