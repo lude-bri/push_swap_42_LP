@@ -31,7 +31,7 @@ void	push_swap(t_ps *root)
 		sort_big(root);
 	to_top(root, A, 0);
 	//optimize(root, root->cmds);
-	optimize_operations(root->cmds);
+	optimize_operations(root, root->cmds);
 	print_cmds(root->cmds);
 }
 
@@ -89,8 +89,8 @@ void	print_cmds(char *cmd)
 {
 	int		i;
 
-	i = -1;
-	while (cmd[++i])
+	i = 0;
+	while (cmd[i])
 	{
 		if (cmd[i] == PA)
 			ft_printf("pa\n");
@@ -114,5 +114,6 @@ void	print_cmds(char *cmd)
 			ft_printf("rrb\n");
 		else if (cmd[i] == RRR)
 			ft_printf("rrr\n");
+		++i;
 	}
 }

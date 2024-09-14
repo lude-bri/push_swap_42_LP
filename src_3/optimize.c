@@ -21,67 +21,76 @@ static void too_many_rotations(t_ps *data, char *cmds);
 static void insert_swap(char *cmds, char id, int rev);
 static void replace_r(char *cmds, char cmd, int count_id);
 
-void optimize_operations(char *ops) 
+
+void optimize_operations(t_ps *root, char *ops) 
 {
-    int i = 0;
-    int size = ft_strlen(ops);
+	char	*prev;
+	int		i;
+	char	do_it;
 
-    while (i < size) 
+	(void)(*root);
+	prev = 0;
+	do_it = -1;
+    while (!(++do_it) || ft_strncmp(ops, prev, !!do_it * ft_strlen(ops)))
 	{
-        // Detecta padrão pb - ra - pa → sa
-        if (ops[i] == PB && ops[i + 1] == RA && ops[i + 2] == PA) {
-            ops[i] = SA;  // Substitui por sa
-            ops[i + 1] = TO_CLEAN;
-            ops[i + 2] = TO_CLEAN;
-        }
-        
-        // Detecta e remove operações de push consecutivas opostas (pb - pa - pb → pb)
-        else if (ops[i] == PB && ops[i + 1] == PA && ops[i + 2] == PB) {
-            ops[i + 1] = TO_CLEAN;  // Limpa o pa
-        }
+		free(prev);
+		prev = ft_strdup(ops);
+		i = -1;
+		while (ops[++i])
+		{
+			// Detecta padrão pb - ra - pa → sa
+			if (ops[i] == PB && ops[i + 1] == RA && ops[i + 2] == PA) {
+				ops[i] = SA;  // Substitui por sa
+				ops[i + 1] = TO_CLEAN;
+				ops[i + 2] = TO_CLEAN;
+			}
+			
+			// Detecta e remove operações de push consecutivas opostas (pb - pa - pb → pb)
+			else if (ops[i] == PB && ops[i + 1] == PA && ops[i + 2] == PB) {
+				ops[i + 1] = TO_CLEAN;  // Limpa o pa
+			}
 
-        // Detecta e combina swaps individuais (sa - sb → ss)
-        else if (ops[i] == SA && ops[i + 1] == SB) {
-            ops[i] = SS;  // Substitui por ss
-            ops[i + 1] = TO_CLEAN;
-        }
+			// Detecta e combina swaps individuais (sa - sb → ss)
+			else if (ops[i] == SA && ops[i + 1] == SB) {
+				ops[i] = SS;  // Substitui por ss
+				ops[i + 1] = TO_CLEAN;
+			}
 
-        // Detecta e combina rotações (ra - rb → rr)
-        else if (ops[i] == RA && ops[i + 1] == RB) {
-            ops[i] = RR;  // Substitui por rr
-            ops[i + 1] = TO_CLEAN;
-        }
+			// Detecta e combina rotações (ra - rb → rr)
+			else if (ops[i] == RA && ops[i + 1] == RB) {
+				ops[i] = RR;  // Substitui por rr
+				ops[i + 1] = TO_CLEAN;
+			}
 
-        // Otimiza rotações: ra - ra - rra → ra (evita gerar rra desnecessário)
-        else if (ops[i] == RA && ops[i + 1] == RA && ops[i + 2] == RRA) {
-            // Mantém apenas um ra e limpa os outros comandos
-            ops[i] = RA;
-            ops[i + 1] = TO_CLEAN;
-            ops[i + 2] = TO_CLEAN;
-        }
+			// Otimiza rotações: ra - ra - rra → ra (evita gerar rra desnecessário)
+			else if (ops[i] == RA && ops[i + 1] == RA && ops[i + 2] == RRA) {
+				// Mantém apenas um ra e limpa os outros comandos
+				ops[i] = RA;
+				ops[i + 1] = TO_CLEAN;
+				ops[i + 2] = TO_CLEAN;
+			}
 
-        // Evita adicionar RRA extra ou desnecessário
-        else if (ops[i] == RA && ops[i + 1] == RRA) {
-            // Se há uma rotação seguida imediatamente por uma reversa, elas se cancelam
-            ops[i] = TO_CLEAN;
-            ops[i + 1] = TO_CLEAN;
-        }
+			// Evita adicionar RRA extra ou desnecessário
+			else if (ops[i] == RA && ops[i + 1] == RRA) {
+				// Se há uma rotação seguida imediatamente por uma reversa, elas se cancelam
+				ops[i] = TO_CLEAN;
+				ops[i + 1] = TO_CLEAN;
+			}
 
-        // Detecta e combina rotações reversas (rra - rrb → rrr)
-        else if (ops[i] == RRA && ops[i + 1] == RRB) {
-            ops[i] = RRR;  // Substitui por rrr
-            ops[i + 1] = TO_CLEAN;
-        }
+			// Detecta e combina rotações reversas (rra - rrb → rrr)
+			else if (ops[i] == RRA && ops[i + 1] == RRB) {
+				ops[i] = RRR;  // Substitui por rrr
+				ops[i + 1] = TO_CLEAN;
+			}
 
-        // Incrementa o índice e limpa comandos TO_CLEAN
-        if (ops[i] == TO_CLEAN) {
-            for (int j = i; j < size - 1; j++) {
-                ops[j] = ops[j + 1];  // Move os comandos para frente
-            }
-            size--;  // Diminui o tamanho da fila
-        } else {
-            i++;
-        }
+			// Incrementa o índice e limpa comandos TO_CLEAN
+			/*if (ops[i] == TO_CLEAN) {
+				for (int j = i; j < size - 1; j++) {
+					ops[j] = ops[j + 1];  // Move os comandos para frente
+				}
+				size--;  // Diminui o tamanho da fila
+			}*/
+		}
     }
 }
 

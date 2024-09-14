@@ -75,7 +75,7 @@ typedef struct s_ps
 /* ************************************************************************** */
 
 
-void optimize_operations(char *ops); 
+void optimize_operations(t_ps *root, char *ops); 
 //main.c
 void	push_swap(t_ps *root);
 int		is_sorted(t_stack *stack);
