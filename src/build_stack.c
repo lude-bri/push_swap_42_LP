@@ -5,87 +5,105 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/07 10:24:31 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/02 11:50:38 by luigi            ###   ########.fr       */
+/*   Created: 2024/09/10 12:23:55 by luigi             #+#    #+#             */
+/*   Updated: 2024/09/13 16:57:38 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*create_stack(char **str, int flag)
+static void		set_stack(t_ps *root, int count);
+
+t_ps	*new_ab(char **str)
 {
-	t_stack			*stack;
-	int				count;
-	int				i;
+	t_ps		*root;
+	int			i;
+	int			count;
 
 	count = number_sanity_check(str);
-	if (count == 0)
+	if (!count)
 		return (NULL);
-	stack = NULL;
-	i = count;
-	while (i > 0)
-	{
-		if (flag == STACK_A)
-			put_node(&stack, ft_atoi(str[count - i]));
-		else
-			put_node(&stack, -1);
-		--i;
-	}
-	init_stack(stack, count);
-	if (!to_rank(stack, count) && flag == STACK_A)
-		return (free_stack(stack), NULL);
-	return (stack);
-}
-
-void	put_node(t_stack **stack, int data)
-{
-	t_stack	*node;
-	t_stack	*last_node;
-
-	node = malloc(sizeof(t_stack));
-	if (!node)
-		return ;
-	node->num = data;
-	node->next = NULL;
-	if (!*stack)
-	{
-		*stack = node;
-		node->prev = NULL;
-	}
-	else
-	{
-		last_node = find_lastnode(*stack);
-		last_node->next = node;
-		node->prev = last_node;
-	}
-	return ;
-}
-
-void	init_stack(t_stack *stack, int size)
-{
-	t_stack			*last_node;
-	t_stack			*current;
-	int				i;
-
+	root = init_root();
+	if (!root)
+		return (NULL);
+	root->a->values = malloc(sizeof(int) * count);
+	root->b->values = malloc(sizeof(int) * count);
+	if (!root->a->values || !root->b->values)
+		return (free_ab(root), NULL);
 	i = -1;
-	current = stack;
-	while (++i < size)
-	{
-		current->a_bottom = 0;
-		current->b_bottom = size - 1;
-		current->pivot = size;
-		current = current->next;
-	}
-	last_node = find_lastnode(stack);
-	last_node->next = stack;
-	stack->prev = last_node;
+	while (++i < count && str[i])
+		root->b->values[i] = ft_atoi(str[i]);
+	set_stack(root, count);
+	if (duplicate_check(root->b->values, count) == 0)
+		return (free_ab(root), NULL);
+	if (!normalize(root->a, root->b))
+		return (free_ab(root), NULL);
+	return (root);
 }
 
-t_stack	*find_lastnode(t_stack *lst)
+static void	set_stack(t_ps *root, int count)
 {
-	if (!lst)
-		return (0);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	root->a->size = count;
+	root->b->size = count;
+	root->a->count = count;
+}
+
+int	normalize(t_stack *a, t_stack *b)
+{
+	int		min;
+	int		low;
+	int		lowest;
+	int		i;
+	int		j;
+
+	min = INT_MIN;
+	i = 0;
+	while (a->size > i)
+	{
+		j = -1;
+		low = INT_MAX;
+		while (a->size > ++j)
+		{
+			if (b->values[j] < low && b->values[j] > min)
+			{
+				low = b->values[j];
+				lowest = j;
+			}
+		}
+		min = low;
+		a->values[lowest] = i++;
+	}
+	a->tail = a->size - 1;
+	return (1);
+}
+
+t_ps	*init_root(void)
+{
+	t_ps	*root;
+
+	root = malloc(sizeof(t_ps));
+	if (!root)
+		return (NULL);
+	root->a = init_stack(root, A);
+	root->b = init_stack(root, B);
+	root->cmds = NULL;
+	//root->split = NULL;
+	return (root);
+}
+
+t_stack	*init_stack(t_ps *root, char id)
+{
+	t_stack		*stack;
+
+	(void)(root);
+	stack = malloc(sizeof(t_stack));
+	if (!stack)
+		return (free_ab(root), NULL);
+	stack->id = id;
+	stack->values = NULL;
+	stack->count = 0;
+	stack->size = 0;
+	stack->head = HEAD;
+	stack->tail = TAIL;
+	return (stack);
 }

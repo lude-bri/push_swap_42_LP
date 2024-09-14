@@ -5,75 +5,114 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/23 14:02:04 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/10 10:51:49 by luigi            ###   ########.fr       */
+/*   Created: 2024/09/10 20:51:03 by luigi             #+#    #+#             */
+/*   Updated: 2024/09/12 15:57:47 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_ab(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root)
-{	
-	int		N;
-	int		partition_size;
-	int		big_pivot;
-	// int		small_pivot;
+static int	verify_id(t_stack *stack);
 
-	N = (*stack_root)->size_a;
-	partition_size = N / 3;
-	big_pivot = (*stack_root)->size_a - partition_size;
-	// small_pivot = big_pivot - partition_size;
-
-	if ((*stack_root)->size_a <= 5)
-		sort_base_case(stack_a, stack_b, stack_root, (*stack_root)->size_a, 0);
-	else
-	{
-		split_first(stack_a, stack_b, 0, stack_root);
-		if (!is_a_sorted(stack_a, stack_root, partition_size))
-			quick_a(stack_a, stack_b, stack_root, big_pivot, N);
-		//se houver somente 3 elementos na stack A, verifique se estao ordenados
-		if ((*stack_root)->size_a <= 3)
-			sort_base_case(stack_a, stack_b, stack_root, (*stack_root)->size_a, 0);
-		//smart_insert(stack_a, stack_b, stack_root);
-	}
-
-
-
-		/*if (is_b_sorted(stack_b, stack_root, small_pivot))
-			push_a_n(stack_a, stack_b, stack_root, small_pivot);
-		else
-			quick_b(stack_a, stack_b, stack_root, 0, small_pivot);
-
-		if (!is_a_sorted(stack_a, stack_root, partition_size))
-			quick_a(stack_a, stack_b, stack_root, big_pivot, (*stack_root)->size_a);
-		if (is_b_sorted(stack_b, stack_root, partition_size))
-			push_a_n(stack_a, stack_b, stack_root, partition_size);
-		else
-			quick_b(stack_a, stack_b, stack_root, small_pivot, big_pivot);
-		if (is_b_sorted(stack_b, stack_root, small_pivot))
-			push_a_n(stack_a, stack_b, stack_root, small_pivot);
-		else
-			quick_b(stack_a, stack_b, stack_root, 0, small_pivot);
-	*/
-}
-
-void	sort_base_case(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int size, int flag)
+void	push_swap(t_ps *root)
 {
-	if (size == 2 && flag)
-		push_a_n(stack_a, stack_b, stack_root, 2);
-	if (size == 2 && (*stack_a)->next->num < (*stack_a)->num)
-		do_cmd(stack_a, stack_b, stack_root, SA);
-	// else if (size == 3 && flag)
-	// 	sort_3b(stack_b, stack_root);
+	int		size;
+
+	size = root->a->count;
+	if (is_sorted(root->a))
+		return ;
+	if (size == 2)
+		do_cmd(root, SA);
 	else if (size == 3)
-		sort_3(stack_a, stack_root);
-	else if (size == 4)
-		sort_4(stack_a, stack_b, stack_root, flag);
-	else if (size == 5)
-		sort_5(stack_a, stack_b, stack_root, flag);
+		sort_3(root, root->a);
+	else if (size <= 5)
+		sort_small(root);
+	else
+		sort_big(root);
+	to_top(root, A, 0);
+	optimize_operations(root, root->cmds);
+	print_cmds(root->cmds);
 }
 
-// First it is needed to split the numbers in 3. In that case N = 100 --> n = 33. Then N = 33 --> n = 11. Then N = 11 --> n = 4
-// Once there is no way to split, its time to go to the phase 3. Therefore
-//
-//	1. Split first 
+int	is_sorted(t_stack *stack)
+{
+	int		i;
+	int		*current_item;
+	int		*next_item;
+
+	i = 0;
+	current_item = take_item(stack, i);
+	if (!current_item)
+		return (1);
+	next_item = take_item(stack, ++i);
+	while (next_item)
+	{
+		if (*current_item + verify_id(stack) != *next_item)
+			return (0);
+		current_item = next_item;
+		next_item = take_item(stack, ++i);
+	}
+	return (1);
+}
+
+static int	verify_id(t_stack *stack)
+{
+	if (stack->id == A)
+		return (1);
+	else
+		return (-1);
+}
+
+void	do_cmd(t_ps *root, char cmd)
+{
+	if (cmd == SA)
+		swap(root->a);
+	if (cmd == SB)
+		swap(root->b);
+	if (cmd == PA && root->b->count > 0)
+		push(root->a, pop(root->b, HEAD), HEAD);
+	if (cmd == PB && root->a->count > 0)
+		push(root->b, pop(root->a, HEAD), HEAD);
+	if (cmd == RA && root->a->count > 1)
+		push(root->a, pop(root->a, HEAD), TAIL);
+	if (cmd == RB && root->b->count > 1)
+		push(root->b, pop(root->b, HEAD), TAIL);
+	if (cmd == RRA && root->a->count > 1)
+		push(root->a, pop(root->a, TAIL), HEAD);
+	if (cmd == RRB && root->b->count > 1)
+		push(root->b, pop(root->b, TAIL), HEAD);
+	cmd_to_buffer(root, cmd);
+}
+
+void	print_cmds(char *cmd)
+{
+	int		i;
+
+	i = 0;
+	while (cmd[i])
+	{
+		if (cmd[i] == PA)
+			ft_printf("pa\n");
+		if (cmd[i] == PB)
+			ft_printf("pb\n");
+		if (cmd[i] == SA)
+			ft_printf("sa\n");
+		else if (cmd[i] == SB)
+			ft_printf("sb\n");
+		else if (cmd[i] == SS)
+			ft_printf("ss\n");
+		else if (cmd[i] == RA)
+			ft_printf("ra\n");
+		else if (cmd[i] == RB)
+			ft_printf("rb\n");
+		else if (cmd[i] == RR)
+			ft_printf("rr\n");
+		else if (cmd[i] == RRA)
+			ft_printf("rra\n");
+		else if (cmd[i] == RRB)
+			ft_printf("rrb\n");
+		else if (cmd[i] == RRR)
+			ft_printf("rrr\n");
+		++i;
+	}
+}

@@ -30,7 +30,7 @@ _SEP 			= =====================
 #                                    PATHS                                     #
 #==============================================================================#
 
-SRC_PATH		= src_3
+SRC_PATH		= src
 BONUS_PATH		= bonus
 LIBS_PATH		= lib
 BUILD_PATH		= .build
@@ -38,39 +38,6 @@ TEMP_PATH		= .temp
 TESTS_PATH		= files
 LIBFT_PATH		= $(LIBS_PATH)
 
-## src_1
-# FILES	= main.c
-# FILES	+= quick_sort.c
-# FILES	+= quick_sort2.c
-# FILES	+= free.c
-# FILES	+= build_stack.c
-# FILES	+= normalize.c
-# FILES	+= split_partitions.c
-# FILES	+= sanity_check.c
-# FILES	+= sort_check.c
-# FILES	+= stack_access.c
-# FILES	+= push_operations.c
-# FILES	+= swap_operations.c
-# FILES	+= rotate_operations.c
-# FILES	+= reverse_rotate_operations.c
-# FILES	+= commands.c
-# FILES	+= push_swap.c
-# FILES	+= push_swap2.c
-
-## src_2
-# FILES = main.c
-# FILES += basic_cmds.c
-# FILES += cmds.c
-# FILES += costs.c
-# FILES += free.c
-# FILES += parser.c
-# FILES += sort_check.c
-# FILES += sort_stack.c
-# FILES += optmize.c
-# FILES += optmize2.c
-#
-
-## src_3
 FILES = main.c
 FILES += basic_cmds.c
 FILES += build_stack.c
@@ -81,11 +48,6 @@ FILES += sanity_check.c
 FILES += sort_stack.c
 FILES += optimize.c
 
-
-# #
-
-
-## TXT_NAMES = file1.txt og_out.txt push_swap_out.txt out_ok.txt out_ko.txt
 
 SRC		= $(addprefix $(SRC_PATH)/, $(FILES))
 SRC_BONUS		= $(addprefix $(BONUS_PATH)/, $(FILES_BONUS))

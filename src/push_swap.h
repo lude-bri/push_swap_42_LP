@@ -5,164 +5,127 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/30 08:56:09 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/09 15:57:50 by luigi            ###   ########.fr       */
+/*   Created: 2024/09/10 10:01:45 by luigi             #+#    #+#             */
+/*   Updated: 2024/09/13 18:45:49 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-////////////////////////////
-///      MACROS         ///
-//////////////////////////
-
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+/* ************************************************************************** */
+/*                                  INCLUDES                                  */
+/* ************************************************************************** */
 
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <limits.h>
-# include <string.h>
+# include <stdbool.h>
 # include "../lib/libft_42/libft.h"
 
-# define STACK_A 1
-# define STACK_B 0
+/* ************************************************************************** */
+/*                                  DEFINES                                   */
+/* ************************************************************************** */
 
-# define PA 00
-# define PB 01
-# define RA 02
-# define RB 03
-# define RR 04
-# define RRA 05
-# define RRB 06
-# define RRR 07
-# define SA 8
-# define SB 9
-# define SS 10
+# define A 1
+# define B 2
 
+# define PA 3
+# define PB 4
+# define RA 5
+# define RB 6
+# define RR 7
+# define RRA 8
+# define RRB 9
+# define RRR 10
+# define SA 11
+# define SB 12
+# define SS 13
 
-////////////////////////////
-//      STRUCTURES		///
-///////////////////////////
+# define HEAD 0
+# define TAIL -1
+
+# define TO_CLEAN 14 
+
+/* ************************************************************************** */
+/*                                  STRUCTS                                   */
+/* ************************************************************************** */
 
 typedef struct s_stack
 {
-	int				num;
-	int				a_bottom;
-	int				b_bottom;
-	int				pivot;
-	struct s_stack	*next;
-	struct s_stack	*prev;
-}	t_stack;
+	char	id;
+	int		*values;
+	int		count;
+	int		size;
+	int		head;
+	int		tail;
+}			t_stack;
 
-typedef struct s_root
+typedef struct s_ps
 {
-	int			size_a;
-	int			size_b;
-}	t_stack_root;
+	t_stack	*a;
+	t_stack	*b;
+	char	*cmds;
+	//char	**split;
+}			t_ps;
+
+/* ************************************************************************** */
+/*                                 FUNCTIONS                                  */
+/* ************************************************************************** */
 
 
-////////////////////////////
-//   FILES FUNCTIONS	 //
-///////////////////////////
+void optimize_operations(t_ps *root, char *ops); 
+//main.c
+void	push_swap(t_ps *root);
+int		is_sorted(t_stack *stack);
 
+//parser.c
+t_ps	*new_ab(char **str);
+t_ps	*init_root(void);
+t_stack	*init_stack(t_ps *root, char id);
+int		normalize(t_stack *a, t_stack *b);
 
+//sanit_check.c
+int		duplicate_check(int *arr, int size);
+int		ft_is_number(char *str);
+int		ft_find_start(char *str);
+int		ft_is_valid(char *str);
+int		number_sanity_check(char **str);
 
-void	smart_insert(t_stack **stack_a, t_stack **stack_b, t_stack_root **root);
+//push_swap.c
+void	do_cmd(t_ps *stack, char cmd);
+void	print_cmds(char *cmd);
 
-int get_pivot(t_stack **stack, t_stack_root *root, int size, int dir);
+//basic_cmds.c
+void	push(t_stack *stack, int value, int position);
+int		pop(t_stack *stack, int position);
+void	swap(t_stack *stack);
+void	cmd_to_buffer(t_ps *root, char cmd);
+int		*take_item(t_stack *stack, int i);
 
-void split_2(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int size, int dir);
-void split_2b(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int size, int pivot);
-void	sort_3a(t_stack **stack_a, t_stack_root **stack_root);
-void	sort_3b(t_stack **stack_b, t_stack_root **stack_root);
-char		*get_pattern_3a_roll(int first, int second, int third);
-char		*get_pattern_3b_roll(int first, int second, int third);
+//sort_stack.c
+void	sort_3(t_ps *data, t_stack *stack);
+void	sort_small(t_ps *root);
+int		unsorted_one(t_stack *stack);
+void	sort_big(t_ps *data);
+void	to_top(t_ps *root, char id, int n);
 
-//main
-t_stack_root	*init_root(t_stack *stack_a);
+//free.c
+void	free_ab(t_ps *stack);
+void	free_strs(char **strs);
 
-//build_stack
-void		init_stack(t_stack *stack, int size);
-t_stack		*create_stack(char **str, int flag);
-void		put_node(t_stack **stack, int data);
-t_stack		*find_lastnode(t_stack *lst);
+//costs.c
+void	find_best_insert(t_ps *root);
+int		find_lowest(t_ps *root, int start, int size);
+int		calculate_moves(t_ps *root, int current);
+int		find_next(t_stack *stack, int num);
+int		find_distance(t_stack *stack, int num);
 
-//free
-void		free_str(char **str);
-void		free_stack(t_stack *stack);
-
-//sanity_check
-int			ft_is_valid(char *str);
-int			ft_find_start(char *str);
-int			ft_is_number(char *str);
-int			number_sanity_check(char **str);
-int			duplicate_check_stack(t_stack *stack, int size);
-
-//sort_check
-int			is_sorted(t_stack *stack_a, t_stack *stack_b, t_stack_root *stack_root);
-int			is_a_sorted(t_stack **stack, t_stack_root **stack_root, int size);
-int			is_b_sorted(t_stack **stack, t_stack_root **stack_root, int size);
-
-//normalize
-int			to_rank(t_stack *stack, int size);
-int			binary_search_stack(t_stack *stack, int target, int low, int high);
-
-//quick_sort
-void		quick_sort_stack(t_stack **stack, int low, int high);
-int			partition_stack(t_stack **stack, int low, int high);
-t_stack		*get_node_at_index(t_stack *stack, int index);
-void		swap_nodes(t_stack **stack, int i, int j);
-
-//quick_sort2
-void		quick_a(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int start, int end);
-void		quick_b(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int start, int end);
-
-//split_partitions
-void		split_first(t_stack **stack_a, t_stack **stack_b, int start, t_stack_root **stack_root);
-void		split_a(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int start, int end);
-void		split_b(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int start, int end);
-
-//push_swap
-void		sort_ab(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
-void		sort_base_case(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int size, int flag);
-
-//push_swap2
-void		sort_3(t_stack **stack_a, t_stack_root **stack_root);
-void		sort_4(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int dir);
-void		sort_5(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int dir);
-t_stack		*find_big(t_stack *stack, int size);
-t_stack		*find_small(t_stack **stack, int size);
-
-//stack_access
-int			a_top(t_stack **stack, t_stack_root **stack_root);
-int			b_top(t_stack **stack, t_stack_root **stack_root);
-int			a_bottom(t_stack **stack, t_stack_root **stack_root);
-int			b_bottom(t_stack **stack, t_stack_root **stack_root);
-
-// commands
-void		do_push_cmd(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int cmd);
-void		do_cmd(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int cmd);
-void		print_cmd(int cmd);
-
-//push_operations
-void		pa(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
-void		pb(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
-void		push_a_n(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root, int size);
-void		if_empty(t_stack **stack);
-
-//rotate_operations
-void		ra(t_stack **stack);
-void		rb(t_stack **stack);
-void		rr(t_stack **stack_a, t_stack **stack_b);
-
-//reverse_rotate_operations
-void		rra(t_stack **stack);
-void		rrb(t_stack **stack);
-void		rrr(t_stack **stack_a, t_stack **stack_b);
-
-//swap_operations
-void		sa(t_stack **stack, t_stack_root **stack_root);
-void		sb(t_stack **stack, t_stack_root **stack_root);
-void		ss(t_stack **stack_a, t_stack **stack_b, t_stack_root **stack_root);
+//optimize.c
+void	optimize(t_ps *data, char *cmds);
+void	optimize_swap(char *cmds, char id);
+void	optimize_rot(char *cmds, char cmd, int count_id);
+int		*count_update(int count[4], int r, int tmp0, int tmp1);
 
 #endif
