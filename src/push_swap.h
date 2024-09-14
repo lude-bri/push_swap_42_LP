@@ -67,7 +67,6 @@ typedef struct s_ps
 	t_stack	*a;
 	t_stack	*b;
 	char	*cmds;
-	//char	**split;
 }			t_ps;
 
 /* ************************************************************************** */
