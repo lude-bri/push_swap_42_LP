@@ -30,7 +30,6 @@ void	push_swap(t_ps *root)
 	else
 		sort_big(root);
 	to_top(root, A, 0);
-	//optimize(root, root->cmds);
 	optimize_operations(root, root->cmds);
 	print_cmds(root->cmds);
 }

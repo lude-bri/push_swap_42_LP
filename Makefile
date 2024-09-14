@@ -80,8 +80,7 @@ FILES += push_swap.c
 FILES += sanity_check.c
 FILES += sort_stack.c
 FILES += optimize.c
-# FILES += optimize_add.c
-# FILES += optimize_clean.c
+
 
 # #
 

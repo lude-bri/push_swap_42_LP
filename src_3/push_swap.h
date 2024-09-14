@@ -134,8 +134,8 @@ void	add_swap(int count_a, int count_b, char *cmds);
 void	add_best(char *cmds, char id, int rev);
 
 //optimize_clean.c
-//void	clean_push(char *cmds);
-//void	clean_swap(char *cmds);
+void	clean_push(char *cmds);
+void	clean_swap(char *cmds);
 void	clean_rotate(char *cmds, char vis, int i, int r);
 void	clean_redundance(t_ps *root, char *cmds);
 
