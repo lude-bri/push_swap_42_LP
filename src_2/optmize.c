@@ -22,6 +22,7 @@ void	optmize(t_ps *data, char *cmds)
 	int		i;
 	char	do_it;
 
+	(void)(data);
 	prev = 0;
 	do_it = -1;
 	while (!(++do_it) || ft_strncmp(cmds, prev, !!do_it * ft_strlen(cmds)))
@@ -42,7 +43,7 @@ void	optmize(t_ps *data, char *cmds)
 		}
 	}
 	free(prev);
-	too_many_rotations(data, cmds);
+	//too_many_rotations(data, cmds);
 }
 
 static void		clean_rot(char *cmds, char vis, int i, int r)

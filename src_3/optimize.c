@@ -12,15 +12,6 @@
 
 #include "push_swap.h"
 
-static void clean_rot(char *cmds, char vis, int i, int r);
-static void clean_swap(char *cmds);
-static void clean_push(char *cmds);
-static int *count_helper(int count[4], int r, int tmp0, int tmp1);
-static void replace_manual_swap(char *cmds, char id);
-static void too_many_rotations(t_ps *data, char *cmds);
-static void insert_swap(char *cmds, char id, int rev);
-static void replace_r(char *cmds, char cmd, int count_id);
-
 
 void optimize_operations(t_ps *root, char *ops) 
 {
@@ -28,7 +19,7 @@ void optimize_operations(t_ps *root, char *ops)
 	int		i;
 	char	do_it;
 
-	(void)(*root);
+	(void)(root);
 	prev = 0;
 	do_it = -1;
     while (!(++do_it) || ft_strncmp(ops, prev, !!do_it * ft_strlen(ops)))
@@ -75,9 +66,20 @@ void optimize_operations(t_ps *root, char *ops)
 				ops[i + 1] = TO_CLEAN;
 			}
 
+			else if (ops[i] == SB && ops[i + 1] == SA) {
+				ops[i] = SS;
+				ops[i + 1] = TO_CLEAN;
+			}
+
 			// Detecta e combina rotações (ra - rb → rr)
 			else if (ops[i] == RA && ops[i + 1] == RB) {
 				ops[i] = RR;  // Substitui por rr
+				ops[i + 1] = TO_CLEAN;
+			}
+
+			else if (ops[i] == RB && ops[i + 1] == RA)
+			{
+				ops[i] = RR;
 				ops[i + 1] = TO_CLEAN;
 			}
 
@@ -102,10 +104,19 @@ void optimize_operations(t_ps *root, char *ops)
 				ops[i + 1] = TO_CLEAN;
 			}
 
+			else if (ops[i] == RRB && ops[i + 1] == RRA) {
+				ops[i] = RRR;
+				ops[i + 1] = TO_CLEAN;
+			}
+
 
 		}
+
     }
+	free(prev);
+	//too_many_rotations(root, ops);
 }
+
 
 
 // void optimize_operations(char *ops) 
@@ -162,295 +173,6 @@ void optimize_operations(t_ps *root, char *ops)
 //         }
 //     }
 // }
-
-
-
-void	optimize(t_ps *data, char *cmds)
-{
-	char	*prev;
-	int		i;
-	char	do_it;
-
-	prev = 0;
-	do_it = -1;
-	while (!(++do_it) || ft_strncmp(cmds, prev, !!do_it * ft_strlen(cmds)))
-	{
-		free(prev);
-		prev = ft_strdup(cmds);
-		i = -1;
-		while (cmds[++i])
-		{
-			replace_manual_swap(&cmds[i], A);
-			replace_manual_swap(&cmds[i], B);
-			if (cmds[i] == PA || cmds[i] == PB)
-				clean_push(&cmds[i]);
-			if (cmds[i] == SA || cmds[i] == SB)
-				clean_swap(&cmds[i]);
-			if (cmds[i] == RA || cmds[i] == RB || cmds[i] == RRA || cmds[i] == RRB)
-				clean_rot(&cmds[i], 0, 4, -2);
-		}
-	}
-	free(prev);
-	too_many_rotations(data, cmds);
-}
-
-static void clean_rot(char *cmds, char vis, int i, int r)
-{
-	int count[4];
-
-	while (i > 0)
-		count[--i] = 0;
-	while (cmds[i] && cmds[i] != PA && cmds[i] != PB && cmds[i] != vis)
-	{
-		count_helper(count, cmds[i++], 0, 0);
-		if (cmds[i - 1] == RRA || cmds[i - 1] == RRB || cmds[i - 1] == RA || cmds[i - 1] == RB)
-			cmds[i - 1] = TO_CLEAN;
-		else if (cmds[i - 1] != TO_CLEAN)
-			vis = cmds[i - 1];
-	}
-	count_helper(count, -1, count[0], count[2]);
-	i = 0;
-	while (++r < 2 && r++ < 2)
-	{
-		while (count[r] || count[r + 1])
-		{
-			while (cmds[i] != TO_CLEAN)
-				i++;
-			if (!count[r])
-			{
-				if (count[1])
-					cmds[i++] = RRA;
-				else if (count[3])
-					cmds[i++] = RRB;
-			}
-			else
-			{
-				if (count[0])
-					cmds[i++] = RA;
-				else if (count[2])
-					cmds[i++] = RB;
-			}
-			count_helper(count, r, !count[r], !count[r + 1]);
-		}
-	}
-}
-
-static void clean_swap(char *cmds)
-{
-	int count_a;
-	int count_b;
-	char vis;
-	int i;
-
-	count_a = 0;
-	count_b = 0;
-	vis = 0;
-	i = 0;
-	while (cmds[i] && cmds[i] != PA && cmds[i] != PB && cmds[i] != vis)
-	{
-		if (cmds[i] == SA)
-			count_a++;
-		if (cmds[i] == SB)
-			count_b++;
-		if (cmds[i] == SA || cmds[i] == SB)
-			cmds[i] = TO_CLEAN;
-		else if (cmds[i] != TO_CLEAN)
-			vis = cmds[i];
-		i++;
-	}
-	if (count_a + count_b && (count_a % 2 + count_b % 2))
-	{
-		cmds[0] = (count_a % 2) ? SA : SB;
-	}
-}
-
-
-static void clean_push(char *cmds)
-{
-	int count_a;
-	int count_b;
-	int i;
-
-	count_a = 0;
-	count_b = 0;
-	i = 0;
-	while ((cmds[i] == PA || cmds[i] == PB) || cmds[i] == TO_CLEAN)
-	{
-		if (cmds[i] == PA)
-			count_a++;
-		if (cmds[i] == PB)
-			count_b++;
-		cmds[i++] = TO_CLEAN;
-	}
-	i = -1;
-	while (++i < ((count_a - count_b) * (count_a > count_b) + (count_b - count_a) * (count_b > count_a)))
-		cmds[i] = (count_a > count_b) ? PA : PB;
-}
-
-
-static int *count_helper(int count[4], int r, int tmp0, int tmp1)
-{
-	if (r > 4)
-	{
-		count[0] += (r == RA);
-		count[1] += (r == RRA);
-		count[2] += (r == RB);
-		count[3] += (r == RRB);
-	}
-	else if (r == -1)
-	{
-		count[0] = (count[0] - count[1]) * (count[0] > count[1]);
-		count[1] = (count[1] - tmp0) * (count[1] > tmp0);
-		count[2] = (count[2] - count[3]) * (count[2] > count[3]);
-		count[3] = (count[3] - tmp1) * (count[3] > tmp1);
-	}
-	else
-	{
-		count[0] -= (tmp1 && count[0]);
-		count[1] -= (tmp0 && count[1]);
-		count[2] -= (tmp1 && count[2]);
-		count[3] -= (tmp0 && count[3]);
-	}
-	return count;
-}
-
-
-static void replace_manual_swap(char *cmds, char id)
-{
-	int rev;
-	int count;
-	int i;
-
-	rev = 0;
-	count = 0;
-	i = -1;
-	while (cmds[++i] && count < 3)
-	{
-		if (count == 1 && (cmds[i] == RRA || cmds[i] == RRB))
-			rev = 1;
-		if ((count == 0 && cmds[i] == ((id == A) ? PB : PA))
-			|| (count == 1 && (cmds[i] == ((id == A) ? RA : RB) || cmds[i] == ((id == A) ? RRA : RRB)))
-			|| (count == 2 && cmds[i] == ((id == A) ? PA : PB)))
-			count++;
-		else if (cmds[i] != TO_CLEAN)
-			count = 10;
-	}
-	if (count == 3)
-		insert_swap(cmds, id, rev);
-}
-
-void too_many_rotations(t_ps *data, char *cmds)
-{
-	static char action;
-	int count_a;
-	int i;
-
-	count_a = data->a->size;
-	i = -1;
-	while (cmds[++i])
-	{
-		// Ajusta a contagem de elementos em 'a'
-
-		count_a += -(cmds[i] == PB) + (cmds[i] == PA);
-		if (cmds[i] == PB || cmds[i] == PA)
-			continue;
-
-		// Verifica se há comandos rra e rrb consecutivos para combinar em rrr
-
-		if (cmds[i] == RRA && cmds[i + 1] == RRB)
-		{
-			// Combina rra e rrb em rrr
-			cmds[i] = RRR;
-			cmds[i + 1] = TO_CLEAN;  // Marca o próximo comando como limpo
-		}
-		else if (((count_a == 2 && (cmds[i] == SA || cmds[i] == RA)) ||
-			(data->a->size - count_a == 2 && (cmds[i] == SB || cmds[i] == RB))) && (++action <= 2))
-		{
-			// Define o comando correspondente
-			cmds[i] = (action == 1) ? RA : RRA;
-			optimize(data, cmds);
-			return;
-		}
-
-		// Substituição de rotações
-		replace_r(&cmds[i], RA, count_a);
-		replace_r(&cmds[i], RRA, count_a);
-		replace_r(&cmds[i], RB, data->a->size - count_a);
-		replace_r(&cmds[i], RRB, data->a->size - count_a);
-	}
-}
-
-static void insert_swap(char *cmds, char id, int rev)
-{
-	int count;
-	int i;
-
-	count = -1;
-	i = -1;
-
-	while (cmds[++i] && ++count < 3)
-	{
-		while (cmds[i] == TO_CLEAN)
-			i++;
-		if (count == 0)
-		{
-			if (rev)
-				cmds[i] = (id == A) ? RRA : RRB;
-			else
-				cmds[i] = TO_CLEAN;
-		}
-		else if (count == 1)
-			cmds[i] = (id == A) ? SA : SB;
-		else if (count == 2)
-		{
-			if (!rev)
-				cmds[i] = (id == A) ? RA : RB;
-			else
-				cmds[i] = TO_CLEAN;
-		}
-	}
-}
-
-
-static void replace_r(char *cmds, char cmd, int count_id)
-{
-	int count_r;
-	int i;
-	int j;
-
-	if (cmds[0] != cmd)
-		return;
-
-	count_r = 0;
-	i = -1;
-
-	// Conta a quantidade de rotações encontradas
-	while (cmds[++i] == cmd || cmds[i] == TO_CLEAN)
-		if (cmds[i] == cmd)
-			count_r++;
-
-	j = 0;
-
-	// Ajusta as rotações conforme a contagem
-	while (count_r > count_id / 2 && j != i)
-	{
-		if (count_r != count_id)
-		{
-			if (cmd == RA)
-				cmds[j++] = RRA;
-			else if (cmd == RB)
-				cmds[j++] = RRB;
-			else if (cmd == RRA)
-				cmds[j++] = RA;
-			else if (cmd == RRB)
-				cmds[j++] = RB;
-			count_r++;
-		}
-		else
-			cmds[j++] = TO_CLEAN;
-	}
-}
-
 
 
 
