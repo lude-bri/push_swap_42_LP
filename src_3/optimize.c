@@ -44,10 +44,29 @@ void optimize_operations(t_ps *root, char *ops)
 				ops[i + 1] = TO_CLEAN;
 				ops[i + 2] = TO_CLEAN;
 			}
-			
+
+			if (ops[i] == PB && ops[i + 1] == PA && ops[i + 2] == RA) {
+				ops[i] = SA;  // Substitui por sa
+				ops[i + 1] = TO_CLEAN;
+				ops[i + 2] = TO_CLEAN;
+			}
+
+			else if (ops[i] == PB && ops[i + 1] == PB && ops[i + 2] == PA) {
+				ops[i] = PB;
+				ops[i + 1] = TO_CLEAN;
+				ops[i + 2] = TO_CLEAN;
+			}
+
 			// Detecta e remove operações de push consecutivas opostas (pb - pa - pb → pb)
 			else if (ops[i] == PB && ops[i + 1] == PA && ops[i + 2] == PB) {
-				ops[i + 1] = TO_CLEAN;  // Limpa o pa
+				ops[i + 1] = TO_CLEAN;
+				ops[i + 2] = TO_CLEAN;// Limpa o pa
+			}
+			
+			else if (ops[i] == PB && ops[i + 1] == PB && ops[i + 2] == PA) {
+				ops[i] = PB;
+				ops[i + 1] = TO_CLEAN;  
+				ops[i + 2] = TO_CLEAN;// Limpa o pa
 			}
 
 			// Detecta e combina swaps individuais (sa - sb → ss)
@@ -63,7 +82,7 @@ void optimize_operations(t_ps *root, char *ops)
 			}
 
 			// Otimiza rotações: ra - ra - rra → ra (evita gerar rra desnecessário)
-			else if (ops[i] == RA && ops[i + 1] == RA && ops[i + 2] == RRA) {
+			else if (ops[i] == RA && ops[i + 1] == RA && (ops[i + 2] == RRA || ops[i + 2] == RRA)) {
 				// Mantém apenas um ra e limpa os outros comandos
 				ops[i] = RA;
 				ops[i + 1] = TO_CLEAN;
@@ -83,13 +102,7 @@ void optimize_operations(t_ps *root, char *ops)
 				ops[i + 1] = TO_CLEAN;
 			}
 
-			// Incrementa o índice e limpa comandos TO_CLEAN
-			/*if (ops[i] == TO_CLEAN) {
-				for (int j = i; j < size - 1; j++) {
-					ops[j] = ops[j + 1];  // Move os comandos para frente
-				}
-				size--;  // Diminui o tamanho da fila
-			}*/
+
 		}
     }
 }
