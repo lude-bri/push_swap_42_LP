@@ -16,6 +16,7 @@ N_KO		= 0
 
 UNAME 			= $(shell whoami)
 NAME 			= push_swap
+NAME_BONUS		= checker
 
 ### Message Vars
 _SUCCESS 		= [$(GRN)SUCCESS$(D)]
@@ -48,6 +49,19 @@ FILES += sanity_check.c
 FILES += sort_stack.c
 FILES += optimize.c
 FILES += utils.c
+
+FILES_BONUS = main.c
+FILES_BONUS += basic_cmds.c
+FILES_BONUS += build_stack.c
+FILES_BONUS += costs.c
+FILES_BONUS += free.c
+FILES_BONUS += push_swap.c
+FILES_BONUS += sanity_check.c
+FILES_BONUS += sort_stack.c
+FILES_BONUS += optimize.c
+FILES_BONUS += utils.c
+
+
 
 SRC		= $(addprefix $(SRC_PATH)/, $(FILES))
 SRC_BONUS		= $(addprefix $(BONUS_PATH)/, $(FILES_BONUS))
