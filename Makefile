@@ -50,7 +50,7 @@ FILES += sort_stack.c
 FILES += optimize.c
 FILES += utils.c
 
-FILES_BONUS = main.c
+FILES_BONUS = main_bonus.c
 FILES_BONUS += basic_cmds.c
 FILES_BONUS += build_stack.c
 FILES_BONUS += costs.c
