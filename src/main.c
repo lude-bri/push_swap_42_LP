@@ -40,3 +40,23 @@ int	main(int ac, char **av)
 	push_swap(root);
 	free_ab(root);
 }
+
+void	push_swap(t_ps *root)
+{
+	int		size;
+
+	size = root->a->count;
+	if (is_sorted(root->a))
+		return ;
+	if (size == 2)
+		do_cmd(root, SA);
+	else if (size == 3)
+		sort_3(root, root->a);
+	else if (size <= 5)
+		sort_small(root);
+	else
+		sort_big(root);
+	to_top(root, A, 0);
+	optimize_operations(root->cmds);
+	print_cmds(root->cmds);
+}

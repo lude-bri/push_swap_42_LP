@@ -47,7 +47,7 @@ FILES += push_swap.c
 FILES += sanity_check.c
 FILES += sort_stack.c
 FILES += optimize.c
-
+FILES += utils.c
 
 SRC		= $(addprefix $(SRC_PATH)/, $(FILES))
 SRC_BONUS		= $(addprefix $(BONUS_PATH)/, $(FILES_BONUS))

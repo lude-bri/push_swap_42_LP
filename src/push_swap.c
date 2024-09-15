@@ -13,26 +13,7 @@
 #include "push_swap.h"
 
 static int	verify_id(t_stack *stack);
-
-void	push_swap(t_ps *root)
-{
-	int		size;
-
-	size = root->a->count;
-	if (is_sorted(root->a))
-		return ;
-	if (size == 2)
-		do_cmd(root, SA);
-	else if (size == 3)
-		sort_3(root, root->a);
-	else if (size <= 5)
-		sort_small(root);
-	else
-		sort_big(root);
-	to_top(root, A, 0);
-	optimize_operations(root, root->cmds);
-	print_cmds(root->cmds);
-}
+static void	print_cmds_2(char *cmd, int i);
 
 int	is_sorted(t_stack *stack)
 {
@@ -101,18 +82,24 @@ void	print_cmds(char *cmd)
 			ft_printf("sb\n");
 		else if (cmd[i] == SS)
 			ft_printf("ss\n");
-		else if (cmd[i] == RA)
-			ft_printf("ra\n");
-		else if (cmd[i] == RB)
-			ft_printf("rb\n");
-		else if (cmd[i] == RR)
-			ft_printf("rr\n");
-		else if (cmd[i] == RRA)
-			ft_printf("rra\n");
-		else if (cmd[i] == RRB)
-			ft_printf("rrb\n");
-		else if (cmd[i] == RRR)
-			ft_printf("rrr\n");
+		else
+			print_cmds_2(cmd, i);
 		++i;
 	}
+}
+
+static void	print_cmds_2(char *cmd, int i)
+{
+	if (cmd[i] == RA)
+		ft_printf("ra\n");
+	else if (cmd[i] == RB)
+		ft_printf("rb\n");
+	else if (cmd[i] == RR)
+		ft_printf("rr\n");
+	else if (cmd[i] == RRA)
+		ft_printf("rra\n");
+	else if (cmd[i] == RRB)
+		ft_printf("rrb\n");
+	else if (cmd[i] == RRR)
+		ft_printf("rrr\n");
 }

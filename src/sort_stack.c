@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 08:59:46 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/12 15:46:00 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/15 14:25:00 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,12 @@ void	sort_small(t_ps *root)
 
 void	sort_big(t_ps *root)
 {
-	int		partition_size;
+	int		p_size;
 	int		partition;
 	int		count;
 	int		i;
 
-	partition_size = root->a->size / 2;
+	p_size = root->a->size / 2;
 	partition = 0;
 	while (root->a->count)
 	{
@@ -72,11 +72,10 @@ void	sort_big(t_ps *root)
 		count = root->a->count;
 		while (++i < count)
 		{
-			if (*take_item(root->a, 0) < (partition + 1) * partition_size)
+			if (*take_item(root->a, 0) < (partition + 1) * p_size)
 			{
 				do_cmd(root, PB);
-				if (*take_item(root->b, 0)
-					< partition * partition_size + partition_size / 2)
+				if (*take_item(root->b, 0) < partition * p_size + p_size / 2)
 					do_cmd(root, RB);
 			}
 			else
@@ -128,24 +127,5 @@ void	to_top(t_ps *root, char id, int n)
 	while (++i < stack->count)
 		if (*take_item(stack, i) == n)
 			break ;
-	if (i > stack->count / 2)
-	{
-		while (i++ < stack->count)
-		{
-			if (id == A)
-				do_cmd(root, RRA);
-			else if (id == B)
-				do_cmd(root, RRB);
-		}
-	}
-	else
-	{
-		while (i-- > 0)
-		{
-			if (id == A)
-				do_cmd(root, RA);
-			else if (id == B)
-				do_cmd(root, RB);
-		}
-	}
+	to_top_2(root, stack, id, i);
 }

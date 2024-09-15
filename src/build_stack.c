@@ -87,7 +87,6 @@ t_ps	*init_root(void)
 	root->a = init_stack(root, A);
 	root->b = init_stack(root, B);
 	root->cmds = NULL;
-	//root->split = NULL;
 	return (root);
 }
 

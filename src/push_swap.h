@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:01:45 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/13 18:45:49 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/15 14:21:59 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,6 @@ typedef struct s_ps
 /*                                 FUNCTIONS                                  */
 /* ************************************************************************** */
 
-
-void optimize_operations(t_ps *root, char *ops); 
 //main.c
 void	push_swap(t_ps *root);
 int		is_sorted(t_stack *stack);
@@ -122,9 +120,9 @@ int		find_next(t_stack *stack, int num);
 int		find_distance(t_stack *stack, int num);
 
 //optimize.c
-void	optimize(t_ps *data, char *cmds);
-void	optimize_swap(char *cmds, char id);
-void	optimize_rot(char *cmds, char cmd, int count_id);
-int		*count_update(int count[4], int r, int tmp0, int tmp1);
+void	optimize_operations(char *ops);
+
+//utils.c
+void	to_top_2(t_ps *root, t_stack *stack, char id, int i);
 
 #endif

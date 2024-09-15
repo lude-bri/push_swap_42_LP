@@ -92,7 +92,6 @@ void	cmd_to_buffer(t_ps *root, char cmd)
 			ft_strlcpy(tmp, root->cmds, size + 1);
 		free(root->cmds);
 		root->cmds = tmp;
-		
 	}
 	root->cmds[i++] = cmd;
 }
