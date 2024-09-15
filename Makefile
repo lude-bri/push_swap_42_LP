@@ -111,7 +111,6 @@ $(NAME_BONUS): $(BUILD_PATH) $(LIBFT_ARC) $(OBJS_BONUS)
 	$(CC) $(CFLAGS) $(DFLAGS) $(OBJS_BONUS) -o $(NAME_BONUS) -L $(LIBFT_PATH) -lft
 	@echo "[$(_SUCCESS) compiling $(MAG)push_swap checker!$(D) $(YEL)🖔$(D)]"
 
-
 bonus:	all $(NAME_BONUS)	## Compile Bonus version
 	@echo "$(YEL)Compiling $(MAG)$(NAME)$(YEL) bonus version$(D)"
 	$(CC) $(CFLAGS) $(DFLAGS) $(OBJS_BONUS) -o $(NAME_BONUS) -L $(LIBFT_PATH) -lft

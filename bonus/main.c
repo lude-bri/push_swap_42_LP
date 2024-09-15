@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:29:05 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/15 18:02:50 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/15 18:28:31 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,4 @@ void	push_swap(t_ps *root)
 	optimize_operations(root->cmds);
 	print_cmds(root->cmds);
 	checker(root);
-	if (is_sorted(root->a))
-		ft_printf("OK\n");
 }

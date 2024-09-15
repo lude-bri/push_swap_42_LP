@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 16:10:00 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/15 18:01:22 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/15 18:08:26 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,42 @@
 static void	check_op(t_ps *root, char *cmds);
 static int	parse_cmds(t_ps *root, char *cmds);
 
-void	checker(t_ps *root)
+
+void checker(t_ps *root)
 {
-	int		result;
-	char	*line;
+    char *line;
 
-	result = 1;
-	while (result)
-	{
-		line = get_next_line(0);
-		if (!line)
-			result = 0;
-		else
-			check_op(root, line);
-	}
-	if (is_sorted(root->a) == 1)
-		ft_printf("OK\n");
-	else
-		ft_printf("KO\n");
+    while ((line = get_next_line(0)) != NULL)
+    {
+        check_op(root, line);
+    }
+    // Verifica se a pilha A está ordenada e se a pilha B está vazia
+    if (is_sorted(root->a) == 1 && root->b == NULL)
+        ft_printf("OK\n");
+    else
+        ft_printf("KO\n");
 }
-
+//
+// void	checker(t_ps *root)
+// {
+// 	int		result;
+// 	char	*line;
+//
+// 	result = 1;
+// 	while (result)
+// 	{
+// 		line = get_next_line(0);
+// 		if (!line)
+// 			result = 0;
+// 		else
+// 			check_op(root, line);
+// 	}
+// 	if (is_sorted(root->a) == 1 && root->b == NULL)
+// 		ft_printf("OK\n");
+// 	else
+// 		ft_printf("KO\n");
+// }
+//
 static void	check_op(t_ps *root, char *cmds)
 {
 	int	result;
