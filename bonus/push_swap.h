@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:01:45 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/15 14:21:59 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/15 17:55:57 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@
 # define TAIL -1
 
 # define TO_CLEAN 14 
+# define CHECKER 15
 
 /* ************************************************************************** */
 /*                                  STRUCTS                                   */
@@ -124,5 +125,8 @@ void	optimize_operations(char *ops);
 
 //utils.c
 void	to_top_2(t_ps *root, t_stack *stack, char id, int i);
+
+//check_stack.c
+void	checker(t_ps *root);
 
 #endif

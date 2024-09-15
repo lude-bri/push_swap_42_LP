@@ -60,7 +60,7 @@ FILES_BONUS += sanity_check.c
 FILES_BONUS += sort_stack.c
 FILES_BONUS += optimize.c
 FILES_BONUS += utils.c
-
+FILES_BONUS += check_stack.c
 
 
 SRC		= $(addprefix $(SRC_PATH)/, $(FILES))
@@ -106,12 +106,18 @@ $(NAME): $(LIBFT_ARC) $(BUILD_PATH) $(OBJS) $(OBJS_BONUS) ## Compile Mandatory v
 	@echo "[$(_SUCCESS) compiling $(MAG)$(NAME)$(D) $(YEL)🖔$(D)]"
 	@make --no-print-directory norm
 
-bonus:	all 	## Compile Bonus version
+$(NAME_BONUS): $(BUILD_PATH) $(LIBFT_ARC) $(OBJS_BONUS)
+	@echo "[$(YEL)Compiling push_swap checker$(D)]"
+	$(CC) $(CFLAGS) $(DFLAGS) $(OBJS_BONUS) -o $(NAME_BONUS) -L $(LIBFT_PATH) -lft
+	@echo "[$(_SUCCESS) compiling $(MAG)push_swap checker!$(D) $(YEL)🖔$(D)]"
+
+
+bonus:	all $(NAME_BONUS)	## Compile Bonus version
 	@echo "$(YEL)Compiling $(MAG)$(NAME)$(YEL) bonus version$(D)"
-	$(CC) $(CFLAGS) $(DFLAGS) $(OBJS_BONUS) -o $(NAME) -L $(LIBFT_PATH) -lft
+	$(CC) $(CFLAGS) $(DFLAGS) $(OBJS_BONUS) -o $(NAME_BONUS) -L $(LIBFT_PATH) -lft
 	@echo "[$(_SUCCESS) compiling $(MAG)$(NAME)$(D) $(YEL)🖔$(D)]"
 	@make --no-print-directory norm_bonus
-
+	#
 deps:		## Download/Update deps
 	@if test ! -d "$(LIBFT_PATH)"; then make get_libft; \
 		else echo "$(YEL)[libft]$(D) folder found ✌️";  fi
