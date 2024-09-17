@@ -19,12 +19,15 @@ static int	parse_cmds(t_ps *root, char *cmds);
 void	checker(t_ps *root)
 {
 	char	*line;
+	int		res;
 
-	while (1)
+	//line = NULL;
+	res = 0;
+	while (res == 0)
 	{
 		line = get_next_line(0);
 		if (!line)
-			return ;
+			res = 1;
 		check_op(root, line);
 	}
 	if (is_sorted(root->a) == 1 && root->b == NULL)
