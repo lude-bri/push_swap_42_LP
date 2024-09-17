@@ -22,7 +22,7 @@ void	checker(t_ps *root)
 
 	while (1)
 	{
-		line = get_next_line_ps(0);
+		line = get_next_line(0);
 		if (!line)
 			return ;
 		check_op(root, line);
