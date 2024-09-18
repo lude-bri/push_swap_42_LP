@@ -58,6 +58,6 @@ void	push_swap(t_ps *root)
 		sort_big(root);
 	to_top(root, A, 0);
 	optimize_operations(root->cmds);
-	print_cmds(root->cmds);
+	//print_cmds(root->cmds);
 	checker(root);
 }
