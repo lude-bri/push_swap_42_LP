@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 11:34:04 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/10 20:05:31 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/19 08:21:27 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	number_sanity_check(char **str)
 	int		i;
 
 	i = 0;
+	if (!str || !*str)
+		return (0);
 	while (str[i])
 		if (!ft_is_number(str[i++]))
 			return (0);
