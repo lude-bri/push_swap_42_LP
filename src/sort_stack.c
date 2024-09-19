@@ -14,13 +14,13 @@
 
 void	sort_3(t_ps *root, t_stack *stack)
 {
-	int		*first;
-	int		*second;
-	int		*third;
+	int		first;
+	int		second;
+	int		third;
 
-	first = take_item(stack, 0);
-	second = take_item(stack, 1);
-	third = take_item(stack, 2);
+	first = *take_item(stack, 0);
+	second = *take_item(stack, 1);
+	third = *take_item(stack, 2);
 	if (first < second && second < third)
 		return ;
 	if (first > second && first > third)

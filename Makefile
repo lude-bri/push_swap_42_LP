@@ -10,8 +10,8 @@ set			?= 10
 n			?= 100
 ARG			?= "3 2 1 0 9"
 SIZES		:= 3 6 9
-# SIZES		+= 25 50 100
-SIZES	+= 200 250 500
+SIZES		+= 25 50 100
+# SIZES	+= 200 250 500
 # SIZES	+= 1000 2000
 N_OK		= 0
 N_KO		= 0
@@ -259,23 +259,36 @@ test_subject: all	## Test push_swap with examples from subject
 	@echo "$(BGRN)*** Error Handling Tests ***$(D)"
 	@echo "[$(RED)1/5$(D) :$(CYA)Success test$(D) (correct args)]"
 	./push_swap 2 1 3 6 5 8
+	@sleep 1
 	@echo "[$(RED)2/5$(D) :$(CYA)Failure test$(D) (wrong args)]"
-	./push_swap 0 one 2 3
+	-./push_swap 0 one 2 3
+	@sleep 1
 	@echo "[$(RED)3/5$(D) :$(CYA)Failure test$(D) (wrong args)]"
-	./push_swap 0 "" 2 3
+	-./push_swap 0 "" 2 3
+	@sleep 1
 	@echo "[$(RED)4/5$(D) :$(CYA)Error handling$(D) (for n > INT_MAX test)]"
-	./push_swap 2147483648 1 2
-	./push_swap 0 21474836848 1 2
-	./push_swap "0 1 2147483648 2"
+	-./push_swap 2147483648 1 2
+	@sleep 1
+	-./push_swap 0 21474836848 1 2
+	@sleep 1
+	-./push_swap "0 1 2147483648 2"
+	@sleep 1
 	@echo "[$(RED)5/5$(D) :$(CYA)Error handling$(D) (No args)]"
-	./push_swap
+	-./push_swap
+	@sleep 1
 	@echo "$(BGRN)*** Identity Tests ***$(D)"
 	@echo "[$(RED)1/1$(D) :$(CYA)no output expected$(D) (Sorted stacks)]"
-	./push_swap 42
-	./push_swap 2 3
-	./push_swap 0 1 2 3
-	./push_swap 0 1 2 3 4 5 6 7 8 9
-	./push_swap 1 3 5 6 8 9
+	-./push_swap 42
+	@sleep 1
+	-./push_swap 2 3
+	@sleep 1
+	-./push_swap 0 1 2 3
+	@sleep 1
+	-./push_swap 0 1 2 3 4 5 6 7 8 9
+	@sleep 1
+	-./push_swap 1 3 5 6 8 9
+	@sleep 1
+	@sleep 1
 	@echo "$(BGRN)*** $ARG Tests ***$(D)"
 	@echo "[$(RED)1/4$(D) :$(CYA)Simple test$(D) (sort 3 elements)]"
 	ARG="2 1 0"; ./push_swap $$ARG | ./checker_linux $$ARG

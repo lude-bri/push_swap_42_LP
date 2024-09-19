@@ -45,7 +45,7 @@ static void	clean_push(char *ops, int i)
 	if ((ops[i] == PB && ops[i + 1] == RA && ops[i + 2] == PA)
 		|| (ops[i + 1] == PA && ops[i + 2] == RA))
 	{
-		ops[i] = SA;
+		ops[i] = RA;
 		ops[i + 1] = TO_CLEAN;
 		ops[i + 2] = TO_CLEAN;
 	}
@@ -69,6 +69,12 @@ static void	clean_swap(char *ops, int i)
 	{
 		ops[i] = SS;
 		ops[i + 1] = TO_CLEAN;
+	}
+	if (ops[i] == SA && ops[i + 1] == SA && ops[i + 2] == SA)
+	{
+		ops[i] = SA;
+		ops[i + 1] = TO_CLEAN;
+		ops[i + 2] = TO_CLEAN;
 	}
 }
 
