@@ -6,7 +6,11 @@ MAKE	= make -C
 SHELL	:= bash
 
 # Default test values
-ARG			?=
+set			?= 10
+n			?= 100
+ARG			?= "3 2 1 0 9"
+SIZES		:= 3 6 9
+SIZES		+= 25 50 100
 N_OK		= 0
 N_KO		= 0 
 
@@ -39,6 +43,7 @@ TEMP_PATH		= .temp
 TESTS_PATH		= files
 LIBFT_PATH		= $(LIBS_PATH)
 
+### Files Source
 FILES = main.c
 FILES += basic_cmds.c
 FILES += build_stack.c
@@ -50,6 +55,7 @@ FILES += sort_stack.c
 FILES += optimize.c
 FILES += utils.c
 
+### Files Bonus
 FILES_BONUS = main_bonus.c
 FILES_BONUS += basic_cmds.c
 FILES_BONUS += build_stack.c
@@ -62,7 +68,6 @@ FILES_BONUS += optimize.c
 FILES_BONUS += utils.c
 FILES_BONUS += check_stack.c
 FILES_BONUS += get_next_line_ps.c
-
 
 SRC		= $(addprefix $(SRC_PATH)/, $(FILES))
 SRC_BONUS		= $(addprefix $(BONUS_PATH)/, $(FILES_BONUS))
