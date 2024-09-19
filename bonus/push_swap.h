@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:01:45 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/15 17:55:57 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/19 08:07:08 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,9 @@ typedef struct s_ps
 void	push_swap(t_ps *root);
 int		is_sorted(t_stack *stack);
 
+//main_bonus.c
+void	checker(t_ps *root);
+
 //parser.c
 t_ps	*new_ab(char **str);
 t_ps	*init_root(void);
@@ -127,6 +130,9 @@ void	optimize_operations(char *ops);
 void	to_top_2(t_ps *root, t_stack *stack, char id, int i);
 
 //check_stack.c
-void	checker(t_ps *root);
+void	check_stack(t_ps *root);
+
+//get_next_line_ps.c
+char	*get_next_line_ps(int fd);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: luigi <luigi@student.42porto.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 10:29:05 by luigi             #+#    #+#             */
-/*   Updated: 2024/09/15 18:28:31 by luigi            ###   ########.fr       */
+/*   Updated: 2024/09/19 08:07:19 by luigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,27 +37,19 @@ int	main(int ac, char **av)
 		ft_putstr_fd("Error\n", 2);
 		exit (1);
 	}
-	push_swap(root);
+	checker(root);
 	free_ab(root);
 }
 
-void	push_swap(t_ps *root)
+void	checker(t_ps *root)
 {
 	int		size;
 
 	size = root->a->count;
 	if (is_sorted(root->a))
-		checker(root);
-	if (size == 2)
-		do_cmd(root, SA);
-	else if (size == 3)
-		sort_3(root, root->a);
-	else if (size <= 5)
-		sort_small(root);
-	else
-		sort_big(root);
-	to_top(root, A, 0);
-	optimize_operations(root->cmds);
-	//print_cmds(root->cmds);
-	checker(root);
+	{
+		check_stack(root);
+		return ;
+	}
+	check_stack(root);
 }

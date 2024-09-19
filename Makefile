@@ -61,6 +61,7 @@ FILES_BONUS += sort_stack.c
 FILES_BONUS += optimize.c
 FILES_BONUS += utils.c
 FILES_BONUS += check_stack.c
+FILES_BONUS += get_next_line_ps.c
 
 
 SRC		= $(addprefix $(SRC_PATH)/, $(FILES))
