@@ -47,7 +47,7 @@ void	push_swap(t_ps *root)
 
 	size = root->a->count;
 	if (is_sorted(root->a))
-		return ;
+		checker(root);
 	if (size == 2)
 		do_cmd(root, SA);
 	else if (size == 3)

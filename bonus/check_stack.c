@@ -34,12 +34,11 @@ void	checker(t_ps *root)
 		else
 			check_op(root, line);
 	}
-	if (is_sorted(root->a) == 1 && root->b == NULL)
+	if (is_sorted(root->a))
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
 }
-
 
 static char	*get_next_line_ps(int fd)
 {
