@@ -167,12 +167,12 @@ get_libft:
 
 get_randgen:
 	@echo "* $(CYA)Getting Randgen submodule$(D)]"
-	git clone git@github.com:PedroZappa/randgen.git $(RANDGEN_PATH)
+	git clone git@github.com:lude-bri/randgen.git $(RANDGEN_PATH)
 	@echo "* $(GRN)Randgen submodule download$(D): $(_SUCCESS)"
 
 build_randgen: all $(TEMP_PATH)
 	@if test ! -d "$(RANDGEN_PATH)"; then \
-	git clone git@github.com:PedroZappa/randgen.git $(RANDGEN_PATH); fi
+	git clone git@github.com:lude-bri/randgen.git $(RANDGEN_PATH); fi
 	$(MAKE) $(RANDGEN_PATH)
 
 randgen: build_randgen		## Generate list of n random values w/ given seed
