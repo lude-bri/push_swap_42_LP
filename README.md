@@ -17,9 +17,9 @@ optimized data sorting.
 
    <ul>
 	<li><strong><a href="#introduction" style="color:white">Introduction </a></strong></li>
-	<li><strong><a href="#complexity" style="color:white">1. Computational Complexity </a></strong></li>
+	<li><strong><a href="#1-computational-complexity" style="color:white">1. Computational Complexity </a></strong></li>
 	<ul style="list-style-type:disc">
-		<li><a href="#"> 1.1. Time Complexity, Space Complexity and Big O notation </a></li>
+		<li><a href="#11-time-complexity-space-complexity-and-big-o-notation"> 1.1. Time Complexity, Space Complexity and Big O notation </a></li>
 	</ul>
 	<li><strong><a href="#" style="color:white">2. Sorting Algorithms </a></strong></li>
 	<li><strong><a href="#" style="color:white">3. Push Swap </a></strong></li>
@@ -102,7 +102,7 @@ $$
 
 As said, we can see the **worst case**, **average case**, **best case**. In asymptotic analysis this is represented as **Big O**, **Big Theta** and **Big Omega** respectively. 
 
-# Sorting Algorithm
+# 2. Sorting Algorithm
 
 A sorting algorithm is an algorithm that puts elements of a list into an order. The most frequently used orders are numerical orders and lexical orders, either ascending or descending.
 
@@ -117,11 +117,11 @@ Formally, the output of any sorting algorithm must satisfy two conditions:
 > For optimum efficiency, the input data should be stored in a data structure which allows random access rather than one that allow only sequential access
 
 
-# Push Swap
+# 3. Push Swap
 
 To discuss about my approach on push swap, let's see the mandatory part in this project:
 
-## Rules
+## 3.1. Rules
 
 There are 2 stacks, named A and B. At the beginning the stack A contains a random amount of negative and/or positive numbers which cannot be duplicated and the stack B is empty. The goal is to sort in ascending order numbers into stack a. To do so, I have the following operations at disposal
 
@@ -139,7 +139,7 @@ There are 2 stacks, named A and B. At the beginning the stack A contains a rando
 | `rrb` | (reverse rotate b) | Shift down all elements of stack `b` by 1. The last element becomes the first one. |
 | `rrr` | (reverse rotate a and reverse rotate b) | Do `rra` and `rrb` at the same time. |
   
-## Program
+## 3.2. Program
 
 I have to write a program named `push_swap` that takes as an argument the stack `a` formatted as a list of integers. The first argument should be at the top of the stack (be careful about the order)
 
@@ -153,7 +153,7 @@ If no parameters are specified, the program must not display anything and give t
 
 In case of error, it must display "Error" followed by a `\n` on the standard error. Errors include for example: some arguments aren't integers, some arguments are bigger than an integer and/or there are duplicates.
 
-## Develop
+## 3.3. Develop
 
 To develop this project, I've decided to implement a recursive algorithm using divide and conquer design. The recursive algorithm will increase my complexity, but it will help me deciding which element is needed to sort the stack. Divide and conquer repeatdly reduces an instance of a problem to one or more samller instances of the same problem (recursivelly) until the instances are small enough to be solved easily.
 
@@ -165,7 +165,7 @@ I've made a flowchart that represents how my program works:
     <img src="images/push_flux_dark.png">    
 </div>
 
-## Data Structure
+## 3.4. Data Structure
 
 To start, we need to create the stacks A and B. I've used arrays to solve this project because sorted arrays are the most space-efficient data structure with the best locality of reference for sequentially stored data. Also, it is very efficient when applied to Quick-Sort. I decided to use a circular array. This is the data struct used:
 
@@ -206,7 +206,7 @@ typedef struct	s_ps
 
 ```
 
-## Push Swap Algorithm
+## 3.5. Push Swap Algorithm
 
 To solve push swap I've decided to structure the algorithm in 4 phases:
 
@@ -230,7 +230,7 @@ Having a pre-sort in stack B, let's calculate the cost of the best numbers to go
 
 Finally, we need to **optimize commands**. Using the root structure `t_ps`, all the commands are contained in `cmds` variable. Now, I've found certains patterns that can optimize the time complexity of my program. Just like, `pb`-`ra`-`pa` = `sa`, `pb`-`pa`-`pb` = `pb`, `sa`-`sb` = `ss`, `ra`-`rb` = `rr`, `rra`-`rrb` = `rrr`. After this, we can print and solve push_swap project! And, voilà! Sorted!
 
-## Time complexity of my algorithm: creating my own formula
+## 3.6. Time complexity of my algorithm: creating my own formula
 
 To better precise my algorithm I have developed a formula to predict the time complexity of my algorithm. To do so, I've used as base the Master Theorem. 
 
@@ -324,7 +324,7 @@ $$
 
 And that is the formula that I developed to analyze the time complexity of my program.
 
-## Testing the formula
+## 3.7. Testing the formula
 
 Let's try with $`n = 100`$
 
@@ -386,7 +386,7 @@ $$
 
 This means that for 100 numbers, my algorithm will take around 550 movements to sort it!! And it is indeed the results that we can see in my program.
 
-# Usage
+# 4. Usage
 
 First you need to clone the git repository
 
