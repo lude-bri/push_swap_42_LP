@@ -107,7 +107,7 @@ To discuss about my approach on push swap, let's see the mandatory part in this 
 
 ## Mandatory Part
 
-Rules
+### Rules
 
   1. I have 2 stacks, named a and b;
   2. At the beginning
@@ -154,6 +154,69 @@ I've made a flowchart that represents how my program works:
 <div aling="center">
     <img src="images/push_flux_dark.png">    
 </div>
+
+## Push_swap
+
+To start, we need to create the stacks A and B. I've used arrays to solve this project because sorted arrays are the most space-efficient data structure with the best locality of reference for sequentially stored data. Also, it is very efficient when applied to Quick-Sort. I decided to use a circular array. This is the data struct used:
+
+```C
+
+typedef struct s_stack
+{
+	char	id;       // Identifier for the stack ('A' or 'B'), used to distinguish between two stacks
+	int		*values;  // Pointer to an array of integers representing the elements in the stack
+	int		count;    // The current number of elements in the stack
+	int		size;     // The maximum capacity of the stack (size of the array)
+	int		head;     // Index of the "head" (top) element in the stack
+	int		tail;     // Index of the "tail" (bottom) element in the stack
+}			t_stack;
+
+```
+<ul>
+	<li>`id`: Used to differentiate between two stacks, for example, A and B.</li>
+	<li>`values`: Points to the dynamically allocated array that holds the elements of the stack.</li>
+	<li>`count`: Tracks the current number of elements present in the stack.</li>
+	<li>`size`: Defines the total capacity or maximum size of the stack (the size of the values array).</li>
+	<li>`head`: Keeps track of the top of the stack, allowing efficient push and pop operations.</li>
+	<li>`tail`: Keeps track of the bottom of the stack (sometimes needed for certain operations).</li>
+</ul>
+
+
+### My Big O Formula
+
+The master theorem is one of the methods for solving recurrence relations arising from divide and conquer algorithms. When a more complex mathematical analysis is required, the master theorem is used, which is an effective tool for this type of situation. In summary, the master theorem solves recurrences that have the following form:
+
+$$
+T(n) = aT(n/b) + f(n)
+$$
+
+Where n is the data size, the values ​​a >= 1 and b > 1 are constants and f(n) is a function that represents the time cost of each recursive call of the algorithm.
+
+Considering the chosen sorting algorithm (Quick Sort and Insertion), I couldn't use an unique formula to estimate the complexity of my program. That's because the worst-case complexity for Quick Sort is O(nlogn) and Insertion would be O(n^2).
+
+In my push_swap, I only use Insertion in 2 specific cases, when we need to sort 3, 4 and 5 numbers. Meaning that the Quick Sort is present in enourmous cases. 
+
+I've said also that I used a 'Twisted' Quick Sort, because I didn't always used a pivot.
+
+Regarding that, in most part of the cases, our worst-case complexity will be:
+
+$$
+T(n) = O(nlogn)
+$$
+
+Because I am using 2 different stacks, I'll call A(n) and B(n). Translating to Master Theorem, we have:
+
+$$
+A(n) = aA(n/b) + B(n)
+$$
+
+n is the quantity of elements (numbers) to sort. The values ​​a >= 1 and b > 1 are constants and B(n) is a function that represents the time cost of each recursive call of the algorithm to sort, or finish, the stack B.
+
+
+
+
+
+# Other
 
 In my case, and because of the multiple things to study, I'll consider 5 weeks of producing this project.
 
