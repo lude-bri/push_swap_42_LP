@@ -202,9 +202,9 @@ To solve push swap I've decided to structure the algorithm in 4 phases:
 
 <ul>
 	<li> Parsing and Verify Sanity </li>
-	<li> Parsing and Verify Sanity </li>
- 	<li> Parsing and Verify Sanity </li>
-	<li> Parsing and Verify Sanity </li>
+	<li> Push to B in Partitions </li>
+ 	<li> Sorting Algorithm </li>
+	<li> Optimize Commands </li>
 </ul>
 
 
