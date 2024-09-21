@@ -220,7 +220,7 @@ Having a pre-sort in stack B, let's calculate the cost of the best numbers to go
 
 Finally, we need to **optimize commands**. Using the root structure `t_ps`, all the commands are contained in `cmds` variable. Now, I've found certains patterns that can optimize the time complexity of my program. Just like, `pb`-`ra`-`pa` = `sa`, `pb`-`pa`-`pb` = `pb`, `sa`-`sb` = `ss`, `ra`-`rb` = `rr`, `rra`-`rrb` = `rrr`. After this, we can print and solve push_swap project! And, voilà! Sorted!
 
-## The complexity of my algorithm
+## Time complexity of my algorithm
 
 To better precise my algorithm I have developed a formula to predict the time complexity of my algorithm. To do so, I've used as base the Master Theorem. 
 
@@ -252,9 +252,9 @@ $$
 
 n is the quantity of elements (numbers) to sort. The values ​​$`a >= 1`$ and $b > 1$ are constants and $B(n)$ is a function that represents the time cost of each recursive call of the algorithm to sort, or finish, the stack B.
 
-Let's find our constants. First of all, as discussed earlier, there are always 4 ways to push from B to A efficiently. Because they're combined with `pa`, is 4 + 1 commands to move a number from B to A. Therefore the number 5 is a constant.
+Let's find our constants. First of all, as discussed earlier, there are always 4 ways to push from B to A efficiently. Because they're combined with `pa`, is 4 + 1 commands to move a number from B to A. Therefore the number 5 is a constant. I'll call this $`a`$
 
-Another constant is the partitions, in the beginning we divide the stack by 2, but ultimatelly, it's always by 4 partitions.
+Another constant is the partitions, which we're always dividing by 2. I'll call this $`b`$
 
 Now, because we need to use 2 stacks to sort, I've decided to make a formula for B, meaning that we will see the complexity to sort B, and then add to A.
 
@@ -274,7 +274,107 @@ The recurrence relation expose the analysis of divide-and-conquer design.
 
 </ul>
 
-Knowing that
+The case of the Master Theorem that applies here is when log<sub>b</sub>a = d, which gives a time complexity of $`O(nlogn)`$. The solution to this recurrence has a time complexity of $`O(nlogn)`$ which is what we expected, regarding the Quick Sort Algorithm.
+
+Once we have $`B(n)`$, it's time to see $`A(n)`$
+
+$$
+A(n) = aA(n/b) + B(n)
+$$
+
+In this formula, it is implied a recursion in $`A(n)`$, which does not happens. The recursion in $`A(n/b)`$ no longer depends on smaller subproblems. Instead, it can be directly resolved into a simpler term, proportional to $`an/b`$.
+
+In this case, we could replace the recursive term $`A(n/b)`$ with its final, non-recursive form, such as $`an/b`$, which gives us:
+
+$$
+A(n) = an/b + B(n)
+$$
+
+
+Considering the constants $`a = 5`$ and $`b = 2`$ we have:
+
+
+$$
+a = 5, b = 2
+$$
+
+$$
+A(n) = 5n/2 + B(n)
+$$
+
+Because stack B is the combination of 4 different partitions of numbers in $`n`$, we can say that $`B(n/4)`$
+
+Also, doing this recursively, for each partition, which ultimatelly is 4, we can consider $`4B(n/4)`$.
+
+So the final formula is:
+
+$$
+A(n) = 5n/2 + 4B(n/4)
+$$
+
+And that is the formula that I developed to analyze the time complexity of my program.
+
+## Using the formula
+
+Let's try with $`n = 100`$
+
+$$
+A(n) = 5n/2 + 4B(n/4)
+$$
+
+$$
+A(100) = 5 x 100/2 + 4B(100/4)
+$$
+
+$$
+A(100) = 500/2 + 4B(25)
+$$
+
+Let's see stack B:
+
+$$
+B(n) = 2B(n/2) + n/2
+$$
+
+$$
+B(25) = 2B(13) + 13 = 2 x 31 + 13 = 75
+$$
+
+$$
+B(13) = 2B(7) + 7 = 2 x 12 + 7 = 31
+$$
+
+$$
+B(7) = 2B(4) + 4 = 2 x 4 + 4 = 12
+$$
+
+$$
+B(4) = 2B(2) + 2 = 2 + 2 = 4
+$$
+
+$$
+B(2) = 1
+$$
+
+Having seen that $`B(25) = 75`$, let's apply in the formula of $`A(n)`$
+
+$$
+A(100) = 500/2 + 4B(25)
+$$
+
+$$
+A(100) = 250 + 4 x 75
+$$
+
+$$
+A(100) = 250 + 300
+$$
+
+$$
+A(100) = 550
+$$
+
+This means that for 100 numbers, my algorithm will take around 550 movements to sort it!! And it is indeed the results that we can see in my program.
 
 
 # Other
