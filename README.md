@@ -28,8 +28,7 @@ Push_swap is a project from 42 school that challenge you to sort a stack using a
 
 Problems come in different varieties, some of then are easy, some are hard. In computers, this the same thing. But what makes some problems computationally hard and other easy? This is the central question of **complexity theory**. Long story short, complexity theory considers not only weather a problem can be solved at all on a computer, but also how **efficiently* the problem can be solved.
 
-To understand the complexity of a problem, researchers developed classes. A complexity class is a set of 
-❓ Oct 15: Follow-Up AUA Sessions Session 1: 13:00 | Session 2: 18computational problems of related resouce-based complexity. The two commonly analyzed resources are **time complexity** and **space complexity**. How many steps it takes to perform a computation, and how much memory is required to perform that computation, respectively.
+To understand the complexity of a problem, researchers developed classes. A complexity class is a set of computational problems of related resouce-based complexity. The two commonly analyzed resources are **time complexity** and **space complexity**. How many steps it takes to perform a computation, and how much memory is required to perform that computation, respectively.
 
 Most complexity classes consist os decision problems that are solvable with a Turing Machine. To measure the complexity, we need to verify if this problem can be solved in **polynomial time**
 
