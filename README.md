@@ -155,7 +155,7 @@ I've made a flowchart that represents how my program works:
     <img src="images/push_flux_dark.png">    
 </div>
 
-## Push_swap
+## Data Structure
 
 To start, we need to create the stacks A and B. I've used arrays to solve this project because sorted arrays are the most space-efficient data structure with the best locality of reference for sequentially stored data. Also, it is very efficient when applied to Quick-Sort. I decided to use a circular array. This is the data struct used:
 
@@ -196,7 +196,20 @@ typedef struct	s_ps
 
 ```
 
-### My Big O Formula
+## Push Swap Algorithm
+
+To solve push swap I've decided to structure the algorithm in 4 phases:
+
+<li>
+	<ul> Parsing and Verify Sanity </ul>
+	<ul> Parsing and Verify Sanity </ul>
+ 	<ul> Parsing and Verify Sanity </ul>
+	<ul> Parsing and Verify Sanity </ul>
+</li>
+
+
+
+## My Big O Formula
 
 The master theorem is one of the methods for solving recurrence relations arising from divide and conquer algorithms. When a more complex mathematical analysis is required, the master theorem is used, which is an effective tool for this type of situation. In summary, the master theorem solves recurrences that have the following form:
 
@@ -225,6 +238,7 @@ A(n) = aA(n/b) + B(n)
 $$
 
 n is the quantity of elements (numbers) to sort. The values ​​a >= 1 and b > 1 are constants and B(n) is a function that represents the time cost of each recursive call of the algorithm to sort, or finish, the stack B.
+
 
 
 
