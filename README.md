@@ -152,10 +152,9 @@ Because using only one sorting algorithm to solve push_swap, I've combined a Twi
 
 I've made a flowchart that represents how my program works:
 
-
-
-
-
+<div aling="center">
+    <img src="images/fluxogram.png">    
+</div>
 
 
 In my case, and because of the multiple things to study, I'll consider 5 weeks of producing this project.
