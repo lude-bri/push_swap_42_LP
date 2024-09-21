@@ -381,7 +381,7 @@ This means that for 100 numbers, my algorithm will take around 550 movements to 
 First you need to clone the git repository
 
 ```bash
-$> git clone 
+$> git clone https://github.com/lude-bri/push_swap_42_LP.git push_swap
 ```
 
 When finished, follow the instructions:
@@ -397,6 +397,17 @@ The arguments can ONLY be numbers
 $> ./push_swap 0 3 2 1 //individually
 $> ./push_swap "0 3 2 1" //or as string
 ```
+
+The display will look like this
+
+```bash
+$> ./push_swap 0 3 2 1
+pb
+ra
+sa
+pa
+```
+Those are the instructions used to sort a stack with elements 0 3 2 1
 
 <!-----------------------------------------------------
 
