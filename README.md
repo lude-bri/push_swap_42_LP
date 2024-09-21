@@ -213,9 +213,13 @@ In the Phase 2, **Preparation** we ask first if the quantity of numbers are betw
 
 > Example: let's take 10 numbers. We divide by 2. Then we're going to have 2 partitions of 5. If the first number is bigger than the half (5), it must stay because it's part of the big partition, so the command will be `ra`. If the number is smaller than the half, it must go to B, so let's do `pb`. Repeat this until A is empty.
 
-Having a pre-sort in stack B, let's calculate the cost of the best numbers to go to A. This will be the **Sorting Algorithm**, move the number requiring the fewest operations. Repeat this until the partition is empty, then move to the next smaller partition, continuing until stack B is empty. And, voilà! Sorted!
+Having a pre-sort in stack B, let's calculate the cost of the best numbers to go to A. This will be the **Sorting Algorithm**, move the number requiring the fewest operations. Repeat this until the partition is empty, then move to the next smaller partition, continuing until stack B is empty. 
 
-Finally, we need to **optimize commands**. Using the root structure `t_ps`, all the commands are contained in `cmds` variable. Now, I've found certains patterns that can optimize the time complexity of my program. Just like, `pb`-`ra`-`pa` = `sa`, `pb`-`pa`-`pb` = `pb`, `sa`-`sb` = `ss`, `ra`-`rb` = `rr`, `rra`-`rrb` = `rrr`. After this, we can print and solve push_swap project!
+>[!TIP]
+> There are always 4 movements to push from B to A. That will be `ra` + `rb`, `ra` + `rrb`, `rra` + `rb`, `rra` + `rrb`. All followed by a `pa`. 
+
+
+Finally, we need to **optimize commands**. Using the root structure `t_ps`, all the commands are contained in `cmds` variable. Now, I've found certains patterns that can optimize the time complexity of my program. Just like, `pb`-`ra`-`pa` = `sa`, `pb`-`pa`-`pb` = `pb`, `sa`-`sb` = `ss`, `ra`-`rb` = `rr`, `rra`-`rrb` = `rrr`. After this, we can print and solve push_swap project! And, voilà! Sorted!
 
 ## My Big O Formula
 
