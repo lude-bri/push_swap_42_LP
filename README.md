@@ -1,10 +1,16 @@
 <!-------Push_Swap_Image-------->
 <a name="readme-top"></a>
 <p align="center">
-	<img src="https://capsule-render.vercel.app/api?type=venom&height=300&color=0:00C9FF,100:92FE9D&text=Push_Swap&animation=fadeIn&fontColor=fcf3f2" />
+	<img src="https://capsule-render.vercel.app/api?type=venom&height=200&color=0:00C9FF,100:92FE9D&text=Push_Swap&animation=fadeIn&fontColor=fcf3f2" />
 </p>
-
 <!-------About-------->
+
+# About
+
+This project will make I sort data on a stack, with a limited set of instructions, using
+the lowest possible number of actions. To succeed I’ll have to manipulate various
+types of algorithms and choose the most appropriate solution (out of many) for an
+optimized data sorting.
 
 # Push Swap
 
@@ -13,13 +19,6 @@
       1. Complexity
       2. Sorting Algorithms
       3. My approach
-
-# About
-
-This project will make I sort data on a stack, with a limited set of instructions, using
-the lowest possible number of actions. To succeed I’ll have to manipulate various
-types of algorithms and choose the most appropriate solution (out of many) for an
-optimized data sorting.
 
 # Index
 
