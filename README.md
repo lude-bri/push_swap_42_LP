@@ -230,9 +230,9 @@ $$
 T(n) = aT(n/b) + f(n)
 $$
 
-Where n is the data size, the values ​​a >= 1 and b > 1 are constants and f(n) is a function that represents the time cost of each recursive call of the algorithm.
+Where n is the data size, the values ​​$`a >= 1`$ and $`b > 1`$ are constants and $`f(n)`$ is a function that represents the time cost of each recursive call of the algorithm.
 
-Considering the chosen sorting algorithm (Quick Sort and Insertion), I couldn't use an unique formula to estimate the complexity of my program. That's because the worst-case complexity for Quick Sort is O(nlogn) and Insertion would be O(n^2).
+Considering the chosen sorting algorithm (Quick Sort and Insertion), I couldn't use an unique formula to estimate the complexity of my program. That's because the worst-case complexity for Quick Sort is $`O(nlogn)`$ and Insertion would be $`O(n^2)`$.
 
 In my push_swap, I only use Insertion in 2 specific cases, when we need to sort 3, 4 and 5 numbers. Meaning that the Quick Sort is present in enourmous cases. 
 
@@ -244,13 +244,13 @@ $$
 T(n) = O(nlogn)
 $$
 
-Because I am using 2 different stacks, I'll call A(n) and B(n). Translating to Master Theorem, we have:
+Because I am using 2 different stacks, I'll call $A(n)$ and $B(n)$. Translating to Master Theorem, we have:
 
 $$
 A(n) = aA(n/b) + B(n)
 $$
 
-n is the quantity of elements (numbers) to sort. The values ​​a >= 1 and b > 1 are constants and B(n) is a function that represents the time cost of each recursive call of the algorithm to sort, or finish, the stack B.
+n is the quantity of elements (numbers) to sort. The values ​​$`a >= 1`$ and $b > 1$ are constants and $B(n)$ is a function that represents the time cost of each recursive call of the algorithm to sort, or finish, the stack B.
 
 Let's find our constants. First of all, as discussed earlier, there are always 4 ways to push from B to A efficiently. Because they're combined with `pa`, is 4 + 1 commands to move a number from B to A. Therefore the number 5 is a constant.
 
@@ -262,10 +262,19 @@ $$
 B(n) = 2B(n/2) + n/2
 $$
 
+The recurrence relation expose the analysis of divide-and-conquer design.
 
+<ul>
 
+<li> $B(n)$: Represent the time complexity required to solve stack B </li>
 
+<li> $2B(n/2)$: Create 2 partitions, each of size $n/2$. Require $B(n/2)$ work to solve, so solving both subproblems together requires $2B(n/2)$ work.</li>
 
+<li> $n/2$: This represents the additional work done at the current level after dividing the problem into smaller subproblems. It might correspond to some linear processing (like merging results or performing operations) that happens after dividing the problem into two parts. </li>
+
+</ul>
+
+Knowing that
 
 
 # Other
