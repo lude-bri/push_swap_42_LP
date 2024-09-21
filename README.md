@@ -17,8 +17,18 @@ optimized data sorting.
 
 1. Introduction
 1. Complexity
-2. Sorting Algorithms
-3. My approach
+   	1.1. Time Complexity, Space Complexity and Big O notation
+3. Sorting Algorithms
+4. Push Swap
+	4.1. Rules
+   	4.2. Program
+   	4.3. Develop
+   	4.4. Data Structure
+   	4.5. Algorithm
+   	4.6. Time complexity of my algorithm: creating my own formula
+   	4.7. Testing the formula
+5. Usage
+   	
 
 # Introduction
 
@@ -101,19 +111,13 @@ Formally, the output of any sorting algorithm must satisfy two conditions:
 > For optimum efficiency, the input data should be stored in a data structure which allows random access rather than one that allow only sequential access
 
 
-# My Approach
+# Push Swap
 
 To discuss about my approach on push swap, let's see the mandatory part in this project:
 
-## Mandatory Part
+## Rules
 
-### Rules
-
-  1. I have 2 stacks, named a and b;
-  2. At the beginning
-      2.1. The stack a contains a random amount of negative and/or positive numbers which cannot be duplicated
-       2.2. The stack b is empty.
-  3. The goal is to sort in ascending order numbers into stack a. To do so, I have the following operations at disposal
+There are 2 stacks, named A and B. At the beginning the stack A contains a random amount of negative and/or positive numbers which cannot be duplicated and the stack B is empty. The goal is to sort in ascending order numbers into stack a. To do so, I have the following operations at disposal
 
 | Code | Name | Description |
 |:----:| :---:| :----------:|
@@ -220,7 +224,7 @@ Having a pre-sort in stack B, let's calculate the cost of the best numbers to go
 
 Finally, we need to **optimize commands**. Using the root structure `t_ps`, all the commands are contained in `cmds` variable. Now, I've found certains patterns that can optimize the time complexity of my program. Just like, `pb`-`ra`-`pa` = `sa`, `pb`-`pa`-`pb` = `pb`, `sa`-`sb` = `ss`, `ra`-`rb` = `rr`, `rra`-`rrb` = `rrr`. After this, we can print and solve push_swap project! And, voilà! Sorted!
 
-## Time complexity of my algorithm
+## Time complexity of my algorithm: creating my own formula
 
 To better precise my algorithm I have developed a formula to predict the time complexity of my algorithm. To do so, I've used as base the Master Theorem. 
 
@@ -314,7 +318,7 @@ $$
 
 And that is the formula that I developed to analyze the time complexity of my program.
 
-## Using the formula
+## Testing the formula
 
 Let's try with $`n = 100`$
 
