@@ -153,7 +153,7 @@ Because using only one sorting algorithm to solve push_swap, I've combined a Twi
 I've made a flowchart that represents how my program works:
 
 <div aling="center">
-    <img src="images/fluxogram.png">    
+    <img src="images/push_flux.png">    
 </div>
 
 
