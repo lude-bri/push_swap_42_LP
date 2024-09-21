@@ -200,12 +200,12 @@ typedef struct	s_ps
 
 To solve push swap I've decided to structure the algorithm in 4 phases:
 
-<li>
-	<ul> Parsing and Verify Sanity </ul>
-	<ul> Parsing and Verify Sanity </ul>
- 	<ul> Parsing and Verify Sanity </ul>
-	<ul> Parsing and Verify Sanity </ul>
-</li>
+<ul>
+	<li> Parsing and Verify Sanity </li>
+	<li> Parsing and Verify Sanity </li>
+ 	<li> Parsing and Verify Sanity </li>
+	<li> Parsing and Verify Sanity </li>
+</ul>
 
 
 
