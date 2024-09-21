@@ -15,26 +15,32 @@ optimized data sorting.
 ------------
 # Index
 
-1. Introduction
-1. Complexity
-   	1.1. Time Complexity, Space Complexity and Big O notation
-3. Sorting Algorithms
-4. Push Swap
-	4.1. Rules
-   	4.2. Program
-   	4.3. Develop
-   	4.4. Data Structure
-   	4.5. Algorithm
-   	4.6. Time complexity of my algorithm: creating my own formula
-   	4.7. Testing the formula
-5. Usage
-   	
+   <ul>
+	<li><strong><a href="#introduction" style="color:white">Introduction </a></strong></li>
+	<li><strong><a href="#complexity" style="color:white">1. Computational Complexity </a></strong></li>
+	<ul style="list-style-type:disc">
+		<li><a href="#"> 1.1. Time Complexity, Space Complexity and Big O notation </a></li>
+	</ul>
+	<li><strong><a href="#" style="color:white">2. Sorting Algorithms </a></strong></li>
+	<li><strong><a href="#" style="color:white">3. Push Swap </a></strong></li>
+	<ul style="list-style-type:disc">
+		<li><a href="#-31-rules"> 3.1. Rules </a></li>
+		<li><a href="#-32-the-functions-"> 3.2. Program </a></li>	
+		<li><a href="#-31-the-preprocessor-directives-for-libft-"> 3.3. Develop </a></li>
+		<li><a href="#-32-the-functions-"> 3.4. Data Structure </a></li>
+		<li><a href="#-31-the-preprocessor-directives-for-libft-"> 3.5. Algorithm </a></li>
+		<li><a href="#-32-the-functions-"> 3.6. Time complexity of my algorithm: creating my own formula </a></li>
+		li><a href="#-32-the-functions-"> 3.7. Testing the formula </a></li>
+	</ul>
+	<li><strong><a href="#-4-makefile-" style="color:white">4. Usage </a></strong></li>
+</ul>
+
 
 # Introduction
 
 Push_swap is a project from 42 school that challenge you to sort a stack using an algorithm, using the lowest possible number of actions. Sound quite straightfoward, right? Well, because it is, indeed. To really understand how to solve this project, or even, how to understand it precisely, we need to see all the topics that surround the project. Specially Complexity and Sorting Algorithms.
 
-# Complexity
+# 1. Computational Complexity
 
 Problems come in different varieties, some of then are easy, some are hard. In computers, this the same thing. But what makes some problems computationally hard and other easy? This is the central question of **complexity theory**. Long story short, complexity theory considers not only weather a problem can be solved at all on a computer, but also how **efficiently* the problem can be solved.
 
@@ -48,7 +54,7 @@ Also, in computer science we talk about **deterministic** and **nondeterministic
 
 Problems for wich a deterministic polynomial time algorithm exist belong to the complexity class P, which is central in the field of computational complexity theory. There are many classes, the most important is the P. Those problems that are non deterministic belong to the complexity class NP. Hence, in computational theory and in the computer science field there is a huge discussion on whether P equals to NP. Highly recommended reading more about this.
 
-## Time complexity, Space Complexity and Big O notation
+## 1.1. Time complexity, Space Complexity and Big O notation
 
 Describes the amount of computer time it takes to run an algorithm. The time complexity is commoly estimated by *counting the number of elementary operations performed by the algorithm*. 
 
