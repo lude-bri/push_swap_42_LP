@@ -38,11 +38,15 @@ Also, in computer science we talk about **deterministic** and **nondeterministic
 
 Problems for wich a deterministic polynomial time algorithm exist belong to the complexity class P, which is central in the field of computational complexity theory. There are many classes, the most important is the P. Those problems that are non deterministic belong to the complexity class NP. Hence, in computational theory and in the computer science field there is a huge discussion on whether P equals to NP. Highly recommended reading more about this.
 
-## Time complexity and Big O notatio
+## Time complexity, Space Complexity and Big O notation
 
-Describes the amount of computer time it takes to run an algorithm. The time complexity is commoly estimated by *counting the number of elementary operations performed by the algorithm*. Since an algorithm running time may vary among different inputs of the same size, we haev the **worst-case time complexity**, **average-case complexity** and **best-case complexity**.
+Describes the amount of computer time it takes to run an algorithm. The time complexity is commoly estimated by *counting the number of elementary operations performed by the algorithm*. 
 
-Time complexity is commonly expressed using the **Big O** notation. Typically
+Like time, space complexity is the amount of **memory space required to solve an instance of the computational problem**.
+
+Since an algorithm running time may vary among different inputs of the same size, we have the **worst-case time complexity**, **average-case complexity** and **best-case complexity**.
+
+Time and Space complexity is commonly expressed using the **Big O** notation. Typically
 
 $$
 O(n), O(nlogn), O(n^a), O(2^n), O(n^2), ...
@@ -50,7 +54,56 @@ $$
 
 where n is the size in units of bits needed to represent the input.
 
-B
+Because the exact runnign time of an algorithm is often a complex expression, we usually **estimate it**. In one convenient form of estimation, called **asymptotic analysis** we seek to understand the running time of the algorithm when it is run on large inputs. We also call this the **Big O notation**.
+
+Created by Bachmann and Landov, Big O notation (also know as **Bachmann-Landov notation** or **asymptotinc notation**) represents an algorithm worst-case complexity that defines the runtime required to execute an algorithm by identifying how performance will change as the input size grows.
+
+In Big O, there are six major types of complexities (time and space):
+
+$$
+Constant Time = O(1)
+$$
+
+$$
+Linear Time = O(n)
+$$
+
+$$
+Logarithm Time = O(nlogn)
+$$
+
+$$
+Quadratic Time = O(n^2)
+$$
+
+$$
+Exponential Time = O(2^n)
+$$
+
+$$
+Factorial Time = O(n!)
+$$
+
+As said, we can see the **worst case**, **average case**, **best case**. In asymptotic analysis this is represented as **Big O**, **Big Theta** and **Big Omega** respectively. 
+
+# Sorting Algorithm
+
+A sorting algorithm is an algorithm that puts elements of a list into an order. The most frequently used orders are numerical orders and lexical orders, either ascending or descending.
+
+Formally, the output of any sorting algorithm must satisfy two conditions:
+
+<ul>
+	<li>The output is in monotonic order. Each element is not smaller/larger than the previous element</li>
+	<li>The output is a permutation. A reordering, yet retaining all of the original elements of the input</li>
+</ul>
+
+> [!IMPORTANT]
+> For optimum efficiency, the input data should be stored in a data structure which allows random access rather than one that allow only sequential access
+
+
+# My Approach
+
+To discuss about my approach on push swap, let's see the mandatory part in this project:
 
 # Mandatory Part
 
