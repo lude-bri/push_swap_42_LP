@@ -28,7 +28,8 @@ Push_swap is a project from 42 school that challenge you to sort a stack using a
 
 Problems come in different varieties, some of then are easy, some are hard. In computers, this the same thing. But what makes some problems computationally hard and other easy? This is the central question of **complexity theory**. Long story short, complexity theory considers not only weather a problem can be solved at all on a computer, but also how **efficiently* the problem can be solved.
 
-To understand the complexity of a problem, researchers developed classes. A complexity class is a set of computational problems of related resouce-based complexity. The two commonly analyzed resources are **time complexity** and **space complexity**. How many steps it takes to perform a computation, and how much memory is required to perform that computation, respectively.
+To understand the complexity of a problem, researchers developed classes. A complexity class is a set of 
+❓ Oct 15: Follow-Up AUA Sessions Session 1: 13:00 | Session 2: 18computational problems of related resouce-based complexity. The two commonly analyzed resources are **time complexity** and **space complexity**. How many steps it takes to perform a computation, and how much memory is required to perform that computation, respectively.
 
 Most complexity classes consist os decision problems that are solvable with a Turing Machine. To measure the complexity, we need to verify if this problem can be solved in **polynomial time**
 
@@ -105,7 +106,7 @@ Formally, the output of any sorting algorithm must satisfy two conditions:
 
 To discuss about my approach on push swap, let's see the mandatory part in this project:
 
-# Mandatory Part
+## Mandatory Part
 
 Rules
 
@@ -113,7 +114,7 @@ Rules
   2. At the beginning
       2.1. The stack a contains a random amount of negative and/or positive numbers which cannot be duplicated
        2.2. The stack b is empty.
-  3. The goal is to sort in ascending order numbers into stack a. To do so, I have the following operations at Ir disposal
+  3. The goal is to sort in ascending order numbers into stack a. To do so, I have the following operations at disposal
 
 | Code | Name | Description |
 |:----:| :---:| :----------:|
@@ -129,7 +130,7 @@ Rules
 | `rrb` | (reverse rotate b) | Shift down all elements of stack `b` by 1. The last element becomes the first one. |
 | `rrr` | (reverse rotate a and reverse rotate b) | Do `rra` and `rrb` at the same time. |
   
-# Program
+## Program
 
 I have to write a program named `push_swap` that takes as an argument the stack `a` formatted as a list of integers. The first argument should be at the top of the stack (be careful about the order)
 
@@ -143,7 +144,19 @@ If no parameters are specified, the program must not display anything and give t
 
 In case of error, it must display "Error" followed by a `\n` on the standard error. Errors include for example: some arguments aren't integers, some arguments are bigger than an integer and/or there are duplicates.
 
-# Develop
+## Develop
+
+To develop this project, I've decided to implement a recursive algorithm using divide and conquer design. The recursive algorithm will increase my complexity, but it will help me deciding which element is needed to sort the stack. Divide and conquer repeatdly reduces an instance of a problem to one or more samller instances of the same problem (recursivelly) until the instances are small enough to be solved easily.
+
+Because using only one sorting algorithm to solve push_swap, I've combined a Twisted Quick-Sort and Insertion Sort. I'll explain in the following.
+
+I've made a flowchart that represents how my program works:
+
+
+
+
+
+
 
 In my case, and because of the multiple things to study, I'll consider 5 weeks of producing this project.
 
