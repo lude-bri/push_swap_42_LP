@@ -12,16 +12,14 @@ the lowest possible number of actions. To succeed I’ll have to manipulate vari
 types of algorithms and choose the most appropriate solution (out of many) for an
 optimized data sorting.
 
-# Push Swap
+------------
+# Index
 
   1. About
   2. Index
       1. Complexity
       2. Sorting Algorithms
       3. My approach
-
-# Index
-
 
 # Mandatory Part
 
