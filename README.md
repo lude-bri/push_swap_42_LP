@@ -15,11 +15,30 @@ optimized data sorting.
 ------------
 # Index
 
-  1. About
-  2. Index
-      1. Complexity
-      2. Sorting Algorithms
-      3. My approach
+1. Introduction
+1. Complexity
+2. Sorting Algorithms
+3. My approach
+
+# Introduction
+
+Push_swap is a project from 42 school that challenge you to sort a stack using an algorithm, using the lowest possible number of actions. Sound quite straightfoward, right? Well, because it is, indeed. To really understand how to solve this project, or even, how to understand it precisely, we need to see all the topics that surround the project. Specially Complexity and Sorting Algorithms.
+
+# Complexity
+
+Problems come in different varieties, some of then are easy, some are hard. In computers, this the same thing. But what makes some problems computationally hard and other easy? This is the central question of **complexity theory**. Long story short, complexity theory considers not only weather a problem can be solved at all on a computer, but also how **efficiently* the problem can be solved.
+
+To understand the complexity of a problem, researchers developed classes. A complexity class is a set of computational problems of related resouce-based complexity. The two commonly analyzed resources are **time complexity** and **space complexity**. How many steps it takes to perform a computation, and how much memory is required to perform that computation, respectively.
+
+Most complexity classes consist os decision problems that are solvable with a Turing Machine. To measure the complexity, we need to verify if this problem can be solved in **polynomial time**
+
+A **Polynomial Time** algorithm are said to be "fast". Most familiar mathematical operations like additions, subtraction, multiplication and divison as well as computing square roots, power and logarithm can be performed in polynomial time.
+
+Also, in computer science we talk about **deterministic** and **nondeterministic** problems. Determinisitc problems always produce the same output to given input. Non deterministic can exhibit different behaviours and different outputs for the same input.
+
+Problems for wich a deterministic polynomial time algorithm exist belong to the complexity class P, which is central in the field of computational complexity theory. There are many classes, the most important is the P. Those problems that are non deterministic belong to the complexity class NP. Hence, in computational theory and in the computer science field there is a huge discussion on whether P equals to NP. Highly recommended reading more about this.
+
+The
 
 # Mandatory Part
 
