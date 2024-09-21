@@ -201,11 +201,22 @@ typedef struct	s_ps
 To solve push swap I've decided to structure the algorithm in 4 phases:
 
 <ul>
-	<li> Parsing and Verify Sanity </li>
-	<li> Push to B in Partitions </li>
- 	<li> Sorting Algorithm </li>
-	<li> Optimize Commands </li>
+	<li> Phase 1. Parsing and Verify Sanity </li>
+	<li> Phase 2. Push to B in Partitions </li>
+ 	<li> Phase 3. Sorting Algorithm </li>
+	<li> Phase 4. Optimize Commands </li>
 </ul>
+
+The **Parsing and Verify Sanity** phase is very self explanatory, we need to get all the tokens (numbers) and verify if they are valid. If everything is correct, we can go to the second phase.
+
+In the Phase 2, we ask first if the quantity of numbers are between 2 and 5. In that case, we jump to the next phase. If not, we're going to create 2 partitions. The smallest are going to B, the biggest stay in A. We need to repeat the process until stack A is empty. After all, we're going to have 4 partitions organized by smallest to biggest numbers. 
+
+> Example: let's take 10 numbers. We divide by 2. Then we're going to have 2 partitions of 5. If the first number is bigger than the half (5), it must stay because it's part of the big partition, so the command will be `ra`. If the number is smaller than the half, it must go to B, so let's do `pb`. Repeat this until A is empty.
+
+
+
+
+
 
 
 
