@@ -173,14 +173,28 @@ typedef struct s_stack
 
 ```
 <ul>
+	<ul>
 	<li>id: Used to differentiate between two stacks, for example, A and B.</li>
 	<li>values: Points to the dynamically allocated array that holds the elements of the stack.</li>
 	<li>count: Tracks the current number of elements present in the stack.</li>
 	<li>size: Defines the total capacity or maximum size of the stack (the size of the values array).</li>
 	<li>head: Keeps track of the top of the stack, allowing efficient push and pop operations.</li>
 	<li>tail: Keeps track of the bottom of the stack (sometimes needed for certain operations).</li>
+	</ul>
 </ul>
 
+Adding to this structure, I've created another one that I call `roots`:
+
+```C
+
+typedef struct	s_ps
+{
+	t_stack	*a;   // Holds stack A
+	t_stack *b;   // Holds stack B
+	char	*cmds; // Holds the values of the commands (pa, pb, ra, ...)
+}		t_ps;
+
+```
 
 ### My Big O Formula
 
