@@ -5,6 +5,12 @@
 
 # Push Swap
 
+  1. About
+  2. Index
+      1. Complexity
+      2. Sorting Algorithms
+      3. My approach
+
 # Summary
 
 This project will make I sort data on a stack, with a limited set of instructions, using
