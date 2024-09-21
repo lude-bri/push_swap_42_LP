@@ -376,6 +376,29 @@ $$
 
 This means that for 100 numbers, my algorithm will take around 550 movements to sort it!! And it is indeed the results that we can see in my program.
 
+# Usage
+
+First you need to clone the git repository
+
+```bash
+$> git clone 
+```
+
+When finished, follow the instructions:
+
+```bash
+$> make
+$> ./push_swap <args>
+```
+
+The arguments can ONLY be numbers
+
+```bash
+$> ./push_swap 0 3 2 1 //individually
+$> ./push_swap "0 3 2 1" //or as string
+```
+
+<!-----------------------------------------------------
 
 # Other
 
