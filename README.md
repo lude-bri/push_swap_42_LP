@@ -218,10 +218,11 @@ Having a pre-sort in stack B, let's calculate the cost of the best numbers to go
 >[!TIP]
 > There are always 4 movements to push from B to A. That will be `ra` + `rb`, `ra` + `rrb`, `rra` + `rb`, `rra` + `rrb`. All followed by a `pa`. 
 
-
 Finally, we need to **optimize commands**. Using the root structure `t_ps`, all the commands are contained in `cmds` variable. Now, I've found certains patterns that can optimize the time complexity of my program. Just like, `pb`-`ra`-`pa` = `sa`, `pb`-`pa`-`pb` = `pb`, `sa`-`sb` = `ss`, `ra`-`rb` = `rr`, `rra`-`rrb` = `rrr`. After this, we can print and solve push_swap project! And, voilà! Sorted!
 
-## My Big O Formula
+## The complexity of my algorithm
+
+To better precise my algorithm I have developed a formula to predict the time complexity of my algorithm. To do so, I've used as base the Master Theorem. 
 
 The master theorem is one of the methods for solving recurrence relations arising from divide and conquer algorithms. When a more complex mathematical analysis is required, the master theorem is used, which is an effective tool for this type of situation. In summary, the master theorem solves recurrences that have the following form:
 
@@ -250,6 +251,17 @@ A(n) = aA(n/b) + B(n)
 $$
 
 n is the quantity of elements (numbers) to sort. The values ​​a >= 1 and b > 1 are constants and B(n) is a function that represents the time cost of each recursive call of the algorithm to sort, or finish, the stack B.
+
+Let's find our constants. First of all, as discussed earlier, there are always 4 ways to push from B to A efficiently. Because they're combined with `pa`, is 4 + 1 commands to move a number from B to A. Therefore the number 5 is a constant.
+
+Another constant is the partitions, in the beginning we divide the stack by 2, but ultimatelly, it's always by 4 partitions.
+
+Now, because we need to use 2 stacks to sort, I've decided to make a formula for B, meaning that we will see the complexity to sort B, and then add to A.
+
+$$
+B(n) = 2B(n/2) + n/2
+$$
+
 
 
 
