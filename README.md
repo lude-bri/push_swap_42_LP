@@ -202,23 +202,20 @@ To solve push swap I've decided to structure the algorithm in 4 phases:
 
 <ul>
 	<li> Phase 1. Parsing and Verify Sanity </li>
-	<li> Phase 2. Push to B in Partitions </li>
+	<li> Phase 2. Preparation </li>
  	<li> Phase 3. Sorting Algorithm </li>
 	<li> Phase 4. Optimize Commands </li>
 </ul>
 
 The **Parsing and Verify Sanity** phase is very self explanatory, we need to get all the tokens (numbers) and verify if they are valid. If everything is correct, we can go to the second phase.
 
-In the Phase 2, we ask first if the quantity of numbers are between 2 and 5. In that case, we jump to the next phase. If not, we're going to create 2 partitions. The smallest are going to B, the biggest stay in A. We need to repeat the process until stack A is empty. After all, we're going to have 4 partitions organized by smallest to biggest numbers. 
+In the Phase 2, **Preparation** we ask first if the quantity of numbers are between 2 and 5. In that case, we jump to the next phase. If not, we're going to create 2 partitions. The smallest are going to B, the biggest stay in A. We need to repeat the process until stack A is empty. After all, we're going to have 4 partitions organized by smallest to biggest numbers. In that case, each element in partition will work almost like a pivot in Quick Sort.
 
 > Example: let's take 10 numbers. We divide by 2. Then we're going to have 2 partitions of 5. If the first number is bigger than the half (5), it must stay because it's part of the big partition, so the command will be `ra`. If the number is smaller than the half, it must go to B, so let's do `pb`. Repeat this until A is empty.
 
+Having a pre-sort in stack B, let's calculate the cost of the best numbers to go to A. This will be the **Sorting Algorithm**, move the number requiring the fewest operations. Repeat this until the partition is empty, then move to the next smaller partition, continuing until stack B is empty. And, voilà! Sorted!
 
-
-
-
-
-
+Finally, we need to **optimize commands**. Using the root structure `t_ps`, all the commands are contained in `cmds` variable. Now, I've found certains patterns that can optimize the time complexity of my program. Just like, `pb`-`ra`-`pa` = `sa`, `pb`-`pa`-`pb` = `pb`, `sa`-`sb` = `ss`, `ra`-`rb` = `rr`, `rra`-`rrb` = `rrr`. After this, we can print and solve push_swap project!
 
 ## My Big O Formula
 
