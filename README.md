@@ -21,7 +21,7 @@ optimized data sorting.
 	<ul style="list-style-type:disc">
 		<li><a href="#11-time-complexity-space-complexity-and-big-o-notation"> 1.1. Time Complexity, Space Complexity and Big O notation </a></li>
 	</ul>
-	<li><strong><a href="#2-sorting-algorithms" style="color:white">2. Sorting Algorithms </a></strong></li>
+	<li><strong><a href="#2-sorting-algorithm" style="color:white">2. Sorting Algorithm </a></strong></li>
 	<li><strong><a href="#3-push-swap" style="color:white">3. Push Swap </a></strong></li>
 	<ul style="list-style-type:disc">
 		<li><a href="#31-rules"> 3.1. Rules </a></li>
@@ -30,7 +30,7 @@ optimized data sorting.
 		<li><a href="#34-data-structure"> 3.4. Data Structure </a></li>
 		<li><a href="#35-push-swap-algorithm"> 3.5. Algorithm </a></li>
 		<li><a href="#36-time-complexity-of-my-algorithm-creating-my-own-formula"> 3.6. Time complexity of my algorithm: creating my own formula </a></li>
-		li><a href="#37-testing-the-formula"> 3.7. Testing the formula </a></li>
+		<li><a href="#37-testing-the-formula"> 3.7. Testing the formula </a></li>
 	</ul>
 	<li><strong><a href="#4-usage" style="color:white">4. Usage </a></strong></li>
 </ul>
