@@ -5,6 +5,7 @@
 
 # Push Swap
 
+  1. Explicar mais ou menos
 # Summary
 
 This project will make I sort data on a stack, with a limited set of instructions, using
