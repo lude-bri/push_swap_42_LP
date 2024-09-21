@@ -38,7 +38,19 @@ Also, in computer science we talk about **deterministic** and **nondeterministic
 
 Problems for wich a deterministic polynomial time algorithm exist belong to the complexity class P, which is central in the field of computational complexity theory. There are many classes, the most important is the P. Those problems that are non deterministic belong to the complexity class NP. Hence, in computational theory and in the computer science field there is a huge discussion on whether P equals to NP. Highly recommended reading more about this.
 
-The
+## Time complexity and Big O notatio
+
+Describes the amount of computer time it takes to run an algorithm. The time complexity is commoly estimated by *counting the number of elementary operations performed by the algorithm*. Since an algorithm running time may vary among different inputs of the same size, we haev the **worst-case time complexity**, **average-case complexity** and **best-case complexity**.
+
+Time complexity is commonly expressed using the **Big O** notation. Typically
+
+$$
+O(n), O(nlogn), O(n^a), O(2^n), O(n^2), ...
+$$
+
+where n is the size in units of bits needed to represent the input.
+
+B
 
 # Mandatory Part
 
