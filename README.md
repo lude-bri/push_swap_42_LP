@@ -38,31 +38,31 @@ optimized data sorting.
 
 # Introduction
 
-Push_swap is a project from 42 school that challenge you to sort a stack using an algorithm, using the lowest possible number of actions. Sound quite straightfoward, right? Well, because it is, indeed. To really understand how to solve this project, or even, how to understand it precisely, we need to see all the topics that surround the project. Specially Complexity and Sorting Algorithms.
+Push_swap is a project from 42 schools that challenges you to sort a stack using an algorithm, using the lowest possible number of actions. Sounds quite straightforward, right? Well, because it is, indeed. To really understand how to solve this project, or even, how to understand it precisely, we need to see all the topics that surround the project. Specially Complexity and Sorting Algorithms.
 
 # 1. Computational Complexity
 
-Problems come in different varieties, some of then are easy, some are hard. In computers, this the same thing. But what makes some problems computationally hard and other easy? This is the central question of **complexity theory**. Long story short, complexity theory considers not only weather a problem can be solved at all on a computer, but also how **efficiently* the problem can be solved.
+Problems come in different varieties, some of them are easy, and some are hard. In computers, this is the same thing. But what makes some problems computationally hard and others easy? This is the central question of **complexity theory**. Long story short, complexity theory considers not only whether a problem can be solved at all on a computer but also how **efficiently* the problem can be solved.
 
-To understand the complexity of a problem, researchers developed classes. A complexity class is a set of computational problems of related resouce-based complexity. The two commonly analyzed resources are **time complexity** and **space complexity**. How many steps it takes to perform a computation, and how much memory is required to perform that computation, respectively.
+To understand the complexity of a problem, researchers developed classes. A complexity class is a set of computational problems of related resource-based complexity. The two commonly analyzed resources are **time complexity** and **space complexity**. How many steps it takes to perform a computation, and how much memory is required to perform that computation, respectively.
 
-Most complexity classes consist os decision problems that are solvable with a Turing Machine. To measure the complexity, we need to verify if this problem can be solved in **polynomial time**
+Most complexity classes consist of decision problems that are solvable with a Turing Machine. To measure the complexity, we need to verify if this problem can be solved in **polynomial time**
 
-A **Polynomial Time** algorithm are said to be "fast". Most familiar mathematical operations like additions, subtraction, multiplication and divison as well as computing square roots, power and logarithm can be performed in polynomial time.
+A **Polynomial Time** algorithm is said to be "fast". Most familiar mathematical operations like additions, subtraction, multiplication and division as well as computing square roots, power and logarithm can be performed in polynomial time.
 
-Also, in computer science we talk about **deterministic** and **nondeterministic** problems. Determinisitc problems always produce the same output to given input. Non deterministic can exhibit different behaviours and different outputs for the same input.
+Also, in computer science, we talk about **deterministic** and **nondeterministic** problems. Deterministic problems always produce the same output as the given input. Non-deterministic can exhibit different behaviours and different outputs for the same input.
 
-Problems for wich a deterministic polynomial time algorithm exist belong to the complexity class P, which is central in the field of computational complexity theory. There are many classes, the most important is the P. Those problems that are non deterministic belong to the complexity class NP. Hence, in computational theory and in the computer science field there is a huge discussion on whether P equals to NP. Highly recommended reading more about this.
+Problems for which a deterministic polynomial time algorithm exists belong to the complexity class P, which is central in the field of computational complexity theory. There are many classes, the most important is the P. Those problems that are non-deterministic belong to the complexity class NP. Hence, in computational theory and in the computer science field there is a huge discussion on whether P equals NP. Highly recommend reading more about this.
 
 ## 1.1. Time complexity, Space Complexity and Big O notation
 
-Describes the amount of computer time it takes to run an algorithm. The time complexity is commoly estimated by *counting the number of elementary operations performed by the algorithm*. 
+Describes the amount of computer time it takes to run an algorithm. The time complexity is commonly estimated by *counting the number of elementary operations performed by the algorithm*. 
 
 Like time, space complexity is the amount of **memory space required to solve an instance of the computational problem**.
 
 Since an algorithm running time may vary among different inputs of the same size, we have the **worst-case time complexity**, **average-case complexity** and **best-case complexity**.
 
-Time and Space complexity is commonly expressed using the **Big O** notation. Typically
+Time and Space complexity is commonly expressed using the **Big O** notation. Typically:
 
 $$
 O(n), O(nlogn), O(n^a), O(2^n), O(n^2), ...
@@ -70,9 +70,9 @@ $$
 
 where n is the size in units of bits needed to represent the input.
 
-Because the exact runnign time of an algorithm is often a complex expression, we usually **estimate it**. In one convenient form of estimation, called **asymptotic analysis** we seek to understand the running time of the algorithm when it is run on large inputs. We also call this the **Big O notation**.
+Because the exact running time of an algorithm is often a complex expression, we usually **estimate it**. In one convenient form of estimation, called **asymptotic analysis** we seek to understand the running time of the algorithm when it is run on large inputs. We also call this the **Big O notation**.
 
-Created by Bachmann and Landov, Big O notation (also know as **Bachmann-Landov notation** or **asymptotinc notation**) represents an algorithm worst-case complexity that defines the runtime required to execute an algorithm by identifying how performance will change as the input size grows.
+Created by Bachmann and Landov, Big O notation (also known as **Bachmann-Landov notation** or **asymptotic notation**) represents an algorithm's worst-case complexity that defines the runtime required to execute an algorithm by identifying how performance will change as the input size grows.
 
 In Big O, there are six major types of complexities (time and space):
 
@@ -114,7 +114,7 @@ Formally, the output of any sorting algorithm must satisfy two conditions:
 </ul>
 
 > [!IMPORTANT]
-> For optimum efficiency, the input data should be stored in a data structure which allows random access rather than one that allow only sequential access
+> For optimum efficiency, the input data should be stored in a data structure which allows random access rather than one that allows only sequential access
 
 
 # 3. Push Swap
@@ -123,7 +123,7 @@ To discuss about my approach on push swap, let's see the mandatory part in this 
 
 ## 3.1. Rules
 
-There are 2 stacks, named A and B. At the beginning the stack A contains a random amount of negative and/or positive numbers which cannot be duplicated and the stack B is empty. The goal is to sort in ascending order numbers into stack a. To do so, I have the following operations at disposal
+There are 2 stacks, named A and B. In the beginning, the stack A contains a random amount of negative and/or positive numbers which cannot be duplicated and the stack B is empty. The goal is to sort in ascending order numbers into the stack a. To do so, I have the following operations at my disposal
 
 | Code | Name | Description |
 |:----:| :---:| :----------:|
@@ -155,7 +155,7 @@ In case of error, it must display "Error" followed by a `\n` on the standard err
 
 ## 3.3. Develop
 
-To develop this project, I've decided to implement a recursive algorithm using divide and conquer design. The recursive algorithm will increase my complexity, but it will help me deciding which element is needed to sort the stack. Divide and conquer repeatdly reduces an instance of a problem to one or more samller instances of the same problem (recursivelly) until the instances are small enough to be solved easily.
+To develop this project, I've decided to implement a recursive algorithm using divide and conquer design. The recursive algorithm will increase my complexity, but it will help me decide which element is needed to sort the stack. Divide and conquer repeatedly reduces an instance of a problem to one or smaller instances of the same problem (recursively) until the instances are small enough to be solved easily.
 
 Because using only one sorting algorithm to solve push_swap, I've combined a Twisted Quick-Sort and Insertion Sort. I'll explain in the following.
 
@@ -167,7 +167,7 @@ I've made a flowchart that represents how my program works:
 
 ## 3.4. Data Structure
 
-To start, we need to create the stacks A and B. I've used arrays to solve this project because sorted arrays are the most space-efficient data structure with the best locality of reference for sequentially stored data. Also, it is very efficient when applied to Quick-Sort. I decided to use a circular array. This is the data struct used:
+To start, we need to create the stacks A and B. I've used arrays to solve this project because sorted arrays are the most space-efficient data structure with the best locality of reference for sequentially stored data. Also, it is very efficient when applied to Quick-Sort. I decided to use a circular array. This is the data structure used:
 
 ```C
 
@@ -208,33 +208,51 @@ typedef struct	s_ps
 
 ## 3.5. Push Swap Algorithm
 
-To solve push swap I've decided to structure the algorithm in 4 phases:
+To solve the push_swap problem, I’ve structured the algorithm into four distinct phases:
 
 <ul>
-	<li> Phase 1. Parsing and Verify Sanity </li>
+	<li> Phase 1. Parsing and Sanity Check </li>
 	<li> Phase 2. Preparation </li>
  	<li> Phase 3. Sorting Algorithm </li>
 	<li> Phase 4. Optimize Commands </li>
 </ul>
 
-The **Parsing and Verify Sanity** phase is very self explanatory, we need to get all the tokens (numbers) and verify if they are valid. If everything is correct, we can go to the second phase.
+#### Phase 1. Parsing and Sanity Check
 
-In the Phase 2, **Preparation** we ask first if the quantity of numbers are between 2 and 5. In that case, we jump to the next phase. If not, we're going to create 2 partitions. The smallest are going to B, the biggest stay in A. We need to repeat the process until stack A is empty. After all, we're going to have 4 partitions organized by smallest to biggest numbers. In that case, each element in partition will work almost like a pivot in Quick Sort.
+In this initial phase, we focus on parsing the input, extracting the tokens (numbers), and validating them. We verify that the input consists of valid integers, ensuring there are no duplicates and that all values fall within acceptable ranges. If everything checks out, we move on to the next phase.
+
+#### Phase 2. Preparation
+
+In this phase, we first check if the number of elements is between 2 and 5. If so, we can move directly to Phase 3, as sorting small sets is trivial. For larger sets, we partition the numbers into two stacks: the smaller values go to stack B, while the larger values remain in stack A. We continue this partitioning process until stack A is empty, ultimately creating four ordered partitions, from smallest to largest. These partitions act similarly to pivots in a Quick Sort algorithm (Hence the *Twisted* Quick Sort)
 
 > Example: let's take 10 numbers. We divide by 2. Then we're going to have 2 partitions of 5. If the first number is bigger than the half (5), it must stay because it's part of the big partition, so the command will be `ra`. If the number is smaller than the half, it must go to B, so let's do `pb`. Repeat this until A is empty.
 
-Having a pre-sort in stack B, let's calculate the cost of the best numbers to go to A. This will be the **Sorting Algorithm**, move the number requiring the fewest operations. Repeat this until the partition is empty, then move to the next smaller partition, continuing until stack B is empty. 
+#### Phase 3. Sorting Algorithm
+
+Now that stack B is pre-sorted, we calculate the cost of moving each number back to stack A in the most efficient way. We move the number that requires the fewest operations to the correct position in stack A. This process is repeated until stack B is emptied, and we gradually rebuild stack A with the sorted numbers.
 
 >[!TIP]
 > There are always 4 movements to push from B to A. That will be `ra` + `rb`, `ra` + `rrb`, `rra` + `rb`, `rra` + `rrb`. All followed by a `pa`. 
 
-Finally, we need to **optimize commands**. Using the root structure `t_ps`, all the commands are contained in `cmds` variable. Now, I've found certains patterns that can optimize the time complexity of my program. Just like, `pb`-`ra`-`pa` = `sa`, `pb`-`pa`-`pb` = `pb`, `sa`-`sb` = `ss`, `ra`-`rb` = `rr`, `rra`-`rrb` = `rrr`. After this, we can print and solve push_swap project! And, voilà! Sorted!
+#### Phase 4. Optimize Commands
+
+Finally, using the root structure `t_ps`, all the commands are contained in `cmds` variable. Now, I've found certains patterns that can optimize the time complexity of my program. Just like:
+
+<ul>
+	<li>pb - ra - pa = sa</li>
+	<li>pb - pa - pb = pb</li>
+	<li>sa - sb = ss</li>
+	<li>ra - rb = rr</li>
+	<li>rra - rrb = rrr</li>
+</ul>
+
+After this, we can print and solve push_swap project! And, voilà! Sorted!
 
 ## 3.6. Time complexity of my algorithm: creating my own formula
 
 To better precise my algorithm I have developed a formula to predict the time complexity of my algorithm. To do so, I've used as base the Master Theorem. 
 
-The master theorem is one of the methods for solving recurrence relations arising from divide and conquer algorithms. When a more complex mathematical analysis is required, the master theorem is used, which is an effective tool for this type of situation. In summary, the master theorem solves recurrences that have the following form:
+The master theorem is one of the methods for solving recurrence relations arising from divide-and-conquer algorithms. When a more complex mathematical analysis is required, the master theorem is used, which is an effective tool for this type of situation. In summary, the master theorem solves recurrences that have the following form:
 
 $$
 T(n) = aT(n/b) + f(n)
@@ -242,11 +260,11 @@ $$
 
 Where n is the data size, the values ​​$`a >= 1`$ and $`b > 1`$ are constants and $`f(n)`$ is a function that represents the time cost of each recursive call of the algorithm.
 
-Considering the chosen sorting algorithm (Quick Sort and Insertion), I couldn't use an unique formula to estimate the complexity of my program. That's because the worst-case complexity for Quick Sort is $`O(nlogn)`$ and Insertion would be $`O(n^2)`$.
+Considering the chosen sorting algorithm (Quick Sort and Insertion), I couldn't use a unique formula to estimate the complexity of my program. That's because the worst-case complexity for Quick Sort is $`O(nlogn)`$ and Insertion would be $`O(n^2)`$.
 
-In my push_swap, I only use Insertion in 2 specific cases, when we need to sort 3, 4 and 5 numbers. Meaning that the Quick Sort is present in enourmous cases. 
+In my push_swap, I only use Insertion in 2 specific cases, when we need to sort 3, 4 and 5 numbers. This means that the Quick Sort is present in enormous cases. 
 
-I've said also that I used a 'Twisted' Quick Sort, because I didn't always used a pivot.
+I've said also that I used a 'Twisted' Quick Sort because I didn't always use a pivot.
 
 Regarding that, in most part of the cases, our worst-case complexity will be:
 
@@ -262,11 +280,11 @@ $$
 
 n is the quantity of elements (numbers) to sort. The values ​​$`a >= 1`$ and $b > 1$ are constants and $B(n)$ is a function that represents the time cost of each recursive call of the algorithm to sort, or finish, the stack B.
 
-Let's find our constants. First of all, as discussed earlier, there are always 4 ways to push from B to A efficiently. Because they're combined with `pa`, is 4 + 1 commands to move a number from B to A. Therefore the number 5 is a constant. I'll call this $`a`$
+Let's find our constants. First of all, as discussed earlier, there are always 4 ways to push from B to A efficiently. Because they're combined with `pa`, 4 + 1 commands move a number from B to A. Therefore the number 5 is a constant. I'll call this $`a`$
 
 Another constant is the partitions, which we're always dividing by 2. I'll call this $`b`$
 
-Now, because we need to use 2 stacks to sort, I've decided to make a formula for B, meaning that we will see the complexity to sort B, and then add to A.
+Now, because we need to use 2 stacks to sort, I've decided to make a formula for B, meaning that we will see the complexity of sorting B, and then add to A.
 
 $$
 B(n) = 2B(n/2) + n/2
